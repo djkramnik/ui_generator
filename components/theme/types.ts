@@ -1,7 +1,7 @@
 import { CSSProperties } from "react"
 
 export type BreakpointsType = {
-  phonesm: string
+  phonesm: null // this is pointless? based on current impl.  It just means a style with no minimum viewport width to apply
   phonelg: string
   tabletsm: string
   tabletlg: string
@@ -11,9 +11,9 @@ export type BreakpointsType = {
 // [<= phonelg, > phonelg, > tabletlg?]
 export type MixinList<T extends string = string>
   = [T, T, T?]
-// [<= phonesm, > phonesm, > phonelg, > tabletsm, > tabletlg, > desktoplg?]
+// [<= phonelg, > phonelg, > tabletsm, > tabletlg, > desktoplg?]
 export type FineGrainedMixinList<T extends string = string>
-  = [T, T, T, T, T, T?]
+  = [T, T, T, T, T?]
 
 // ways of specifiying a single responsive style on a component
 export type ResponsiveMixin<T extends string = string> =

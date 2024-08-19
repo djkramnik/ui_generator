@@ -1,8 +1,13 @@
 import type { NextPage } from 'next'
+import { ThemeToggle } from '../components/lib/theme_toggle'
 
 const Home: NextPage = () => {
   return (
-    <div>hi</div>
+    <>
+      <ThemeToggle />
+      <div>hi</div>
+    </>
+    
   )
 }
 

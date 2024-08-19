@@ -76,6 +76,12 @@ export const getResponsiveStylesFactory = (breakpoints: BreakpointsType = {
   }
 }
 
+const camelToSnakeCase = (str: string) => str.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)
+
 function getCssStr(prop: keyof CSSProperties, val: string): string {
-  return `${prop}: ${val};`
+  return `${camelToSnakeCase(prop)}: ${val};`
 }
+
+// different themes should be able to set their own breakpoints
+// this should also be togglable
+export const getResponsiveStyles = getResponsiveStylesFactory()

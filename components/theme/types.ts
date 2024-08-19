@@ -37,7 +37,7 @@ export type ThemeConfig = {
 
 export type Theme = Partial<ThemeConfig>
 
-export type ThemeableComponent<
+export type ResponsiveComponent<
 E extends React.ElementType<any>> =
   & React.ComponentPropsWithoutRef<E>
   & {

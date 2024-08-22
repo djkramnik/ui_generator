@@ -4,7 +4,7 @@ import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme
 
 export type HeadingProps = WithTheme<ResponsiveComponent<'h1'>> & { level: | 1 | 2 | 3 | 4 | 5 | 6 }
 
-export const StyledHeading = styled(
+export const Heading = styled(
   ({ level = 3, ...rest }: HeadingProps) => {
     return React.createElement(`h${level}`, rest)
   }

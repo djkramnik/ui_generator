@@ -42,4 +42,9 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   a:hover {
     text-decoration: underline;
   }
+  button {
+    outline: none;
+    background: none;
+    border: none;
+  }
 `

@@ -9,7 +9,7 @@ import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme
 export type AnchorProps = WithTheme<ResponsiveComponent<'a'>>
 
 // in the future theme and variant will come into play???
-export const Anchor = styled('a')`
+export const Anchor = styled('a')<AnchorProps>`
   ${({ theme, $variant, $sx }: AnchorProps) => {
     const responsive = getResponsiveStyles({
       ...($sx ?? {}),

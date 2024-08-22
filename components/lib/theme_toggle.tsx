@@ -10,10 +10,13 @@ export const ThemeToggle = () => {
   return (
     <div style={{
       position: 'fixed',
-      top: '0',
+      bottom: '0',
       right: '0',
     }}>
-      <button onClick={handleClick}>
+      <button onClick={handleClick} style={{
+        backgroundImage: `linear-gradient(to bottom, #e4e4e4, #f7f7f7)`,
+        border: `1px solid #afafaf`
+      }}>
         Toggle Theme
       </button>
     </div>

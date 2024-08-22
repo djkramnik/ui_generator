@@ -5,6 +5,8 @@ import { Testimonial } from '../components/lib/applied/testimonial'
 import { NewsPreview } from '../components/lib/applied/news_preview'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { CnnLogo } from '../components/svg'
+import { Spacer } from '../components/lib/layout/spacer'
+import { Button, Heading } from '../components/lib/atomics'
 
 const Home: NextPage = () => {
   return (
@@ -25,13 +27,47 @@ const Home: NextPage = () => {
           {'Watch'}
           {'Listen'}
           {'Live TV'}
-          <button>Sign In</button>
+          <Button $sx={{ 
+            color: '#fff',
+            border: '1px solid #fff',
+            borderRadius: '8px',
+            padding: '6px 8px',
+            fontWeight: '700',
+            }}>
+            Sign In
+          </Button>
         </NavbarLinks>
       </Navbar>
       <NavBanner
         lineOne="HAPPENING NOW"
         lineTwo={<a href="#">Oprah Winfrey solves world hunger.  Watch it Live!</a>}
       />
+      <Heading level={4} $sx={{
+        textAlign: 'center',
+        fontWeight: '700',
+        fontSize: '24px',
+        width: '80%',
+        margin: 'auto',
+        color: '#aaa',
+        letterSpacing: '0',
+        paddingTop: '20px',
+        position: 'relative',
+        top: '8px'
+      }}>
+        DEMOCRACY IN ACTION
+      </Heading>
+      <Heading level={1} $sx={{ 
+        textAlign: 'center',
+        padding: '20px 0',
+        paddingTop: '0',
+        fontSize: '94px',
+        lineHeight: '116px',
+        fontWeight: '700',
+        margin: 'auto'
+        }}>
+        <a href="#">Bro, Do what we tell you</a>
+      </Heading>
+      <Spacer />
       <ThemeToggle />
       <ThreeCol>
         <>

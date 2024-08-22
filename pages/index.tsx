@@ -3,9 +3,8 @@ import { ThemeToggle } from '../components/lib/theme_toggle'
 import { ThreeCol } from '../components/lib/layout/threecol'
 import { Testimonial } from '../components/lib/applied/testimonial'
 import { NewsPreview } from '../components/lib/applied/news_preview'
-import { NavBanner, Navbar, NavbarLink, NavbarLinks } from '../components/lib/applied'
+import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { CnnLogo } from '../components/svg'
-import { Flex } from '../components/lib'
 
 const Home: NextPage = () => {
   return (
@@ -29,7 +28,10 @@ const Home: NextPage = () => {
           <button>Sign In</button>
         </NavbarLinks>
       </Navbar>
-      <NavBanner lineOne="HAPPENING NOW" lineTwo="Oprah Winfrey solves world hunger.  Watch it Live!" />
+      <NavBanner
+        lineOne="HAPPENING NOW"
+        lineTwo={<a href="#">Oprah Winfrey solves world hunger.  Watch it Live!</a>}
+      />
       <ThemeToggle />
       <ThreeCol>
         <>

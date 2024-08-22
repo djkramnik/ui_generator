@@ -1,4 +1,4 @@
-import { Children } from "react"
+import React, { Children } from "react"
 import { useTheme } from "styled-components"
 import { ResponsiveMixin } from "../../theme"
 import { Box, Flex, FlexProps } from "../layout"
@@ -84,8 +84,8 @@ export const NavBanner = ({
 }: {
   c?: ResponsiveMixin
   bgc?: ResponsiveMixin
-  lineOne: string
-  lineTwo: string
+  lineOne: React.ReactNode
+  lineTwo: React.ReactNode
   w?: ResponsiveMixin
   p?: ResponsiveMixin
 }) => {

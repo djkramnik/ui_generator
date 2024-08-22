@@ -125,6 +125,10 @@ const Home: NextPage = () => {
           />
         </>
         <>
+        <NewsPreview
+          headline="Old insecure man looks disapprovingly at some random object in the distance, trying to hide his hurt feelings"
+          imgSrc="/thumbs/cnn3.jpg"
+          />
           <Testimonial
             imgSrc="/avatars/guts.jpg"
             name="Boss Man"

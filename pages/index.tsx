@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { ThreeCol } from '../components/lib/layout/threecol'
 import { Testimonial } from '../components/lib/applied/testimonial'
+import { NewsPreview } from '../components/lib/applied/news_preview'
 
 const Home: NextPage = () => {
   return (
@@ -9,6 +10,8 @@ const Home: NextPage = () => {
       <ThemeToggle />
       <ThreeCol>
         <>
+        <NewsPreview imgSrc="/thumbs/yt_thumb1.jpg"
+          headline="Unearthed recording of Black Keys Lead Singer reveals confession of lonely young maleness" />
           <Testimonial 
             imgSrc="/avatars/guillermo.jpg"
             name="Vedran Earthling"
@@ -57,19 +60,19 @@ const Home: NextPage = () => {
         </>
         <>
           <Testimonial
-            imgSrc="/avatars/guillermo.jpg"
+            imgSrc="/avatars/guts.jpg"
             name="Boss Man"
             position="CEO"
             testimony={`I like to stare at my workers as they code, scrutinizing the way they type.  None of them can beat me in a game of table tennis and it sickens me.`}
           />
           <Testimonial
-            imgSrc="/avatars/adam.jpg"
+            imgSrc="/avatars/historian.jpg"
             name="Russian Prodigy"
             position="Jr Dev"
             testimony={`I wrote the entire application in the least amount of time, for the least amount of money, with the least amount of bugs.  I will not say hello to you on the staircase.`}
           />
           <Testimonial
-            imgSrc="/avatars/ryan.jpg"
+            imgSrc="/avatars/couple.jpg"
             name="Still Innocent Intern"
             position="Intern"
             testimony={`When the CTO wandered into the room drunk and asked me if I had any questions, with a crazed look in his eye, I did in fact have a lot of questions. But my instinct for survival blocked them from my mind so I just told him no.`}

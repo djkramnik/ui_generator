@@ -1,3 +1,4 @@
+import { ResponsiveMixin } from "../../theme"
 import { Card, Flex } from "../layout"
 import { TwoCol } from "../layout/twocol"
 
@@ -6,16 +7,18 @@ export const Testimonial = ({
   name,
   position,
   testimony,
-  portrait = true
+  portrait = true,
+  bgc,
 }: {
   imgSrc: string,
   name: string,
   position: string,
   testimony: string
   portrait?: boolean
+  bgc?: ResponsiveMixin
 }) => {
   return (
-    <Card>
+    <Card bgc={bgc}>
       <Flex col $sx={{ gap: '12px' }}>
         <TwoCol growRight widthLeft="20%" hGap="12px">
           <img src={imgSrc}

@@ -25,6 +25,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   * {
     box-sizing: border-box;
     font-family: ${({ theme }) => theme.typography?.primary?.fontFamily ?? 'fantasy'};
+    margin: 0;
   }
 
   body {

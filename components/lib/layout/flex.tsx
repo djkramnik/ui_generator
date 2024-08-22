@@ -33,7 +33,7 @@ const flagToCss: Record<keyof FlexFlags, [keyof CSSProperties, ResponsiveMixin]>
   wrap: ['flexWrap', 'wrap']
 }
 
-type FlexProps = ResponsiveComponent<'div'> & Partial<FlexFlags>
+export type FlexProps = ResponsiveComponent<'div'> & Partial<FlexFlags>
 
 const shortHand = (flags: Partial<FlexFlags>): ResponsiveMixinProps<CSSProperties> => {
   return Object.entries(flags)

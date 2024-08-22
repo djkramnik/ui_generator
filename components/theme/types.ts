@@ -29,10 +29,10 @@ export type ResponsiveMixinProps<T extends CSSProperties> = {
 export type CssProps = ResponsiveMixinProps<CSSProperties>
 
 export type ThemeConfig = {
-  palette: Record<string, CssProps>
-  typography: Record<string, CssProps>
-  spacing: Record<string, CssProps>
-  components: Record<string, CssProps>
+  palette: Record<string, ResponsiveMixin>
+  typography: Record<string, ResponsiveMixin>
+  spacing: Record<string, ResponsiveMixin>
+  components: Record<string, ResponsiveMixin>
 }
 
 export type Theme = Partial<ThemeConfig>

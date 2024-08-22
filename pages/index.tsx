@@ -3,10 +3,32 @@ import { ThemeToggle } from '../components/lib/theme_toggle'
 import { ThreeCol } from '../components/lib/layout/threecol'
 import { Testimonial } from '../components/lib/applied/testimonial'
 import { NewsPreview } from '../components/lib/applied/news_preview'
+import { Navbar, NavbarLink, NavbarLinks } from '../components/lib/applied'
+import { CnnLogo } from '../components/svg'
+import { Flex } from '../components/lib'
 
 const Home: NextPage = () => {
   return (
     <>
+      <Navbar h="40px">
+        <NavbarLinks wrapChildren>
+          <CnnLogo style={{ marginRight: '12px'}} />
+          {'US'}
+          {'World'}
+          {'Politics'}
+          {'Business'}
+          {'Health'}
+          {'Celebritities'}
+          {'Style baby'}
+          {'Moar'}
+        </NavbarLinks>
+        <NavbarLinks wrapChildren>
+          {'Watch'}
+          {'Listen'}
+          {'Live TV'}
+          <button>Sign In</button>
+        </NavbarLinks>
+      </Navbar>
       <ThemeToggle />
       <ThreeCol>
         <>

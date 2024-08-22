@@ -11,7 +11,7 @@ export const NewsPreview = ({
 }) => {
 
   return (
-    <a href="#" style={{ textDecoration: 'none', color: '#333' }}>
+    <a href="#">
       <Flex col $sx={{ gap: '8px' }}>
         {
           topHeadline

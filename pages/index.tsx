@@ -10,8 +10,11 @@ const Home: NextPage = () => {
       <ThemeToggle />
       <ThreeCol>
         <>
-        <NewsPreview imgSrc="/thumbs/yt_thumb1.jpg"
-          headline="Unearthed recording of Black Keys Lead Singer reveals confession of lonely young maleness" />
+        <NewsPreview
+          topHeadline="Read my lips says old man, whilst licking said lips disturbingly"
+          imgSrc="/thumbs/yt_thumb1.jpg"
+          headline="Unearthed recording of Black Keys Lead Singer reveals confession of lonely young maleness"
+          />
           <Testimonial 
             imgSrc="/avatars/guillermo.jpg"
             name="Vedran Earthling"
@@ -32,6 +35,10 @@ const Home: NextPage = () => {
           />
         </>
         <>
+        <NewsPreview
+          imgSrc="/thumbs/cnn1.jpg"
+          headline="Body of British tech millionaire recovered from yacht, Italian official says, as divers search for his daughter"
+          />
           <Testimonial
             imgSrc="/avatars/adam.jpg"
             name="David Grrrrr"

@@ -1,0 +1,35 @@
+import { ResponsiveMixin } from "../../theme"
+import { Flex } from "./flex"
+
+export const TwoCol = ({
+  widthLeft = 'auto',
+  widthRight = 'auto',
+  growLeft,
+  growRight,
+  hGap,
+  children,
+}: {
+  hGap?: string
+  widthLeft?: ResponsiveMixin
+  widthRight?: ResponsiveMixin
+  growLeft?: boolean
+  growRight?: boolean
+  children: [React.ReactNode, React.ReactNode]
+}) => {
+  return (
+    <Flex row $sx={{ gap: hGap, alignItems: 'stretch' }}>
+      <Flex col $sx={{ 
+        width: widthLeft,
+        flexGrow: growLeft ? '1' : '0'
+      }}>
+        {children[0] ?? null}
+      </Flex>
+      <Flex col $sx={{ 
+        width: widthRight,
+        flexGrow: growRight ? '1' : '0',
+      }}>
+        {children[1] ?? null}
+      </Flex>
+    </Flex>
+  )
+}

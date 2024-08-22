@@ -1,1 +1,1 @@
-export * from './cnn'
+export * from './logos'

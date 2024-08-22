@@ -61,13 +61,11 @@ const Home: NextPage = () => {
         padding: '20px 0',
         paddingTop: '0',
         fontSize: '94px',
-        lineHeight: '116px',
         fontWeight: '700',
         margin: 'auto'
         }}>
-        <a href="#">Bro, Do what we tell you</a>
+        <a href="#">Bro, do what we tell you</a>
       </Heading>
-      <Spacer />
       <ThemeToggle />
       <ThreeCol>
         <>

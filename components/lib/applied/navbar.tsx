@@ -79,11 +79,26 @@ export const NavBanner = ({
   bgc = '#cc0000',
   lineOne,
   lineTwo,
+  w,
+  p,
 }: {
   c?: ResponsiveMixin
   bgc?: ResponsiveMixin
   lineOne: string
   lineTwo: string
+  w?: ResponsiveMixin
+  p?: ResponsiveMixin
 }) => {
-  
+  const theme = useTheme()
+  const width = w ?? theme.spacing?.containerWidth ?? '90%'
+  const padding = p ?? '20px 0'
+  return (
+    <Flex row aic jcsb $sx={{ color: c, backgroundColor: bgc, padding }}>
+      <Flex col $sx={{ gap: '12px', width, margin: 'auto' }}>
+        <h3>{lineOne}</h3>
+        <p>{lineTwo}</p>
+      </Flex>
+      {/**TODO: add the collapsible icon */}
+    </Flex>
+  )
 }

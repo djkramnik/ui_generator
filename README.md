@@ -20,6 +20,8 @@ React, NextJS and styled components doing the heavy lifting.
 
 ## Sections to simulate
 * hero
+  * mock code section
+  * stripe phone graphic 
 * navbar
 * footer
 * sidebar
@@ -37,11 +39,13 @@ React, NextJS and styled components doing the heavy lifting.
 * order summary
 * legal
 * social media links
+* pricing table
 
 ## Roadmap 
+* create script to extract all custom styles from a given element on page... for the purpose of grabbing mock assets for use in the simulator. 
 * create highly configurable versions of the above sections
 * have templates for page types to simulate 
-* have script to procedurally create nextjs pages randomized pages by type
+* have script, or perhaps server side rendering logic to procedurally generate pages upon request 
 * for now just desktop width. strictly non responsive. later on; generate for both mobile and desktop
 
 

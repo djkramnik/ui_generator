@@ -5,12 +5,11 @@ import { Testimonial } from '../components/lib/applied/testimonial'
 import { NewsPreview } from '../components/lib/applied/news_preview'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { CnnLogo } from '../components/svg'
-import { Spacer } from '../components/lib/layout/spacer'
 import { Button, Copy, Heading } from '../components/lib/atomics'
 import { VideoHero } from '../components/lib/applied/hero'
 import { ShopifyLogo } from '../components/svg/logos/shopify'
 import { Container } from '../components/lib/layout/container'
-import { Box, Flex, TwoCol } from '../components/lib'
+import { Flex } from '../components/lib'
 
 const Home: NextPage = () => {
   return (

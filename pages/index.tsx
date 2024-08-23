@@ -6,11 +6,78 @@ import { NewsPreview } from '../components/lib/applied/news_preview'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { CnnLogo } from '../components/svg'
 import { Spacer } from '../components/lib/layout/spacer'
-import { Button, Heading } from '../components/lib/atomics'
+import { Button, Copy, Heading } from '../components/lib/atomics'
+import { VideoHero } from '../components/lib/applied/hero'
+import { ShopifyLogo } from '../components/svg/logos/shopify'
+import { Container } from '../components/lib/layout/container'
+import { Box, Flex, TwoCol } from '../components/lib'
 
 const Home: NextPage = () => {
   return (
     <>
+      <VideoHero 
+        videoSrc="/videos/shopify.avif"
+      >
+        <Flex col $sx={{ height: '100%' }}>
+          <Navbar bgc="transparent" h="60px" boxStyles={{ zIndex: '1'}}>
+            <NavbarLinks wrapChildren>
+              <ShopifyLogo style={{ width: '100px', marginRight: '12px' }} />
+              {'Solutions'}
+              {'Pricing'}
+              {'Resources'}
+              {'What\'s new'}
+            </NavbarLinks>
+            <NavbarLinks gap="18px">
+              {'Log in'}
+              <Button $sx={{
+                backgroundColor: '#fff',
+                color: '#333',
+                borderRadius: '24px',
+                fontWeight: '700',
+                padding: '12px 18px'
+              }}>
+                Start Free Trial
+              </Button>
+            </NavbarLinks>
+          </Navbar>
+          <Container $sx={{ flexGrow: '1', display: 'flex', flexDirection: 'column', zIndex: '1' }}>
+            <Flex col jcc $sx={{ flexGrow: '1', width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
+              <Heading level={2} $sx={{ fontSize: '56px', lineHeight: '64px'}}>
+                Some Javascript, <br />for a Monthly Fee
+              </Heading>
+              <Heading level={4} $sx={{ fontSize: '22px' }}>
+                Will sell you javascript.. for food.<br />  And boats.  And cars.  And the future.
+              </Heading>
+            </Flex>
+            <Flex jcsb aic $sx={{ height: '200px'}}>
+              <Flex $sx={{ gap: '8px'}} aic>
+                <Button $sx={{
+                  backgroundColor: '#fff',
+                  color: '#333',
+                  borderRadius: '24px',
+                  fontWeight: '700',
+                  padding: '12px 18px'
+                }}>
+                  Start Free Trial
+                </Button>
+                <Copy $sx={{ fontSize: '12px', color: '#fff' }}>
+                  Get 3 days for free!<br /> Then we will begin the invoicing.
+                </Copy>
+              </Flex>
+              <Button $sx={{
+                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                color: '#fff',
+                borderRadius: '24px',
+                fontWeight: '700',
+                padding: '12px 18px',
+                border: '1px solid #fff',
+              }}>
+                Watch the Shopify Story
+              </Button>
+            </Flex>
+          </Container>
+        </Flex>
+      </VideoHero>
       <Navbar h="40px">
         <NavbarLinks wrapChildren>
           <CnnLogo style={{ marginRight: '12px'}} />

@@ -18,7 +18,7 @@ export const themes: Record<string, Theme> = {
       primaryff: 'Courier'
     },
     spacing: {
-      containerWidth: ['96%', '94%', '92%']
+      containerWidth: ['98%', '96%', '94%']
     }
   }
 }

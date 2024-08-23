@@ -1,7 +1,7 @@
 import React, { Children } from "react"
 import { useTheme } from "styled-components"
 import { ResponsiveMixin } from "../../theme"
-import { Box, Flex, FlexProps } from "../layout"
+import { Box, BoxProps, Flex, FlexProps } from "../layout"
 import { CloseIcon } from "../../svg/common/close"
 
 // need anchor with sx....
@@ -47,6 +47,7 @@ export const Navbar = ({
   w,
   children,
   flexProps,
+  boxStyles,
   h,
 }: {
   bgc?: ResponsiveMixin
@@ -54,13 +55,16 @@ export const Navbar = ({
   w?: ResponsiveMixin
   children?: React.ReactNode
   flexProps?: FlexProps
+  boxStyles?: BoxProps['$sx']
   h?: ResponsiveMixin
 }) => {
   const theme = useTheme()
   const width = w ?? theme.spacing?.containerWidth ?? '90%'
   const {$sx, ...rest} = flexProps ?? {}
   return (
-    <Box $sx={{ backgroundColor: bgc, color: c }}>
+    <Box $sx={{ 
+      backgroundColor: bgc,
+      color: c, ...(boxStyles ?? {}) }} >
       <Flex row aic jcsb
         $sx={{
           width,

@@ -4,31 +4,27 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "ES5"
     ],
+    "outDir": "dist",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "UMD",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "react": [ "./node_modules/@types/react" ]
+      "react": [ "../node_modules/@types/react" ]
     }
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-, "components/lib/index.tsz"  ],
+    "**/*.ts"
+  ],
   "exclude": [
-    "node_modules",
-    "chameleon"
+    "node_modules"
   ]
 }

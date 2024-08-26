@@ -62,13 +62,19 @@ function getDefaultStyles({
   return styleMapToFilteredObj(styleMap, filter)
 }
 
-function getUniqueStylesFactory(
-  filter: (key: string) => boolean,
-  existingIframe: HTMLIFrameElement
-) {
+function getUniqueStylesFactory({
+  filter,
+  existingIframe,
+}: {
+  filter?: (key: string) => boolean,
+  existingIframe?: HTMLIFrameElement
+}): {
+  iframe: HTMLIFrameElement
+  getUniqueStyles: (el: HTMLElement) =>  (Dict | null)
+} {
   const iframe = existingIframe ?? createIframe()
   
-  function getUniqueStyles(el: HTMLElement) {
+  function getUniqueStyles(el: HTMLElement): Dict | null {
     const defaultStyles = getDefaultStyles({ el, iframe, filter })
     if (!defaultStyles) {
       return null
@@ -82,7 +88,7 @@ function getUniqueStylesFactory(
         ...acc,
         [k]: v
       }
-    }, {})
+    }, {} as Dict) as Dict
   }
 
   return {
@@ -93,10 +99,10 @@ function getUniqueStylesFactory(
 
 function buildUniqueStylesGraph({ 
   el,
-  uniq
+  getGraph
 }: {
   el: HTMLElement
-  uniq: (el: HTMLElement) =>  (Dict | null)
+  getGraph: (el: HTMLElement) =>  (Dict | null)
 }) {
   if (el.nodeType !== 1 && el.nodeType !== 3) {
     return null
@@ -109,7 +115,7 @@ function buildUniqueStylesGraph({
   const node = {
     tagName: el.tagName,
     children: [],
-    style: objToStyleStr(uniq(el) ?? {}) 
+    style: objToStyleStr(getGraph(el) ?? {}) 
   }
   if (el.tagName === 'svg') {
     // @ts-ignore

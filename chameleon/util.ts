@@ -97,6 +97,13 @@ function getUniqueStylesFactory({
   }
 }
 
+type StyleNode = {
+  tagName: string
+  children: Array<StyleNode>
+  html?: string
+  style: string
+} | { tagName: 'text' }
+
 function buildUniqueStylesGraph({ 
   el,
   getGraph
@@ -110,16 +117,15 @@ function buildUniqueStylesGraph({
   if (el.nodeType === 3) {
     return {
       tagName: 'text'
-    }
+    } as StyleNode
   }
-  const node = {
+  const node: StyleNode = {
     tagName: el.tagName,
-    children: [] as Array<{ tagName: string; children: never[]; style: string; } | { tagName: string; }>,
+    children: [] as StyleNode[],
     style: objToStyleStr(getGraph(el) ?? {}) 
   }
   if (el.tagName === 'svg') {
-    // @ts-ignore
-    node.html = innerHTML
+    node.html = el.innerHTML
     return node
   }
   if (el.hasChildNodes()) {
@@ -134,6 +140,7 @@ function buildUniqueStylesGraph({
       node.children.push(graph)
     })
   }
+  return node
 }
 
 export {

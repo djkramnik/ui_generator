@@ -114,7 +114,7 @@ function buildUniqueStylesGraph({
   }
   const node = {
     tagName: el.tagName,
-    children: [],
+    children: [] as Array<{ tagName: string; children: never[]; style: string; } | { tagName: string; }>,
     style: objToStyleStr(getGraph(el) ?? {}) 
   }
   if (el.tagName === 'svg') {
@@ -124,8 +124,14 @@ function buildUniqueStylesGraph({
   }
   if (el.hasChildNodes()) {
     el.childNodes.forEach(childNode => {
-      // @ts-ignore
-      node.children.push(buildUniqueStylesGraph({el: childNode, uniq }))
+      if (!childNode) {
+        return
+      }
+      const graph = buildUniqueStylesGraph( {el: childNode as HTMLElement, getGraph })
+      if (!graph) {
+        return
+      }
+      node.children.push(graph)
     })
   }
 }

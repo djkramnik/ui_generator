@@ -1,7 +1,19 @@
+import { CSSProperties } from 'react'
 
 type Dict = {[key: string]: string}
 
 type StyleFilter = (key: string) => boolean
+
+function toCamelCase(s: string): string {
+  return s.split('-').map((s, index) => {
+    if (!s) {
+      return ''
+    }
+    return index > 0
+      ? `${s[0].toUpperCase()}${s.slice(1)}`
+      : s
+  }).join('')
+}
 
 function styleMapToFilteredObj(
   styleMap: StylePropertyMapReadOnly,
@@ -22,6 +34,15 @@ function objToStyleStr(obj: Dict): string {
   return Object.entries(obj).reduce((acc, [k,v]) => {
     return acc.concat(`${k}:${v};`)
   }, '')
+}
+
+function objToCss(obj: Dict): CSSProperties {
+  return Object.entries(obj).reduce((acc, [k,v]) => {
+    return {
+      ...acc,
+      [toCamelCase(k)]: String(v)
+    }
+  }, {} as CSSProperties)
 }
 
 function createIframe() {
@@ -101,8 +122,12 @@ type StyleNode = {
   tagName: string
   children: Array<StyleNode>
   html?: string
-  style: string
-} | { tagName: 'text' }
+  style: CSSProperties
+  styleStr: string
+} | { 
+  tagName: 'text',
+  content: string
+}
 
 function buildUniqueStylesGraph({ 
   el,
@@ -116,13 +141,17 @@ function buildUniqueStylesGraph({
   }
   if (el.nodeType === 3) {
     return {
-      tagName: 'text'
+      tagName: 'text',
+      content: el.textContent,
     } as StyleNode
   }
+
+  const customStyles = getGraph(el) ?? {}
   const node: StyleNode = {
     tagName: el.tagName,
     children: [] as StyleNode[],
-    style: objToStyleStr(getGraph(el) ?? {}) 
+    styleStr: objToStyleStr(customStyles),
+    style: objToCss(customStyles),
   }
   if (el.tagName === 'svg') {
     node.html = el.innerHTML

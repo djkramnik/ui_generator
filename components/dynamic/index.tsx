@@ -4,22 +4,7 @@ import { Box } from "../lib"
 import { CssProps } from "../theme"
 import { useTheme } from "styled-components"
 import { Anchor, Button, Input } from "../lib/atomics"
-
-type TextNode = { 
-  tagName: 'text',
-  content: string
-}
-
-type DomNode = {
-  tagName: string
-  children: Array<StyleNode>
-  html?: string
-  style: CSSProperties
-  styleStr: string
-  attributes?: Record<string, string>
-} 
-
-type StyleNode = DomNode | TextNode
+import { DomNode, StyleNode, TextNode } from "./types"
 
 const toSx = (cssProperties: CSSProperties): CssProps => {
   return Object.entries(cssProperties)

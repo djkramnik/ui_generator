@@ -16,8 +16,7 @@ type DomNode = {
   html?: string
   style: CSSProperties
   styleStr: string
-  href?: string
-  src?: string
+  attributes?: Record<string, string>
 } 
 
 type StyleNode = DomNode | TextNode
@@ -66,13 +65,14 @@ export const DynamicComponent = ({
   if (tagName === 'text') {
     return (graph as TextNode).content
   }
+  const attributes = graph
   const element = getElement(tagName)
   if (element === null) {
     return null
   }
   return createElement(
     element,
-    {$sx: toSx((graph as DomNode).style), theme},
+    {$sx: toSx((graph as DomNode).style), theme, ...attributes},
     ...(
       (graph as DomNode).children
         .map((c, index) => {

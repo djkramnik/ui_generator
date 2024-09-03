@@ -100,7 +100,14 @@ function getUniqueStylesFactory({
     if (!defaultStyles) {
       return null
     }
-    const currentStyles = styleMapToFilteredObj(el.computedStyleMap(), filter)
+
+    let currentStyles = styleMapToFilteredObj(el.computedStyleMap(), filter)
+    
+    if (el.tagName === 'img' || el.tagName === 'image') {
+      currentStyles.width = el.clientWidth + 'px'
+      currentStyles.height = el.clientHeight + 'px'
+    }
+
     return Object.entries(currentStyles).reduce((acc, [k, v]) => {
       if (currentStyles[k] === defaultStyles[k]) {
         return acc
@@ -124,6 +131,7 @@ type StyleNode = {
   html?: string
   style: CSSProperties
   styleStr: string
+  attributes: Record<string, string>
 } | { 
   tagName: 'text',
   content: string
@@ -152,11 +160,25 @@ function buildUniqueStylesGraph({
     children: [] as StyleNode[],
     styleStr: objToStyleStr(customStyles),
     style: objToCss(customStyles),
+    attributes: {}
   }
   if (el.tagName === 'svg') {
     node.html = el.innerHTML
     return node
   }
+  // adding attributes where relevant....
+  // for images, we won't be copying the actual src content for now...
+  // but upstream from here, we add explicit width and height css properties for images
+  // we use a placeholder image of a solid color for now
+  if (el.tagName === 'input') {
+    const placeholder = el.getAttribute('placeholder')
+    if (placeholder) {
+      node.attributes.placeholder = placeholder
+    }
+  } else if (el.tagName === 'img' || el.tagName === 'image') {
+    node.attributes.src = '/public/solid-color.jpg'
+  }
+
   if (el.hasChildNodes()) {
     el.childNodes.forEach(childNode => {
       if (!childNode) {

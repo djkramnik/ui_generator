@@ -1,9 +1,9 @@
 import React, { createElement } from "react"
 import { CSSProperties } from "react"
-import { Box, BoxProps } from "../lib"
+import { Box } from "../lib"
 import { CssProps } from "../theme"
 import { useTheme } from "styled-components"
-import { Anchor, Button } from "../lib/atomics"
+import { Anchor, Button, Input } from "../lib/atomics"
 
 type TextNode = { 
   tagName: 'text',
@@ -37,14 +37,12 @@ const getElement = (tagName: string): any => {
     case 'a':
       return Anchor
     case 'button':
-    // todo... copying certain attributes...
-    case 'input':
-      // todo: styled input...
       return Button
-    // todo... styled image!
+    case 'input':
+      return Input
     case 'img':
     case 'image':
-      return Button
+      return Image
     case 'svg':
       return 'svg'
     case 'script':

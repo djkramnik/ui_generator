@@ -12,6 +12,7 @@ export type DomNode = {
   style: CSSProperties
   styleStr: string
   attributes?: Record<string, string>
+  className: string
 } 
 
 export type StyleNode = DomNode | TextNode

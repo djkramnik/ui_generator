@@ -59,8 +59,16 @@ export const DynamicComponent = ({
     element,
     {
       $sx: toSx((graph as DomNode).style),
+      className: node.className,
       theme,
       ...attributes,
+      ...(
+        node.tagName === 'svg'
+          ? {
+            style: (graph as DomNode).style
+          }
+          : undefined
+      ),
       ...(
         typeof node.html === 'string'
           ? {

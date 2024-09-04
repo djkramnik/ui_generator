@@ -130,6 +130,7 @@ type StyleNode = {
   style: CSSProperties
   styleStr: string
   attributes: Record<string, string>
+  className: string
 } | { 
   tagName: 'text',
   content: string
@@ -158,7 +159,8 @@ function buildUniqueStylesGraph({
     children: [] as StyleNode[],
     styleStr: objToStyleStr(customStyles),
     style: objToCss(customStyles),
-    attributes: {}
+    attributes: {},
+    className: el.className
   }
   if (el.tagName === 'svg') {
     node.html = el.innerHTML

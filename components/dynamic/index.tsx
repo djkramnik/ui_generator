@@ -11,7 +11,7 @@ const toSx = (cssProperties: CSSProperties): CssProps => {
     .reduce((acc, [k, v]) => {
       return {
         ...acc,
-        k: String(v)
+        [k]: String(v)
       }
     }, {} as CssProps)
 }

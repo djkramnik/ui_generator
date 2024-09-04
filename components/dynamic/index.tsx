@@ -39,23 +39,38 @@ const getElement = (tagName: string): any => {
 }
 
 export const DynamicComponent = ({
-  graph
+  graph,
 }: {
   graph: StyleNode
 }) => {
   const theme = useTheme()
-  const { tagName } = graph
+  // type assert for convenience.  runtime if statement to validate (tagName === text)
+  const node = graph as DomNode
+  const { tagName } = node
   if (tagName === 'text') {
     return (graph as TextNode).content
   }
-  const attributes = graph
+  const { attributes } = node
   const element = getElement(tagName)
   if (element === null) {
     return null
   }
   return createElement(
     element,
-    {$sx: toSx((graph as DomNode).style), theme, ...attributes},
+    {
+      $sx: toSx((graph as DomNode).style),
+      theme,
+      ...attributes,
+      ...(
+        typeof node.html === 'string'
+          ? {
+            dangerouslySetInnerHTML: {
+              __html: node.html
+            }
+          }
+          : undefined
+      ),
+    },
     ...(
       (graph as DomNode).children
         .map((c, index) => {

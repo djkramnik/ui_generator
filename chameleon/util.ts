@@ -1,8 +1,8 @@
 import { CSSProperties } from 'react'
 
-type Dict = {[key: string]: string}
+export type Dict = {[key: string]: string}
 
-type StyleFilter = (key: string) => boolean
+export type StyleFilter = (key: string) => boolean
 
 function toCamelCase(s: string): string {
   return s.split('-').map((s, index) => {

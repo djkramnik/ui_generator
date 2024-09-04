@@ -103,10 +103,9 @@ function getUniqueStylesFactory({
 
     let currentStyles = styleMapToFilteredObj(el.computedStyleMap(), filter)
     
-    if (el.tagName === 'img' || el.tagName === 'image') {
-      currentStyles.width = el.clientWidth + 'px'
-      currentStyles.height = el.clientHeight + 'px'
-    }
+    currentStyles.width = el.clientWidth + 'px'
+    currentStyles.height = el.clientHeight + 'px'
+    
     return Object.entries(currentStyles).reduce((acc, [k, v]) => {
       if (currentStyles[k] === defaultStyles[k]) {
         return acc

@@ -26,7 +26,9 @@ declare global {
   }
 }
 
-const { getUniqueStyles } = getUniqueStylesFactory({})
+const { getUniqueStyles } = getUniqueStylesFactory({
+  filter: (k: string) => k.charAt(0) !== '-'
+})
 
 window.chameleon = (el: HTMLElement): StyleGraph | null | undefined => {
   return buildUniqueStylesGraph({ el, getGraph: getUniqueStyles })

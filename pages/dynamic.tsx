@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { DynamicComponent } from '../components/dynamic'
-import { StripePhoneNode, TestNode } from '../components/dynamic/test'
+import { StripeHeroDashboard, StripePhoneNode, TestNode } from '../components/dynamic/test'
 
 // testing out the copy pasta component
 const DynamicTest: NextPage = () => {
@@ -8,6 +8,7 @@ const DynamicTest: NextPage = () => {
     <div>
       <DynamicComponent graph={TestNode} />
       <DynamicComponent graph={StripePhoneNode} />
+      <DynamicComponent graph={StripeHeroDashboard} />
     </div>  
   )
 }

@@ -6,7 +6,7 @@ import { NewsPreview } from '../components/lib/applied/news_preview'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { CnnLogo } from '../components/svg'
 import { Button, Copy, Heading } from '../components/lib/atomics'
-import { VideoHero } from '../components/lib/applied/hero'
+import { StripeHero, VideoHero } from '../components/lib/applied/hero'
 import { ShopifyLogo } from '../components/svg/logos/shopify'
 import { Container } from '../components/lib/layout/container'
 import { Flex } from '../components/lib'
@@ -14,6 +14,28 @@ import { Flex } from '../components/lib'
 const Home: NextPage = () => {
   return (
     <>
+      <StripeHero 
+        bigText="Surveillance infrastructure to grow your case"
+        littleText={
+          `Every breath you take, every move you make, every bond you break, every step you take.
+          Every single day, every word you say.  Every game you play, every night you stay.`
+        }
+        navbar={
+          (
+            <Navbar h="68px" bgc="transparent" w="80vw" c="#fff">
+              <NavbarLinks wrapChildren gap="20px">
+                <ShopifyLogo style={{ width: '100px', marginRight: '12px' }} />
+                {'Products'}
+                {'Solutions'}
+                {'Resources'}
+                {'Developers'}
+                {'Pricing'}
+              </NavbarLinks>
+
+            </Navbar>
+          )
+        }
+      />
       <VideoHero 
         videoSrc="/videos/shopify.avif"
       >
@@ -77,6 +99,8 @@ const Home: NextPage = () => {
           </Container>
         </Flex>
       </VideoHero>
+
+
       <Navbar h="40px">
         <NavbarLinks wrapChildren>
           <CnnLogo style={{ marginRight: '12px'}} />

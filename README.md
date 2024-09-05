@@ -6,6 +6,11 @@ React, NextJS and styled components doing the heavy lifting.
 
 ## Page types to simulate
 * lander
+  * marketing
+  * ecommerce
+  * news
+  * content mill
+
 * checkout
 * article
 * blog
@@ -20,11 +25,14 @@ React, NextJS and styled components doing the heavy lifting.
 
 ## Sections to simulate
 * hero
-  * mock code section
-  * stripe phone graphic 
+  * shopify
+  * stripe
+  * https://dynamicland.org/
+
 * navbar
 * footer
 * sidebar
+  * chess.com 
 * sign up form
 * checkout form
 * popup
@@ -42,10 +50,10 @@ React, NextJS and styled components doing the heavy lifting.
 * pricing table
 
 ## Roadmap 
-* create script to extract all custom styles from a given element on page... for the purpose of grabbing mock assets for use in the simulator. 
-* create highly configurable versions of the above sections
-* have templates for page types to simulate 
-* have script, or perhaps server side rendering logic to procedurally generate pages upon request 
-* for now just desktop width. strictly non responsive. later on; generate for both mobile and desktop
+- [x] create script to extract all custom styles from a given element on page... for the purpose of grabbing mock assets for use in the simulator.
+- [ ] create highly configurable versions of the above sections
+- [ ] have templates for page types to simulate
+- [ ] have script, or perhaps server side rendering logic to procedurally generate pages upon request
+- [ ] for now just desktop width. strictly non responsive. later on; generate for both mobile and desktop
 
 

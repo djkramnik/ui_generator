@@ -53,6 +53,7 @@ export const StripeHero = ({
     <Flex col $sx={{ minHeight: '100vh', backgroundColor: 'transparent', position: 'relative' }}>
       <DiagonalSection />
       {navbar}
+      <Spacer />
       <TwoCol widthLeft="50%" widthRight="50%">
         <Flex col $sx={{ gap: '30px', paddingLeft: '10vw' }}>
           <Spacer />

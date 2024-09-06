@@ -1,6 +1,6 @@
 import React, { Children } from "react"
 import { useTheme } from "styled-components"
-import { ResponsiveMixin } from "../../theme"
+import { CssProps, ResponsiveMixin } from "../../theme"
 import { Box, BoxProps, Flex, FlexProps } from "../layout"
 import { CloseIcon } from "../../svg/common/close"
 
@@ -11,7 +11,12 @@ export const NavbarLink = ({
   children?: React.ReactNode
 }) => {
   return (
-    <a href="#" style={{ fontSize: '15px', lineHeight: '10px' }}>
+    <a href="#" style={{ 
+      fontSize: 'inherit',
+      fontWeight: 'inherit',
+      lineHeight: '10px',
+      color: 'inherit',
+      }}>
       { children }
     </a>
   )
@@ -20,14 +25,16 @@ export const NavbarLink = ({
 export const NavbarLinks = ({
   children,
   gap,
-  wrapChildren
+  wrapChildren,
+  $sx = {},
 } : {
   children?: React.ReactNode
   gap?: ResponsiveMixin
   wrapChildren?: boolean
+  $sx?: CssProps
 }) => {
   return (
-    <Flex row aic $sx={{ gap: gap ?? '12px' }}>
+    <Flex row aic $sx={{ gap: gap ?? '12px', ...$sx }}>
       {
         wrapChildren
           ? (

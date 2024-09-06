@@ -9,7 +9,18 @@ export type ButtonProps = WithTheme<ResponsiveComponent<'button'>>
 export const Button = styled('button')<ButtonProps>`
   ${({ theme, $variant, $sx }: ButtonProps) => {
     const responsive = getResponsiveStyles({
-      // default styles???
+      // default styles??? theme???
+      ...(
+        $variant === "pill"
+          ? {
+            backgroundColor: '#fff',
+            color: '#333',
+            borderRadius: '24px',
+            fontWeight: '700',
+            padding: '12px 18px'
+          }
+          : undefined
+      ),
       ...($sx ?? {}),
     })
     return responsive

@@ -10,6 +10,9 @@ import { StripeHero, VideoHero } from '../components/lib/applied/hero'
 import { ShopifyLogo } from '../components/svg/logos/shopify'
 import { Container } from '../components/lib/layout/container'
 import { Flex } from '../components/lib'
+import { StripeLogo } from '../components/svg/logos/stripe'
+import { DynamicComponent } from '../components/dynamic'
+import { StripeEmailInput } from '../components/dynamic/test'
 
 const Home: NextPage = () => {
   return (
@@ -23,16 +26,36 @@ const Home: NextPage = () => {
         navbar={
           (
             <Navbar h="68px" bgc="transparent" w="80vw" c="#fff">
-              <NavbarLinks wrapChildren gap="20px">
-                <ShopifyLogo style={{ width: '100px', marginRight: '12px' }} />
+              <NavbarLinks wrapChildren gap="20px" $sx={{ fontSize: '16px', fontWeight: 'bold' }}>
+                <StripeLogo fill="#fff" />
                 {'Products'}
                 {'Solutions'}
                 {'Resources'}
                 {'Developers'}
                 {'Pricing'}
               </NavbarLinks>
+              <NavbarLinks wrapChildren gap="20px" $sx={{ fontSize: '16px', fontWeight: 'bold' }}>
+                {'Contact Sales'}
+                <Button $sx={{
+                  backgroundColor: '#fff',
+                  color: '#FFC300',
+                  borderRadius: '24px',
+                  fontWeight: '700',
+                  padding: '12px 18px',
+                  fontSize: '16px'
+                }}>
+                  Sign In
+                </Button>
+              </NavbarLinks>
 
             </Navbar>
+          )
+        }
+        buttonRow={
+          (
+            <Flex $sx={{ gap: "20px" }}>
+              <DynamicComponent graph={StripeEmailInput} />
+            </Flex>
           )
         }
       />
@@ -50,13 +73,7 @@ const Home: NextPage = () => {
             </NavbarLinks>
             <NavbarLinks gap="18px">
               {'Log in'}
-              <Button $sx={{
-                backgroundColor: '#fff',
-                color: '#333',
-                borderRadius: '24px',
-                fontWeight: '700',
-                padding: '12px 18px'
-              }}>
+              <Button $variant="pill">
                 Start Free Trial
               </Button>
             </NavbarLinks>

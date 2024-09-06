@@ -54,6 +54,6 @@ React, NextJS and styled components doing the heavy lifting.
 - [ ] create highly configurable versions of the above sections
 - [ ] have templates for page types to simulate
 - [ ] have script, or perhaps server side rendering logic to procedurally generate pages upon request
-- [ ] for now just desktop width. strictly non responsive. later on; generate for both mobile and desktop
+- [ ] for now just desktop width (1300x635). strictly non responsive. later on; generate for both mobile and desktop
 
 

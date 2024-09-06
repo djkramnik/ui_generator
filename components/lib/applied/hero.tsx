@@ -1,28 +1,46 @@
+import { CSSProperties } from 'react'
 import { DynamicComponent } from '../../dynamic'
 import { StripeHeroDashboard, StripePhoneNode } from '../../dynamic/test'
 import { Heading } from '../atomics'
-import { Box, Flex, TwoCol } from '../layout'
+import { Box, BoxProps, Flex, TwoCol } from '../layout'
 import { Spacer } from '../layout/spacer'
 import { DiagonalSection } from './diagonal'
+import { ResponsiveMixin } from '../../theme'
 
 export const VideoHero = ({
   videoSrc,
   children,
+  maskBgc,
+  backgroundStyle,
+  minh,
+  h,
 }: {
   videoSrc: string
   children?: React.ReactNode
+  maskBgc?: string
+  backgroundStyle?: CSSProperties
+  minh?: ResponsiveMixin
+  h?: ResponsiveMixin
 }) => {
   return (
     <Box
       $sx={{
-        backgroundImage: `url(${videoSrc})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        minHeight: '600px',
-        height: '100vh',
+        minHeight: minh ?? '600px',
+        height: h ?? '100vh',
         position: 'relative',
       }}
     >
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundImage: `url(${videoSrc})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        ...backgroundStyle,
+      }} />
       <div
         style={{
           position: 'absolute',
@@ -30,7 +48,7 @@ export const VideoHero = ({
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.3)',
+          backgroundColor: maskBgc ?? 'rgba(0, 0, 0, 0.3)',
         }}
       />
       {children}

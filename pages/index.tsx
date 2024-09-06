@@ -5,7 +5,7 @@ import { Testimonial } from '../components/lib/applied/testimonial'
 import { NewsPreview } from '../components/lib/applied/news_preview'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { CnnLogo } from '../components/svg'
-import { Button, Copy, Heading } from '../components/lib/atomics'
+import { Button, Copy, Heading, Image } from '../components/lib/atomics'
 import { StripeHero, VideoHero } from '../components/lib/applied/hero'
 import { ShopifyLogo } from '../components/svg/logos/shopify'
 import { Container } from '../components/lib/layout/container'
@@ -17,6 +17,72 @@ import { StripeEmailInput } from '../components/dynamic/test'
 const Home: NextPage = () => {
   return (
     <>
+      <NavBanner bgc="#006f51"
+        lineOne="TODO: this component sux"
+        lineTwo="" p="10px 0"
+        hideClose
+        flexProps={{ row: false, rowrev: true, $sx: { fontSize: '12px' } }}
+      />
+      <VideoHero
+        maskBgc='rgba(0, 0, 0, 0.7)'
+        videoSrc="/thumbs/parkingbg.png"
+        backgroundStyle={{ transform: 'scaleX(-1)' }}
+      >
+        <Flex col $sx={{ height: '100%' }}>
+          <Navbar bgc="transparent" h="90px" boxStyles={{ zIndex: '1'}} w="85vw"
+            >
+            <NavbarLinks >
+              <ShopifyLogo style={{ width: '100px', marginRight: '12px' }} />
+            </NavbarLinks>
+            <NavbarLinks wrapChildren $sx={{ fontWeight: 'bold' }}>
+              {'Solutions'}
+              {'Pricing'}
+              {'Resources'}
+              {'What\'s new'}
+            </NavbarLinks>
+            <NavbarLinks gap="18px" $sx={{ fontWeight: 'bold' }}>
+              {'TODO: Find Parking thing'}
+            </NavbarLinks>
+          </Navbar>
+          <Container w="85vw" $sx={{ 
+            flexGrow: '1',
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: '1',
+            justifyContent: 'center'
+            }}>
+            <Flex row aic>
+              <Flex col jcc $sx={{ flexGrow: '1', width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
+                <Heading level={2} $sx={{ fontSize: '56px', lineHeight: '64px'}}>
+                  EXPLORE TORONTO,<br />
+                  CAR BABIES
+                </Heading>
+                <Heading level={5} $sx={{ fontSize: '16px' }}>
+                  Pay for parking with your credit card, and receive a free ticket.
+                </Heading>
+                <Flex $sx={{ gap: '20px' }}>
+                  <Button $sx={{
+                    backgroundColor: '#006f51',
+                    padding: '20px',
+                    paddingRight: '40px',
+                    color: '#fff'
+                  }}>PAY FOR PARKING</Button>
+                  <Button $sx={{
+                    backgroundColor: '#006f51',
+                    padding: '20px',
+                    paddingRight: '40px',
+                    color: '#fff'
+                  }}>RIDE A BIKE</Button>
+                </Flex>
+              </Flex>
+              <Flex aic $sx={{ width: '50%'}}>
+                <Image src="/thumbs/devices.png" $sx={{ width: '100%' }} />
+              </Flex>
+            </Flex>
+          </Container>
+        </Flex>
+      </VideoHero>
+
       <StripeHero 
         bigText="Surveillance infrastructure to grow your case"
         littleText={

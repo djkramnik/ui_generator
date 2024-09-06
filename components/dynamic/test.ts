@@ -62,8 +62,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(66, 84, 102)',
                         columnRuleColor: 'rgb(66, 84, 102)',
                         fill: 'none',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '91px',
@@ -103,8 +102,7 @@ export const StripePhoneNode: StyleNode = {
                     caretColor: 'rgb(66, 84, 102)',
                     color: 'rgb(66, 84, 102)',
                     columnRuleColor: 'rgb(66, 84, 102)',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     height: '80px',
@@ -141,7 +139,7 @@ export const StripePhoneNode: StyleNode = {
                 color: 'rgb(66, 84, 102)',
                 columnRuleColor: 'rgb(66, 84, 102)',
                 display: 'flex',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '80px',
@@ -184,7 +182,7 @@ export const StripePhoneNode: StyleNode = {
                 caretColor: 'rgb(10, 37, 64)',
                 color: 'rgb(10, 37, 64)',
                 columnRuleColor: 'rgb(10, 37, 64)',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '425',
                 height: '14px',
@@ -229,7 +227,7 @@ export const StripePhoneNode: StyleNode = {
                 caretColor: 'rgb(66, 84, 102)',
                 color: 'rgb(66, 84, 102)',
                 columnRuleColor: 'rgb(66, 84, 102)',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '14px',
@@ -287,8 +285,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(255, 255, 255)',
                         columnRuleColor: 'rgb(255, 255, 255)',
                         display: 'block',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '425',
                         height: '14px',
@@ -345,8 +342,7 @@ export const StripePhoneNode: StyleNode = {
                     color: 'rgb(255, 255, 255)',
                     columnRuleColor: 'rgb(255, 255, 255)',
                     display: 'grid',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '425',
                     height: '24px',
@@ -391,7 +387,7 @@ export const StripePhoneNode: StyleNode = {
                 columnRuleColor: 'rgb(66, 84, 102)',
                 display: 'flex',
                 flexDirection: 'column',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '24px',
@@ -443,8 +439,7 @@ export const StripePhoneNode: StyleNode = {
                     color: 'rgb(66, 84, 102)',
                     columnRuleColor: 'rgb(66, 84, 102)',
                     display: 'inline',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     height: '0px',
@@ -489,7 +484,7 @@ export const StripePhoneNode: StyleNode = {
                 caretColor: 'rgb(66, 84, 102)',
                 color: 'rgb(66, 84, 102)',
                 columnRuleColor: 'rgb(66, 84, 102)',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '14px',
@@ -541,7 +536,7 @@ export const StripePhoneNode: StyleNode = {
                 caretColor: 'rgb(98, 120, 141)',
                 color: 'rgb(98, 120, 141)',
                 columnRuleColor: 'rgb(98, 120, 141)',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '24px',
@@ -600,8 +595,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(98, 120, 141)',
                         columnRuleColor: 'rgb(98, 120, 141)',
                         display: 'block',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '12px',
@@ -645,8 +639,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(98, 120, 141)',
                         columnRuleColor: 'rgb(98, 120, 141)',
                         display: 'block',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '12px',
@@ -690,8 +683,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(98, 120, 141)',
                         columnRuleColor: 'rgb(98, 120, 141)',
                         display: 'block',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '12px',
@@ -735,8 +727,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(98, 120, 141)',
                         columnRuleColor: 'rgb(98, 120, 141)',
                         display: 'block',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '12px',
@@ -784,8 +775,7 @@ export const StripePhoneNode: StyleNode = {
                     columnGap: '6px',
                     columnRuleColor: 'rgb(98, 120, 141)',
                     display: 'grid',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     gridAutoFlow: 'column',
@@ -838,8 +828,7 @@ export const StripePhoneNode: StyleNode = {
                     color: 'rgb(98, 120, 141)',
                     columnRuleColor: 'rgb(98, 120, 141)',
                     display: 'grid',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     gridAutoFlow: 'column',
@@ -889,8 +878,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(98, 120, 141)',
                         columnRuleColor: 'rgb(98, 120, 141)',
                         display: 'block',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '14px',
@@ -941,8 +929,7 @@ export const StripePhoneNode: StyleNode = {
                     color: 'rgb(98, 120, 141)',
                     columnRuleColor: 'rgb(98, 120, 141)',
                     display: 'grid',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     gridAutoFlow: 'column',
@@ -997,7 +984,7 @@ export const StripePhoneNode: StyleNode = {
                 color: 'rgb(98, 120, 141)',
                 columnRuleColor: 'rgb(98, 120, 141)',
                 display: 'grid',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 gridTemplateColumns: 'repeat(2, 1fr)',
@@ -1059,8 +1046,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(98, 120, 141)',
                         columnRuleColor: 'rgb(98, 120, 141)',
                         display: 'block',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '6px',
@@ -1107,8 +1093,7 @@ export const StripePhoneNode: StyleNode = {
                     color: 'rgb(98, 120, 141)',
                     columnRuleColor: 'rgb(98, 120, 141)',
                     display: 'grid',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     gridAutoFlow: 'column',
@@ -1159,8 +1144,7 @@ export const StripePhoneNode: StyleNode = {
                     color: 'rgb(98, 120, 141)',
                     columnRuleColor: 'rgb(98, 120, 141)',
                     display: 'grid',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     gridAutoFlow: 'column',
@@ -1210,7 +1194,7 @@ export const StripePhoneNode: StyleNode = {
                 caretColor: 'rgb(98, 120, 141)',
                 color: 'rgb(98, 120, 141)',
                 columnRuleColor: 'rgb(98, 120, 141)',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '49px',
@@ -1273,7 +1257,7 @@ export const StripePhoneNode: StyleNode = {
                 color: 'rgb(255, 255, 255)',
                 columnRuleColor: 'rgb(255, 255, 255)',
                 display: 'grid',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '425',
                 height: '24px',
@@ -1326,8 +1310,7 @@ export const StripePhoneNode: StyleNode = {
                     caretColor: 'rgb(66, 84, 102)',
                     color: 'rgb(66, 84, 102)',
                     columnRuleColor: 'rgb(66, 84, 102)',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     height: '520px',
@@ -1390,8 +1373,7 @@ export const StripePhoneNode: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'block',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '16px',
@@ -1440,8 +1422,7 @@ export const StripePhoneNode: StyleNode = {
                             color: 'rgb(42, 105, 254)',
                             columnRuleColor: 'rgb(42, 105, 254)',
                             display: 'block',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '13px',
                             fontWeight: '300',
                             height: '17px',
@@ -1484,8 +1465,7 @@ export const StripePhoneNode: StyleNode = {
                         columnGap: '16px',
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'grid',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '10px',
                         fontWeight: '300',
                         gridTemplateColumns: '1fr auto',
@@ -1550,8 +1530,7 @@ export const StripePhoneNode: StyleNode = {
                                 caretColor: 'rgb(102, 120, 143)',
                                 color: 'rgb(102, 120, 143)',
                                 columnRuleColor: 'rgb(102, 120, 143)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '16px',
@@ -1595,8 +1574,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(102, 120, 143)',
                             color: 'rgb(102, 120, 143)',
                             columnRuleColor: 'rgb(102, 120, 143)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '64px',
@@ -1648,8 +1626,7 @@ export const StripePhoneNode: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '0px',
@@ -1688,8 +1665,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(66, 84, 102)',
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '64px',
@@ -1731,8 +1707,7 @@ export const StripePhoneNode: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'block',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '10px',
@@ -1779,8 +1754,7 @@ export const StripePhoneNode: StyleNode = {
                         columnGap: '16px',
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'grid',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '10px',
                         fontWeight: '300',
                         gridTemplateColumns: '54px 1fr auto',
@@ -1842,8 +1816,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(102, 120, 143)',
                             color: 'rgb(102, 120, 143)',
                             columnRuleColor: 'rgb(102, 120, 143)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '80px',
@@ -1894,8 +1867,7 @@ export const StripePhoneNode: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '0px',
@@ -1935,8 +1907,7 @@ export const StripePhoneNode: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '0px',
@@ -1976,8 +1947,7 @@ export const StripePhoneNode: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '0px',
@@ -2017,8 +1987,7 @@ export const StripePhoneNode: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '0px',
@@ -2056,8 +2025,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(66, 84, 102)',
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '80px',
@@ -2100,8 +2068,7 @@ export const StripePhoneNode: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'block',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '10px',
@@ -2148,8 +2115,7 @@ export const StripePhoneNode: StyleNode = {
                         columnGap: '16px',
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'grid',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '10px',
                         fontWeight: '300',
                         gridTemplateColumns: '54px 1fr auto',
@@ -2210,8 +2176,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(102, 120, 143)',
                             color: 'rgb(102, 120, 143)',
                             columnRuleColor: 'rgb(102, 120, 143)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '32px',
@@ -2263,8 +2228,7 @@ export const StripePhoneNode: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '0px',
@@ -2302,8 +2266,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(66, 84, 102)',
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '32px',
@@ -2345,8 +2308,7 @@ export const StripePhoneNode: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'block',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '10px',
@@ -2393,8 +2355,7 @@ export const StripePhoneNode: StyleNode = {
                         columnGap: '16px',
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'grid',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '10px',
                         fontWeight: '300',
                         gridTemplateColumns: '54px 1fr auto',
@@ -2450,8 +2411,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(102, 120, 143)',
                             color: 'rgb(102, 120, 143)',
                             columnRuleColor: 'rgb(102, 120, 143)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '16px',
@@ -2500,8 +2460,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(66, 84, 102)',
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '16px',
@@ -2547,8 +2506,7 @@ export const StripePhoneNode: StyleNode = {
                             caretColor: 'rgb(66, 84, 102)',
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '10px',
                             fontWeight: '300',
                             height: '16px',
@@ -2592,8 +2550,7 @@ export const StripePhoneNode: StyleNode = {
                         columnGap: '16px',
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'grid',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '10px',
                         fontWeight: '300',
                         gridTemplateColumns: '54px 1fr auto',
@@ -2666,8 +2623,7 @@ export const StripePhoneNode: StyleNode = {
                                     columnRuleColor: 'rgb(66, 84, 102)',
                                     cursor: 'pointer',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '80px',
@@ -2726,8 +2682,7 @@ export const StripePhoneNode: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 cursor: 'pointer',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '80px',
@@ -2784,8 +2739,7 @@ export const StripePhoneNode: StyleNode = {
                                     columnRuleColor: 'rgb(66, 84, 102)',
                                     cursor: 'pointer',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '100px',
@@ -2840,8 +2794,7 @@ export const StripePhoneNode: StyleNode = {
                                     columnRuleColor: 'rgb(66, 84, 102)',
                                     cursor: 'pointer',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '100px',
@@ -2897,8 +2850,7 @@ export const StripePhoneNode: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 cursor: 'pointer',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '100px',
@@ -2941,8 +2893,7 @@ export const StripePhoneNode: StyleNode = {
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 cursor: 'pointer',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '100px',
@@ -2994,8 +2945,7 @@ export const StripePhoneNode: StyleNode = {
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 cursor: 'pointer',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '100px',
@@ -3042,8 +2992,7 @@ export const StripePhoneNode: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             cursor: 'pointer',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '40px',
@@ -3083,8 +3032,7 @@ export const StripePhoneNode: StyleNode = {
                         color: 'rgb(66, 84, 102)',
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'flex',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '40px',
@@ -3142,8 +3090,7 @@ export const StripePhoneNode: StyleNode = {
                     caretColor: 'rgb(66, 84, 102)',
                     color: 'rgb(66, 84, 102)',
                     columnRuleColor: 'rgb(66, 84, 102)',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     height: '358px',
@@ -3187,7 +3134,7 @@ export const StripePhoneNode: StyleNode = {
                 caretColor: 'rgb(66, 84, 102)',
                 color: 'rgb(66, 84, 102)',
                 columnRuleColor: 'rgb(66, 84, 102)',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '520px',
@@ -3240,7 +3187,7 @@ export const StripePhoneNode: StyleNode = {
             caretColor: 'rgb(66, 84, 102)',
             color: 'rgb(66, 84, 102)',
             columnRuleColor: 'rgb(66, 84, 102)',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+            
             fontSize: '11px',
             fontWeight: '300',
             height: '520px',
@@ -3293,7 +3240,7 @@ export const StripePhoneNode: StyleNode = {
         caretColor: 'rgb(66, 84, 102)',
         color: 'rgb(66, 84, 102)',
         columnRuleColor: 'rgb(66, 84, 102)',
-        fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+        
         fontWeight: '300',
         height: '520px',
         maskImage:
@@ -3341,7 +3288,7 @@ export const StripePhoneNode: StyleNode = {
     caretColor: 'rgb(66, 84, 102)',
     color: 'rgb(66, 84, 102)',
     columnRuleColor: 'rgb(66, 84, 102)',
-    fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+    
     fontWeight: '300',
     height: '536px',
     inlineSize: '270px',
@@ -3409,7 +3356,7 @@ export const StripeHeroDashboard: StyleNode = {
             color: 'rgb(255, 255, 255)',
             columnRuleColor: 'rgb(255, 255, 255)',
             display: 'block',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+            
             fontSize: '11px',
             fontWeight: '620',
             height: '20px',
@@ -3455,7 +3402,7 @@ export const StripeHeroDashboard: StyleNode = {
             color: 'rgb(255, 255, 255)',
             columnRuleColor: 'rgb(255, 255, 255)',
             display: 'block',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+            
             fontSize: '11px',
             fontWeight: '620',
             height: '4px',
@@ -3500,7 +3447,7 @@ export const StripeHeroDashboard: StyleNode = {
         columnGap: '8px',
         columnRuleColor: 'rgb(255, 255, 255)',
         display: 'grid',
-        fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+        
         fontSize: '11px',
         fontWeight: '620',
         gridAutoColumns: 'max-content',
@@ -3565,8 +3512,7 @@ export const StripeHeroDashboard: StyleNode = {
                     color: 'rgb(98, 120, 141)',
                     columnRuleColor: 'rgb(98, 120, 141)',
                     display: 'block',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     height: '10px',
@@ -3625,7 +3571,7 @@ export const StripeHeroDashboard: StyleNode = {
                 color: 'rgb(98, 120, 141)',
                 columnRuleColor: 'rgb(98, 120, 141)',
                 display: 'flex',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '20px',
@@ -3666,7 +3612,7 @@ export const StripeHeroDashboard: StyleNode = {
                 color: 'rgb(66, 84, 102)',
                 columnRuleColor: 'rgb(66, 84, 102)',
                 display: 'block',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '12px',
@@ -3709,7 +3655,7 @@ export const StripeHeroDashboard: StyleNode = {
             color: 'rgb(66, 84, 102)',
             columnRuleColor: 'rgb(66, 84, 102)',
             display: 'flex',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+            
             fontSize: '11px',
             fontWeight: '300',
             height: '20px',
@@ -3785,8 +3731,7 @@ export const StripeHeroDashboard: StyleNode = {
                             caretColor: 'rgb(65, 69, 82)',
                             color: 'rgb(65, 69, 82)',
                             columnRuleColor: 'rgb(65, 69, 82)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '17px',
                             fontWeight: '500',
                             height: '0px',
@@ -3826,8 +3771,7 @@ export const StripeHeroDashboard: StyleNode = {
                         caretColor: 'rgb(65, 69, 82)',
                         color: 'rgb(65, 69, 82)',
                         columnRuleColor: 'rgb(65, 69, 82)',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '17px',
                         fontWeight: '500',
                         height: '28px',
@@ -3919,8 +3863,7 @@ export const StripeHeroDashboard: StyleNode = {
                                                 color: 'rgb(10, 37, 64)',
                                                 columnRuleColor:
                                                   'rgb(10, 37, 64)',
-                                                fontFamily:
-                                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                                 fontSize: '11px',
                                                 fontWeight: '425',
                                                 height: '0px',
@@ -3965,8 +3908,7 @@ export const StripeHeroDashboard: StyleNode = {
                                             columnRuleColor:
                                               'rgb(114, 127, 150)',
                                             display: 'block',
-                                            fontFamily:
-                                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                             fontSize: '11px',
                                             fontWeight: '300',
                                             height: '14px',
@@ -4018,8 +3960,7 @@ export const StripeHeroDashboard: StyleNode = {
                                             display: 'block',
                                             fill: 'none',
                                             flexShrink: '0',
-                                            fontFamily:
-                                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                             fontSize: '11px',
                                             fontWeight: '300',
                                             height: '4px',
@@ -4212,8 +4153,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(66, 84, 102)',
                                     color: 'rgb(66, 84, 102)',
                                     columnRuleColor: 'rgb(66, 84, 102)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '52px',
@@ -4283,8 +4223,7 @@ export const StripeHeroDashboard: StyleNode = {
                                                 color: 'rgb(10, 37, 64)',
                                                 columnRuleColor:
                                                   'rgb(10, 37, 64)',
-                                                fontFamily:
-                                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                                 fontSize: '11px',
                                                 fontWeight: '425',
                                                 height: '0px',
@@ -4329,8 +4268,7 @@ export const StripeHeroDashboard: StyleNode = {
                                             columnRuleColor:
                                               'rgb(114, 127, 150)',
                                             display: 'block',
-                                            fontFamily:
-                                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                             fontSize: '11px',
                                             fontWeight: '300',
                                             height: '14px',
@@ -4382,8 +4320,7 @@ export const StripeHeroDashboard: StyleNode = {
                                             display: 'block',
                                             fill: 'none',
                                             flexShrink: '0',
-                                            fontFamily:
-                                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                             fontSize: '11px',
                                             fontWeight: '300',
                                             height: '4px',
@@ -4526,8 +4463,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(66, 84, 102)',
                                     color: 'rgb(66, 84, 102)',
                                     columnRuleColor: 'rgb(66, 84, 102)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '52px',
@@ -4565,8 +4501,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 display: 'flex',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '52px',
@@ -4616,8 +4551,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     color: 'rgb(66, 84, 102)',
                                     columnRuleColor: 'rgb(66, 84, 102)',
                                     fill: 'none',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '70px',
@@ -4823,8 +4757,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     color: 'rgb(66, 84, 102)',
                                     columnRuleColor: 'rgb(66, 84, 102)',
                                     display: 'flex',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '12px',
@@ -4863,8 +4796,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '93px',
@@ -4902,8 +4834,7 @@ export const StripeHeroDashboard: StyleNode = {
                             caretColor: 'rgb(66, 84, 102)',
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '151px',
@@ -4987,8 +4918,7 @@ export const StripeHeroDashboard: StyleNode = {
                                                 color: 'rgb(10, 37, 64)',
                                                 columnRuleColor:
                                                   'rgb(10, 37, 64)',
-                                                fontFamily:
-                                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                                 fontSize: '11px',
                                                 fontWeight: '425',
                                                 height: '0px',
@@ -5033,8 +4963,7 @@ export const StripeHeroDashboard: StyleNode = {
                                             columnRuleColor:
                                               'rgb(114, 127, 150)',
                                             display: 'block',
-                                            fontFamily:
-                                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                             fontSize: '11px',
                                             fontWeight: '300',
                                             height: '14px',
@@ -5086,8 +5015,7 @@ export const StripeHeroDashboard: StyleNode = {
                                             display: 'block',
                                             fill: 'none',
                                             flexShrink: '0',
-                                            fontFamily:
-                                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                             fontSize: '11px',
                                             fontWeight: '300',
                                             height: '4px',
@@ -5280,8 +5208,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(66, 84, 102)',
                                     color: 'rgb(66, 84, 102)',
                                     columnRuleColor: 'rgb(66, 84, 102)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '52px',
@@ -5327,8 +5254,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     color: 'rgb(99, 91, 255)',
                                     columnRuleColor: 'rgb(99, 91, 255)',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '425',
                                     height: '14px',
@@ -5370,8 +5296,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 display: 'flex',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '54px',
@@ -5412,8 +5337,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '1px',
@@ -5479,8 +5403,7 @@ export const StripeHeroDashboard: StyleNode = {
                                             caretColor: 'rgb(10, 37, 64)',
                                             color: 'rgb(10, 37, 64)',
                                             columnRuleColor: 'rgb(10, 37, 64)',
-                                            fontFamily:
-                                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                             fontSize: '11px',
                                             fontWeight: '425',
                                             height: '0px',
@@ -5662,8 +5585,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(66, 84, 102)',
                                     color: 'rgb(66, 84, 102)',
                                     columnRuleColor: 'rgb(66, 84, 102)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '52px',
@@ -5709,8 +5631,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     color: 'rgb(99, 91, 255)',
                                     columnRuleColor: 'rgb(99, 91, 255)',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '425',
                                     height: '14px',
@@ -5752,8 +5673,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 display: 'flex',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '54px',
@@ -5792,8 +5712,7 @@ export const StripeHeroDashboard: StyleNode = {
                             columnGap: '20px',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'grid',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '151px',
@@ -5833,8 +5752,7 @@ export const StripeHeroDashboard: StyleNode = {
                         columnGap: '46px',
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'grid',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         gridTemplateColumns: '2fr 1fr',
@@ -5883,8 +5801,7 @@ export const StripeHeroDashboard: StyleNode = {
                     caretColor: 'rgb(66, 84, 102)',
                     color: 'rgb(66, 84, 102)',
                     columnRuleColor: 'rgb(66, 84, 102)',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     height: '237px',
@@ -5959,8 +5876,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '12px',
                                     fontWeight: '500',
                                     height: '0px',
@@ -5994,8 +5910,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '12px',
                                 fontWeight: '300',
                                 height: '15px',
@@ -6042,8 +5957,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(21, 190, 83)',
                                     color: 'rgb(21, 190, 83)',
                                     columnRuleColor: 'rgb(21, 190, 83)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '10px',
                                     fontWeight: '425',
                                     height: '0px',
@@ -6077,8 +5991,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '12px',
@@ -6118,8 +6031,7 @@ export const StripeHeroDashboard: StyleNode = {
                             columnGap: '6px',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '15px',
@@ -6174,8 +6086,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '14px',
                                     fontWeight: '300',
                                     height: '0px',
@@ -6209,8 +6120,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(10, 37, 64)',
                                 columnRuleColor: 'rgb(10, 37, 64)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '14px',
                                 fontWeight: '300',
                                 height: '18px',
@@ -6255,8 +6165,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '14px',
@@ -6296,8 +6205,7 @@ export const StripeHeroDashboard: StyleNode = {
                             columnGap: '6px',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '18px',
@@ -6347,8 +6255,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 fill: 'none',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '105px',
@@ -6404,8 +6311,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     color: 'rgb(114, 127, 150)',
                                     columnRuleColor: 'rgb(114, 127, 150)',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '10px',
                                     fontWeight: '300',
                                     height: '12px',
@@ -6452,8 +6358,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     color: 'rgb(114, 127, 150)',
                                     columnRuleColor: 'rgb(114, 127, 150)',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '10px',
                                     fontWeight: '300',
                                     height: '12px',
@@ -6493,8 +6398,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 display: 'flex',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '12px',
@@ -6531,8 +6435,7 @@ export const StripeHeroDashboard: StyleNode = {
                             caretColor: 'rgb(66, 84, 102)',
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '119px',
@@ -6587,8 +6490,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '12px',
@@ -6628,8 +6530,7 @@ export const StripeHeroDashboard: StyleNode = {
                             columnGap: '6px',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '12px',
@@ -6676,8 +6577,7 @@ export const StripeHeroDashboard: StyleNode = {
                         caretColor: 'rgb(66, 84, 102)',
                         color: 'rgb(66, 84, 102)',
                         columnRuleColor: 'rgb(66, 84, 102)',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '230px',
@@ -6745,8 +6645,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '12px',
                                     fontWeight: '500',
                                     height: '0px',
@@ -6780,8 +6679,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '12px',
                                 fontWeight: '300',
                                 height: '15px',
@@ -6828,8 +6726,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(21, 190, 83)',
                                     color: 'rgb(21, 190, 83)',
                                     columnRuleColor: 'rgb(21, 190, 83)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '10px',
                                     fontWeight: '425',
                                     height: '0px',
@@ -6863,8 +6760,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '12px',
@@ -6904,8 +6800,7 @@ export const StripeHeroDashboard: StyleNode = {
                             columnGap: '6px',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '15px',
@@ -6960,8 +6855,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '14px',
                                     fontWeight: '300',
                                     height: '0px',
@@ -6995,8 +6889,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(10, 37, 64)',
                                 columnRuleColor: 'rgb(10, 37, 64)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '14px',
                                 fontWeight: '300',
                                 height: '18px',
@@ -7041,8 +6934,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '14px',
@@ -7082,8 +6974,7 @@ export const StripeHeroDashboard: StyleNode = {
                             columnGap: '6px',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '18px',
@@ -7134,8 +7025,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 fill: 'none',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '112px',
@@ -7192,8 +7082,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     color: 'rgb(114, 127, 150)',
                                     columnRuleColor: 'rgb(114, 127, 150)',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '10px',
                                     fontWeight: '300',
                                     height: '12px',
@@ -7240,8 +7129,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     color: 'rgb(114, 127, 150)',
                                     columnRuleColor: 'rgb(114, 127, 150)',
                                     display: 'block',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '10px',
                                     fontWeight: '300',
                                     height: '12px',
@@ -7281,8 +7169,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
                                 display: 'flex',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '12px',
@@ -7319,8 +7206,7 @@ export const StripeHeroDashboard: StyleNode = {
                             caretColor: 'rgb(66, 84, 102)',
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '127px',
@@ -7375,8 +7261,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '12px',
@@ -7416,8 +7301,7 @@ export const StripeHeroDashboard: StyleNode = {
                             columnGap: '6px',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '12px',
@@ -7464,8 +7348,7 @@ export const StripeHeroDashboard: StyleNode = {
                         caretColor: 'rgb(66, 84, 102)',
                         color: 'rgb(66, 84, 102)',
                         columnRuleColor: 'rgb(66, 84, 102)',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '230px',
@@ -7526,8 +7409,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 caretColor: 'rgb(10, 37, 64)',
                                 color: 'rgb(10, 37, 64)',
                                 columnRuleColor: 'rgb(10, 37, 64)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '12px',
                                 fontWeight: '500',
                                 height: '0px',
@@ -7559,8 +7441,7 @@ export const StripeHeroDashboard: StyleNode = {
                             caretColor: 'rgb(114, 127, 150)',
                             color: 'rgb(114, 127, 150)',
                             columnRuleColor: 'rgb(114, 127, 150)',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '12px',
                             fontWeight: '300',
                             height: '0px',
@@ -7607,8 +7488,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '10px',
@@ -7650,8 +7530,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '10px',
@@ -7693,8 +7572,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 caretColor: 'rgb(66, 84, 102)',
                                 color: 'rgb(66, 84, 102)',
                                 columnRuleColor: 'rgb(66, 84, 102)',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '10px',
@@ -7742,8 +7620,7 @@ export const StripeHeroDashboard: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '10px',
@@ -7810,8 +7687,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '8px',
@@ -7853,8 +7729,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 columnGap: '6px',
                                 columnRuleColor: 'rgb(10, 37, 64)',
                                 display: 'flex',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '14px',
@@ -7902,8 +7777,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '425',
                                     height: '0px',
@@ -7937,8 +7811,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '14px',
@@ -7981,8 +7854,7 @@ export const StripeHeroDashboard: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '34px',
@@ -8050,8 +7922,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '8px',
@@ -8094,8 +7965,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 columnGap: '6px',
                                 columnRuleColor: 'rgb(10, 37, 64)',
                                 display: 'flex',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '14px',
@@ -8143,8 +8013,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '425',
                                     height: '0px',
@@ -8178,8 +8047,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '14px',
@@ -8222,8 +8090,7 @@ export const StripeHeroDashboard: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '34px',
@@ -8291,8 +8158,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '300',
                                     height: '8px',
@@ -8335,8 +8201,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 columnGap: '6px',
                                 columnRuleColor: 'rgb(10, 37, 64)',
                                 display: 'flex',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '14px',
@@ -8384,8 +8249,7 @@ export const StripeHeroDashboard: StyleNode = {
                                     caretColor: 'rgb(10, 37, 64)',
                                     color: 'rgb(10, 37, 64)',
                                     columnRuleColor: 'rgb(10, 37, 64)',
-                                    fontFamily:
-                                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                     fontSize: '11px',
                                     fontWeight: '425',
                                     height: '0px',
@@ -8419,8 +8283,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '11px',
                                 fontWeight: '300',
                                 height: '14px',
@@ -8463,8 +8326,7 @@ export const StripeHeroDashboard: StyleNode = {
                             color: 'rgb(66, 84, 102)',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '34px',
@@ -8521,8 +8383,7 @@ export const StripeHeroDashboard: StyleNode = {
                                 color: 'rgb(114, 127, 150)',
                                 columnRuleColor: 'rgb(114, 127, 150)',
                                 display: 'block',
-                                fontFamily:
-                                  'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                                 fontSize: '10px',
                                 fontWeight: '300',
                                 height: '12px',
@@ -8562,8 +8423,7 @@ export const StripeHeroDashboard: StyleNode = {
                             columnGap: '6px',
                             columnRuleColor: 'rgb(66, 84, 102)',
                             display: 'flex',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontSize: '11px',
                             fontWeight: '300',
                             height: '12px',
@@ -8612,8 +8472,7 @@ export const StripeHeroDashboard: StyleNode = {
                         caretColor: 'rgb(66, 84, 102)',
                         color: 'rgb(66, 84, 102)',
                         columnRuleColor: 'rgb(66, 84, 102)',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '230px',
@@ -8659,8 +8518,7 @@ export const StripeHeroDashboard: StyleNode = {
                     columnGap: '12px',
                     columnRuleColor: 'rgb(66, 84, 102)',
                     display: 'grid',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     gridTemplateColumns: 'repeat(3, 1fr)',
@@ -8700,7 +8558,7 @@ export const StripeHeroDashboard: StyleNode = {
                 columnGap: '12px',
                 columnRuleColor: 'rgb(66, 84, 102)',
                 display: 'grid',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '479px',
@@ -8756,8 +8614,7 @@ export const StripeHeroDashboard: StyleNode = {
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'block',
                         fill: 'none',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '20px',
@@ -8803,8 +8660,7 @@ export const StripeHeroDashboard: StyleNode = {
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'block',
                         fill: 'none',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '21px',
@@ -8850,8 +8706,7 @@ export const StripeHeroDashboard: StyleNode = {
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'block',
                         fill: 'none',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '20px',
@@ -8897,8 +8752,7 @@ export const StripeHeroDashboard: StyleNode = {
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'block',
                         fill: 'none',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '20px',
@@ -8944,8 +8798,7 @@ export const StripeHeroDashboard: StyleNode = {
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'block',
                         fill: 'none',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '20px',
@@ -8991,8 +8844,7 @@ export const StripeHeroDashboard: StyleNode = {
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'block',
                         fill: 'none',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '20px',
@@ -9038,8 +8890,7 @@ export const StripeHeroDashboard: StyleNode = {
                         columnRuleColor: 'rgb(66, 84, 102)',
                         display: 'block',
                         fill: 'none',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontSize: '11px',
                         fontWeight: '300',
                         height: '20px',
@@ -9083,8 +8934,7 @@ export const StripeHeroDashboard: StyleNode = {
                     columnRuleColor: 'rgb(66, 84, 102)',
                     display: 'flex',
                     flexDirection: 'column',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '11px',
                     fontWeight: '300',
                     height: '237px',
@@ -9123,7 +8973,7 @@ export const StripeHeroDashboard: StyleNode = {
                 color: 'rgb(66, 84, 102)',
                 columnRuleColor: 'rgb(66, 84, 102)',
                 display: 'flex',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '11px',
                 fontWeight: '300',
                 height: '479px',
@@ -9162,7 +9012,7 @@ export const StripeHeroDashboard: StyleNode = {
             columnGap: '12px',
             columnRuleColor: 'rgb(66, 84, 102)',
             display: 'grid',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+            
             fontSize: '11px',
             fontWeight: '300',
             gridTemplateColumns: '1fr 20px',
@@ -9203,7 +9053,7 @@ export const StripeHeroDashboard: StyleNode = {
         caretColor: 'rgb(66, 84, 102)',
         color: 'rgb(66, 84, 102)',
         columnRuleColor: 'rgb(66, 84, 102)',
-        fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+        
         fontSize: '11px',
         fontWeight: '300',
         height: '523px',
@@ -9253,7 +9103,7 @@ export const StripeHeroDashboard: StyleNode = {
     columnGap: '24px',
     columnRuleColor: 'rgb(66, 84, 102)',
     display: 'grid',
-    fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+    
     fontSize: '11px',
     fontWeight: '300',
     gridTemplateColumns: '132px 1fr',
@@ -9343,7 +9193,7 @@ export const StripeEmailInput: StyleNode = {
             caretColor: 'rgb(10, 37, 64)',
             color: 'rgb(10, 37, 64)',
             columnRuleColor: 'rgb(10, 37, 64)',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+            
             fontSize: '15px',
             fontWeight: '300',
             height: '43px',
@@ -9419,8 +9269,7 @@ export const StripeEmailInput: StyleNode = {
                             fill: 'rgb(255, 89, 150)',
                             fillOpacity: '0.2',
                             fillRule: 'evenodd',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontWeight: '300',
                             height: '0px',
                             letterSpacing: '0.2px',
@@ -9456,8 +9305,7 @@ export const StripeEmailInput: StyleNode = {
                             d: 'path("M 8 11 A 1 1 0 1 1 8 13 A 1 1 0 0 1 8 11 Z M 8 3 A 1 1 0 0 1 9 4 V 9 A 1 1 0 1 1 7 9 V 4 A 1 1 0 0 1 8 3 Z")',
                             fill: 'rgb(255, 89, 150)',
                             fillRule: 'evenodd',
-                            fontFamily:
-                              'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                             fontWeight: '300',
                             height: '0px',
                             letterSpacing: '0.2px',
@@ -9489,8 +9337,7 @@ export const StripeEmailInput: StyleNode = {
                         columnRuleColor: 'rgb(66, 84, 102)',
                         fill: 'rgb(255, 89, 150)',
                         fillRule: 'evenodd',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                         fontWeight: '300',
                         height: '0px',
                         letterSpacing: '0.2px',
@@ -9525,8 +9372,7 @@ export const StripeEmailInput: StyleNode = {
                     caretColor: 'rgb(66, 84, 102)',
                     color: 'rgb(66, 84, 102)',
                     columnRuleColor: 'rgb(66, 84, 102)',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontWeight: '300',
                     height: '0px',
                     inlineSize: '16px',
@@ -9575,7 +9421,7 @@ export const StripeEmailInput: StyleNode = {
                 color: 'rgb(66, 84, 102)',
                 columnRuleColor: 'rgb(66, 84, 102)',
                 display: 'none',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontWeight: '300',
                 height: '0px',
                 inlineSize: '32px',
@@ -9617,7 +9463,7 @@ export const StripeEmailInput: StyleNode = {
             columnRuleColor: 'rgb(66, 84, 102)',
             display: 'flex',
             flexDirection: 'column',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+            
             fontWeight: '300',
             height: '0px',
             inlineSize: '100%',
@@ -9642,210 +9488,6 @@ export const StripeEmailInput: StyleNode = {
             {
               tagName: 'text',
               content: 'Start now ',
-            },
-            {
-              tagName: 'SVG',
-              children: [
-                {
-                  tagName: 'text',
-                  content: '\n  ',
-                },
-                {
-                  tagName: 'G',
-                  children: [
-                    {
-                      tagName: 'text',
-                      content: '\n    \n      ',
-                    },
-                    {
-                      tagName: 'PATH',
-                      children: [],
-                      styleStr:
-                        'border-block-end-color:rgb(255, 255, 255);border-block-start-color:rgb(255, 255, 255);border-bottom-color:rgb(255, 255, 255);border-inline-end-color:rgb(255, 255, 255);border-inline-start-color:rgb(255, 255, 255);border-left-color:rgb(255, 255, 255);border-right-color:rgb(255, 255, 255);border-top-color:rgb(255, 255, 255);box-sizing:border-box;caret-color:rgb(255, 255, 255);color:rgb(255, 255, 255);column-rule-color:rgb(255, 255, 255);cursor:pointer;d:path("M 0 5 H 7");fill:none;fill-rule:evenodd;font-family:sohne-var, "Helvetica Neue", Arial, sans-serif;font-size:15px;font-weight:425;height:0px;letter-spacing:0.2px;line-height:1.6;opacity:0;outline-color:rgb(255, 255, 255);stroke:rgb(255, 255, 255);stroke-width:2px;text-decoration:none solid rgb(255, 255, 255);text-decoration-color:rgb(255, 255, 255);text-emphasis-color:rgb(255, 255, 255);text-wrap:nowrap;transform-origin:0px 0px;transition-duration:0.15s;transition-property:opacity;transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);width:0px;',
-                      style: {
-                        borderBlockEndColor: 'rgb(255, 255, 255)',
-                        borderBlockStartColor: 'rgb(255, 255, 255)',
-                        borderBottomColor: 'rgb(255, 255, 255)',
-                        borderInlineEndColor: 'rgb(255, 255, 255)',
-                        borderInlineStartColor: 'rgb(255, 255, 255)',
-                        borderLeftColor: 'rgb(255, 255, 255)',
-                        borderRightColor: 'rgb(255, 255, 255)',
-                        borderTopColor: 'rgb(255, 255, 255)',
-                        boxSizing: 'border-box',
-                        caretColor: 'rgb(255, 255, 255)',
-                        color: 'rgb(255, 255, 255)',
-                        columnRuleColor: 'rgb(255, 255, 255)',
-                        cursor: 'pointer',
-                        d: 'path("M 0 5 H 7")',
-                        fill: 'none',
-                        fillRule: 'evenodd',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
-                        fontSize: '15px',
-                        fontWeight: '425',
-                        height: '0px',
-                        letterSpacing: '0.2px',
-                        lineHeight: '1.6',
-                        opacity: '0',
-                        outlineColor: 'rgb(255, 255, 255)',
-                        stroke: 'rgb(255, 255, 255)',
-                        strokeWidth: '2px',
-                        textDecoration: 'none solid rgb(255, 255, 255)',
-                        textDecorationColor: 'rgb(255, 255, 255)',
-                        textEmphasisColor: 'rgb(255, 255, 255)',
-                        textWrap: 'nowrap',
-                        transformOrigin: '0px 0px',
-                        transitionDuration: '0.15s',
-                        transitionProperty: 'opacity',
-                        transitionTimingFunction:
-                          'cubic-bezier(0.215, 0.61, 0.355, 1)',
-                        width: '0px',
-                      },
-                      attributes: {},
-                      className: {},
-                    },
-                    {
-                      tagName: 'text',
-                      content: '\n      ',
-                    },
-                    {
-                      tagName: 'PATH',
-                      children: [],
-                      styleStr:
-                        'border-block-end-color:rgb(255, 255, 255);border-block-start-color:rgb(255, 255, 255);border-bottom-color:rgb(255, 255, 255);border-inline-end-color:rgb(255, 255, 255);border-inline-start-color:rgb(255, 255, 255);border-left-color:rgb(255, 255, 255);border-right-color:rgb(255, 255, 255);border-top-color:rgb(255, 255, 255);box-sizing:border-box;caret-color:rgb(255, 255, 255);color:rgb(255, 255, 255);column-rule-color:rgb(255, 255, 255);cursor:pointer;d:path("M 1 1 L 5 5 L 1 9");fill:none;fill-rule:evenodd;font-family:sohne-var, "Helvetica Neue", Arial, sans-serif;font-size:15px;font-weight:425;height:0px;letter-spacing:0.2px;line-height:1.6;outline-color:rgb(255, 255, 255);stroke:rgb(255, 255, 255);stroke-width:2px;text-decoration:none solid rgb(255, 255, 255);text-decoration-color:rgb(255, 255, 255);text-emphasis-color:rgb(255, 255, 255);text-wrap:nowrap;transform-origin:0px 0px;transition-duration:0.15s;transition-property:transform;transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);width:0px;',
-                      style: {
-                        borderBlockEndColor: 'rgb(255, 255, 255)',
-                        borderBlockStartColor: 'rgb(255, 255, 255)',
-                        borderBottomColor: 'rgb(255, 255, 255)',
-                        borderInlineEndColor: 'rgb(255, 255, 255)',
-                        borderInlineStartColor: 'rgb(255, 255, 255)',
-                        borderLeftColor: 'rgb(255, 255, 255)',
-                        borderRightColor: 'rgb(255, 255, 255)',
-                        borderTopColor: 'rgb(255, 255, 255)',
-                        boxSizing: 'border-box',
-                        caretColor: 'rgb(255, 255, 255)',
-                        color: 'rgb(255, 255, 255)',
-                        columnRuleColor: 'rgb(255, 255, 255)',
-                        cursor: 'pointer',
-                        d: 'path("M 1 1 L 5 5 L 1 9")',
-                        fill: 'none',
-                        fillRule: 'evenodd',
-                        fontFamily:
-                          'sohne-var, "Helvetica Neue", Arial, sans-serif',
-                        fontSize: '15px',
-                        fontWeight: '425',
-                        height: '0px',
-                        letterSpacing: '0.2px',
-                        lineHeight: '1.6',
-                        outlineColor: 'rgb(255, 255, 255)',
-                        stroke: 'rgb(255, 255, 255)',
-                        strokeWidth: '2px',
-                        textDecoration: 'none solid rgb(255, 255, 255)',
-                        textDecorationColor: 'rgb(255, 255, 255)',
-                        textEmphasisColor: 'rgb(255, 255, 255)',
-                        textWrap: 'nowrap',
-                        transformOrigin: '0px 0px',
-                        transitionDuration: '0.15s',
-                        transitionProperty: 'transform',
-                        transitionTimingFunction:
-                          'cubic-bezier(0.215, 0.61, 0.355, 1)',
-                        width: '0px',
-                      },
-                      attributes: {},
-                      className: {},
-                    },
-                    {
-                      tagName: 'text',
-                      content: '\n    \n  ',
-                    },
-                  ],
-                  styleStr:
-                    'border-block-end-color:rgb(255, 255, 255);border-block-start-color:rgb(255, 255, 255);border-bottom-color:rgb(255, 255, 255);border-inline-end-color:rgb(255, 255, 255);border-inline-start-color:rgb(255, 255, 255);border-left-color:rgb(255, 255, 255);border-right-color:rgb(255, 255, 255);border-top-color:rgb(255, 255, 255);box-sizing:border-box;caret-color:rgb(255, 255, 255);color:rgb(255, 255, 255);column-rule-color:rgb(255, 255, 255);cursor:pointer;fill:none;fill-rule:evenodd;font-family:sohne-var, "Helvetica Neue", Arial, sans-serif;font-size:15px;font-weight:425;height:0px;letter-spacing:0.2px;line-height:1.6;outline-color:rgb(255, 255, 255);stroke:rgb(255, 255, 255);stroke-width:2px;text-decoration:none solid rgb(255, 255, 255);text-decoration-color:rgb(255, 255, 255);text-emphasis-color:rgb(255, 255, 255);text-wrap:nowrap;transform-origin:0px 0px;width:0px;',
-                  style: {
-                    borderBlockEndColor: 'rgb(255, 255, 255)',
-                    borderBlockStartColor: 'rgb(255, 255, 255)',
-                    borderBottomColor: 'rgb(255, 255, 255)',
-                    borderInlineEndColor: 'rgb(255, 255, 255)',
-                    borderInlineStartColor: 'rgb(255, 255, 255)',
-                    borderLeftColor: 'rgb(255, 255, 255)',
-                    borderRightColor: 'rgb(255, 255, 255)',
-                    borderTopColor: 'rgb(255, 255, 255)',
-                    boxSizing: 'border-box',
-                    caretColor: 'rgb(255, 255, 255)',
-                    color: 'rgb(255, 255, 255)',
-                    columnRuleColor: 'rgb(255, 255, 255)',
-                    cursor: 'pointer',
-                    fill: 'none',
-                    fillRule: 'evenodd',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
-                    fontSize: '15px',
-                    fontWeight: '425',
-                    height: '0px',
-                    letterSpacing: '0.2px',
-                    lineHeight: '1.6',
-                    outlineColor: 'rgb(255, 255, 255)',
-                    stroke: 'rgb(255, 255, 255)',
-                    strokeWidth: '2px',
-                    textDecoration: 'none solid rgb(255, 255, 255)',
-                    textDecorationColor: 'rgb(255, 255, 255)',
-                    textEmphasisColor: 'rgb(255, 255, 255)',
-                    textWrap: 'nowrap',
-                    transformOrigin: '0px 0px',
-                    width: '0px',
-                  },
-                  attributes: {},
-                  className: {},
-                },
-                {
-                  tagName: 'text',
-                  content: '\n',
-                },
-              ],
-              styleStr:
-                'block-size:10px;border-block-end-color:rgb(255, 255, 255);border-block-start-color:rgb(255, 255, 255);border-bottom-color:rgb(255, 255, 255);border-inline-end-color:rgb(255, 255, 255);border-inline-start-color:rgb(255, 255, 255);border-left-color:rgb(255, 255, 255);border-right-color:rgb(255, 255, 255);border-top-color:rgb(255, 255, 255);box-sizing:border-box;caret-color:rgb(255, 255, 255);color:rgb(255, 255, 255);column-rule-color:rgb(255, 255, 255);cursor:pointer;fill:none;font-family:sohne-var, "Helvetica Neue", Arial, sans-serif;font-size:15px;font-weight:425;height:10px;inline-size:10px;inset-block-start:1px;letter-spacing:0.2px;line-height:1.6;margin-inline-start:5px;margin-left:5px;outline-color:rgb(255, 255, 255);overflow-clip-margin:content-box;overflow-x:hidden;overflow-y:hidden;position:relative;stroke:rgb(255, 255, 255);stroke-width:2px;text-decoration:none solid rgb(255, 255, 255);text-decoration-color:rgb(255, 255, 255);text-emphasis-color:rgb(255, 255, 255);text-wrap:nowrap;top:1px;width:10px;',
-              style: {
-                blockSize: '10px',
-                borderBlockEndColor: 'rgb(255, 255, 255)',
-                borderBlockStartColor: 'rgb(255, 255, 255)',
-                borderBottomColor: 'rgb(255, 255, 255)',
-                borderInlineEndColor: 'rgb(255, 255, 255)',
-                borderInlineStartColor: 'rgb(255, 255, 255)',
-                borderLeftColor: 'rgb(255, 255, 255)',
-                borderRightColor: 'rgb(255, 255, 255)',
-                borderTopColor: 'rgb(255, 255, 255)',
-                boxSizing: 'border-box',
-                caretColor: 'rgb(255, 255, 255)',
-                color: 'rgb(255, 255, 255)',
-                columnRuleColor: 'rgb(255, 255, 255)',
-                cursor: 'pointer',
-                fill: 'none',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
-                fontSize: '15px',
-                fontWeight: '425',
-                height: '10px',
-                inlineSize: '10px',
-                insetBlockStart: '1px',
-                letterSpacing: '0.2px',
-                lineHeight: '1.6',
-                marginInlineStart: '5px',
-                marginLeft: '5px',
-                outlineColor: 'rgb(255, 255, 255)',
-                overflowClipMargin: 'content-box',
-                overflowX: 'hidden',
-                overflowY: 'hidden',
-                position: 'relative',
-                stroke: 'rgb(255, 255, 255)',
-                strokeWidth: '2px',
-                textDecoration: 'none solid rgb(255, 255, 255)',
-                textDecorationColor: 'rgb(255, 255, 255)',
-                textEmphasisColor: 'rgb(255, 255, 255)',
-                textWrap: 'nowrap',
-                top: '1px',
-                width: '10px',
-              },
-              attributes: {},
-              className: {},
             },
           ],
           styleStr:
@@ -9875,7 +9517,6 @@ export const StripeEmailInput: StyleNode = {
             columnRuleColor: 'rgb(255, 255, 255)',
             cursor: 'pointer',
             display: 'block',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
             fontSize: '15px',
             fontWeight: '425',
             height: '33px',
@@ -9931,7 +9572,6 @@ export const StripeEmailInput: StyleNode = {
         columnRuleColor: 'rgb(66, 84, 102)',
         flexBasis: '0%',
         flexGrow: '1',
-        fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
         fontWeight: '300',
         height: '45px',
         letterSpacing: '0.2px',
@@ -9994,8 +9634,7 @@ export const StripeEmailInput: StyleNode = {
                     d: 'path("M 0 5 H 7")',
                     fill: 'none',
                     fillRule: 'evenodd',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '15px',
                     fontWeight: '425',
                     height: '0px',
@@ -10044,8 +9683,7 @@ export const StripeEmailInput: StyleNode = {
                     d: 'path("M 1 1 L 5 5 L 1 9")',
                     fill: 'none',
                     fillRule: 'evenodd',
-                    fontFamily:
-                      'sohne-var, "Helvetica Neue", Arial, sans-serif',
+
                     fontSize: '15px',
                     fontWeight: '425',
                     height: '0px',
@@ -10090,7 +9728,7 @@ export const StripeEmailInput: StyleNode = {
                 cursor: 'pointer',
                 fill: 'none',
                 fillRule: 'evenodd',
-                fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+                
                 fontSize: '15px',
                 fontWeight: '425',
                 height: '0px',
@@ -10131,7 +9769,6 @@ export const StripeEmailInput: StyleNode = {
             columnRuleColor: 'rgb(10, 37, 64)',
             cursor: 'pointer',
             fill: 'none',
-            fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
             fontSize: '15px',
             fontWeight: '425',
             height: '0px',
@@ -10183,7 +9820,7 @@ export const StripeEmailInput: StyleNode = {
         columnRuleColor: 'rgb(10, 37, 64)',
         cursor: 'pointer',
         display: 'none',
-        fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+        
         fontSize: '15px',
         fontWeight: '425',
         height: '0px',
@@ -10230,7 +9867,7 @@ export const StripeEmailInput: StyleNode = {
     columnRuleColor: 'rgb(66, 84, 102)',
     display: 'flex',
     flexDirection: 'column',
-    fontFamily: 'sohne-var, "Helvetica Neue", Arial, sans-serif',
+    
     fontWeight: '300',
     height: '45px',
     inlineSize: '100%',

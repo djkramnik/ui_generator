@@ -177,6 +177,9 @@ function buildUniqueStylesGraph({
     }
   } else if (el.tagName === 'IMG' || el.tagName === 'IMAGE') {
     node.attributes.src = '/public/solid-color.jpg'
+  } else if (el.tagName === 'SVG') {
+    node.attributes.fill = el.getAttribute('fill') ?? 'initial'
+    node.attributes.stroke = el.getAttribute('stroke') ?? 'currentColor'
   }
 
   if (el.hasChildNodes()) {
@@ -190,9 +193,6 @@ function buildUniqueStylesGraph({
       }
       node.children.push(graph)
     })
-  }
-  if (node.tagName === "INPUT") {
-    console.log('node attributes', node.attributes)
   }
   
   return node

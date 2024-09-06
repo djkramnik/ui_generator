@@ -18,7 +18,7 @@ const toSx = (cssProperties: CSSProperties): CssProps => {
 
 // not any.... a component that accepts $sx and theme, or null
 const getElement = (tagName: string): any => {
-  switch(tagName) {
+  switch(tagName.toLowerCase()) {
     case 'a':
       return Anchor
     case 'button':

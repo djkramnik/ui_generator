@@ -155,14 +155,14 @@ function buildUniqueStylesGraph({
 
   const customStyles = getGraph(el) ?? {}
   const node: StyleNode = {
-    tagName: el.tagName,
+    tagName: el.tagName.toUpperCase(),
     children: [] as StyleNode[],
     styleStr: objToStyleStr(customStyles),
     style: objToCss(customStyles),
     attributes: {},
     className: el.className
   }
-  if (el.tagName === 'svg') {
+  if (el.tagName === 'SVG') {
     node.html = el.innerHTML
     return node
   }
@@ -170,12 +170,12 @@ function buildUniqueStylesGraph({
   // for images, we won't be copying the actual src content for now...
   // but upstream from here, we add explicit width and height css properties for images
   // we use a placeholder image of a solid color for now
-  if (el.tagName === 'input') {
+  if (el.tagName === 'INPUT') {
     const placeholder = el.getAttribute('placeholder')
     if (placeholder) {
       node.attributes.placeholder = placeholder
     }
-  } else if (el.tagName === 'img' || el.tagName === 'image') {
+  } else if (el.tagName === 'IMG' || el.tagName === 'IMAGE') {
     node.attributes.src = '/public/solid-color.jpg'
   }
 
@@ -191,6 +191,10 @@ function buildUniqueStylesGraph({
       node.children.push(graph)
     })
   }
+  if (node.tagName === "INPUT") {
+    console.log('node attributes', node.attributes)
+  }
+  
   return node
 }
 

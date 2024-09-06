@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import App from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
@@ -40,6 +41,7 @@ export default class MyApp extends App<
           </Head>
           <GlobalStyles theme={themes[this.state.activeTheme]}/>
           <Component {...pageProps} />
+          <Script src="https://kit.fontawesome.com/8624cac04a.js" crossOrigin="anonymous" />
         </ThemeProvider>
       </ActiveThemeContext.Provider>
     )

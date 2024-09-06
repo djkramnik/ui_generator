@@ -5,7 +5,7 @@ import { Testimonial } from '../components/lib/applied/testimonial'
 import { NewsPreview } from '../components/lib/applied/news_preview'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { CnnLogo } from '../components/svg'
-import { Button, Copy, Heading, Image } from '../components/lib/atomics'
+import { Anchor, Button, ButtonWithIcon, Copy, Heading, Image, Input } from '../components/lib/atomics'
 import { StripeHero, VideoHero } from '../components/lib/applied/hero'
 import { ShopifyLogo } from '../components/svg/logos/shopify'
 import { Container } from '../components/lib/layout/container'
@@ -13,15 +13,90 @@ import { Flex } from '../components/lib'
 import { StripeLogo } from '../components/svg/logos/stripe'
 import { DynamicComponent } from '../components/dynamic'
 import { StripeEmailInput } from '../components/dynamic/test'
+import { Spacer } from '../components/lib/layout/spacer'
+import { EnercareLogo } from '../components/svg/logos/enercare'
 
 const Home: NextPage = () => {
   return (
     <>
+      <Navbar bgc="#e6e4e4" c="#000" h="68px" w="90vw">
+        <NavbarLinks wrapChildren>
+          {'Commercial'}
+          {'Builder'}
+          {'PMs'}
+          {'Blog'}
+          {'Special Offers'}
+          <span style={{
+            fontWeight: 'bold',
+            color: '#da1b27'
+          }}>My Account</span>
+          {'About Us'}
+        </NavbarLinks>
+        <NavbarLinks>
+          <div style={{ position: 'relative'}}>
+            <i className="fa-solid fa-magnifying-glass"  style={{
+              color: '#da1b27',
+              fontSize: '18px',
+              zIndex: 1,
+              position: 'relative',
+              left: '30px',
+              top: '2px'
+            }}/>
+            <Input placeholder="Search" $sx={{ 
+              width: '300px', paddingLeft: '40px', fontSize: '15px', borderRadius: '6px' }} />
+          </div>
+        </NavbarLinks>
+      </Navbar>
+      <Navbar bgc="#fff" c="#000" h="90px" w="90vw">
+        <NavbarLinks>
+          <EnercareLogo />
+        </NavbarLinks>
+      </Navbar>
+      <VideoHero
+        maskBgc='rgba(0, 0, 0, 0)'
+        videoSrc="/thumbs/enercare.png"
+        h="500px"
+        minh="auto"
+      >
+        <Flex col $sx={{ height: '100%' }}>
+          <Container w="90vw" $sx={{ 
+            flexGrow: '1',
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: '1',
+            justifyContent: 'center'
+            }}>
+            <Flex row aic>
+              <Flex col jcc $sx={{ width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
+                <Spacer />
+                <Heading level={2} $sx={{ fontSize: '42px', lineHeight: '64px', textAlign: 'center'}}>
+                  Get up to $5000 on a prepaid credit card
+                  with a cooling and heating combo rental
+                </Heading>
+                <Flex $sx={{ gap: '8px'}} aic jcc>
+                  <Heading level={5} $sx={{ fontSize: '16px' }}>
+                    Offer expires September 30, 2024.
+                  </Heading>
+                  <Anchor $sx={{ textDecoration: 'underline', color: '#aaa' }}>
+                    View Terms and Conditions
+                  </Anchor>
+                </Flex>
+                <ButtonWithIcon
+                  $variant="pill"
+                  flexProps={{ row: false, rowrev: true, $sx: { gap: '12px' } }}
+                  $sx={{ width: 'fit-content', alignSelf: 'center', borderRadius: '48px' }}
+                  bgc="#da1b27" c="#fff" text="Get Deal" icon="cart-shopping" />
+              </Flex>
+            </Flex>
+          </Container>
+        </Flex>
+      </VideoHero>
+
       <NavBanner bgc="#006f51"
-        lineOne="TODO: this component sux"
+        lineOne="Click to find parking"
         lineTwo="" p="10px 0"
         hideClose
-        flexProps={{ row: false, rowrev: true, $sx: { fontSize: '12px' } }}
+        flexProps={{ row: false, rowrev: true, $sx: { fontSize: '14px' } }}
       />
       <VideoHero
         maskBgc='rgba(0, 0, 0, 0.7)'
@@ -29,16 +104,17 @@ const Home: NextPage = () => {
         backgroundStyle={{ transform: 'scaleX(-1)' }}
       >
         <Flex col $sx={{ height: '100%' }}>
-          <Navbar bgc="transparent" h="90px" boxStyles={{ zIndex: '1'}} w="85vw"
-            >
+          <Navbar bgc="transparent" h="90px" boxStyles={{ zIndex: '1'}} w="85vw">
             <NavbarLinks >
-              <ShopifyLogo style={{ width: '100px', marginRight: '12px' }} />
+              <Flex>
+                <Image src="/logos/greenp.png" $sx={{ width: '200px' }} />
+              </Flex>
             </NavbarLinks>
             <NavbarLinks wrapChildren $sx={{ fontWeight: 'bold' }}>
-              {'Solutions'}
-              {'Pricing'}
-              {'Resources'}
-              {'What\'s new'}
+              {'ABOUT US'}
+              {'PARKING INFO'}
+              {'SAFE BICYCLING'}
+              {'MUNICIPAL RAG'}
             </NavbarLinks>
             <NavbarLinks gap="18px" $sx={{ fontWeight: 'bold' }}>
               {'TODO: Find Parking thing'}
@@ -53,7 +129,7 @@ const Home: NextPage = () => {
             }}>
             <Flex row aic>
               <Flex col jcc $sx={{ flexGrow: '1', width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
-                <Heading level={2} $sx={{ fontSize: '56px', lineHeight: '64px'}}>
+                <Heading level={2} $sx={{ fontSize: '64px', lineHeight: '64px'}}>
                   EXPLORE TORONTO,<br />
                   CAR BABIES
                 </Heading>
@@ -61,18 +137,11 @@ const Home: NextPage = () => {
                   Pay for parking with your credit card, and receive a free ticket.
                 </Heading>
                 <Flex $sx={{ gap: '20px' }}>
-                  <Button $sx={{
-                    backgroundColor: '#006f51',
-                    padding: '20px',
-                    paddingRight: '40px',
-                    color: '#fff'
-                  }}>PAY FOR PARKING</Button>
-                  <Button $sx={{
-                    backgroundColor: '#006f51',
-                    padding: '20px',
-                    paddingRight: '40px',
-                    color: '#fff'
-                  }}>RIDE A BIKE</Button>
+                  <ButtonWithIcon icon="arrow-right" text="PAY FOR PARKING"
+                    $sx={{ fontWeight: '800', border: '2px solid white' }} />
+                  <ButtonWithIcon icon="arrow-right" text="RIDE A BIKE"
+                    $sx={{ fontWeight: '800', border: '2px solid white' }}
+                  />
                 </Flex>
               </Flex>
               <Flex aic $sx={{ width: '50%'}}>

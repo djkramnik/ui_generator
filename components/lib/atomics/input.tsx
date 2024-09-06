@@ -7,6 +7,7 @@ export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 export const Input = styled('input')<InputProps>`
   ${({ theme, $variant, $sx }: InputProps) => {
     const responsive = getResponsiveStyles({
+      padding: '9px 18px',
       ...($sx ?? {}),
     })
     return responsive

@@ -1,5 +1,7 @@
 import { styled } from "styled-components"
-import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
+import { getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../theme"
+import { CSSProperties } from "react"
+import { Flex, FlexProps } from "../layout"
 
 export type ButtonProps = WithTheme<ResponsiveComponent<'button'>>
 
@@ -26,3 +28,44 @@ export const Button = styled('button')<ButtonProps>`
     return responsive
   }}
 `
+
+export const ButtonWithIcon = ({
+  text,
+  icon,
+  bgc,
+  p,
+  c,
+  $sx,
+  $variant,
+  iconStyle,
+  flexProps,
+}: {
+  text: string
+  icon: string
+  bgc?: ResponsiveMixin
+  p?: ResponsiveMixin
+  c?: ResponsiveMixin
+  $sx?: ButtonProps['$sx']
+  $variant?: ButtonProps['$variant']
+  iconStyle?: CSSProperties
+  flexProps?: FlexProps
+}) => {
+  return (
+    <Button 
+      $variant={$variant}
+      $sx={{
+        backgroundColor: bgc ?? '#006f51',
+        padding: p ?? '20px',
+        color: c ?? '#fff',
+        ...$sx,
+      }}>
+      <Flex aic jcsb {...flexProps} $sx={{ gap: '20px', ...flexProps?.$sx }} >
+        <span>{text}</span>
+        <i className={`fa-solid fa-${icon}`} style={{
+          fontSize: '22px',
+          ...iconStyle
+        }} />
+      </Flex>
+    </Button>
+  )
+}

@@ -78,6 +78,7 @@ export const ThreeColCnn = () => {
       </Heading>
       <Container w="96%">
         <ThreeColNews />
+        <Spacer />
         <TabbedThreeColNews
           tabs={[
             'Mortons Steakhouse',
@@ -86,11 +87,14 @@ export const ThreeColCnn = () => {
           ]}
         />
         <Spacer />
-        <Spacer />
         <HeadlineThreeColSection
           headline="Food, Sex, Paradise"
           headlineSx={{ fontSize: '30px' }}
           >
+            <NewsPreview 
+              headline="New video depicts Trump smoking crack with prostitutes"
+              imgSrc="/thumbs/cnn64.jpg"
+            />
             <NewsPreview 
               headline="Three fiddy buys you a hello"
               imgSrc="/thumbs/cnn60.jpg"
@@ -106,10 +110,6 @@ export const ThreeColCnn = () => {
             <NewsPreview 
               headline="So called Karen flips out over the term December holidays"
               imgSrc="/thumbs/cnn63.jpg"
-            />
-            <NewsPreview 
-              headline="Trump video shows him smoking crack with prostitutes"
-              imgSrc="/thumbs/cnn64.jpg"
             />
             <NewsPreview 
               headline="Suicidal ideation rising in depressed jobless ugly old people"

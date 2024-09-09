@@ -141,7 +141,7 @@ export const NewsPreviewH = ({
 // TODO: customizable content you idiot
 export const ThreeColNews = () => {
   return (
-    <ThreeCol>
+    <ThreeCol w={['45%', '30%', '25%']}>
     <>
       <NewsPreview
         topHeadline="Read my lips says old man, whilst licking said lips disturbingly"
@@ -355,7 +355,7 @@ export const HeadlineThreeColSection = ({
         {
           React.Children.map(children, (c, index) => {
             return (
-              <Box key={index} $sx={{ width: w?.[index % 3] ?? '30%' }}>
+              <Box key={index} $sx={{ width: w?.[index % 3] ?? '32%', marginBottom: '12px' }}>
                 {c}
               </Box>
             )

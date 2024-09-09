@@ -1,11 +1,8 @@
 import type { NextPage } from 'next'
 import { ThemeToggle } from '../components/lib/theme_toggle'
-import { ThreeCol } from '../components/lib/layout/threecol'
-import { Testimonial } from '../components/lib/applied/testimonial'
-import { NewsPreview } from '../components/lib/applied/news_preview'
+import { ThreeColTestimonial } from '../components/lib/applied/testimonial'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
-import { CnnLogo } from '../components/svg'
-import { Anchor, Button, ButtonWithIcon, Copy, Heading, IconButton, Image, Input, InputWithIcon } from '../components/lib/atomics'
+import { Anchor, Button, ButtonWithIcon, Copy, Heading, IconButton, Image, InputWithIcon } from '../components/lib/atomics'
 import { StripeHero, VideoHero } from '../components/lib/applied/hero'
 import { ShopifyLogo } from '../components/svg/logos/shopify'
 import { Container } from '../components/lib/layout/container'
@@ -15,7 +12,7 @@ import { DynamicComponent } from '../components/dynamic'
 import { StripeEmailInput } from '../components/dynamic/test'
 import { Spacer } from '../components/lib/layout/spacer'
 import { EnercareLogo } from '../components/svg/logos/enercare'
-import { ThreeColNews } from '../components/lib/applied/news'
+import { ThreeColCnn } from '../components/lib/applied/news'
 
 const Home: NextPage = () => {
   return (
@@ -263,7 +260,8 @@ const Home: NextPage = () => {
         </Flex>
       </VideoHero>
 
-      <ThreeColNews />
+      <ThreeColCnn />
+      <ThreeColTestimonial />
       
     </>
     

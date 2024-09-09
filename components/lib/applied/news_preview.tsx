@@ -1,4 +1,56 @@
-import { Flex } from "../layout"
+import { CssProps, ResponsiveMixin } from "../../theme"
+import { Anchor } from "../atomics"
+import { Box, Flex } from "../layout"
+
+export const NewsLink = ({
+  text,
+  anchorSx,
+}: {
+  text: string
+  anchorSx?: CssProps
+}) => {
+  return (
+    <Anchor href="#" $sx={{
+      fontSize: '18px',
+      ...anchorSx,
+      }}>
+      {text}
+    </Anchor>
+  )
+}
+
+export const NewsLinkList = ({
+  links,
+  w = '90%',
+  p = '12px 0',
+}: {
+  links: string[]
+  w?: ResponsiveMixin
+  p?: ResponsiveMixin
+}) => {
+  return (
+    <Box>
+      <Flex col $sx={{ width: w, margin: 'auto' }}>
+        {
+          links.map((l, index) => {
+            return (
+              <Box key={l} $sx={{
+                padding: p ?? '20px 0',
+                borderBottom: '1px solid #e6e4e4',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderTop: index === 0 ? `1pd solid #eee` : 'none'
+              }}>
+                <NewsLink text={l} />
+              </Box>
+            )
+          })
+        }
+      </Flex>
+    </Box>
+  )
+}
 
 export const NewsPreview = ({
   imgSrc,

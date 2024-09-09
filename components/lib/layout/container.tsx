@@ -9,7 +9,7 @@ export const Container = ({
 }: {
   children?: React.ReactNode
   w?: ResponsiveMixin
-  $sx: BoxProps['$sx']
+  $sx?: BoxProps['$sx']
 }) => {
   const theme = useTheme()
   const width = w ?? theme.spacing?.containerWidth ?? '92%'

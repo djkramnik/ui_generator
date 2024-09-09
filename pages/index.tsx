@@ -12,7 +12,7 @@ import { DynamicComponent } from '../components/dynamic'
 import { StripeEmailInput } from '../components/dynamic/test'
 import { Spacer } from '../components/lib/layout/spacer'
 import { EnercareLogo } from '../components/svg/logos/enercare'
-import { ThreeColCnn } from '../components/lib/applied/news'
+import { TabbedThreeColNews, ThreeColCnn } from '../components/lib/applied/news'
 
 const Home: NextPage = () => {
   return (
@@ -260,7 +260,17 @@ const Home: NextPage = () => {
         </Flex>
       </VideoHero>
 
-      <ThreeColCnn />
+      <Container w="96%">
+        <ThreeColCnn />
+        <TabbedThreeColNews
+          tabs={[
+            'Mortons Steakhouse',
+            'Atlantic City Casinos',
+            'Carmela'
+          ]}
+        />
+      </Container>
+
       <ThreeColTestimonial />
       
     </>

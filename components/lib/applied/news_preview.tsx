@@ -1,3 +1,4 @@
+import { CSSProperties } from "react"
 import { CssProps, ResponsiveMixin, ResponsiveMixinProps } from "../../theme"
 import { Anchor, Heading } from "../atomics"
 import { Box, Flex } from "../layout"
@@ -21,7 +22,7 @@ export const NewsLink = ({
 
 export const NewsLinkList = ({
   links,
-  w = '90%',
+  w = '100%',
   p = '12px 0',
   withDot,
 }: {
@@ -64,12 +65,14 @@ export const NewsLinkList = ({
 
 export const NewsPreview = ({
   imgSrc,
+  imgStyle,
   headline,
   topHeadline,
   headlineSx,
   topHeadlineSx,
 }: {
   imgSrc: string
+  imgStyle?: CSSProperties
   headline: string
   topHeadline?: string
   headlineSx?: CssProps
@@ -93,11 +96,11 @@ export const NewsPreview = ({
             )
             : null
         }
-        <img src={imgSrc} style={{ width: '90%', margin: 'auto' }} />
+        <img src={imgSrc} style={{ width: '100%', margin: 'auto', ...imgStyle }} />
         <Heading level={3} $sx={{ 
           fontSize: '20px',
           lineHeight: '26px',
-          width: '90%',
+          width: '100%',
           margin: 'auto',
           ...headlineSx,
         }}>{headline}</Heading>
@@ -110,7 +113,7 @@ export const NewsPreviewH = ({
   imgSrc,
   headline,
   headlineSx,
-  w = '90%',
+  w = '100%',
 }: {
   imgSrc: string
   headline: string

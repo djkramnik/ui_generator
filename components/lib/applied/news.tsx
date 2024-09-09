@@ -1,6 +1,7 @@
 import { CnnLogo } from "../../svg"
-import { Button, Heading } from "../atomics"
-import { ThreeCol } from "../layout"
+import { Button, Copy, Heading } from "../atomics"
+import { Box, ThreeCol } from "../layout"
+import { Spacer } from "../layout/spacer"
 import { NavBanner, Navbar, NavbarLinks } from "./navbar"
 import { NewsLinkList, NewsPreview, NewsPreviewH } from "./news_preview"
 
@@ -88,6 +89,61 @@ export const ThreeColNews = () => {
       </ThreeCol>
     </>
   </ThreeCol>
+  )
+}
+
+// TODO: customizable content you idiot
+export const TabbedThreeColNews = ({
+  tabs,
+}: {
+  tabs: [string, string, string]
+}) => {
+  return (
+    <ThreeCol>
+      <>
+        <Box $sx={{
+          borderTop: '1px solid #e4e6e6',
+        }}>
+          <Box $sx={{
+            marginBottom: '6px',
+            borderTop: '5px solid #cc0000',
+            width: '50px',
+            height: '5px',
+          }} />
+          <Copy $sx={{ fontWeight: 'bold', fontSize: '12px' }}>{tabs[0].toUpperCase()}</Copy>
+        </Box>
+        <NewsPreview
+          imgSrc="/thumbs/yt_thumb6.jpg"
+          headline="What they discovered after attempting to get the Russian green beret, was a dead deer."
+        />
+      </>
+      <>
+          <Box $sx={{
+              borderTop: '1px solid #e4e6e6',
+            }}>
+              <Box $sx={{
+                marginBottom: '6px',
+                borderTop: '5px solid #cc0000',
+                width: '50px',
+                height: '5px',
+              }} />
+              <Copy $sx={{ fontWeight: 'bold', fontSize: '12px' }}>{tabs[1].toUpperCase()}</Copy>
+            </Box>
+      </>
+      <>
+        <Box $sx={{
+          borderTop: '1px solid #e4e6e6',
+        }}>
+          <Box $sx={{
+            marginBottom: '6px',
+            borderTop: '5px solid #cc0000',
+            width: '50px',
+            height: '5px',
+          }} />
+          <Copy $sx={{ fontWeight: 'bold', fontSize: '12px' }}>{tabs[2].toUpperCase()}</Copy>
+        </Box>
+      </>
+    </ThreeCol>
   )
 }
 

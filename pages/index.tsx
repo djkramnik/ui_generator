@@ -5,7 +5,7 @@ import { Testimonial } from '../components/lib/applied/testimonial'
 import { NewsPreview } from '../components/lib/applied/news_preview'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { CnnLogo } from '../components/svg'
-import { Anchor, Button, ButtonWithIcon, Copy, Heading, Image, Input } from '../components/lib/atomics'
+import { Anchor, Button, ButtonWithIcon, Copy, Heading, IconButton, Image, Input, InputWithIcon } from '../components/lib/atomics'
 import { StripeHero, VideoHero } from '../components/lib/applied/hero'
 import { ShopifyLogo } from '../components/svg/logos/shopify'
 import { Container } from '../components/lib/layout/container'
@@ -33,23 +33,32 @@ const Home: NextPage = () => {
           {'About Us'}
         </NavbarLinks>
         <NavbarLinks>
-          <div style={{ position: 'relative'}}>
-            <i className="fa-solid fa-magnifying-glass"  style={{
-              color: '#da1b27',
-              fontSize: '18px',
-              zIndex: 1,
-              position: 'relative',
-              left: '30px',
-              top: '2px'
-            }}/>
-            <Input placeholder="Search" $sx={{ 
-              width: '300px', paddingLeft: '40px', fontSize: '15px', borderRadius: '6px' }} />
-          </div>
+          <InputWithIcon icon="magnifying-glass" placeholder="Search" />
         </NavbarLinks>
       </Navbar>
       <Navbar bgc="#fff" c="#000" h="90px" w="90vw">
+        <NavbarLinks gap="40px" $sx={{ alignItems: 'stretch' }}>
+          <div style={{ marginRight: '20px'}}>
+            <EnercareLogo />
+          </div>
+          <IconButton icon="shop" text="Shop" iconStyle={{ fontSize: '40px'}} />
+          <IconButton icon="truck-front" text="Delivery" iconStyle={{ fontSize: '40px '}} />
+          <IconButton icon="snowflake" text="Cooling" iconStyle={{ fontSize: '40px '}} />
+          <IconButton icon="fire-flame-curved" text="Heating" iconStyle={{ fontSize: '40px '}} />
+          <IconButton icon="umbrella" text="Waterproofing" iconStyle={{ fontSize: '40px '}} />
+          <IconButton icon="headset" text="Support" iconStyle={{ fontSize: '40px' }} />
+        </NavbarLinks>
         <NavbarLinks>
-          <EnercareLogo />
+          <Flex col $sx={{ gap: '4px' }}>
+            <Heading level={4} $sx={{ fontWeight: 'bold', fontSize: '22px' }}>Speak with an expert</Heading>
+            <Flex $sx={{ gap: '4px'}}>
+              <i className="fa-solid fa-phone" style={{
+                color: '#da1b27',
+                fontSize: '30px'
+              }}/>
+              <Heading level={4} $sx={{ color: '#da1b27', fontWeight: 'bold', fontSize: '22px' }}>1-877-642-8607</Heading>
+            </Flex>
+          </Flex>
         </NavbarLinks>
       </Navbar>
       <VideoHero

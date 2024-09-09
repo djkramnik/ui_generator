@@ -2,6 +2,7 @@ import { styled } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../theme"
 import { CSSProperties } from "react"
 import { Flex, FlexProps } from "../layout"
+import { Copy, CopyProps } from "./copy"
 
 export type ButtonProps = WithTheme<ResponsiveComponent<'button'>>
 
@@ -65,6 +66,33 @@ export const ButtonWithIcon = ({
           fontSize: '22px',
           ...iconStyle
         }} />
+      </Flex>
+    </Button>
+  )
+}
+
+export const IconButton = ({
+  icon,
+  text,
+  rev,
+  iconStyle,
+  textSx,
+}: {
+  icon: string
+  text: string
+  rev?: boolean
+  iconStyle?: CSSProperties
+  textSx?: CopyProps['$sx']
+}) => {
+  return (
+    <Button>
+      <Flex aic jcsb {...rev ? { colrev: true } : { col: true }}
+        $sx={{ gap: '8px', width: '50px'}}>
+        <i className={`fa-solid fa-${icon}`} style={{
+          fontSize: '30px',
+          ...iconStyle,
+        }} />
+        <Copy $sx={textSx}>{text}</Copy>
       </Flex>
     </Button>
   )

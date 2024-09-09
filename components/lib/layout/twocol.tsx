@@ -8,24 +8,26 @@ export const TwoCol = ({
   growRight,
   hGap,
   children,
+  halvsies,
 }: {
   hGap?: string
   widthLeft?: ResponsiveMixin
   widthRight?: ResponsiveMixin
   growLeft?: boolean
   growRight?: boolean
+  halvsies?: boolean
   children: [React.ReactNode, React.ReactNode]
 }) => {
   return (
     <Flex row $sx={{ gap: hGap, alignItems: 'stretch' }}>
       <Flex col $sx={{ 
-        width: widthLeft,
+        width: (halvsies ? '50%' : widthLeft),
         flexGrow: growLeft ? '1' : '0'
       }}>
         {children[0] ?? null}
       </Flex>
       <Flex col $sx={{ 
-        width: widthRight,
+        width: (halvsies ? '50%' : widthRight),
         flexGrow: growRight ? '1' : '0',
       }}>
         {children[1] ?? null}

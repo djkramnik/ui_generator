@@ -2,7 +2,16 @@ import type { NextPage } from 'next'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { ThreeColTestimonial } from '../components/lib/applied/testimonial'
 import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
-import { Anchor, Button, ButtonWithIcon, Copy, Heading, IconButton, Image, InputWithIcon } from '../components/lib/atomics'
+import { 
+  Anchor,
+  Button,
+  ButtonWithIcon,
+  Copy,
+  Heading,
+  IconButton,
+  Image,
+  InputWithIcon
+} from '../components/lib/atomics'
 import { StripeHero, VideoHero } from '../components/lib/applied/hero'
 import { ShopifyLogo } from '../components/svg/logos/shopify'
 import { Container } from '../components/lib/layout/container'

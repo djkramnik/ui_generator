@@ -33,7 +33,9 @@ const flagToCss: Record<keyof FlexFlags, [keyof CSSProperties, ResponsiveMixin]>
   wrap: ['flexWrap', 'wrap']
 }
 
-export type FlexProps = ResponsiveComponent<'div'> & Partial<FlexFlags>
+export type FlexProps = ResponsiveComponent<'div'> & Partial<FlexFlags> & {
+  gap?: ResponsiveMixin
+}
 
 const shortHand = (flags: Partial<FlexFlags>): ResponsiveMixinProps<CSSProperties> => {
   return Object.entries(flags)
@@ -58,6 +60,7 @@ export const Flex = ({
   return (
     <Box
       $sx={{
+        gap: rest.gap,
         display: 'flex',
         ...shortHand(flagProps),
         ...$sx,

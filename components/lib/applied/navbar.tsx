@@ -78,7 +78,7 @@ export const Navbar = ({
         jcsb
         $sx={{
           width,
-          height: h,
+          height: h ?? 'auto',
           margin: 'auto',
           fontSize: '15px',
           ...($sx ?? {}),

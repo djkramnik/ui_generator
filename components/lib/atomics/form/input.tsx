@@ -1,5 +1,5 @@
 import { CSSProperties, styled } from "styled-components"
-import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
+import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../../theme"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 

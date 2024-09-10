@@ -10,8 +10,8 @@ export const SimpleForm = ({
 }) => {
   return (
     <form>
-      <Flex col {...flexProps}
-        $sx={{ gap: '12px', ...flexProps?.$sx }}>
+      <Flex col gap="12px" {...flexProps}
+        $sx={{ ...flexProps?.$sx }}>
         {children}
       </Flex>
     </form>

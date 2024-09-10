@@ -1,5 +1,6 @@
 import { CSSProperties, styled } from "styled-components"
-import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../../theme"
+import { getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../../theme"
+import { Flex } from "../../layout"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 
@@ -44,5 +45,92 @@ export const InputWithIcon = ({
         ...inputProps?.$sx
       }} />
     </div>
+  )
+}
+
+
+export type LabelProps = WithTheme<ResponsiveComponent<'label'>>
+
+export const Label = styled('label')<LabelProps>`
+  ${({ theme, $variant, $sx }: LabelProps) => {
+    const responsive = getResponsiveStyles({
+      // default styles??? theme???
+      ...($sx ?? {}),
+    })
+    return responsive
+  }}
+`
+
+// I don't care about the dom semantics... only the visuals baby.
+// needs to be made customizable.  i.e. the gap
+export const LabelizeIt = ({
+  label,
+  secondaryLabel,
+  secondaryColor,
+  secondaryStyles,
+  flexDir = 'column',
+  labelProps,
+  children,
+}: {
+  label: string
+  secondaryLabel?: string
+  secondaryColor?: string
+  secondaryStyles?: CSSProperties
+  flexDir?: ResponsiveMixin
+  labelProps?: LabelProps
+  children?: React.ReactNode
+}) => {
+  return (
+    <Flex $sx={{ flexDirection: flexDir, gap: '6px' }}>
+      <Flex row gap="12px" aic>
+        <Label {...labelProps} $sx={{
+          color: 'inherit',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          ...labelProps?.$sx
+          }}>
+          {label}
+        </Label>
+        {
+          secondaryLabel
+            ? (
+              <span style={{
+                color: secondaryColor,
+                ...secondaryStyles
+              }}>{secondaryLabel}</span>
+            )
+            : null
+        }
+      </Flex>
+      {children}
+    </Flex>
+  )
+}
+
+// not a component a normal rational human would make
+export const WithErrata = ({
+  errorMessage,
+  color = '#da1b27',
+  messageStyles,
+  errorIcon,
+  children,
+}: {
+  errorMessage: string
+  color?: string
+  messageStyles?: CSSProperties
+  errorIcon?: React.ReactNode
+  children?: React.ReactNode
+}) => {
+  return (
+    <Flex col gap="6px">
+      {children}
+      <Flex row gap="6px">
+        {errorIcon ?? null}
+        <span style={{
+          color,
+          ...messageStyles
+        }}>{errorMessage}</span>
+      </Flex>
+    </Flex>
   )
 }

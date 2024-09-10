@@ -1,5 +1,5 @@
 import { CSSProperties, styled } from "styled-components"
-import { getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../../theme"
+import { CssProps, getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../../theme"
 import { Flex } from "../../layout"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>
@@ -69,7 +69,7 @@ export const LabelizeIt = ({
   secondaryColor,
   secondaryStyles,
   flexDir = 'column',
-  labelProps,
+  labelSx,
   children,
 }: {
   label: string
@@ -77,27 +77,28 @@ export const LabelizeIt = ({
   secondaryColor?: string
   secondaryStyles?: CSSProperties
   flexDir?: ResponsiveMixin
-  labelProps?: LabelProps
+  labelSx?: CssProps
   children?: React.ReactNode
 }) => {
   return (
     <Flex $sx={{ flexDirection: flexDir, gap: '6px' }}>
       <Flex row gap="12px" aic>
-        <Label {...labelProps} $sx={{
+        <Label $sx={{
           color: 'inherit',
-          fontSize: '14px',
+          fontSize: '16px',
           fontWeight: 'bold',
-          ...labelProps?.$sx
+          ...labelSx,
           }}>
           {label}
         </Label>
         {
           secondaryLabel
             ? (
-              <span style={{
+              <label style={{
                 color: secondaryColor,
+                fontSize: '16px',
                 ...secondaryStyles
-              }}>{secondaryLabel}</span>
+              }}>{secondaryLabel}</label>
             )
             : null
         }

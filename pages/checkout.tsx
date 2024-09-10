@@ -10,6 +10,7 @@ import { Spacer } from '../components/lib/layout/spacer'
 import { CssProps } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
 import { ThemeToggle } from '../components/lib/theme_toggle'
+import { Dropdown } from '../components/lib/atomics/form/select'
 
 const colors: Record<string, string> = {
   gsapWhite: '#FFFCE1',
@@ -135,7 +136,15 @@ const Checkout: NextPage = () => {
           <Spacer />
           <TwoCol widthLeft="70%" growRight>
             <Flex col gap="20px" $sx={{ padding: '0 20px' }}>
-              <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }}>hi</div>
+              <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }}>
+                <LabelizeIt label="Casual Greeting *">
+                  <Dropdown
+                    value="kookamunga"
+                    options={['hi', 'hey', 'ayo', 'kookamunga']}
+                    selectSx={{ width: '300px' }}
+                    />
+                </LabelizeIt>
+              </div>
               <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }} />
             </Flex>
             <div style={{ 

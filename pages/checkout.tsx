@@ -5,12 +5,15 @@ import { Navbar, NavbarLinks } from '../components/lib/applied'
 import { GsapLogo } from '../components/svg'
 import { Container } from '../components/lib/layout/container'
 import { Flex, TwoCol } from '../components/lib'
-import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, WithErrata } from '../components/lib/atomics'
+import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
 import { CssProps } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { Dropdown } from '../components/lib/atomics/form/select'
+import { Checkbox } from '../components/lib/atomics/form/checkbox'
+import { Toggle } from '../components/lib/atomics/form/toggle'
+import { TextAccordion } from '../components/lib/atomics/accordion'
 
 const colors: Record<string, string> = {
   gsapWhite: '#FFFCE1',
@@ -20,6 +23,7 @@ const colors: Record<string, string> = {
   enercareRed: '#da1b27',
   amazonDark: '#131921',
   amazonGrey: '#F8F8F8',
+  amazonBlue: '#007185',
 }
 
 const gsapInputSx: CssProps = {
@@ -136,14 +140,63 @@ const Checkout: NextPage = () => {
           <Spacer />
           <TwoCol widthLeft="70%" growRight>
             <Flex col gap="20px" $sx={{ padding: '0 20px' }}>
-              <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }}>
-                <LabelizeIt label="Casual Greeting *">
-                  <Dropdown
-                    value="kookamunga"
-                    options={['hi', 'hey', 'ayo', 'kookamunga']}
-                    selectSx={{ width: '300px' }}
+              <div style={{ width: '100%', minHeight: '300px', backgroundColor: '#fff', padding: '20px 0' }}>
+                <SimpleForm>
+                  <LabelizeIt label="Casual Greeting *">
+                    <Dropdown
+                      value="kookamunga"
+                      options={['hi', 'hey', 'ayo', 'kookamunga']}
+                      selectSx={{ width: '300px' }}
+                      />
+                  </LabelizeIt>
+
+                  <LabelizeIt label="Random shit">
+                    <Checkbox label="Can you put on an iron shirt?" checked />
+                    <Checkbox radio label="I will chase Satan out of earf" checked />
+                  </LabelizeIt>
+
+                  <LabelizeIt label="Why are you so negative?">
+                    <TextArea $sx={{ width: '50%' }}>Tone!</TextArea>
+                  </LabelizeIt>
+
+                  <LabelizeIt label="Best Beetlejuice day">
+                    <Toggle 
+                      selectedIndex={0}
+                      options={[
+                        'Monday',
+                        'Toosday',
+                        'Whensday',
+                        'Hersday'
+                      ]}
                     />
-                </LabelizeIt>
+                  </LabelizeIt>
+                  <TextAccordion label="Show holidays"
+                    open copySx={{ 
+                      color: colors.amazonBlue,
+                      fontWeight: 'bold',
+                      cursor: 'pointer'
+                      }}>
+                    <Flex col gap="4px" $sx={{ paddingLeft: '20px' }}>
+                      <Copy>Christmas</Copy>
+                      <Copy>Winter festival month</Copy>
+                      <Copy>Winter solstice sacrificial period</Copy>
+                      <Copy>Cranberry season</Copy>
+                    </Flex>
+                  </TextAccordion>
+                  <TextAccordion label="Show holidays"
+                    copySx={{ 
+                      color: colors.amazonBlue,
+                      fontWeight: 'bold',
+                      cursor: 'pointer'
+                      }}>
+                    <Flex col gap="4px" $sx={{ paddingLeft: '20px' }}>
+                      <Copy>Christmas</Copy>
+                      <Copy>Winter festival month</Copy>
+                      <Copy>Winter solstice sacrificial period</Copy>
+                      <Copy>Cranberry season</Copy>
+                    </Flex>
+                  </TextAccordion>
+                </SimpleForm>
               </div>
               <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }} />
             </Flex>

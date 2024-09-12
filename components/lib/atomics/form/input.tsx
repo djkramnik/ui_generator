@@ -15,6 +15,20 @@ export const Input = styled('input')<InputProps>`
   }}
 `
 
+export type TextAreaProps = WithTheme<ResponsiveComponent<'textarea'>>
+
+export const TextArea = styled('textarea')<InputProps>`
+  ${({ theme, $variant, $sx }: InputProps) => {
+    const responsive = getResponsiveStyles({
+      padding: '9px 18px',
+      borderRadius: '0.25rem',
+      border: '2px solid rgba(0, 0, 0, 0.6)',
+      ...($sx ?? {}),
+    })
+    return responsive
+  }}
+  `
+
 export const InputWithIcon = ({
   placeholder,
   inputProps,

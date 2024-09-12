@@ -22,8 +22,6 @@ React, NextJS and styled components doing the heavy lifting.
 15. register for course on code ninja
 16. register for course on udemy 
 
-
-
 Avoid going overboard with hierarchies 
 
 ## Page types to simulate
@@ -33,7 +31,6 @@ lander:business, platform:login, platform:management,
 signup:flow, signup:payment, signup:confirmation, checkout-page, product-added page, 
 sign in page, forgot password page, 
 lander:ecommerce,
-
 
 ## Sections to simulate (provides context to components )
 
@@ -63,14 +60,12 @@ icon:left, search-result, price, accordion, rating, locale-switcher,
 input:radio, input:checkbox, svg-decoration, {back to top (the literal text bro)},
 menu-item:icon, button:toggle, 
 
-
-some labels should only be found out in the context of other sections... 
+component labels that are context-free, and those that have a different meaning placed in their section
+or parent component.  i.e. a tab being just text context free, within the context of tabs it is a tab
 
 what is actually needed for these workflows... 
 you need not just the visual understanding but also semantic. 
 ie. back to top bar with small centered font.  what the hell is that 
-
-
 
 
 ## Roadmap 

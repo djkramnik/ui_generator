@@ -7,24 +7,13 @@ import { Container } from '../components/lib/layout/container'
 import { Flex, TwoCol } from '../components/lib'
 import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
-import { CssProps } from '../components/theme'
+import { colors, CssProps } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { Dropdown } from '../components/lib/atomics/form/select'
 import { Checkbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
-import { TextAccordion } from '../components/lib/atomics/accordion'
-
-const colors: Record<string, string> = {
-  gsapWhite: '#FFFCE1',
-  gsapGrey: '#7c7c6f',
-  gsapGrey2: 'rgba(255, 255, 255, 0.1)',
-  gsapGreen: '#0ae448',
-  enercareRed: '#da1b27',
-  amazonDark: '#131921',
-  amazonGrey: '#F8F8F8',
-  amazonBlue: '#007185',
-}
+import { AccordionSection, TextAccordion } from '../components/lib/atomics/accordion'
 
 const gsapInputSx: CssProps = {
   fontSize: '14px',
@@ -196,6 +185,37 @@ const Checkout: NextPage = () => {
                       <Copy>Cranberry season</Copy>
                     </Flex>
                   </TextAccordion>
+                  <div style={{ width: '500px'}}>
+                    <AccordionSection
+                      heading="A Salut">
+                      hi
+                    </AccordionSection>
+                    <AccordionSection
+                      heading="Hi Jack" open>
+                      Bye Jack
+                    </AccordionSection>
+                    <Spacer />
+                  </div>
+                  <AccordionSection
+                    heading="Do we need a security code, call box or key to access?" open>
+                    <SimpleForm>
+                      <LabelizeIt label="Security code">
+                        <Input type="text"
+                          $sx={{ width: '70%' }}
+                          placeholder="Security code for the door" />
+                      </LabelizeIt>
+                      <LabelizeIt label="Call box">
+                        <Input type="text"
+                          $sx={{ width: '70%' }}
+                          placeholder="Call box number or name" />
+                      </LabelizeIt>
+                      <Checkbox 
+                        label="Can you put on an iron shirt?"
+                        labelSx={{ fontWeight: 'bold' }}
+                        checked />
+                    </SimpleForm>
+                  </AccordionSection>
+
                 </SimpleForm>
               </div>
               <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }} />

@@ -1,6 +1,7 @@
 import { styled } from "styled-components"
 import { colors, CssProps, getResponsiveStyles, ResponsiveComponent, shadows, WithTheme } from "../../../theme"
 import { Box } from "../../layout"
+import React from "react"
 
 export type SelectProps = WithTheme<ResponsiveComponent<'select'>>
 
@@ -58,7 +59,7 @@ export const Dropdown = ({
         position: 'absolute',
         right: '8px',
         top: 'calc(50% - 12px)',
-
+        zIndex: '1',
       }}>
         <i className="fa-solid fa-chevron-down" style={{ fontSize: '12px' }} />
       </div>
@@ -78,47 +79,114 @@ export const Dropdown = ({
             </Select>
           )
           : (
-            <>
+            <Box $sx={{
+              position: 'relative',
+              fontSize: '16px',
+              padding: '9px 6px',
+              borderRadius: '0.25rem',
+              fontWeight: '400',
+              border: '2px solid rgba(0, 0, 0, 0.6)',
+              backgroundColor: '#fff',
+              ...selectSx,
+            }}>
+              {value}
               <Box $sx={{
-                position: 'relative',
-                fontSize: '16px',
-                padding: '9px 6px',
+                position: 'absolute',
+                top: 'calc(100% + 5px)',
+                left: '0',
+                width: '100%',
+                height: 'auto',
                 borderRadius: '0.25rem',
-                fontWeight: '400',
-                border: '2px solid rgba(0, 0, 0, 0.6)',
-                ...selectSx,
+                padding: '6px',
+                backgroundColor: '#fff',
+                boxShadow: shadows.lichessCard
               }}>
-                {value}
-                <Box $sx={{
-                  position: 'absolute',
-                  bottom: '-130px',
-                  left: '0',
-                  width: '100%',
-                  height: 'auto',
-                  borderRadius: '0.25rem',
-                  padding: '6px',
-                  backgroundColor: '#fff',
-                  boxShadow: shadows.lichessCard
-                }}>
-                  {
-                    options.map((optionText) => {
-                      return (
-                        <Box $sx={{
-                          padding: '4px 6px',
-                          backgroundColor: value === optionText
-                            ? colors.antBlueLight
-                            : 'transparent'
-                        }}>
-                          {optionText}
-                        </Box>
-                      )
-                    })
-                  }
-                </Box>
+                {
+                  options.map((optionText) => {
+                    return (
+                      <Box $sx={{
+                        padding: '4px 6px',
+                        backgroundColor: value === optionText
+                          ? colors.antBlueLight
+                          : 'transparent'
+                      }}>
+                        {optionText}
+                      </Box>
+                    )
+                  })
+                }
               </Box>
-            </>
+            </Box>
           )
       }
+    </Box>
+  )
+}
+
+export const DropdownBubble = ({
+  children,
+  label,
+  selectSx,
+  containerSx,
+}: {
+  children?: React.ReactNode
+  label: string
+  selectSx?: CssProps
+  containerSx?: CssProps
+}) => {
+  return (
+    <Box $sx={{
+      position: 'relative',
+      display: 'inline-block',
+      width: 'fit-content'
+    }}>
+      <div style={{
+        pointerEvents: 'none',
+        position: 'absolute',
+        right: '8px',
+        top: 'calc(50% - 12px)',
+        zIndex: '1',
+      }}>
+        <i className="fa-solid fa-chevron-down" style={{ fontSize: '12px' }} />
+      </div>
+    <Box $sx={{
+      position: 'relative',
+      fontSize: '16px',
+      padding: '9px 6px',
+      borderRadius: '0.25rem',
+      fontWeight: '400',
+      border: '2px solid rgba(0, 0, 0, 0.6)',
+      backgroundColor: '#fff',
+      ...selectSx,
+    }}>
+      {label}
+      <Box $sx={{
+        position: 'absolute',
+        top: '100%',
+        width: '0', 
+        height: '0', 
+        borderLeft: '5px solid transparent',
+        borderRight: '5px solid transparent',
+        borderBottom: '5px solid #fff',
+      }}>
+      </Box>
+      <Box $sx={{
+        position: 'absolute',
+        top: `calc(100% + 5px)`,
+        left: '0',
+        minWidth: '100%',
+        height: 'auto',
+        borderRadius: '0.25rem',
+        padding: '6px',
+        backgroundColor: '#fff',
+        boxShadow: shadows.lichessCard,
+        ...containerSx
+      }}>
+        {
+          children
+        }
+      </Box>
+    </Box>
     </Box>
   )
 }

@@ -10,7 +10,7 @@ import { Spacer } from '../components/lib/layout/spacer'
 import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
 import { ThemeToggle } from '../components/lib/theme_toggle'
-import { Dropdown } from '../components/lib/atomics/form/select'
+import { Dropdown, DropdownBubble } from '../components/lib/atomics/form/select'
 import { Checkbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
 import { AccordionSection, TextAccordion } from '../components/lib/atomics/accordion'
@@ -263,14 +263,24 @@ const Checkout: NextPage = () => {
                   <Heading level={3}>Der Glock</Heading>
                 </Modal>
               </div>
-              <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }} />
+              <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }}>
+
+              </div>
             </Flex>
             <div style={{ 
               width: '100%',
               height: '300px',
-              backgroundColor: '#fff',
+              backgroundColor: '#aaa',
               padding: '0 20px',
-              }} />
+              }}>
+                <DropdownBubble 
+                selectSx={{ width: '300px' }}
+                label="Accomplish great things?">
+                  <Image $sx={{ width: '300px'}} 
+                    src="/thumbs/cnn88.jpg"
+                  />
+                </DropdownBubble>
+              </div>
           </TwoCol>
         </Container>
       </div>

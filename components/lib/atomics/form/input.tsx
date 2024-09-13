@@ -36,7 +36,7 @@ export const InputWithIcon = ({
   iconStyles,
 }: {
   placeholder?: string
-  inputProps?: InputProps
+  inputProps?: Omit<InputProps, 'theme'>
   icon: string
   iconStyles?: CSSProperties
 }) => {
@@ -46,9 +46,9 @@ export const InputWithIcon = ({
         color: '#da1b27',
         fontSize: '18px',
         zIndex: 1,
-        position: 'relative',
-        left: '30px',
-        top: '2px',
+        position: 'absolute',
+        left: '15px',
+        top: '25%',
         ...iconStyles,
       }}/>
       <Input placeholder={placeholder} {...inputProps} $sx={{ 

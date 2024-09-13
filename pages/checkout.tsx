@@ -5,7 +5,7 @@ import { Navbar, NavbarLinks } from '../components/lib/applied'
 import { GsapLogo } from '../components/svg'
 import { Container } from '../components/lib/layout/container'
 import { Box, Flex, TwoCol } from '../components/lib'
-import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image } from '../components/lib/atomics'
+import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
 import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
@@ -258,13 +258,37 @@ const Checkout: NextPage = () => {
                       selectSx={{ width: '300px' }}
                       />
                   </LabelizeIt>
+                  <Spacer />
+                  <Spacer />
                 </SimpleForm>
                 <Modal open={openModal}>
                   <Heading level={3}>Der Glock</Heading>
                 </Modal>
               </div>
               <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }}>
-
+                <Autocomplete open inputProps={{ 
+                  placeholder: 'Search horror movie',
+                  $sx: { borderRadius: '24px' }
+                  }}>
+                    {
+                      ['Showing 3 results', 'The Shining', 'Exorcist', 'Alien']
+                        .map((movie, index) => {
+                          return (
+                            <Box $sx={{
+                              padding: '4px 6px',
+                              fontWeight: index === 0
+                                ? 'bold'
+                                : 'initial',
+                              backgroundColor: index === 1
+                                ? colors.antBlueLight
+                                : 'transparent'
+                            }}>
+                              {movie}
+                            </Box>
+                          )
+                        })
+                    }
+                </Autocomplete>
               </div>
             </Flex>
             <div style={{ 

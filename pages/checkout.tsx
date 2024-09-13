@@ -4,16 +4,19 @@ import type { NextPage } from 'next'
 import { Navbar, NavbarLinks } from '../components/lib/applied'
 import { GsapLogo } from '../components/svg'
 import { Container } from '../components/lib/layout/container'
-import { Flex, TwoCol } from '../components/lib'
-import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata } from '../components/lib/atomics'
+import { Box, Flex, TwoCol } from '../components/lib'
+import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
-import { colors, CssProps } from '../components/theme'
+import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { Dropdown } from '../components/lib/atomics/form/select'
 import { Checkbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
 import { AccordionSection, TextAccordion } from '../components/lib/atomics/accordion'
+import { Modal } from '../components/lib/atomics/modal'
+import { useState } from 'react'
+import { Tabs } from '../components/lib/atomics/tabs'
 
 const gsapInputSx: CssProps = {
   fontSize: '14px',
@@ -30,8 +33,19 @@ const errorSx: CssProps = {
 }
 
 const Checkout: NextPage = () => {
+  const [openModal, setOpenModal] = useState<boolean>(false)
   return (
     <>
+    <button style={{
+      position: 'fixed',
+      top: '0',
+      left: '0',
+      backgroundColor: 'tan',
+      zIndex: '100'
+    }}
+      onClick={() => setOpenModal(open => !open)}>
+        Toggle Modal
+    </button>
     <ThemeToggle />
       <div style={{ minHeight: '100vh', backgroundColor: '#333'}}>
         <Navbar h="60px" flexProps={{
@@ -130,6 +144,24 @@ const Checkout: NextPage = () => {
           <TwoCol widthLeft="70%" growRight>
             <Flex col gap="20px" $sx={{ padding: '0 20px' }}>
               <div style={{ width: '100%', minHeight: '300px', backgroundColor: '#fff', padding: '20px 0' }}>
+                <Tabs
+                  selectedIndex={0}
+                  tabs={['computer analysis', 
+                  'chess tactics', 'chess books', 'great new deals']}>
+                    <Box $sx={{
+                      minHeight: '400px',
+                      boxShadow: shadows.lichessCard,
+                      padding: '20px'
+                    }}>
+                      <Flex col gap="12px">
+                        <Heading level={3}>
+                          Der Glock
+                        </Heading>
+                        <Image src="/thumbs/cnn74.jpg" $sx={{ width: '100%' }} />
+                      </Flex>
+                    </Box>
+                </Tabs>
+                <Spacer />
                 <SimpleForm>
                   <LabelizeIt label="Casual Greeting *">
                     <Dropdown
@@ -213,10 +245,23 @@ const Checkout: NextPage = () => {
                         label="Can you put on an iron shirt?"
                         labelSx={{ fontWeight: 'bold' }}
                         checked />
+                        <LabelizeIt label="Put random quackery">
+                          <TextArea rows={3}>Think of me as a curious farmboy</TextArea>
+                        </LabelizeIt>
                     </SimpleForm>
                   </AccordionSection>
-
+                  <LabelizeIt label="Reggae">
+                    <Dropdown
+                      artificial
+                      value="reggae"
+                      options={['reggae', 'hey', 'ayo', 'kookamunga']}
+                      selectSx={{ width: '300px' }}
+                      />
+                  </LabelizeIt>
                 </SimpleForm>
+                <Modal open={openModal}>
+                  <Heading level={3}>Der Glock</Heading>
+                </Modal>
               </div>
               <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }} />
             </Flex>

@@ -10,4 +10,9 @@ export const colors: Record<string, string> = {
   amazonDark: '#131921',
   amazonGrey: '#F8F8F8',
   amazonBlue: '#007185',
+  antBlueLight: '#e6f4ff'
+}
+
+export const shadows: Record<string, string> = {
+  lichessCard: '0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)'
 }

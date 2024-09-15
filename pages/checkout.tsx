@@ -17,6 +17,7 @@ import { AccordionSection, TextAccordion } from '../components/lib/atomics/accor
 import { Modal } from '../components/lib/atomics/modal'
 import { useState } from 'react'
 import { Tabs } from '../components/lib/atomics/tabs'
+import { getGenericColumns, BasicTable } from '../components/lib/atomics/table'
 
 const gsapInputSx: CssProps = {
   fontSize: '14px',
@@ -161,6 +162,26 @@ const Checkout: NextPage = () => {
                       </Flex>
                     </Box>
                 </Tabs>
+                <Spacer />
+                <BasicTable<object>
+                  headers={[
+                    'why it is',
+                    'always',
+                    'suffering'
+                  ]}
+                  data={
+                    [{
+                      'a': 'adslfkasjlfkj',
+                      'b': 'aldksjflaskdjf',
+                      'c': 'asldfkjasldkfj'
+                    }, {
+                      'a': 'frig',
+                      'b': 'the',
+                      'c': 'world'
+                    }]
+                  }
+                  columns={getGenericColumns(['a', 'b', 'c'])}
+                />
                 <Spacer />
                 <SimpleForm>
                   <LabelizeIt label="Casual Greeting *">

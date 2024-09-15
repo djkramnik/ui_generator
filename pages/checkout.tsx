@@ -11,7 +11,7 @@ import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { Dropdown, DropdownBubble } from '../components/lib/atomics/form/select'
-import { Checkbox } from '../components/lib/atomics/form/checkbox'
+import { Checkbox, CustomCheckbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
 import { AccordionSection, TextAccordion } from '../components/lib/atomics/accordion'
 import { Modal } from '../components/lib/atomics/modal'
@@ -172,6 +172,36 @@ const Checkout: NextPage = () => {
                   </LabelizeIt>
 
                   <LabelizeIt label="Random shit">
+                    <CustomCheckbox label="Please hoont" />
+                    <CustomCheckbox label="Dark souls > Bloodborne" checked />
+                    <CustomCheckbox
+                      icon={<i className="fa-solid fa-check" />}
+                      label="My name John Leigh Pedimore"
+                      checked />
+                     <CustomCheckbox
+                      icon={
+                        <Copy>&#x2713;</Copy>
+                      }
+                      label="Zero tours of duty in Nam"
+                      checked />
+                      <CustomCheckbox
+                        label="Im a friggin idiot"
+                        checked
+                        iconSx={{ color: 'white' }}
+                        inputSx={{ backgroundColor: 'green', border: 'none' }}
+                      />
+                      <CustomCheckbox 
+                        label="Im invincible?"
+                        checked
+                        radio
+                        icon={<Box $sx={{
+                          backgroundColor: 'blue',
+                          borderRadius: '50%',
+                          width: '100%',
+                          aspectRatio: '1',
+                        }} />}
+                        inputSx={{ padding: '2px' }}
+                      />
                     <Checkbox label="Can you put on an iron shirt?" checked />
                     <Checkbox radio label="I will chase Satan out of earf" checked />
                   </LabelizeIt>
@@ -271,7 +301,7 @@ const Checkout: NextPage = () => {
                   $sx: { borderRadius: '24px' }
                   }}>
                     {
-                      ['Showing 3 results', 'The Shining', 'Exorcist', 'Alien']
+                      ['Showing 3 results', 'The Shining', 'The Exorcist', 'Alien']
                         .map((movie, index) => {
                           return (
                             <Box $sx={{

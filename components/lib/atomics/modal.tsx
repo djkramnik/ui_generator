@@ -1,6 +1,7 @@
 import React from "react"
 import { CssProps } from "../../theme"
 import { Box } from "../layout"
+import { Modal as MuiModal } from '@mui/material'
 
 const DefaultCloseIcon = ({}) => {
   return (
@@ -13,6 +14,15 @@ const DefaultCloseIcon = ({}) => {
   )
 }
 
+type ModalProps = {
+  backgroundSx?: CssProps
+  containerSx?: CssProps
+  children?: React.ReactNode
+  closeIcon?: React.ReactNode
+  closeIconContainerSx?: CssProps
+  open?: Boolean
+}
+
 export const Modal = ({
   backgroundSx,
   containerSx,
@@ -20,14 +30,7 @@ export const Modal = ({
   closeIcon,
   closeIconContainerSx,
   open,
-}: {
-  backgroundSx?: CssProps
-  containerSx?: CssProps
-  children?: React.ReactNode
-  closeIcon?: React.ReactNode
-  closeIconContainerSx?: CssProps
-  open?: Boolean
-}) => {
+}: ModalProps) => {
   return (
     <Box $sx={{
       backgroundColor: 'rgba(0, 0, 0, 0.6)',
@@ -66,5 +69,39 @@ export const Modal = ({
         {children}
       </Box>
     </Box>
+  )
+}
+
+export const ChimericModal = (props: ModalProps & {
+  mui?: boolean
+  handleClose?: () => void
+}) => {
+  const { children, mui, open, handleClose, ...rest } = props
+  if (mui) {
+    return (
+      <MuiModal disableEnforceFocus
+        open={open === true} onClose={handleClose}>
+        <Box $sx={{
+          margin: 'auto',
+          backgroundColor: '#fff',
+          width: '45vw',
+          minWidth: '500px',
+          height: '40vw',
+          minHeight: '300px',
+          position: 'absolute' as 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          ...rest.containerSx,
+        }}>
+          {children}
+        </Box>
+      </MuiModal>
+    )
+  }
+  return (
+    <Modal {...rest} open={open}>
+      {children}
+    </Modal>
   )
 }

@@ -14,7 +14,7 @@ import { Dropdown, DropdownBubble } from '../components/lib/atomics/form/select'
 import { Checkbox, CustomCheckbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
 import { AccordionSection, TextAccordion } from '../components/lib/atomics/accordion'
-import { Modal } from '../components/lib/atomics/modal'
+import { ChimericModal, Modal } from '../components/lib/atomics/modal'
 import { useState } from 'react'
 import { Tabs } from '../components/lib/atomics/tabs'
 import { getGenericColumns, BasicTable, Pagination } from '../components/lib/atomics/table'
@@ -374,9 +374,10 @@ const Checkout: NextPage = () => {
                   <Spacer />
                   <Spacer />
                 </SimpleForm>
-                <Modal open={openModal}>
+                <ChimericModal mui open={openModal}
+                  handleClose={() => setOpenModal(false)}>
                   <Heading level={3}>Der Glock</Heading>
-                </Modal>
+                </ChimericModal>
               </div>
               <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }}>
                 <Autocomplete open inputProps={{ 

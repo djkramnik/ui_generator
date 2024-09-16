@@ -16,7 +16,7 @@ import { Toggle } from '../components/lib/atomics/form/toggle'
 import { AccordionSection, TextAccordion } from '../components/lib/atomics/accordion'
 import { ChimericModal, Modal } from '../components/lib/atomics/modal'
 import { useState } from 'react'
-import { Tabs } from '../components/lib/atomics/tabs'
+import { ChimericTabs, Tabs } from '../components/lib/atomics/tabs'
 import { getGenericColumns, BasicTable, Pagination } from '../components/lib/atomics/table'
 import { Carousel } from '../components/lib/applied/carousel'
 
@@ -208,6 +208,25 @@ const Checkout: NextPage = () => {
                       </Flex>
                     </Box>
                 </Tabs>
+                <Spacer />
+                <ChimericTabs
+                  mui
+                  selectedIndex={0}
+                  tabs={['computer analysis', 
+                  'chess tactics', 'chess books', 'great new deals']}>
+                    <Box $sx={{
+                      minHeight: '400px',
+                      boxShadow: shadows.lichessCard,
+                      padding: '20px'
+                    }}>
+                      <Flex col gap="12px">
+                        <Heading level={3}>
+                          Der Glock
+                        </Heading>
+                        <Image src="/thumbs/cnn74.jpg" $sx={{ width: '100%' }} />
+                      </Flex>
+                    </Box>
+                </ChimericTabs>
                 <Spacer />
                 <Flex col gap="12px">
                   <Pagination

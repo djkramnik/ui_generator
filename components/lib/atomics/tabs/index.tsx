@@ -1,5 +1,7 @@
+import React from "react"
 import { colors, CssProps, shadows } from "../../../theme"
 import { Box, Flex } from "../../layout"
+import {Tabs as MuiTabs, Tab as MuiTab} from '@mui/material'
 
 const DefaultTab = ({
   containerSx,
@@ -74,5 +76,36 @@ export const Tabs = ({
         {children}
       </Box>
     </Flex>
+  )
+}
+
+export const ChimericTabs = (props: TabsProps & {
+  mui?: boolean
+}) => {
+  const { children, tabs, mui, ...rest} = props
+  if (mui) {
+    return (
+      <Box $sx={{ width: '100%'}}>
+        <Box>
+          <MuiTabs value={rest.selectedIndex}>
+            {
+              tabs.map(t => {
+                return (
+                  <MuiTab key={t} label={t} />
+                )
+              })
+            }
+          </MuiTabs>
+        </Box>
+        {
+          children
+        }
+      </Box>
+    )
+  }
+  return (
+    <Tabs tabs={tabs} {...rest}>
+      {children}
+    </Tabs>
   )
 }

@@ -5,7 +5,7 @@ import { Navbar, NavbarLinks } from '../components/lib/applied'
 import { GsapLogo } from '../components/svg'
 import { Container } from '../components/lib/layout/container'
 import { Box, Flex, TwoCol } from '../components/lib'
-import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete } from '../components/lib/atomics'
+import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
 import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
@@ -116,7 +116,7 @@ const Checkout: NextPage = () => {
                     fontWeight: 'normal',
                     color: colors.gsapGrey,
                   }}>Already signed up?</Heading>
-                  <Anchor href="#">Sign In</Anchor>
+                  <ChimericAnchor href="#" mui>Sign In</ChimericAnchor>
                 </Flex>
               </Flex>
               <Spacer h="12px" />

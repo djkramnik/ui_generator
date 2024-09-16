@@ -17,3 +17,7 @@ export const shadows: Record<string, string> = {
   lichessCard: '0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)',
   card: '0 3px 6px rgba(149,157,165,.15)'
 }
+
+export const backgrounds: Record<string, string> = {
+  grey: 'linear-gradient(to bottom, rgba(230, 230, 230, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);'
+}

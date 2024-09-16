@@ -17,7 +17,8 @@ import { AccordionSection, TextAccordion } from '../components/lib/atomics/accor
 import { Modal } from '../components/lib/atomics/modal'
 import { useState } from 'react'
 import { Tabs } from '../components/lib/atomics/tabs'
-import { getGenericColumns, BasicTable } from '../components/lib/atomics/table'
+import { getGenericColumns, BasicTable, Pagination } from '../components/lib/atomics/table'
+import { Carousel } from '../components/lib/applied/carousel'
 
 const gsapInputSx: CssProps = {
   fontSize: '14px',
@@ -48,6 +49,51 @@ const Checkout: NextPage = () => {
         Toggle Modal
     </button>
     <ThemeToggle />
+      <div style={{ backgroundColor: '#eee'}}>
+        <Carousel
+          h="300px"
+          bgi="url(https://m.media-amazon.com/images/I/71DMmDvKxKL._SX3000_.jpg)"
+          iconLeft={
+          <div style={{ 
+            height: '300px',
+            width: '60px',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            }}>
+            <i className="fa-solid fa-chevron-left"
+            style={{ color: '#fff', fontSize: '40px' }} />
+          </div>}
+          iconRight={
+          <div style={{
+            height: '300px',
+            width: '60px',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+          }}>
+            <i className="fa-solid fa-chevron-right"
+            style={{ color: '#fff', fontSize: '40px' }} />
+          </div>}
+          boxSx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+          }}
+          overlayContainerSx={{
+            backgroundSize: 'cover'
+          }}
+        >
+          <Heading level={2} $sx={{ textAlign: 'center' }}>
+            Celebrate Health and Wellness Month
+          </Heading>
+        </Carousel>
+      </div>
       <div style={{ minHeight: '100vh', backgroundColor: '#333'}}>
         <Navbar h="60px" flexProps={{
           $sx: { borderBottom: '1px solid', borderColor: colors.gsapWhite }
@@ -163,25 +209,42 @@ const Checkout: NextPage = () => {
                     </Box>
                 </Tabs>
                 <Spacer />
-                <BasicTable<object>
-                  headers={[
-                    'why it is',
-                    'always',
-                    'suffering'
-                  ]}
-                  data={
-                    [{
-                      'a': 'adslfkasjlfkj',
-                      'b': 'aldksjflaskdjf',
-                      'c': 'asldfkjasldkfj'
-                    }, {
-                      'a': 'frig',
-                      'b': 'the',
-                      'c': 'world'
-                    }]
-                  }
-                  columns={getGenericColumns(['a', 'b', 'c'])}
-                />
+                <Flex col gap="12px">
+                  <Pagination
+                    withEllipsis
+                    pages={[1,2,3,4,5,6,7,8]}
+                    selectedIndex={0}
+                    postfix
+                    highlightedIndex={3}
+                    containerSx={{
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <BasicTable<object>
+                    alternateColor='#eee'
+                    headers={[
+                      'why it is',
+                      'always',
+                      'suffering'
+                    ]}
+                    data={
+                      [{
+                        'a': 'adslfkasjlfkj',
+                        'b': 'aldksjflaskdjf',
+                        'c': 'asldfkjasldkfj'
+                      }, {
+                        'a': 'frig',
+                        'b': 'the',
+                        'c': 'world'
+                      }, {
+                        'a': 'I fell asleep',
+                        'b': 'she got suffocated!?,',
+                        'c': 'or somethin...'
+                      }]
+                    }
+                    columns={getGenericColumns(['a', 'b', 'c'])}
+                  />
+                </Flex>
                 <Spacer />
                 <SimpleForm>
                   <LabelizeIt label="Casual Greeting *">
@@ -191,7 +254,6 @@ const Checkout: NextPage = () => {
                       selectSx={{ width: '300px' }}
                       />
                   </LabelizeIt>
-
                   <LabelizeIt label="Random shit">
                     <CustomCheckbox label="Please hoont" />
                     <CustomCheckbox label="Dark souls > Bloodborne" checked />

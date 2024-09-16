@@ -7,6 +7,7 @@ import {
   Button,
   ChimericButton,
   ChimericButtonWithIcon,
+  ChimericHeading,
   Copy,
   Heading,
   IconButton,
@@ -148,10 +149,10 @@ const Home: NextPage = () => {
             }}>
             <Flex row aic>
               <Flex col jcc $sx={{ flexGrow: '1', width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
-                <Heading level={2} $sx={{ fontSize: '64px', lineHeight: '64px'}}>
+                <ChimericHeading mui level={2} $sx={{ fontSize: '64px', lineHeight: '64px'}}>
                   EXPLORE TORONTO,<br />
                   CAR BABIES
-                </Heading>
+                </ChimericHeading>
                 <Heading level={5} $sx={{ fontSize: '16px' }}>
                   Pay for parking with your credit card, and receive a free ticket.
                 </Heading>
@@ -237,7 +238,10 @@ const Home: NextPage = () => {
             </NavbarLinks>
             <NavbarLinks gap="18px">
               {'Log in'}
-              <Button $variant="pill">
+              <Button $variant="pill" $sx={{
+                backgroundColor: '#fff',
+                color: '#333',
+              }}>
                 Start Free Trial
               </Button>
             </NavbarLinks>

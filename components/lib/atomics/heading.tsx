@@ -1,6 +1,8 @@
 import React from "react"
-import { styled } from "styled-components"
+import { styled, useTheme } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
+import { Typography } from "@mui/material"
+import { sxToStyle } from "../../utils"
 
 export type HeadingProps = WithTheme<ResponsiveComponent<'h1'>> & { level: | 1 | 2 | 3 | 4 | 5 | 6 }
 
@@ -17,3 +19,26 @@ export const Heading = styled(
     })
   }}
 `
+
+export const ChimericHeading = (props: Omit<HeadingProps, 'theme'> & {
+  mui?: boolean
+}) => {
+  const theme = useTheme()
+  const { children, $sx, mui, level, ...rest } = props
+  if (mui) {
+    return (
+      <Typography variant={`h${level}`}
+        style={{
+          ...sxToStyle($sx ?? {}),
+          ...rest.style,
+        }}>
+        {children}
+      </Typography>
+    )
+  }
+  return (
+    <Heading level={level} $sx={$sx} theme={theme} {...rest}>
+      {children}
+    </Heading>
+  )
+}

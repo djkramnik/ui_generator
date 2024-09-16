@@ -5,7 +5,7 @@ import { Navbar, NavbarLinks } from '../components/lib/applied'
 import { GsapLogo } from '../components/svg'
 import { Container } from '../components/lib/layout/container'
 import { Box, Flex, TwoCol } from '../components/lib'
-import { Anchor, Button, Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor } from '../components/lib/atomics'
+import { Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor, ChimericButton } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
 import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
@@ -158,9 +158,9 @@ const Checkout: NextPage = () => {
                   <Input type="password" placeholder="Confirm Password" $sx={{ fontSize: '14px', padding: '12px' }} />
                 </LabelizeIt>
                 <hr />
-                <Button $variant="pill" $sx={{ fontSize: '18px' }}>
+                <ChimericButton mui $variant="pill" $sx={{ fontSize: '18px' }}>
                   Create Account
-                </Button>
+                </ChimericButton>
               </SimpleForm>
               <Spacer />
             </div>

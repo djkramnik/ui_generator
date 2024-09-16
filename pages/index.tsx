@@ -5,7 +5,8 @@ import { NavBanner, Navbar, NavbarLinks } from '../components/lib/applied'
 import { 
   Anchor,
   Button,
-  ButtonWithIcon,
+  ChimericButton,
+  ChimericButtonWithIcon,
   Copy,
   Heading,
   IconButton,
@@ -98,7 +99,8 @@ const Home: NextPage = () => {
                     View Terms and Conditions
                   </Anchor>
                 </Flex>
-                <ButtonWithIcon
+                <ChimericButtonWithIcon
+                  mui
                   $variant="pill"
                   flexProps={{ row: false, rowrev: true, $sx: { gap: '12px' } }}
                   $sx={{ width: 'fit-content', alignSelf: 'center', borderRadius: '48px' }}
@@ -154,10 +156,20 @@ const Home: NextPage = () => {
                   Pay for parking with your credit card, and receive a free ticket.
                 </Heading>
                 <Flex $sx={{ gap: '20px' }}>
-                  <ButtonWithIcon icon="arrow-right" text="PAY FOR PARKING"
+                  <ChimericButtonWithIcon
+                    mui icon="arrow-right" text="PAY FOR PARKING"
+                    bgc='#006f51'
+                    p="20px"
+                    c="#fff"
                     $sx={{ fontWeight: '800', border: '2px solid white' }} />
-                  <ButtonWithIcon icon="arrow-right" text="RIDE A BIKE"
-                    $sx={{ fontWeight: '800', border: '2px solid white' }}
+                  <ChimericButtonWithIcon icon="arrow-right" text="RIDE A BIKE"
+                    bgc='#006f51'
+                    p="20px"
+                    c="#fff"
+                    $sx={{ 
+                      fontWeight: '800',
+                      border: '2px solid white',
+                    }}
                   />
                 </Flex>
               </Flex>
@@ -188,7 +200,7 @@ const Home: NextPage = () => {
               </NavbarLinks>
               <NavbarLinks wrapChildren gap="20px" $sx={{ fontSize: '16px', fontWeight: 'bold' }}>
                 {'Contact Sales'}
-                <Button $sx={{
+                <ChimericButton $sx={{
                   backgroundColor: '#fff',
                   color: '#FFC300',
                   borderRadius: '24px',
@@ -197,7 +209,7 @@ const Home: NextPage = () => {
                   fontSize: '16px'
                 }}>
                   Sign In
-                </Button>
+                </ChimericButton>
               </NavbarLinks>
 
             </Navbar>

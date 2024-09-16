@@ -22,10 +22,10 @@ export const Anchor = styled('a')<AnchorProps>`
 export const ChimericAnchor = (props: Omit<AnchorProps, 'theme'> & {
   mui?: boolean
 }) => {
-  const { children, $sx, ...rest} = props
+  const { children, $sx, mui, ...rest} = props
   const theme = useTheme()
 
-  if (rest.mui) {
+  if (mui) {
     return (
       <Link {...rest } style={{
         ...sxToStyle($sx ?? {}),

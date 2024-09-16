@@ -12,6 +12,17 @@ import {
 import { Box, Flex } from '../../layout'
 import { Position } from '../position'
 import React from 'react'
+import { 
+  Table as MuiTable,
+  TableContainer as MuiTableContainer,
+  TableBody as MuiTableBody,
+  TableHead as MuiTableHead,
+  TableRow as MuiTableRow,
+  TableCell as MuiTableCell,
+  Paper,
+  Pagination as MuiPagination
+} from '@mui/material' 
+import { sxToStyle } from '../../../utils'
 
 // styled component shit
 
@@ -125,6 +136,16 @@ const Page = ({
   )
 }
 
+type PaginationProps = {
+  selectedIndex: number
+  pages: number[]
+  withEllipsis?: boolean
+  containerSx?: CssProps
+  prefix?: boolean
+  postfix?: boolean
+  highlightedIndex?: number
+}
+
 export const Pagination = ({
   selectedIndex,
   pages,
@@ -133,15 +154,7 @@ export const Pagination = ({
   prefix,
   postfix,
   highlightedIndex,
-}: {
-  selectedIndex: number
-  pages: number[]
-  withEllipsis?: boolean
-  containerSx?: CssProps
-  prefix?: boolean
-  postfix?: boolean
-  highlightedIndex?: number
-}) => {
+}: PaginationProps) => {
   const highlighted = {
     background: colors.amazonDark,
     color: colors.gsapWhite
@@ -214,19 +227,37 @@ export const Pagination = ({
   )
 }
 
+export const ChimericPagination = (props: PaginationProps & {
+  mui?: boolean
+}) => {
+  const {mui, ...rest} = props
+  if (mui) {
+    return (
+      <MuiPagination count={props.pages.length}
+        defaultPage={rest.selectedIndex}
+        variant="outlined" />
+    )
+  }
+  return (
+    <Pagination {...rest} />
+  )
+}
+
+type BasicTableProps<T extends RowType = object> = {
+  data: T[]
+  columns: Columns<T>
+  headers?: string[]
+  tableProps?: Omit<TableProps, 'theme'>
+  alternateColor?: ResponsiveMixin
+}
+
 export const BasicTable = <T extends RowType = object>({
   data,
   columns,
   headers,
   tableProps,
   alternateColor,
-}: {
-  data: T[]
-  columns: Columns<T>
-  headers?: string[]
-  tableProps?: Omit<TableProps, 'theme'>
-  alternateColor?: ResponsiveMixin
-}) => {
+}: BasicTableProps<T>) => {
   const sortedColumns = Object.entries(columns)
     .map(([k, v]) => {
       const value = v as Columns<T>[typeof k]
@@ -244,7 +275,6 @@ export const BasicTable = <T extends RowType = object>({
           {sortedColumns.map((_, i) => {
             const header = headers[i]
             return (
-
                 <TableHeader key={`header_${i}`} $sx={{ 
                   position: 'relative',
                   textAlign: 'center',
@@ -302,5 +332,78 @@ export const BasicTable = <T extends RowType = object>({
         })}
       </tbody>
     </Table>
+  )
+}
+
+export const ChimericTable = <T extends RowType = object>(props: BasicTableProps<T> & {
+  mui?: boolean
+}) => {
+  
+  const sortedColumns = Object.entries(props.columns)
+  .map(([k, v]) => {
+    const value = v as Columns<T>[typeof k]
+    return {
+      key: k,
+      render: value.config.render,
+      order: value.order,
+    }
+  })
+  .sort((a, b) => a.order - b.order)
+
+  if (props.mui) {
+    return (
+      <MuiTableContainer component={Paper}>
+        <MuiTable {...props.tableProps} style={{
+          ...props.tableProps?.style,
+          ...sxToStyle(props.tableProps?.$sx ?? {})
+        }}>
+          <MuiTableHead>
+            <MuiTableRow>
+              {
+                sortedColumns.map((_, i) => {
+                  const header = props.headers?.[i]
+                  return (
+                    <MuiTableCell style={{
+                      borderBottom: '1px solid #333',
+                      textAlign: 'center',
+                      fontWeight: 'bold'
+                    }}>
+                      {header ?? null}
+                    </MuiTableCell>
+                  )
+                })         
+              }
+            </MuiTableRow>
+          </MuiTableHead>
+          <MuiTableBody>
+            {props.data.map((row, i) => {
+            return (
+              <MuiTableRow>
+                {sortedColumns.map(({ key, render }, j) => {
+                  return (
+                    <MuiTableCell
+                      style={{
+                        borderRight: j !== sortedColumns.length - 1
+                          ? '1px solid #333'
+                          : 'none',
+                        backgroundColor: typeof props.alternateColor === 'string' && !(i % 2)
+                          ? props.alternateColor
+                          : 'initial'
+                      }} 
+                      key={`${i}_${j}`}>
+                      {render(row[key], row)}
+                    </MuiTableCell>
+                  )
+                })}
+              </MuiTableRow>
+            )
+          })}
+          </MuiTableBody>
+        </MuiTable>
+      </MuiTableContainer>
+    )
+  }
+  return (
+    <BasicTable<T> {...props} />
   )
 }

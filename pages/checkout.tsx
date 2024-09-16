@@ -17,7 +17,7 @@ import { AccordionSection, TextAccordion } from '../components/lib/atomics/accor
 import { ChimericModal, Modal } from '../components/lib/atomics/modal'
 import { useState } from 'react'
 import { ChimericTabs, Tabs } from '../components/lib/atomics/tabs'
-import { getGenericColumns, BasicTable, Pagination } from '../components/lib/atomics/table'
+import { getGenericColumns, BasicTable, Pagination, ChimericTable, ChimericPagination } from '../components/lib/atomics/table'
 import { Carousel } from '../components/lib/applied/carousel'
 
 const gsapInputSx: CssProps = {
@@ -229,6 +229,37 @@ const Checkout: NextPage = () => {
                 </ChimericTabs>
                 <Spacer />
                 <Flex col gap="12px">
+                  <ChimericPagination
+                    mui
+                    pages={[1,2,3,4,5,6,7,8]}
+                    selectedIndex={0}
+                  />
+                  <ChimericTable<object>
+                    mui
+                    alternateColor='#eee'
+                    headers={[
+                      'why it is',
+                      'always',
+                      'suffering'
+                    ]}
+                    data={
+                      [{
+                        'a': 'adslfkasjlfkj',
+                        'b': 'aldksjflaskdjf',
+                        'c': 'asldfkjasldkfj'
+                      }, {
+                        'a': 'frig',
+                        'b': 'the',
+                        'c': 'world'
+                      }, {
+                        'a': 'I fell asleep',
+                        'b': 'she got suffocated!?,',
+                        'c': 'or somethin...'
+                      }]
+                    }
+                    columns={getGenericColumns(['a', 'b', 'c'])}
+                  />
+                  <Spacer />
                   <Pagination
                     withEllipsis
                     pages={[1,2,3,4,5,6,7,8]}

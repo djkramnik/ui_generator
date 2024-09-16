@@ -5,7 +5,7 @@ import { Navbar, NavbarLinks } from '../components/lib/applied'
 import { GsapLogo } from '../components/svg'
 import { Container } from '../components/lib/layout/container'
 import { Box, Flex, TwoCol } from '../components/lib'
-import { Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor, ChimericButton } from '../components/lib/atomics'
+import { Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor, ChimericButton, ChimericCopy } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
 import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
@@ -173,12 +173,12 @@ const Checkout: NextPage = () => {
             <AmazonPrimeLogo />
           </NavbarLinks>
           <NavbarLinks $sx={{ justifyContent: 'center' }}>
-            <Copy $sx={{
+            <ChimericCopy mui $sx={{
               fontSize: '30px',
               color: colors.gsapWhite,
             }}>
               Secure Checkout
-            </Copy>
+            </ChimericCopy>
             <i className="fa-solid fa-chevron-down" style={{ fontSize: '20px '}} />
           </NavbarLinks>
           <NavbarLinks $sx={{ width: '200px', justifyContent: 'flex-end'}}>
@@ -311,8 +311,8 @@ const Checkout: NextPage = () => {
                       cursor: 'pointer'
                       }}>
                     <Flex col gap="4px" $sx={{ paddingLeft: '20px' }}>
-                      <Copy>Christmas</Copy>
-                      <Copy>Winter festival month</Copy>
+                      <ChimericCopy>Christmas</ChimericCopy>
+                      <ChimericCopy mui>Winter festival month</ChimericCopy>
                       <Copy>Winter solstice sacrificial period</Copy>
                       <Copy>Cranberry season</Copy>
                     </Flex>

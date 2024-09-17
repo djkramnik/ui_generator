@@ -13,7 +13,7 @@ import { ThemeToggle } from '../components/lib/theme_toggle'
 import { Dropdown, DropdownBubble } from '../components/lib/atomics/form/select'
 import { Checkbox, CustomCheckbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
-import { AccordionSection, TextAccordion } from '../components/lib/atomics/accordion'
+import { AccordionSection, ChimericAccordion, TextAccordion } from '../components/lib/atomics/accordion'
 import { ChimericModal, Modal } from '../components/lib/atomics/modal'
 import { useState } from 'react'
 import { ChimericTabs, Tabs } from '../components/lib/atomics/tabs'
@@ -389,6 +389,9 @@ const Checkout: NextPage = () => {
                       heading="Hi Jack" open>
                       Bye Jack
                     </AccordionSection>
+                    <ChimericAccordion mui heading="Hi Jack" open>
+                      Bye Jack
+                    </ChimericAccordion>
                     <Spacer />
                   </div>
                   <AccordionSection

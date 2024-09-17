@@ -1,6 +1,9 @@
+import { AccordionDetails, AccordionSummary } from "@mui/material";
 import { colors, CssProps } from "../../../theme"
 import { Box, Flex } from "../../layout"
 import { Heading } from "../heading"
+import MuiAccordion from '@mui/material/Accordion';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const DefaultIcon = ({ open }: { open: boolean }) => {
   return (
@@ -8,6 +11,17 @@ const DefaultIcon = ({ open }: { open: boolean }) => {
     className={`fa-solid fa-chevron-${open ? 'up' : 'down'}`}
     />
   )
+}
+
+type AccordionProps = {
+  heading: string
+  open?: boolean
+  headingContainerSx?: CssProps
+  headingSx?: CssProps
+  boxSx?: CssProps
+  containerSx?: CssProps
+  children?: React.ReactNode
+  icon?: React.ReactNode
 }
 
 export const AccordionSection = ({
@@ -19,16 +33,7 @@ export const AccordionSection = ({
   containerSx,
   children,
   icon,
-}: {
-  heading: string
-  open?: boolean
-  headingContainerSx?: CssProps
-  headingSx?: CssProps
-  boxSx?: CssProps
-  containerSx?: CssProps
-  children?: React.ReactNode
-  icon?: React.ReactNode
-}) => {
+}: AccordionProps) => {
   return (
     <Box $sx={{
       border: '1px solid #aaa',
@@ -63,5 +68,28 @@ export const AccordionSection = ({
           : null
       }
     </Box>
+  )
+}
+
+export const ChimericAccordion = (props: AccordionProps & {
+  mui?: boolean
+}) => {
+  const { children, mui, open, ...rest } = props
+  if (mui) {
+    return (
+      <MuiAccordion defaultExpanded={open === true}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          {rest.heading}
+        </AccordionSummary>
+        <AccordionDetails>
+          {children}
+        </AccordionDetails>
+      </MuiAccordion>
+    )
+  }
+  return (
+    <AccordionSection {...rest}>
+      {children}
+    </AccordionSection>
   )
 }

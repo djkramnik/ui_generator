@@ -2,6 +2,8 @@ import { styled } from "styled-components"
 import { colors, CssProps, getResponsiveStyles, ResponsiveComponent, shadows, WithTheme } from "../../../theme"
 import { Box } from "../../layout"
 import React from "react"
+import MuiSelect from "@mui/material/Select"
+import { MenuItem } from "@mui/material"
 
 export type SelectProps = WithTheme<ResponsiveComponent<'select'>>
 
@@ -36,18 +38,20 @@ export const Option = styled('option')<SelectProps>`
   }}
 `
 
+type DropdownProps = {
+  options: string[]
+  value?: string
+  selectSx?: CssProps
+  artificial?: boolean
+}
+
 // ego lifting 
 export const Dropdown = ({
   options,
   selectSx,
   value,
   artificial,
-}: {
-  options: string[]
-  value?: string
-  selectSx?: CssProps
-  artificial?: boolean
-}) => {
+}: DropdownProps) => {
   return (
     <Box $sx={{
       position: 'relative',
@@ -120,6 +124,31 @@ export const Dropdown = ({
           )
       }
     </Box>
+  )
+}
+
+export const ChimericDropdown = (props: DropdownProps & {
+  mui?: boolean
+  label?: string
+}) => {
+  const { mui, ...rest } = props
+  if (mui) {
+    return (
+      <MuiSelect label={props.label} value={rest.value}>
+        {
+          props.options.map((optionText, i) => {
+            return (
+              <MenuItem key={`${optionText}_${i}`} value={optionText}>
+                {optionText}
+              </MenuItem>
+            )
+          })
+        }
+      </MuiSelect>
+    )
+  }
+  return (
+    <Dropdown {...rest} />
   )
 }
 

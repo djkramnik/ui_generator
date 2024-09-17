@@ -1,6 +1,8 @@
-import { CSSProperties, styled } from "styled-components"
+import { CSSProperties, styled, useTheme } from "styled-components"
 import { CssProps, getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../../theme"
 import { Flex } from "../../layout"
+import { Input as MuiInput } from "@mui/material"
+import { sxToStyle } from "../../../utils"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 
@@ -14,6 +16,29 @@ export const Input = styled('input')<InputProps>`
     return responsive
   }}
 `
+
+export const ChimericInput = (props: Omit<InputProps, 'theme'> & {
+  mui?: boolean
+}) => {
+  const theme = useTheme()
+  const { mui, $sx, style, ...rest } = props
+  if (mui) {
+    return (
+      <MuiInput
+        style={{
+          ...sxToStyle($sx ?? {}),
+          ...style,
+        }}
+        type={rest.type}
+        value={rest.value}
+        placeholder={rest.placeholder}
+      />
+    )
+  }
+  return (
+    <Input {...rest} $sx={$sx} style={style} theme={theme} />
+  )
+}
 
 export type TextAreaProps = WithTheme<ResponsiveComponent<'textarea'>>
 

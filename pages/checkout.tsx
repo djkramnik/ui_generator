@@ -5,12 +5,12 @@ import { Navbar, NavbarLinks } from '../components/lib/applied'
 import { GsapLogo } from '../components/svg'
 import { Container } from '../components/lib/layout/container'
 import { Box, Flex, TwoCol } from '../components/lib'
-import { Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor, ChimericButton, ChimericCopy, ChimericAutocomplete } from '../components/lib/atomics'
+import { Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor, ChimericButton, ChimericCopy, ChimericAutocomplete, ChimericInput } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
 import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
 import { ThemeToggle } from '../components/lib/theme_toggle'
-import { Dropdown, DropdownBubble } from '../components/lib/atomics/form/select'
+import { ChimericDropdown, Dropdown, DropdownBubble } from '../components/lib/atomics/form/select'
 import { Checkbox, ChimericCheckbox, CustomCheckbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
 import { AccordionSection, ChimericAccordion, TextAccordion } from '../components/lib/atomics/accordion'
@@ -409,14 +409,18 @@ const Checkout: NextPage = () => {
                     heading="Do we need a security code, call box or key to access?" open>
                     <SimpleForm>
                       <LabelizeIt label="Security code">
-                        <Input type="text"
+                        <ChimericInput type="text"
                           $sx={{ width: '70%' }}
                           placeholder="Security code for the door" />
                       </LabelizeIt>
                       <LabelizeIt label="Call box">
-                        <Input type="text"
+                        <ChimericInput
+                          mui
+                          type="text"
                           $sx={{ width: '70%' }}
-                          placeholder="Call box number or name" />
+                          placeholder="Call box number or name"
+                          
+                        />
                       </LabelizeIt>
                       <Checkbox 
                         label="Can you put on an iron shirt?"
@@ -427,6 +431,15 @@ const Checkout: NextPage = () => {
                         </LabelizeIt>
                     </SimpleForm>
                   </AccordionSection>
+                  <LabelizeIt label="Reggae">
+                    <ChimericDropdown
+                      mui
+                      artificial
+                      value="reggae"
+                      options={['reggae', 'hey', 'ayo', 'kookamunga']}
+                      selectSx={{ width: '300px' }}
+                      />
+                  </LabelizeIt>
                   <LabelizeIt label="Reggae">
                     <Dropdown
                       artificial

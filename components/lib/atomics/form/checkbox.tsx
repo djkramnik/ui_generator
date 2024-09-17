@@ -1,6 +1,17 @@
+import { FormControlLabel } from "@mui/material"
 import { CssProps, ResponsiveMixin } from "../../../theme"
 import { Box, Flex } from "../../layout"
 import { Copy } from "../copy"
+import MuiCheckbox from '@mui/material/Checkbox'
+import MuiRadio from '@mui/material/Radio'
+
+type CheckboxProps = {
+  checked?: boolean
+  label: string
+  gap?: ResponsiveMixin
+  radio?: boolean
+  labelSx?: CssProps
+}
 
 export const Checkbox = ({
   checked,
@@ -8,18 +19,39 @@ export const Checkbox = ({
   gap,
   radio,
   labelSx,
-}: {
-  checked?: boolean
-  label: string
-  gap?: ResponsiveMixin
-  radio?: boolean
-  labelSx?: CssProps
-}) => {
+}: CheckboxProps) => {
   return (
     <Flex row gap={gap ?? '12px'}>
       <input type={radio ? 'radio' : 'checkbox'} checked={checked === true} />
       <Copy $sx={{ ...labelSx }}>{label}</Copy>
     </Flex>
+  )
+}
+
+export const ChimericCheckbox = (props: CheckboxProps & {
+  mui?: boolean
+}) => {
+  const {mui, ...rest} = props
+  if (mui) {
+    return (
+      <FormControlLabel
+        required={true}
+        control={
+          rest.radio
+            ? (
+              <MuiRadio defaultChecked={rest.checked === true} />
+            )
+            : (
+              <MuiCheckbox defaultChecked={rest.checked === true} />
+            )
+          
+        }
+        label={rest.label}
+      />
+    )
+  }
+  return (
+    <Checkbox {...rest} />
   )
 }
 
@@ -68,3 +100,4 @@ export const CustomCheckbox = ({
     </Flex>
   )
 }
+

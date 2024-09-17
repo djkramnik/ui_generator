@@ -11,7 +11,7 @@ import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { Dropdown, DropdownBubble } from '../components/lib/atomics/form/select'
-import { Checkbox, CustomCheckbox } from '../components/lib/atomics/form/checkbox'
+import { Checkbox, ChimericCheckbox, CustomCheckbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
 import { AccordionSection, ChimericAccordion, TextAccordion } from '../components/lib/atomics/accordion'
 import { ChimericModal, Modal } from '../components/lib/atomics/modal'
@@ -305,6 +305,17 @@ const Checkout: NextPage = () => {
                       />
                   </LabelizeIt>
                   <LabelizeIt label="Random shit">
+                    <ChimericCheckbox
+                      mui
+                      label="Drum roll please"
+                      checked
+                    />
+                    <ChimericCheckbox
+                      mui
+                      label="Valentina"
+                      checked
+                      radio
+                    />
                     <CustomCheckbox label="Please hoont" />
                     <CustomCheckbox label="Dark souls > Bloodborne" checked />
                     <CustomCheckbox

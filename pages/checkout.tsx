@@ -5,7 +5,7 @@ import { Navbar, NavbarLinks } from '../components/lib/applied'
 import { GsapLogo } from '../components/svg'
 import { Container } from '../components/lib/layout/container'
 import { Box, Flex, TwoCol } from '../components/lib'
-import { Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor, ChimericButton, ChimericCopy } from '../components/lib/atomics'
+import { Copy, Heading, Input, LabelizeIt, SimpleForm, TextArea, WithErrata, Image, Autocomplete, ChimericAnchor, ChimericButton, ChimericCopy, ChimericAutocomplete } from '../components/lib/atomics'
 import { Spacer } from '../components/lib/layout/spacer'
 import { colors, CssProps, shadows } from '../components/theme'
 import { AmazonPrimeLogo } from '../components/lib/logos'
@@ -437,6 +437,7 @@ const Checkout: NextPage = () => {
                   placeholder: 'Search horror movie',
                   $sx: { borderRadius: '24px' }
                   }}>
+                    {/**todo: this logic needs to go into autocomplete... and use options */}
                     {
                       ['Showing 3 results', 'The Shining', 'The Exorcist', 'Alien']
                         .map((movie, index) => {
@@ -456,6 +457,30 @@ const Checkout: NextPage = () => {
                         })
                     }
                 </Autocomplete>
+              </div>
+              <div style={{ width: '100%', height: '300px', backgroundColor: '#fff' }}>
+                <ChimericAutocomplete
+                  mui
+                  open
+                  inputProps={{ 
+                    placeholder: 'Search horror movie',
+                    $sx: { borderRadius: '24px' }
+                  }}
+                  options={[
+                    {
+                      label: 'The Shining',
+                      id: 1,
+                    },
+                    {
+                      label: 'The Exorcist',
+                      id: 2,
+                    },
+                    {
+                      label: 'Alien',
+                      id: 3,
+                    }
+                  ]}
+                />
               </div>
             </Flex>
             <div style={{ 

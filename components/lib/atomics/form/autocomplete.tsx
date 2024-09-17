@@ -1,18 +1,21 @@
 import { CssProps, shadows } from "../../../theme"
 import { Box } from "../../layout"
 import { InputProps, InputWithIcon } from "./input"
+import { Autocomplete as MuiAutocomplete, TextField } from "@mui/material"
+
+type AutocompleteProps = {
+  inputProps?: Omit<InputProps, 'theme'>
+  containerSx?: CssProps
+  children?: React.ReactNode
+  open?: boolean
+}
 
 export const Autocomplete = ({
   inputProps,
   containerSx,
   children,
   open,
-}: {
-  inputProps?: Omit<InputProps, 'theme'>
-  containerSx?: CssProps
-  children?: React.ReactNode
-  open?: boolean
-}) => {
+}: AutocompleteProps) => {
   return (
     <Box $sx={{
       position: 'relative',
@@ -48,5 +51,30 @@ export const Autocomplete = ({
           : null
       }
     </Box>
+  )
+}
+
+export const ChimericAutocomplete = (props: AutocompleteProps & {
+  mui?: boolean
+  options?: {
+    label: string
+    id: number
+  }[] 
+}) => {
+  const { children, mui, options, open, ...rest } = props
+  if (mui) {
+    return (
+      <MuiAutocomplete
+        open={open}
+        options={options ?? []}
+        sx={{ width: 300 }}
+        renderInput={(params) => <TextField {...params} label="Movie" />}
+      />
+    )
+  }
+  return (
+    <Autocomplete {...rest}>
+      {children}
+    </Autocomplete>
   )
 }

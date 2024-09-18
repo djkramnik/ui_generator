@@ -1,14 +1,24 @@
 import { styled, useTheme } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
 import { Typography } from "@mui/material"
-import { sxToStyle } from "../../utils"
+import { parseVariant, parseVariants, sxToStyle } from "../../utils"
 
 export type CopyProps = WithTheme<ResponsiveComponent<'p'>>
 
-// in the future theme and variant will come into play???
 export const Copy = styled('p')<CopyProps>`
   ${({ theme, $variant, $sx }: CopyProps) => {
+    const variantDiff = typeof $variant === 'string'
+      ? parseVariant($variant, theme)
+      : (
+        Array.isArray($variant)
+          ? parseVariants($variant, theme)
+          : {}
+      )
+
     const responsive = getResponsiveStyles({
+      color: theme.palette.copy,
+      backgroundColor: theme.palette.primary,
+      ...variantDiff,
       ...($sx ?? {}),
     })
     return responsive

@@ -1,8 +1,125 @@
-import { CSSProperties } from "react"
-import Abc from '@mui/icons-material/Abc'
-import { OverridableComponent } from "@mui/material/OverridableComponent";
-import { SvgIconTypeMap } from "@mui/material";
-import { Comment,List, Gamepad, Error, Menu, Map, Lock, House, Search, TravelExplore, Person, Facebook, Check, Download, Twitter, Instagram, Phone, FacebookTwoTone, Reddit, Email, LinkedIn, Star, Place, GitHub, AutoFixHigh, Favorite, ErrorOutline, YouTube, Cloud, ArrowUpward, ArrowDownward, ArrowForward, ArrowBack, KeyboardArrowDown, Sort, SentimentSatisfiedAlt, CalendarToday, Attachment, DesignServices, Description, Notifications, NotificationsOff, ShoppingCart, ContentPaste, FilterList, Info, Upload, Edit, Google, MoneyOff, Redeem, Delete, Payment, Settings, ArrowCircleUp, Computer, Print, CameraAlt, VideoCameraFront, VideoCameraBack, Headset, Bookmark, Share, Fireplace, RemoveRedEye, VisibilityOff, AirplanemodeActive, Folder, ThumbUp, ThumbDown, Code, Wifi, Tune, Group, Chat, PlayArrow, PlayCircleFilled, Replay10, Replay30, Replay, FastForward, SkipNext, Forward10, Stop, StopCircle, PauseCircle, Pause, ExpandMore, ExpandLess, ClosedCaption, MicOff, Mic, VolumeOff, VolumeMute, VolumeDown, VolumeUp, Warning, CreditCard, KeyboardArrowUp, KeyboardArrowRight, KeyboardArrowLeft, ArrowDropUp, ArrowDropDown, FormatAlignRight, FormatAlignLeft, FormatAlignJustify, FormatAlignCenter, PowerSettingsNew, Reply, RssFeed, Add, Remove, ArrowCircleDown, ArrowCircleRight, ArrowCircleLeft, Message, BrokenImage } from "@mui/icons-material";
+import { CSSProperties } from 'react'
+import { OverridableComponent } from '@mui/material/OverridableComponent'
+import { SvgIconTypeMap } from '@mui/material'
+import {
+  Comment,
+  List,
+  Gamepad,
+  Error,
+  Menu,
+  Map,
+  Lock,
+  House,
+  Search,
+  TravelExplore,
+  Person,
+  Facebook,
+  Check,
+  Download,
+  Twitter,
+  Instagram,
+  Phone,
+  FacebookTwoTone,
+  Reddit,
+  Email,
+  LinkedIn,
+  Star,
+  Place,
+  GitHub,
+  AutoFixHigh,
+  Favorite,
+  ErrorOutline,
+  YouTube,
+  Cloud,
+  ArrowUpward,
+  ArrowDownward,
+  ArrowForward,
+  ArrowBack,
+  KeyboardArrowDown,
+  Sort,
+  SentimentSatisfiedAlt,
+  CalendarToday,
+  Attachment,
+  DesignServices,
+  Description,
+  Notifications,
+  NotificationsOff,
+  ShoppingCart,
+  ContentPaste,
+  FilterList,
+  Info,
+  Upload,
+  Edit,
+  Google,
+  MoneyOff,
+  Redeem,
+  Delete,
+  Payment,
+  Settings,
+  ArrowCircleUp,
+  Computer,
+  Print,
+  CameraAlt,
+  VideoCameraFront,
+  VideoCameraBack,
+  Headset,
+  Bookmark,
+  Share,
+  Fireplace,
+  RemoveRedEye,
+  VisibilityOff,
+  AirplanemodeActive,
+  Folder,
+  ThumbUp,
+  ThumbDown,
+  Code,
+  Wifi,
+  Tune,
+  Group,
+  Chat,
+  PlayArrow,
+  PlayCircleFilled,
+  Replay10,
+  Replay30,
+  Replay,
+  FastForward,
+  SkipNext,
+  Forward10,
+  Stop,
+  StopCircle,
+  PauseCircle,
+  Pause,
+  ExpandMore,
+  ExpandLess,
+  ClosedCaption,
+  MicOff,
+  Mic,
+  VolumeOff,
+  VolumeMute,
+  VolumeDown,
+  VolumeUp,
+  Warning,
+  CreditCard,
+  KeyboardArrowUp,
+  KeyboardArrowRight,
+  KeyboardArrowLeft,
+  ArrowDropUp,
+  ArrowDropDown,
+  FormatAlignRight,
+  FormatAlignLeft,
+  FormatAlignJustify,
+  FormatAlignCenter,
+  PowerSettingsNew,
+  Reply,
+  RssFeed,
+  Add,
+  Remove,
+  ArrowCircleDown,
+  ArrowCircleRight,
+  ArrowCircleLeft,
+  Message,
+  BrokenImage,
+} from '@mui/icons-material'
 
 enum Icon {
   house = 'house',
@@ -33,7 +150,7 @@ enum Icon {
   youtube = 'youtube',
   cloud = 'cloud',
   comment = 'comment',
-  
+
   caretUp = 'caret-up',
   caretDown = 'caret-down',
   caretRight = 'caret-right',
@@ -91,7 +208,7 @@ enum Icon {
   gamepad = 'gamepad',
   users = 'users',
   whatsapp = 'whatsapp',
-  
+
   play = 'play',
   circlePlay = 'circle-play',
   backward = 'backward',
@@ -151,12 +268,7 @@ enum Icon {
   circleChevronLeft = 'circle-chevron-left',
   map = 'map',
   message = 'message',
-
-
-
-
 }
-
 
 // const toMuiIcon = (icon: Icon)=> {
 //   switch(icon) {
@@ -210,296 +322,297 @@ enum Icon {
 //       return ErrorOutline
 //     case 'youtube':
 //       return YouTube
-    
+
 //     default:
 //       return BrokenImage
 //   }
 // }
 
 // gpt supplied mapping
-export const toMuiIcon = (icon: Icon): OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
-  muiName: string;
+export const toMuiIcon = (
+  icon: Icon
+): OverridableComponent<SvgIconTypeMap<{}, 'svg'>> & {
+  muiName: string
 } => {
   switch (icon) {
     case Icon.hamburger:
-      return Menu;
+      return Menu
     case Icon.house:
-      return House;
+      return House
     case Icon.search:
-      return Search;
+      return Search
     case Icon.search2:
-      return TravelExplore;
+      return TravelExplore
     case Icon.user:
-      return Person;
+      return Person
     case Icon.facebook:
-      return Facebook;
+      return Facebook
     case Icon.check:
-      return Check;
+      return Check
     case Icon.download:
-      return Download;
+      return Download
     case Icon.twitter:
-      return Twitter;
+      return Twitter
     // case Icon.image:
     //   return Image;
     case Icon.instagram:
-      return Instagram;
+      return Instagram
     case Icon.phone:
-      return Phone;
+      return Phone
     case Icon.tiktok:
-      return FacebookTwoTone; // Note: Material UI does not have TikTok; using FacebookTwoTone as a placeholder.
+      return FacebookTwoTone // Note: Material UI does not have TikTok; using FacebookTwoTone as a placeholder.
     case Icon.reddit:
-      return Reddit;
+      return Reddit
     // case Icon.hamburger:
     //   return Menu;
     case Icon.envelope:
-      return Email;
+      return Email
     case Icon.linkedin:
-      return LinkedIn;
+      return LinkedIn
     case Icon.star:
-      return Star;
+      return Star
     case Icon.location:
-      return Place;
+      return Place
     case Icon.github:
-      return GitHub;
+      return GitHub
     case Icon.wand:
-      return AutoFixHigh;
+      return AutoFixHigh
     case Icon.heart:
-      return Favorite;
+      return Favorite
     case Icon.discord:
-      return Gamepad; // Note: No direct Discord icon in Material UI; using Gamepad as a placeholder.
+      return Gamepad // Note: No direct Discord icon in Material UI; using Gamepad as a placeholder.
     case Icon.circleXMark:
-      return Error;
+      return Error
     case Icon.xMark:
-      return ErrorOutline;
+      return ErrorOutline
     case Icon.youtube:
-      return YouTube;
+      return YouTube
     case Icon.cloud:
-      return Cloud;
+      return Cloud
     case Icon.comment:
-      return Comment;
+      return Comment
     case Icon.caretUp:
-      return ArrowUpward;
+      return ArrowUpward
     case Icon.caretDown:
-      return ArrowDownward;
+      return ArrowDownward
     case Icon.caretRight:
-      return ArrowForward;
+      return ArrowForward
     case Icon.caretLeft:
-      return ArrowBack;
+      return ArrowBack
     case Icon.chevronDown:
       return KeyboardArrowDown
     case Icon.sortUp:
-      return Sort;
+      return Sort
     case Icon.sortDown:
-      return Sort;
+      return Sort
     case Icon.smile:
-      return SentimentSatisfiedAlt;
+      return SentimentSatisfiedAlt
     case Icon.calendar:
-      return CalendarToday;
+      return CalendarToday
     case Icon.paperclip:
-      return Attachment;
+      return Attachment
     case Icon.figma:
-      return DesignServices; // Note: No direct Figma icon; using DesignServices as a placeholder.
+      return DesignServices // Note: No direct Figma icon; using DesignServices as a placeholder.
     case Icon.file:
-      return Description;
+      return Description
     case Icon.bell:
-      return Notifications;
+      return Notifications
     case Icon.bellSlash:
-      return NotificationsOff;
+      return NotificationsOff
     case Icon.shoppingCart:
-      return ShoppingCart;
+      return ShoppingCart
     case Icon.clipboard:
-      return ContentPaste;
+      return ContentPaste
     case Icon.filter:
-      return FilterList;
+      return FilterList
     case Icon.circleInfo:
-      return Info;
+      return Info
     case Icon.upload:
-      return Upload;
+      return Upload
     case Icon.pen:
-      return Edit;
+      return Edit
     case Icon.google:
-      return Google;
+      return Google
     case Icon.googlePay:
-      return MoneyOff; // Note: No direct Google Pay icon; using MoneyOff as a placeholder.
+      return MoneyOff // Note: No direct Google Pay icon; using MoneyOff as a placeholder.
     case Icon.gift:
       return Redeem
     case Icon.trash:
-      return Delete;
+      return Delete
     case Icon.trashCan:
-      return Delete;
+      return Delete
     case Icon.stripe:
-      return Payment; // Note: No direct Stripe icon; using Payment as a placeholder.
+      return Payment // Note: No direct Stripe icon; using Payment as a placeholder.
     case Icon.list:
-      return List;
+      return List
     case Icon.gear:
-      return Settings;
+      return Settings
     case Icon.circleUp:
-      return ArrowCircleUp;
+      return ArrowCircleUp
     case Icon.lock:
-      return Lock;
+      return Lock
     case Icon.windows:
-      return Computer;
+      return Computer
     case Icon.paypal:
-      return MoneyOff; // Note: No direct PayPal icon; using MoneyOff as a placeholder.
+      return MoneyOff // Note: No direct PayPal icon; using MoneyOff as a placeholder.
     case Icon.print:
-      return Print;
+      return Print
     case Icon.camera:
-      return CameraAlt;
+      return CameraAlt
     case Icon.video:
-      return VideoCameraFront;
+      return VideoCameraFront
     case Icon.videoSlash:
-      return VideoCameraBack;
+      return VideoCameraBack
     case Icon.headset:
-      return Headset;
+      return Headset
     case Icon.bookmark:
-      return Bookmark;
+      return Bookmark
     case Icon.share:
-      return Share;
+      return Share
     case Icon.circleExclamation:
-      return Error;
+      return Error
     case Icon.fire:
-      return Fireplace;
+      return Fireplace
     case Icon.eye:
-      return RemoveRedEye;
+      return RemoveRedEye
     case Icon.eyeSlash:
-      return VisibilityOff;
+      return VisibilityOff
     case Icon.plane:
-      return AirplanemodeActive;
+      return AirplanemodeActive
     case Icon.folder:
-      return Folder;
+      return Folder
     case Icon.thumbsUp:
-      return ThumbUp;
+      return ThumbUp
     case Icon.thumbsDown:
-      return ThumbDown;
+      return ThumbDown
     case Icon.code:
-      return Code;
+      return Code
     case Icon.wifi:
-      return Wifi;
+      return Wifi
     case Icon.sliders:
-      return Tune;
+      return Tune
     case Icon.gamepad:
-      return Gamepad;
+      return Gamepad
     case Icon.users:
-      return Group;
+      return Group
     case Icon.whatsapp:
-      return Chat;
+      return Chat
     case Icon.play:
-      return PlayArrow;
+      return PlayArrow
     case Icon.circlePlay:
-      return PlayCircleFilled;
+      return PlayCircleFilled
     case Icon.backward:
-      return Replay10;
+      return Replay10
     case Icon.backwardStep:
-      return Replay30;
+      return Replay30
     case Icon.backwardFast:
-      return Replay;
+      return Replay
     case Icon.forward:
-      return FastForward;
+      return FastForward
     case Icon.forwardStep:
       return SkipNext
     case Icon.forwardFast:
-      return Forward10;
+      return Forward10
     case Icon.stop:
-      return Stop;
+      return Stop
     case Icon.circleStop:
-      return StopCircle;
+      return StopCircle
     case Icon.circlePause:
-      return PauseCircle;
+      return PauseCircle
     case Icon.pause:
-      return Pause;
+      return Pause
     case Icon.expand:
-      return ExpandMore;
+      return ExpandMore
     case Icon.compress:
-      return ExpandLess;
+      return ExpandLess
     case Icon.closedCaptioning:
       return ClosedCaption
     case Icon.repeat:
-      return Replay;
+      return Replay
     case Icon.microphoneSlash:
-      return MicOff;
+      return MicOff
     case Icon.microphone:
-      return Mic;
+      return Mic
     case Icon.volumeXMark:
-      return VolumeOff;
+      return VolumeOff
     case Icon.volumeOff:
-      return VolumeMute;
+      return VolumeMute
     case Icon.volumeLow:
-      return VolumeDown;
+      return VolumeDown
     case Icon.volumeHigh:
-      return VolumeUp;
+      return VolumeUp
     case Icon.warning:
-      return Warning;
+      return Warning
     case Icon.upload2:
-      return Upload;
+      return Upload
     case Icon.creditCard:
-      return CreditCard;
+      return CreditCard
     case Icon.angleUp:
-      return KeyboardArrowUp;
+      return KeyboardArrowUp
     case Icon.angleRight:
-      return KeyboardArrowRight;
+      return KeyboardArrowRight
     case Icon.angleDown:
-      return KeyboardArrowDown;
+      return KeyboardArrowDown
     case Icon.angleLeft:
-      return KeyboardArrowLeft;
+      return KeyboardArrowLeft
     case Icon.anglesUp:
-      return ArrowDropUp;
+      return ArrowDropUp
     case Icon.anglesDown:
-      return ArrowDropDown;
+      return ArrowDropDown
     case Icon.anglesRight:
       return KeyboardArrowRight
     case Icon.anglesLeft:
       return KeyboardArrowLeft
     case Icon.arrowDown:
-      return ArrowDownward;
+      return ArrowDownward
     case Icon.arrowUp:
-      return ArrowUpward;
+      return ArrowUpward
     case Icon.arrowRight:
-      return ArrowForward;
+      return ArrowForward
     case Icon.arrowLeft:
-      return ArrowBack;
+      return ArrowBack
     case Icon.alignRight:
-      return FormatAlignRight;
+      return FormatAlignRight
     case Icon.alighLeft:
-      return FormatAlignLeft;
+      return FormatAlignLeft
     case Icon.alignJustify:
-      return FormatAlignJustify;
+      return FormatAlignJustify
     case Icon.alignCenter:
-      return FormatAlignCenter;
+      return FormatAlignCenter
     case Icon.powerOff:
-      return PowerSettingsNew;
+      return PowerSettingsNew
     case Icon.reply:
-      return Reply;
+      return Reply
     case Icon.rss:
-      return RssFeed;
+      return RssFeed
     case Icon.plus:
-      return Add;
+      return Add
     case Icon.minus:
-      return Remove;
+      return Remove
     case Icon.circleChevronUp:
-      return ArrowCircleUp;
+      return ArrowCircleUp
     case Icon.circleChevronDown:
-      return ArrowCircleDown;
+      return ArrowCircleDown
     case Icon.circleChevronRight:
-      return ArrowCircleRight;
+      return ArrowCircleRight
     case Icon.circleChevronLeft:
-      return ArrowCircleLeft;
+      return ArrowCircleLeft
     case Icon.map:
-      return Map;
+      return Map
     case Icon.message:
-      return Message;
+      return Message
 
     default:
-      return BrokenImage; // Default icon if none of the cases match
+      return BrokenImage // Default icon if none of the cases match
   }
-  return Abc
-};
+}
 
 enum MuiStyles {
   filled = '',
   Outlined = 'Outlined',
   Rounded = 'Rounded',
   TwoTone = 'TwoTone',
-  Sharp = 'Sharp'
+  Sharp = 'Sharp',
 }
 
 export const ChimericIcon = ({
@@ -514,11 +627,13 @@ export const ChimericIcon = ({
   // any defaults must derive from theme, right here yo
   if (mui) {
     const AltMuiIcon = toMuiIcon(icon)
-    return <AltMuiIcon style={{
-      ...iconStyle
-    }} />
+    return (
+      <AltMuiIcon
+        style={{
+          ...iconStyle,
+        }}
+      />
+    )
   }
-  return (
-    <i className={`fa-solid fa-${icon}`} style={iconStyle} />
-  )
+  return <i className={`fa-solid fa-${icon}`} style={iconStyle} />
 }

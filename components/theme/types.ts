@@ -29,13 +29,26 @@ export type ResponsiveMixinProps<T extends CSSProperties> = {
 export type CssProps = ResponsiveMixinProps<CSSProperties>
 
 export type ThemeConfig = {
-  palette: Record<string, ResponsiveMixin>
-  typography: Record<string, ResponsiveMixin>
-  spacing: Record<string, ResponsiveMixin>
+  palette: {
+    background: ResponsiveMixin
+    copy: ResponsiveMixin
+    heading: ResponsiveMixin
+    primary: ResponsiveMixin
+    secondary: ResponsiveMixin
+    error: ResponsiveMixin
+    success: ResponsiveMixin
+  }
+  typography: {
+    primaryff: ResponsiveMixin
+    secondaryff: ResponsiveMixin
+  }
+  spacing: {
+    containerWidth: ResponsiveMixin
+  }
   components: Record<string, ResponsiveMixin>
 }
 
-export type Theme = Partial<ThemeConfig>
+export type Theme = ThemeConfig
 
 export type ResponsiveComponent<
 E extends React.ElementType<any>> =

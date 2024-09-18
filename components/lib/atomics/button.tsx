@@ -4,7 +4,7 @@ import { CSSProperties } from "react"
 import { Flex, FlexProps } from "../layout"
 import { Copy, CopyProps } from "./copy"
 import { Button as MuiButton } from "@mui/material"
-import { sxToStyle } from "../../utils"
+import { parseVariant, parseVariants, sxToStyle } from "../../utils"
 import { toMuiIcon } from "./icon"
 
 export type ButtonProps = WithTheme<ResponsiveComponent<'button'>>
@@ -18,13 +18,18 @@ const pillVariant: CssProps = {
 // the default styles I include in button should later get ported to theme under theme.component.button
 export const Button = styled('button')<ButtonProps>`
   ${({ theme, $variant, $sx }: ButtonProps) => {
+    const variantDiff = typeof $variant === 'string'
+      ? parseVariant($variant, theme)
+      : (
+        Array.isArray($variant)
+          ? parseVariants($variant, theme)
+          : {}
+      )
+
     const responsive = getResponsiveStyles({
-      // default styles??? theme???
-      ...(
-        $variant === "pill"
-          ? pillVariant
-          : undefined
-      ),
+      color: theme.palette.copy,
+      backgroundColor: theme.palette.primary,
+      ...variantDiff,
       ...($sx ?? {}),
     })
     return responsive

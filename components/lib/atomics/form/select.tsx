@@ -4,7 +4,7 @@ import { Box } from "../../layout"
 import React from "react"
 import MuiSelect from "@mui/material/Select"
 import { MenuItem } from "@mui/material"
-import { parseVariant, parseVariants } from "../../../utils"
+import { getComponentStyles, parseVariant, parseVariants } from "../../../utils"
 
 export type SelectProps = WithTheme<ResponsiveComponent<'select'>>
 
@@ -18,15 +18,9 @@ export const Select = styled('select')<SelectProps>`
           ? parseVariants($variant, theme)
           : {}
       )
+    const componentDiff = getComponentStyles('select', theme)
     const responsive = getResponsiveStyles({
-      outline: 'none',
-      appearance: 'none',
-      cursor: 'pointer',
-      fontSize: '16px',
-      padding: '9px 6px',
-      borderRadius: '0.25rem',
-      fontWeight: '400',
-      border: '2px solid rgba(0, 0, 0, 0.6)',
+      ...componentDiff,
       ...variantDiff,
       ...($sx ?? {}),
     })
@@ -46,8 +40,12 @@ export const Option = styled('option')<SelectProps>`
           ? parseVariants($variant, theme)
           : {}
       )
+    const componentDiff = getComponentStyles(
+      'option',
+      theme,
+    )
     const responsive = getResponsiveStyles({
-      padding: '9px 6px',
+      ...componentDiff,
       ...variantDiff,
       ...($sx ?? {}),
     })

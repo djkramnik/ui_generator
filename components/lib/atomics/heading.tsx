@@ -2,7 +2,7 @@ import React from "react"
 import { styled, useTheme } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
 import { Typography } from "@mui/material"
-import { parseVariant, parseVariants, sxToStyle } from "../../utils"
+import { getComponentStyles, parseVariant, parseVariants, sxToStyle } from "../../utils"
 
 export type HeadingProps = WithTheme<ResponsiveComponent<'h1'>> & { level: | 1 | 2 | 3 | 4 | 5 | 6 }
 
@@ -20,9 +20,13 @@ export const Heading = styled(
           : {}
       )
 
+    const componentDiff = getComponentStyles('heading', theme)
+    const levelDiff = getComponentStyles(`h${level}`, theme)
+    
     return getResponsiveStyles({
-      margin: '0',
-      fontWeight: level < 4 ? '700' : '400',
+      color: theme.palette.heading,
+      ...componentDiff,
+      ...levelDiff,
       ...variantDiff,
       ...$sx,
     })
@@ -33,11 +37,28 @@ export const ChimericHeading = (props: Omit<HeadingProps, 'theme'> & {
   mui?: boolean
 }) => {
   const theme = useTheme()
+
   const { children, $sx, mui, level, ...rest } = props
   if (mui) {
+    const variantDiff = typeof props.$variant === 'string'
+      ? parseVariant(props.$variant, theme)
+      : (
+        Array.isArray(props.$variant)
+          ? parseVariants(props.$variant, theme)
+          : {}
+      )
+  
+    const componentDiff = getComponentStyles('heading', theme)
+    const levelDiff = getComponentStyles(`h${level}`, theme)
+    const diff = sxToStyle({
+      ...componentDiff,
+      ...levelDiff,
+      ...variantDiff,
+    })
     return (
       <Typography variant={`h${level}`}
         style={{
+          ...diff,
           ...sxToStyle($sx ?? {}),
           ...rest.style,
         }}>

@@ -28,6 +28,7 @@ export const sxToStyle = ($sx: CssProps): CSSProperties => {
 }
 
 export const parseVariant = ($variant: string, theme: Theme): CssProps => {
+  console.log('hiho', theme.palette)
   switch($variant) {
     case 'pill':
       return {
@@ -43,6 +44,26 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
       return {
         backgroundColor: 'transparent',
       }
+    case 'center':
+      return {
+        textAlign: 'center'
+      }
+    case 'white':
+      return {
+        color: theme.palette.white
+      }
+    case 'muted':
+      return {
+        color: theme.palette.grey
+      }
+    case 'transparent':
+      return {
+        backgroundColor: 'transparent'
+      }
+    case 'border': 
+      return {
+        border: '1px solid currentColor'
+      }
     default:
       return {
 
@@ -57,4 +78,9 @@ export const parseVariants = ($variant: string[], theme: Theme): CssProps => {
       ...parseVariant(s, theme),
     }
   }, {})
+}
+
+export const getComponentStyles = (s: string, theme: Theme): CssProps => {
+  // @ts-ignore
+  return theme.components[s] ?? {}
 }

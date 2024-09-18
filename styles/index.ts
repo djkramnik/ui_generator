@@ -2,7 +2,7 @@ import {
   createGlobalStyle,
 } from 'styled-components'
 
-import type { Theme } from '../components/theme'
+import { colors, type Theme } from '../components/theme'
 
 export const themes: Record<string, Theme> = {
   primary: {
@@ -19,11 +19,53 @@ export const themes: Record<string, Theme> = {
       secondary: '#c5cae9',
       error: '#dd2c00',
       success: '#303f9f',
+      white: '#fff',
+      grey: 'rgb(146,146,146)',
     },
     spacing: {
       containerWidth: ['96%', '94%', '92%']
     },
-    components: {}
+    components: {
+      heading: {
+        margin: '0',
+      },
+      h1: {
+        fontSize: '94px',
+        lineHeight: '97px',
+        fontWeight: 'bold'
+      },
+      h2: {
+        fontSize: '56px',
+        lineHeight: '64px',
+        fontWeight: 'bold'
+      },
+      h3: {
+        fontSize: '30px',
+        fontWeight: 'bold',
+      },
+      h4: {
+        fontSize: '22px',
+      },
+      h5: {
+        fontSize: '18px'
+      },
+      select: {
+        outline: 'none',
+        appearance: 'none',
+        cursor: 'pointer',
+        fontSize: '16px',
+        padding: '9px 6px',
+        borderRadius: '0.25rem',
+        fontWeight: '400',
+        border: '2px solid rgba(0, 0, 0, 0.6)',
+      },
+      option: {
+        padding: '9px 6px',
+      },
+      input: {
+        padding: '9px 18px',
+      }
+    }
   },
   alt: {
     typography: {
@@ -39,11 +81,53 @@ export const themes: Record<string, Theme> = {
       secondary: '#aeaeae',
       error: '#dc3545',
       success: '#28a745',
+      white: '#fff',
+      grey: '#eee'
     },
     spacing: {
       containerWidth: ['98%', '96%', '94%']
     },
-    components: {},
+    components: {
+      heading: {
+        margin: '0',
+      },
+      h1: {
+        fontSize: '56px',
+        lineHeight: '64px',
+        fontWeight: 'bold'
+      },
+      h2: {
+        fontSize: '56px',
+        lineHeight: '64px',
+        fontWeight: 'bold'
+      },
+      h3: {
+        fontSize: '30px',
+        fontWeight: 'bold',
+      },
+      h4: {
+        fontSize: '22px',
+      },
+      h5: {
+        fontSize: '18px'
+      },
+      select: {
+        outline: 'none',
+        appearance: 'none',
+        cursor: 'pointer',
+        fontSize: '16px',
+        padding: '9px 6px',
+        borderRadius: '0.25rem',
+        fontWeight: '400',
+        border: '2px solid rgba(0, 0, 0, 0.6)',
+      },
+      option: {
+        padding: '9px 6px',
+      },
+      input: {
+        padding: '9px 18px',
+      }
+    },
   },
   tertiary: {
     typography: {
@@ -59,11 +143,53 @@ export const themes: Record<string, Theme> = {
       secondary: '#e54747',
       error: '#dc3545',
       success: '#28a745',
+      white: '#fff',
+      grey: colors.gsapGrey
     },
     spacing: {
       containerWidth: '96%'
     },
-    components: {},
+    components: {
+      heading: {
+        margin: '0',
+      },
+      h1: {
+        fontSize: '56px',
+        lineHeight: '64px',
+        fontWeight: 'bold'
+      },
+      h2: {
+        fontSize: '56px',
+        lineHeight: '64px',
+        fontWeight: 'bold'
+      },
+      h3: {
+        fontSize: '30px',
+        fontWeight: 'bold',
+      },
+      h4: {
+        fontSize: '22px',
+      },
+      h5: {
+        fontSize: '18px'
+      },
+      select: {
+        outline: 'none',
+        appearance: 'none',
+        cursor: 'pointer',
+        fontSize: '16px',
+        padding: '9px 6px',
+        borderRadius: '0.25rem',
+        fontWeight: '400',
+        border: '2px solid rgba(0, 0, 0, 0.6)',
+      },
+      option: {
+        padding: '9px 6px',
+      },
+      input: {
+        padding: '9px 18px',
+      }
+    },
   }
 }
 

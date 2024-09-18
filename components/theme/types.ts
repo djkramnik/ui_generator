@@ -37,6 +37,8 @@ export type ThemeConfig = {
     secondary: ResponsiveMixin
     error: ResponsiveMixin
     success: ResponsiveMixin
+    white: ResponsiveMixin
+    grey: ResponsiveMixin
   }
   typography: {
     primaryff: ResponsiveMixin
@@ -45,7 +47,17 @@ export type ThemeConfig = {
   spacing: {
     containerWidth: ResponsiveMixin
   }
-  components: Record<string, ResponsiveMixin>
+  components: {
+    select: CssProps
+    option: CssProps
+    input: CssProps
+    heading: CssProps
+    h1: CssProps
+    h2: CssProps
+    h3: CssProps
+    h4: CssProps
+    h5: CssProps
+  }
 }
 
 export type Theme = ThemeConfig

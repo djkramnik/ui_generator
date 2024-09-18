@@ -46,36 +46,21 @@ export const ThreeColCnn = () => {
           <a href="#">Oprah Winfrey solves world hunger. Watch it Live!</a>
         }
       />
+      <Spacer />
       <Heading
         level={4}
-        $sx={{
-          textAlign: 'center',
-          fontWeight: '700',
-          fontSize: '24px',
-          width: '80%',
-          margin: 'auto',
-          color: '#aaa',
-          letterSpacing: '0',
-          paddingTop: '20px',
-          position: 'relative',
-          top: '8px',
-        }}
+        $variant={['center', 'muted']}
       >
         DEMOCRACY IN ACTION
       </Heading>
+      <Spacer />
       <Heading
         level={1}
-        $sx={{
-          textAlign: 'center',
-          padding: '20px 0',
-          paddingTop: '0',
-          fontSize: '94px',
-          fontWeight: '700',
-          margin: 'auto',
-        }}
+        $variant="center"
       >
         <a href="#">Bro, do what we tell you</a>
       </Heading>
+      <Spacer />
       <Container w="96%">
         <ThreeColNews />
         <Spacer />

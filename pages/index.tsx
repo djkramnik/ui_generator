@@ -60,13 +60,13 @@ const Home: NextPage = () => {
         </NavbarLinks>
         <NavbarLinks>
           <Flex col $sx={{ gap: '4px' }}>
-            <Heading level={4} $sx={{ fontWeight: 'bold', fontSize: '22px' }}>Speak with an expert</Heading>
+            <Heading level={4}>Speak with an expert</Heading>
             <Flex $sx={{ gap: '4px'}}>
               <i className="fa-solid fa-phone" style={{
                 color: '#da1b27',
                 fontSize: '30px'
               }}/>
-              <Heading level={4} $sx={{ color: '#da1b27', fontWeight: 'bold', fontSize: '22px' }}>1-877-642-8607</Heading>
+              <Heading level={4}>1-877-642-8607</Heading>
             </Flex>
           </Flex>
         </NavbarLinks>
@@ -88,15 +88,15 @@ const Home: NextPage = () => {
             <Flex row aic>
               <Flex col jcc $sx={{ width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
                 <Spacer />
-                <Heading level={2} $sx={{ fontSize: '42px', lineHeight: '64px', textAlign: 'center'}}>
+                <Heading $variant="white" level={2} $sx={{ textAlign: 'center' }}>
                   Get up to $5000 on a prepaid credit card
                   with a cooling and heating combo rental
                 </Heading>
                 <Flex $sx={{ gap: '8px'}} aic jcc>
-                  <Heading level={5} $sx={{ fontSize: '16px' }}>
+                  <Heading level={5} $variant="white">
                     Offer expires September 30, 2024.
                   </Heading>
-                  <Anchor $sx={{ textDecoration: 'underline', color: '#aaa' }}>
+                  <Anchor $variant="white" $sx={{ textDecoration: 'underline' }}>
                     View Terms and Conditions
                   </Anchor>
                 </Flex>
@@ -149,11 +149,11 @@ const Home: NextPage = () => {
             }}>
             <Flex row aic>
               <Flex col jcc $sx={{ flexGrow: '1', width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
-                <ChimericHeading mui level={2} $sx={{ fontSize: '64px', lineHeight: '64px'}}>
+                <ChimericHeading mui level={2}>
                   EXPLORE TORONTO,<br />
                   CAR BABIES
                 </ChimericHeading>
-                <Heading level={5} $sx={{ fontSize: '16px' }}>
+                <Heading level={5} $variant="white">
                   Pay for parking with your credit card, and receive a free ticket.
                 </Heading>
                 <Flex $sx={{ gap: '20px' }}>
@@ -183,7 +183,7 @@ const Home: NextPage = () => {
       </VideoHero>
 
       <StripeHero 
-        bigText="Surveillance infrastructure to grow your case"
+        bigText="Spyware infras to grow your case"
         littleText={
           `Every breath you take, every move you make, every bond you break, every step you take.
           Every single day, every word you say.  Every game you play, every night you stay.`
@@ -238,46 +238,30 @@ const Home: NextPage = () => {
             </NavbarLinks>
             <NavbarLinks gap="18px">
               {'Log in'}
-              <Button $variant="pill" $sx={{
-                backgroundColor: '#fff',
-                color: '#333',
-              }}>
+              <Button $variant={['transparent', 'pill', 'white', 'border']}>
                 Start Free Trial
               </Button>
             </NavbarLinks>
           </Navbar>
           <Container $sx={{ flexGrow: '1', display: 'flex', flexDirection: 'column', zIndex: '1' }}>
             <Flex col jcc $sx={{ flexGrow: '1', width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
-              <Heading level={2} $sx={{ fontSize: '56px', lineHeight: '64px'}}>
+              <Heading level={2} $variant="white">
                 Some Javascript, <br />for a Monthly Fee
               </Heading>
-              <Heading level={4} $sx={{ fontSize: '22px' }}>
+              <Heading level={4} $variant="white">
                 Will sell you javascript.. for food.<br />  And boats.  And cars.  And the future.
               </Heading>
             </Flex>
             <Flex jcsb aic $sx={{ height: '200px'}}>
               <Flex $sx={{ gap: '8px'}} aic>
-                <Button $sx={{
-                  backgroundColor: '#fff',
-                  color: '#333',
-                  borderRadius: '24px',
-                  fontWeight: '700',
-                  padding: '12px 18px'
-                }}>
+                <Button $variant={['pill', 'white', 'transparent', 'border']}>
                   Start Free Trial
                 </Button>
-                <Copy $sx={{ fontSize: '12px', color: '#fff' }}>
+                <Copy $variant="white">
                   Get 3 days for free!<br /> Then we will begin the invoicing.
                 </Copy>
               </Flex>
-              <Button $sx={{
-                backgroundColor: 'rgba(0, 0, 0, 0.3)',
-                color: '#fff',
-                borderRadius: '24px',
-                fontWeight: '700',
-                padding: '12px 18px',
-                border: '1px solid #fff',
-              }}>
+              <Button $variant={['white', 'transparent', 'pill', 'border']}>
                 Watch the Shopify Story
               </Button>
             </Flex>

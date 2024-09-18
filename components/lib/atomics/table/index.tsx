@@ -122,6 +122,9 @@ const Page = ({
 }) => {
   return (
     <Box $sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       padding: '6px',
       color: selected
         ? colors.amazonBlue
@@ -134,7 +137,6 @@ const Page = ({
         : 'none',
       width: '30px',
       height: '30px',
-      textAlign: 'center',
       background: backgrounds.grey,
       cursor: 'pointer',
       ...containerSx,

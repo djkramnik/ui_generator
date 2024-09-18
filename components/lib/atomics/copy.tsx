@@ -14,7 +14,7 @@ export const Copy = styled('p')<CopyProps>`
           ? parseVariants($variant, theme)
           : {}
       )
-
+    console.log('variant diff', typeof $variant)
     const responsive = getResponsiveStyles({
       color: theme.palette.copy,
       ...variantDiff,

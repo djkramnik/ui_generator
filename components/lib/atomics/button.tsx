@@ -4,16 +4,10 @@ import { CSSProperties } from "react"
 import { Flex, FlexProps } from "../layout"
 import { Copy, CopyProps } from "./copy"
 import { Button as MuiButton } from "@mui/material"
-import { parseVariant, parseVariants, sxToStyle } from "../../utils"
+import { getComponentStyles, parseVariant, parseVariants, sxToStyle } from "../../utils"
 import { toMuiIcon } from "./icon"
 
 export type ButtonProps = WithTheme<ResponsiveComponent<'button'>>
-
-const pillVariant: CssProps = {
-  borderRadius: '24px',
-  fontWeight: '700',
-  padding: '12px 18px'
-}
 
 // the default styles I include in button should later get ported to theme under theme.component.button
 export const Button = styled('button')<ButtonProps>`
@@ -25,10 +19,9 @@ export const Button = styled('button')<ButtonProps>`
           ? parseVariants($variant, theme)
           : {}
       )
-
+    const componentDiff = getComponentStyles('button', theme)
     const responsive = getResponsiveStyles({
-      color: theme.palette.copy,
-      backgroundColor: theme.palette.primary,
+      ...componentDiff,
       ...variantDiff,
       ...($sx ?? {}),
     })
@@ -42,20 +35,41 @@ export const ChimericButton = (props: Omit<ButtonProps, 'theme'> & {
   const theme = useTheme()
   const {children, $sx, mui, $variant, ...rest} = props
   if (mui) {
+    const variantDiff = typeof $variant === 'string'
+    ? parseVariant($variant, theme)
+    : (
+      Array.isArray($variant)
+        ? parseVariants($variant, theme)
+        : {}
+    )
+
+
+  const componentDiff = getComponentStyles('button', theme)
+  const diff = sxToStyle({
+    ...componentDiff,
+    ...variantDiff,
+  })
+
+  console.log('why god why', {
+    ...diff,
+    ...sxToStyle($sx ?? {}),
+    ...rest.style,
+  })
     return (
       <MuiButton 
-        
       style={{
+        ...diff,
         ...sxToStyle($sx ?? {}),
         ...rest.style,
-        ...($variant === "pill" ? sxToStyle(pillVariant) : {})
       }}>
         {children}
       </MuiButton>
     )
   }
   return (
-    <Button $sx={$sx} {...rest} theme={theme}>
+    <Button
+      $variant={$variant}
+      $sx={$sx} {...rest} theme={theme}>
       {children}
     </Button>
   )
@@ -107,6 +121,7 @@ export const ButtonWithIcon = ({
 export const ChimericButtonWithIcon = (props: ButtonWithIconProps & {
   mui?: boolean
 }) => {
+  const theme = useTheme()
   const Icon = () => <i className={`fa-solid fa-${props.icon}`} style={{
     fontSize: '22px',
     ...props.iconStyle
@@ -114,9 +129,23 @@ export const ChimericButtonWithIcon = (props: ButtonWithIconProps & {
   const { text, mui, $sx, $variant, ...rest } = props
 
   if (mui) {
+    const variantDiff = typeof $variant === 'string'
+    ? parseVariant($variant, theme)
+    : (
+      Array.isArray($variant)
+        ? parseVariants($variant, theme)
+        : {}
+    )
+
+  const componentDiff = getComponentStyles('button', theme)
+  const diff = sxToStyle({
+    ...componentDiff,
+    ...variantDiff,
+  })
     return (
       <MuiButton startIcon={<Icon />}
         style={{
+          ...diff,
           ...(
             typeof props.bgc === 'string'
               ? {
@@ -139,7 +168,6 @@ export const ChimericButtonWithIcon = (props: ButtonWithIconProps & {
               : {}
           ),
           ...sxToStyle($sx ?? {}),
-          ...($variant === "pill" ? sxToStyle(pillVariant) : {})
         }}>
         {text}
       </MuiButton>

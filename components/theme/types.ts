@@ -34,6 +34,7 @@ export type ThemeConfig = {
     copy: ResponsiveMixin
     heading: ResponsiveMixin
     primary: ResponsiveMixin
+    button: ResponsiveMixin
     secondary: ResponsiveMixin
     error: ResponsiveMixin
     success: ResponsiveMixin
@@ -48,6 +49,8 @@ export type ThemeConfig = {
     containerWidth: ResponsiveMixin
   }
   components: {
+    link: CssProps
+    button: CssProps
     select: CssProps
     option: CssProps
     input: CssProps

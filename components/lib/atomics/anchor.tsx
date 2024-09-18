@@ -1,26 +1,34 @@
-
 // I should be using WithTheme wrapper more ubiquitously imo but
 // ... will do so after getting a better sense of what the theme schema should actually be
-// and specifying the theme type more rigorously 
+// and specifying the theme type more rigorously
 
-import { styled, useTheme } from "styled-components"
-import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
+import { styled, useTheme } from 'styled-components'
+import {
+  getResponsiveStyles,
+  ResponsiveComponent,
+  WithTheme,
+} from '../../theme'
 import Link from '@mui/material/Link'
-import { parseVariant, parseVariants, sxToStyle } from "../../utils"
+import {
+  getComponentStyles,
+  parseVariant,
+  parseVariants,
+  sxToStyle,
+} from '../../utils'
 export type AnchorProps = WithTheme<ResponsiveComponent<'a'>>
 
 // in the future theme and variant will come into play???
 export const Anchor = styled('a')<AnchorProps>`
   ${({ theme, $variant, $sx }: AnchorProps) => {
-    const variantDiff = typeof $variant === 'string'
-      ? parseVariant($variant, theme)
-      : (
-        Array.isArray($variant)
+    const variantDiff =
+      typeof $variant === 'string'
+        ? parseVariant($variant, theme)
+        : Array.isArray($variant)
           ? parseVariants($variant, theme)
           : {}
-      )
+    const componentDiff = getComponentStyles('link', theme)
     const responsive = getResponsiveStyles({
-      color: theme.palette.primary,
+      ...componentDiff,
       ...variantDiff,
       ...($sx ?? {}),
     })
@@ -28,24 +36,41 @@ export const Anchor = styled('a')<AnchorProps>`
   }}
 `
 
-export const ChimericAnchor = (props: Omit<AnchorProps, 'theme'> & {
-  mui?: boolean
-}) => {
-  const { children, $sx, mui, ...rest} = props
+export const ChimericAnchor = (
+  props: Omit<AnchorProps, 'theme'> & {
+    mui?: boolean
+  }
+) => {
+  const { children, $sx, mui, $variant, ...rest } = props
   const theme = useTheme()
 
   if (mui) {
+    const variantDiff =
+      typeof $variant === 'string'
+        ? parseVariant($variant, theme)
+        : Array.isArray($variant)
+          ? parseVariants($variant, theme)
+          : {}
+    const componentDiff = getComponentStyles('link', theme)
+    const diff = sxToStyle({
+      ...componentDiff,
+      ...variantDiff,
+    })
     return (
-      <Link {...rest } style={{
-        ...sxToStyle($sx ?? {}),
-        ...rest.style,
-      }}>
+      <Link
+        {...rest}
+        style={{
+          ...diff,
+          ...sxToStyle($sx ?? {}),
+          ...rest.style,
+        }}
+      >
         {children}
       </Link>
     )
   }
   return (
-    <Anchor {...rest} $sx={$sx} theme={theme}>
+    <Anchor $variant={$variant} {...rest} $sx={$sx} theme={theme}>
       {children}
     </Anchor>
   )

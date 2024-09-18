@@ -1,5 +1,5 @@
 import { CSSProperties } from "react"
-import { CssProps, Theme } from "./theme"
+import { CssProps, shadows, Theme } from "./theme"
 
 export const pick = <T extends object = object>(obj: T, keys: string[]): Partial<T> => {
   return Object.entries(obj)
@@ -28,21 +28,23 @@ export const sxToStyle = ($sx: CssProps): CSSProperties => {
 }
 
 export const parseVariant = ($variant: string, theme: Theme): CssProps => {
-  console.log('hiho', theme.palette)
   switch($variant) {
+    case 'underline':
+      return {
+        textDecoration: 'underline'
+      }
+    case 'bold':
+      return {
+        fontWeight: 'bold'
+      }
     case 'pill':
       return {
-        borderRadius: '24px',
-        fontWeight: '700',
+        borderRadius: '30px',
         padding: '12px 18px'
       }
     case 'secondary':
       return {
         fontFamily: theme.typography.secondaryff 
-      }
-    case 'noBg':
-      return {
-        backgroundColor: 'transparent',
       }
     case 'center':
       return {
@@ -56,13 +58,18 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
       return {
         color: theme.palette.grey
       }
+    case 'noBg':
     case 'transparent':
       return {
         backgroundColor: 'transparent'
       }
     case 'border': 
       return {
-        border: '1px solid currentColor'
+        border: '2px solid currentColor'
+      }
+    case 'shadow':
+      return {
+        boxShadow: shadows.w3Schools
       }
     default:
       return {

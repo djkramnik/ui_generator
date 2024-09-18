@@ -54,7 +54,7 @@ const Home: NextPage = () => {
           <IconButton icon="shop" text="Shop" iconStyle={{ fontSize: '40px'}} />
           <IconButton icon="truck-front" text="Delivery" iconStyle={{ fontSize: '40px '}} />
           <IconButton icon="snowflake" text="Cooling" iconStyle={{ fontSize: '40px '}} />
-          <IconButton icon="fire-flame-curved" text="Heating" iconStyle={{ fontSize: '40px '}} />
+          <IconButton mui icon="fire" text="Heating" iconStyle={{ fontSize: '40px '}} />
           <IconButton icon="umbrella" text="Waterproofing" iconStyle={{ fontSize: '40px '}} />
           <IconButton icon="headset" text="Support" iconStyle={{ fontSize: '40px' }} />
         </NavbarLinks>

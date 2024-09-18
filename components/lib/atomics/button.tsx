@@ -5,6 +5,7 @@ import { Flex, FlexProps } from "../layout"
 import { Copy, CopyProps } from "./copy"
 import { Button as MuiButton } from "@mui/material"
 import { sxToStyle } from "../../utils"
+import { toMuiIcon } from "./icon"
 
 export type ButtonProps = WithTheme<ResponsiveComponent<'button'>>
 
@@ -150,21 +151,32 @@ export const IconButton = ({
   rev,
   iconStyle,
   textSx,
+  mui,
 }: {
   icon: string
   text: string
   rev?: boolean
   iconStyle?: CSSProperties
   textSx?: CopyProps['$sx']
+  mui?: boolean
 }) => {
+  const AltMuiIcon = toMuiIcon(icon as any)
   return (
     <Button>
       <Flex aic jcsb {...rev ? { colrev: true } : { col: true }}
         $sx={{ gap: '8px', width: '50px'}}>
-        <i className={`fa-solid fa-${icon}`} style={{
-          fontSize: '30px',
-          ...iconStyle,
-        }} />
+          {
+            mui
+              ? (
+                <AltMuiIcon style={{ ...iconStyle }} />
+              )
+              : (
+                <i className={`fa-solid fa-${icon}`} style={{
+                  fontSize: '30px',
+                  ...iconStyle,
+                }} />
+              )
+          }
         <Copy $sx={textSx}>{text}</Copy>
       </Flex>
     </Button>

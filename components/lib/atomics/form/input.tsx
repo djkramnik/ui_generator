@@ -4,6 +4,7 @@ import { Flex } from "../../layout"
 import { Input as MuiInput } from "@mui/material"
 import { sxToStyle } from "../../../utils"
 import { toMuiIcon } from "../icon"
+import { Position } from "../position"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 
@@ -74,7 +75,9 @@ export const InputWithIcon = ({
       {
         mui
           ? (
-            <AltMuiIcon style={{ ...iconStyles }} />
+            <Position tlbr={{ top: 'calc(50% - 12px)', left: '10px' }}>
+              <AltMuiIcon style={{ ...iconStyles }} />
+            </Position>
           )
           : (
             <i className={`fa-solid fa-${icon}`} style={{

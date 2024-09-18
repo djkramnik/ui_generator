@@ -1,7 +1,8 @@
 import { CSSProperties } from "react"
-import MuiIcon from '@mui/icons-material'
+import Abc from '@mui/icons-material/Abc'
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { SvgIconTypeMap } from "@mui/material";
+import { Comment,List, Gamepad, Error, Menu, Map, Lock, House, Search, TravelExplore, Person, Facebook, Check, Download, Twitter, Instagram, Phone, FacebookTwoTone, Reddit, Email, LinkedIn, Star, Place, GitHub, AutoFixHigh, Favorite, ErrorOutline, YouTube, Cloud, ArrowUpward, ArrowDownward, ArrowForward, ArrowBack, KeyboardArrowDown, Sort, SentimentSatisfiedAlt, CalendarToday, Attachment, DesignServices, Description, Notifications, NotificationsOff, ShoppingCart, ContentPaste, FilterList, Info, Upload, Edit, Google, MoneyOff, Redeem, Delete, Payment, Settings, ArrowCircleUp, Computer, Print, CameraAlt, VideoCameraFront, VideoCameraBack, Headset, Bookmark, Share, Fireplace, RemoveRedEye, VisibilityOff, AirplanemodeActive, Folder, ThumbUp, ThumbDown, Code, Wifi, Tune, Group, Chat, PlayArrow, PlayCircleFilled, Replay10, Replay30, Replay, FastForward, SkipNext, Forward10, Stop, StopCircle, PauseCircle, Pause, ExpandMore, ExpandLess, ClosedCaption, MicOff, Mic, VolumeOff, VolumeMute, VolumeDown, VolumeUp, Warning, CreditCard, KeyboardArrowUp, KeyboardArrowRight, KeyboardArrowLeft, ArrowDropUp, ArrowDropDown, FormatAlignRight, FormatAlignLeft, FormatAlignJustify, FormatAlignCenter, PowerSettingsNew, Reply, RssFeed, Add, Remove, ArrowCircleDown, ArrowCircleRight, ArrowCircleLeft, Message, BrokenImage } from "@mui/icons-material";
 
 enum Icon {
   house = 'house',
@@ -156,338 +157,341 @@ enum Icon {
 
 }
 
-// todo: return google material icon, not string
+
 // const toMuiIcon = (icon: Icon)=> {
 //   switch(icon) {
 //     case 'house':
-//       return MuiIcon.House
+//       return House
 //     case 'magnifying-glass':
-//       return MuiIcon.Search
+//       return Search
 //     case 'sistrix':
-//       return MuiIcon.TravelExplore
+//       return TravelExplore
 //     case 'user':
-//       return MuiIcon.Person
+//       return Person
 //     case 'facebook':
-//       return MuiIcon.Facebook
+//       return Facebook
 //     case 'check':
-//       return MuiIcon.Check
+//       return Check
 //     case 'download':
-//       return MuiIcon.Download
+//       return Download
 //     case 'twitter':
-//       return MuiIcon.Twitter
+//       return Twitter
 //     case 'image':
-//       return MuiIcon.Image
+//       return Image
 //     case 'instagram':
-//       return MuiIcon.Instagram
+//       return Instagram
 //     case 'phone':
-//       return MuiIcon.Phone
+//       return Phone
 //     case 'tiktok':
-//       return MuiIcon.FacebookTwoTone
+//       return FacebookTwoTone
 //     case 'reddit':
-//       return MuiIcon.Reddit
+//       return Reddit
 //     case 'bars':
-//       return MuiIcon.Menu
+//       return Menu
 //     case 'envelope':
-//       return MuiIcon.Email
+//       return Email
 //     case 'linkedin':
-//       return MuiIcon.LinkedIn
+//       return LinkedIn
 //     case 'star':
-//       return MuiIcon.Star
+//       return Star
 //     case 'location-dot':
-//       return MuiIcon.Place
+//       return Place
 //     case 'github':
-//       return MuiIcon.GitHub
+//       return GitHub
 //     case 'wand-magic-sparkles':
-//       return MuiIcon.AutoFixHigh
+//       return AutoFixHigh
 //     case 'heart':
-//       return MuiIcon.Favorite
+//       return Favorite
 //     case 'discord':
-//       return MuiIcon.Gamepad
+//       return Gamepad
 //     case 'circle-x-mark':
-//       return MuiIcon.Error
+//       return Error
 //     case 'x-mark':
-//       return MuiIcon.ErrorOutline
+//       return ErrorOutline
 //     case 'youtube':
-//       return MuiIcon.YouTube
+//       return YouTube
     
 //     default:
-//       return MuiIcon.BrokenImage
+//       return BrokenImage
 //   }
 // }
 
 // gpt supplied mapping
-const toMuiIcon = (icon: Icon): OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
+export const toMuiIcon = (icon: Icon): OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
   muiName: string;
 } => {
   switch (icon) {
-    case Icon.house:
-      return MuiIcon.House;
-    case Icon.search:
-      return MuiIcon.Search;
-    case Icon.search2:
-      return MuiIcon.TravelExplore;
-    case Icon.user:
-      return MuiIcon.Person;
-    case Icon.facebook:
-      return MuiIcon.Facebook;
-    case Icon.check:
-      return MuiIcon.Check;
-    case Icon.download:
-      return MuiIcon.Download;
-    case Icon.twitter:
-      return MuiIcon.Twitter;
-    case Icon.image:
-      return MuiIcon.Image;
-    case Icon.instagram:
-      return MuiIcon.Instagram;
-    case Icon.phone:
-      return MuiIcon.Phone;
-    case Icon.tiktok:
-      return MuiIcon.FacebookTwoTone; // Note: Material UI does not have TikTok; using FacebookTwoTone as a placeholder.
-    case Icon.reddit:
-      return MuiIcon.Reddit;
     case Icon.hamburger:
-      return MuiIcon.Menu;
+      return Menu;
+    case Icon.house:
+      return House;
+    case Icon.search:
+      return Search;
+    case Icon.search2:
+      return TravelExplore;
+    case Icon.user:
+      return Person;
+    case Icon.facebook:
+      return Facebook;
+    case Icon.check:
+      return Check;
+    case Icon.download:
+      return Download;
+    case Icon.twitter:
+      return Twitter;
+    // case Icon.image:
+    //   return Image;
+    case Icon.instagram:
+      return Instagram;
+    case Icon.phone:
+      return Phone;
+    case Icon.tiktok:
+      return FacebookTwoTone; // Note: Material UI does not have TikTok; using FacebookTwoTone as a placeholder.
+    case Icon.reddit:
+      return Reddit;
+    // case Icon.hamburger:
+    //   return Menu;
     case Icon.envelope:
-      return MuiIcon.Email;
+      return Email;
     case Icon.linkedin:
-      return MuiIcon.LinkedIn;
+      return LinkedIn;
     case Icon.star:
-      return MuiIcon.Star;
+      return Star;
     case Icon.location:
-      return MuiIcon.Place;
+      return Place;
     case Icon.github:
-      return MuiIcon.GitHub;
+      return GitHub;
     case Icon.wand:
-      return MuiIcon.AutoFixHigh;
+      return AutoFixHigh;
     case Icon.heart:
-      return MuiIcon.Favorite;
+      return Favorite;
     case Icon.discord:
-      return MuiIcon.Gamepad; // Note: No direct Discord icon in Material UI; using Gamepad as a placeholder.
+      return Gamepad; // Note: No direct Discord icon in Material UI; using Gamepad as a placeholder.
     case Icon.circleXMark:
-      return MuiIcon.Error;
+      return Error;
     case Icon.xMark:
-      return MuiIcon.ErrorOutline;
+      return ErrorOutline;
     case Icon.youtube:
-      return MuiIcon.YouTube;
+      return YouTube;
     case Icon.cloud:
-      return MuiIcon.Cloud;
+      return Cloud;
     case Icon.comment:
-      return MuiIcon.Comment;
+      return Comment;
     case Icon.caretUp:
-      return MuiIcon.ArrowUpward;
+      return ArrowUpward;
     case Icon.caretDown:
-      return MuiIcon.ArrowDownward;
+      return ArrowDownward;
     case Icon.caretRight:
-      return MuiIcon.ArrowForward;
+      return ArrowForward;
     case Icon.caretLeft:
-      return MuiIcon.ArrowBack;
+      return ArrowBack;
     case Icon.chevronDown:
-      return MuiIcon.KeyboardArrowDown
+      return KeyboardArrowDown
     case Icon.sortUp:
-      return MuiIcon.Sort;
+      return Sort;
     case Icon.sortDown:
-      return MuiIcon.Sort;
+      return Sort;
     case Icon.smile:
-      return MuiIcon.SentimentSatisfiedAlt;
+      return SentimentSatisfiedAlt;
     case Icon.calendar:
-      return MuiIcon.CalendarToday;
+      return CalendarToday;
     case Icon.paperclip:
-      return MuiIcon.Attachment;
+      return Attachment;
     case Icon.figma:
-      return MuiIcon.DesignServices; // Note: No direct Figma icon; using DesignServices as a placeholder.
+      return DesignServices; // Note: No direct Figma icon; using DesignServices as a placeholder.
     case Icon.file:
-      return MuiIcon.Description;
+      return Description;
     case Icon.bell:
-      return MuiIcon.Notifications;
+      return Notifications;
     case Icon.bellSlash:
-      return MuiIcon.NotificationsOff;
+      return NotificationsOff;
     case Icon.shoppingCart:
-      return MuiIcon.ShoppingCart;
+      return ShoppingCart;
     case Icon.clipboard:
-      return MuiIcon.ContentPaste;
+      return ContentPaste;
     case Icon.filter:
-      return MuiIcon.FilterList;
+      return FilterList;
     case Icon.circleInfo:
-      return MuiIcon.Info;
+      return Info;
     case Icon.upload:
-      return MuiIcon.Upload;
+      return Upload;
     case Icon.pen:
-      return MuiIcon.Edit;
+      return Edit;
     case Icon.google:
-      return MuiIcon.Google;
+      return Google;
     case Icon.googlePay:
-      return MuiIcon.MoneyOff; // Note: No direct Google Pay icon; using MoneyOff as a placeholder.
+      return MoneyOff; // Note: No direct Google Pay icon; using MoneyOff as a placeholder.
     case Icon.gift:
-      return MuiIcon.Redeem
+      return Redeem
     case Icon.trash:
-      return MuiIcon.Delete;
+      return Delete;
     case Icon.trashCan:
-      return MuiIcon.Delete;
+      return Delete;
     case Icon.stripe:
-      return MuiIcon.Payment; // Note: No direct Stripe icon; using Payment as a placeholder.
+      return Payment; // Note: No direct Stripe icon; using Payment as a placeholder.
     case Icon.list:
-      return MuiIcon.List;
+      return List;
     case Icon.gear:
-      return MuiIcon.Settings;
+      return Settings;
     case Icon.circleUp:
-      return MuiIcon.ArrowCircleUp;
+      return ArrowCircleUp;
     case Icon.lock:
-      return MuiIcon.Lock;
+      return Lock;
     case Icon.windows:
-      return MuiIcon.Computer;
+      return Computer;
     case Icon.paypal:
-      return MuiIcon.MoneyOff; // Note: No direct PayPal icon; using MoneyOff as a placeholder.
+      return MoneyOff; // Note: No direct PayPal icon; using MoneyOff as a placeholder.
     case Icon.print:
-      return MuiIcon.Print;
+      return Print;
     case Icon.camera:
-      return MuiIcon.CameraAlt;
+      return CameraAlt;
     case Icon.video:
-      return MuiIcon.VideoCameraFront;
+      return VideoCameraFront;
     case Icon.videoSlash:
-      return MuiIcon.VideoCameraBack;
+      return VideoCameraBack;
     case Icon.headset:
-      return MuiIcon.Headset;
+      return Headset;
     case Icon.bookmark:
-      return MuiIcon.Bookmark;
+      return Bookmark;
     case Icon.share:
-      return MuiIcon.Share;
+      return Share;
     case Icon.circleExclamation:
-      return MuiIcon.Error;
+      return Error;
     case Icon.fire:
-      return MuiIcon.Fireplace;
+      return Fireplace;
     case Icon.eye:
-      return MuiIcon.RemoveRedEye;
+      return RemoveRedEye;
     case Icon.eyeSlash:
-      return MuiIcon.VisibilityOff;
+      return VisibilityOff;
     case Icon.plane:
-      return MuiIcon.AirplanemodeActive;
+      return AirplanemodeActive;
     case Icon.folder:
-      return MuiIcon.Folder;
+      return Folder;
     case Icon.thumbsUp:
-      return MuiIcon.ThumbUp;
+      return ThumbUp;
     case Icon.thumbsDown:
-      return MuiIcon.ThumbDown;
+      return ThumbDown;
     case Icon.code:
-      return MuiIcon.Code;
+      return Code;
     case Icon.wifi:
-      return MuiIcon.Wifi;
+      return Wifi;
     case Icon.sliders:
-      return MuiIcon.Tune;
+      return Tune;
     case Icon.gamepad:
-      return MuiIcon.Gamepad;
+      return Gamepad;
     case Icon.users:
-      return MuiIcon.Group;
+      return Group;
     case Icon.whatsapp:
-      return MuiIcon.Chat;
+      return Chat;
     case Icon.play:
-      return MuiIcon.PlayArrow;
+      return PlayArrow;
     case Icon.circlePlay:
-      return MuiIcon.PlayCircleFilled;
+      return PlayCircleFilled;
     case Icon.backward:
-      return MuiIcon.Replay10;
+      return Replay10;
     case Icon.backwardStep:
-      return MuiIcon.Replay30;
+      return Replay30;
     case Icon.backwardFast:
-      return MuiIcon.Replay;
+      return Replay;
     case Icon.forward:
-      return MuiIcon.FastForward;
+      return FastForward;
     case Icon.forwardStep:
-      return MuiIcon.SkipNext
+      return SkipNext
     case Icon.forwardFast:
-      return MuiIcon.Forward10;
+      return Forward10;
     case Icon.stop:
-      return MuiIcon.Stop;
+      return Stop;
     case Icon.circleStop:
-      return MuiIcon.StopCircle;
+      return StopCircle;
     case Icon.circlePause:
-      return MuiIcon.PauseCircle;
+      return PauseCircle;
     case Icon.pause:
-      return MuiIcon.Pause;
+      return Pause;
     case Icon.expand:
-      return MuiIcon.ExpandMore;
+      return ExpandMore;
     case Icon.compress:
-      return MuiIcon.ExpandLess;
+      return ExpandLess;
     case Icon.closedCaptioning:
-      return MuiIcon.ClosedCaption
+      return ClosedCaption
     case Icon.repeat:
-      return MuiIcon.Replay;
+      return Replay;
     case Icon.microphoneSlash:
-      return MuiIcon.MicOff;
+      return MicOff;
     case Icon.microphone:
-      return MuiIcon.Mic;
+      return Mic;
     case Icon.volumeXMark:
-      return MuiIcon.VolumeOff;
+      return VolumeOff;
     case Icon.volumeOff:
-      return MuiIcon.VolumeMute;
+      return VolumeMute;
     case Icon.volumeLow:
-      return MuiIcon.VolumeDown;
+      return VolumeDown;
     case Icon.volumeHigh:
-      return MuiIcon.VolumeUp;
+      return VolumeUp;
     case Icon.warning:
-      return MuiIcon.Warning;
+      return Warning;
     case Icon.upload2:
-      return MuiIcon.Upload;
+      return Upload;
     case Icon.creditCard:
-      return MuiIcon.CreditCard;
+      return CreditCard;
     case Icon.angleUp:
-      return MuiIcon.KeyboardArrowUp;
+      return KeyboardArrowUp;
     case Icon.angleRight:
-      return MuiIcon.KeyboardArrowRight;
+      return KeyboardArrowRight;
     case Icon.angleDown:
-      return MuiIcon.KeyboardArrowDown;
+      return KeyboardArrowDown;
     case Icon.angleLeft:
-      return MuiIcon.KeyboardArrowLeft;
+      return KeyboardArrowLeft;
     case Icon.anglesUp:
-      return MuiIcon.ArrowDropUp;
+      return ArrowDropUp;
     case Icon.anglesDown:
-      return MuiIcon.ArrowDropDown;
+      return ArrowDropDown;
     case Icon.anglesRight:
-      return MuiIcon.KeyboardArrowRight
+      return KeyboardArrowRight
     case Icon.anglesLeft:
-      return MuiIcon.KeyboardArrowLeft
+      return KeyboardArrowLeft
     case Icon.arrowDown:
-      return MuiIcon.ArrowDownward;
+      return ArrowDownward;
     case Icon.arrowUp:
-      return MuiIcon.ArrowUpward;
+      return ArrowUpward;
     case Icon.arrowRight:
-      return MuiIcon.ArrowForward;
+      return ArrowForward;
     case Icon.arrowLeft:
-      return MuiIcon.ArrowBack;
+      return ArrowBack;
     case Icon.alignRight:
-      return MuiIcon.FormatAlignRight;
+      return FormatAlignRight;
     case Icon.alighLeft:
-      return MuiIcon.FormatAlignLeft;
+      return FormatAlignLeft;
     case Icon.alignJustify:
-      return MuiIcon.FormatAlignJustify;
+      return FormatAlignJustify;
     case Icon.alignCenter:
-      return MuiIcon.FormatAlignCenter;
+      return FormatAlignCenter;
     case Icon.powerOff:
-      return MuiIcon.PowerSettingsNew;
+      return PowerSettingsNew;
     case Icon.reply:
-      return MuiIcon.Reply;
+      return Reply;
     case Icon.rss:
-      return MuiIcon.RssFeed;
+      return RssFeed;
     case Icon.plus:
-      return MuiIcon.Add;
+      return Add;
     case Icon.minus:
-      return MuiIcon.Remove;
+      return Remove;
     case Icon.circleChevronUp:
-      return MuiIcon.ArrowCircleUp;
+      return ArrowCircleUp;
     case Icon.circleChevronDown:
-      return MuiIcon.ArrowCircleDown;
+      return ArrowCircleDown;
     case Icon.circleChevronRight:
-      return MuiIcon.ArrowCircleRight;
+      return ArrowCircleRight;
     case Icon.circleChevronLeft:
-      return MuiIcon.ArrowCircleLeft;
+      return ArrowCircleLeft;
     case Icon.map:
-      return MuiIcon.Map;
+      return Map;
     case Icon.message:
-      return MuiIcon.Message;
+      return Message;
 
     default:
-      return MuiIcon.BrokenImage; // Default icon if none of the cases match
+      return BrokenImage; // Default icon if none of the cases match
   }
+  return Abc
 };
 
 enum MuiStyles {
@@ -503,13 +507,16 @@ export const ChimericIcon = ({
   mui,
   iconStyle,
 }: {
-  icon: string
+  icon: Icon
   mui?: boolean
   iconStyle?: CSSProperties
 }) => {
   // any defaults must derive from theme, right here yo
   if (mui) {
-    return null
+    const AltMuiIcon = toMuiIcon(icon)
+    return <AltMuiIcon style={{
+      ...iconStyle
+    }} />
   }
   return (
     <i className={`fa-solid fa-${icon}`} style={iconStyle} />

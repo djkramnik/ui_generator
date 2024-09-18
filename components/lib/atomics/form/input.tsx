@@ -3,6 +3,7 @@ import { CssProps, getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, Wi
 import { Flex } from "../../layout"
 import { Input as MuiInput } from "@mui/material"
 import { sxToStyle } from "../../../utils"
+import { toMuiIcon } from "../icon"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 
@@ -59,23 +60,34 @@ export const InputWithIcon = ({
   inputProps,
   icon,
   iconStyles,
+  mui,
 }: {
   placeholder?: string
   inputProps?: Omit<InputProps, 'theme'>
   icon: string
   iconStyles?: CSSProperties
+  mui?: boolean
 }) => {
+  const AltMuiIcon = toMuiIcon(icon as any) // let it be
   return (
     <div style={{ position: 'relative'}}>
-      <i className={`fa-solid fa-${icon}`} style={{
-        color: '#da1b27',
-        fontSize: '18px',
-        zIndex: 1,
-        position: 'absolute',
-        left: '15px',
-        top: '25%',
-        ...iconStyles,
-      }}/>
+      {
+        mui
+          ? (
+            <AltMuiIcon style={{ ...iconStyles }} />
+          )
+          : (
+            <i className={`fa-solid fa-${icon}`} style={{
+              color: '#da1b27',
+              fontSize: '18px',
+              zIndex: 1,
+              position: 'absolute',
+              left: '15px',
+              top: '25%',
+              ...iconStyles,
+            }}/>
+          )
+      }
       <Input placeholder={placeholder} {...inputProps} $sx={{ 
         width: '300px',
         paddingLeft: '40px',
@@ -86,7 +98,6 @@ export const InputWithIcon = ({
     </div>
   )
 }
-
 
 export type LabelProps = WithTheme<ResponsiveComponent<'label'>>
 

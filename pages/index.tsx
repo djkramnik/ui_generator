@@ -43,7 +43,7 @@ const Home: NextPage = () => {
           {'About Us'}
         </NavbarLinks>
         <NavbarLinks>
-          <InputWithIcon icon="magnifying-glass" placeholder="Search" />
+          <InputWithIcon mui icon="magnifying-glass" placeholder="Search" />
         </NavbarLinks>
       </Navbar>
       <Navbar bgc="#fff" c="#000" h="90px" w="90vw">

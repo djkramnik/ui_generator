@@ -215,6 +215,7 @@ enum Icon {
 //   }
 // }
 
+// gpt supplied mapping
 const toMuiIcon = (icon: Icon): OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
   muiName: string;
 } => {

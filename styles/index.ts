@@ -7,7 +7,8 @@ import type { Theme } from '../components/theme'
 export const themes: Record<string, Theme> = {
   primary: {
     typography: {
-      primaryff: 'helveticaneue',
+      primaryff: 'Noto Sans, sans-serif',
+      secondaryff: 'helveticaneue'
     },
     spacing: {
       containerWidth: ['96%', '94%', '92%']
@@ -15,10 +16,21 @@ export const themes: Record<string, Theme> = {
   },
   alt: {
     typography: {
-      primaryff: 'Courier'
+      primaryff: 'Roboto',
+      secondaryff: 'Montserrat'
+
     },
     spacing: {
       containerWidth: ['98%', '96%', '94%']
+    }
+  },
+  tertiary: {
+    typography: {
+      primaryff: 'Montserrat',
+      secondaryff: 'Roboto',
+    },
+    spacing: {
+      containerWidth: '96%'
     }
   }
 }

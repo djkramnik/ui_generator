@@ -2,7 +2,7 @@ import { CSSProperties, styled, useTheme } from "styled-components"
 import { CssProps, getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../../theme"
 import { Flex } from "../../layout"
 import { Input as MuiInput } from "@mui/material"
-import { sxToStyle } from "../../../utils"
+import { parseVariant, parseVariants, sxToStyle } from "../../../utils"
 import { toMuiIcon } from "../icon"
 import { Position } from "../position"
 
@@ -11,8 +11,16 @@ export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 // in the future theme and variant will come into play???
 export const Input = styled('input')<InputProps>`
   ${({ theme, $variant, $sx }: InputProps) => {
+    const variantDiff = typeof $variant === 'string'
+      ? parseVariant($variant, theme)
+      : (
+        Array.isArray($variant)
+          ? parseVariants($variant, theme)
+          : {}
+      )
     const responsive = getResponsiveStyles({
       padding: '9px 18px',
+      ...variantDiff,
       ...($sx ?? {}),
     })
     return responsive

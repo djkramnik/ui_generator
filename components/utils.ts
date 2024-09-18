@@ -39,6 +39,10 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
       return {
         fontFamily: theme.typography.secondaryff 
       }
+    case 'noBg':
+      return {
+        backgroundColor: 'transparent',
+      }
     default:
       return {
 

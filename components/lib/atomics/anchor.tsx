@@ -6,13 +6,22 @@
 import { styled, useTheme } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
 import Link from '@mui/material/Link'
-import { sxToStyle } from "../../utils"
+import { parseVariant, parseVariants, sxToStyle } from "../../utils"
 export type AnchorProps = WithTheme<ResponsiveComponent<'a'>>
 
 // in the future theme and variant will come into play???
 export const Anchor = styled('a')<AnchorProps>`
   ${({ theme, $variant, $sx }: AnchorProps) => {
+    const variantDiff = typeof $variant === 'string'
+      ? parseVariant($variant, theme)
+      : (
+        Array.isArray($variant)
+          ? parseVariants($variant, theme)
+          : {}
+      )
     const responsive = getResponsiveStyles({
+      color: theme.palette.primary,
+      ...variantDiff,
       ...($sx ?? {}),
     })
     return responsive

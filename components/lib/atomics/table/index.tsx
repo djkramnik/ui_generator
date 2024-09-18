@@ -22,7 +22,7 @@ import {
   Paper,
   Pagination as MuiPagination
 } from '@mui/material' 
-import { sxToStyle } from '../../../utils'
+import { parseVariant, parseVariants, sxToStyle } from '../../../utils'
 
 // styled component shit
 
@@ -30,10 +30,18 @@ export type TableProps = WithTheme<ResponsiveComponent<'table'>>
 
 export const Table = styled('table')<TableProps>`
   ${({ theme, $variant, $sx }: TableProps) => {
+    const variantDiff = typeof $variant === 'string'
+      ? parseVariant($variant, theme)
+      : (
+        Array.isArray($variant)
+          ? parseVariants($variant, theme)
+          : {}
+      )
     const responsive = getResponsiveStyles({
       borderSpacing: '0',
       border: '1px solid #333',
       borderBottom: 'none',
+      ...variantDiff,
       ...($sx ?? {}),
     })
     return responsive

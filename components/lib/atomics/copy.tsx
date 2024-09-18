@@ -17,7 +17,6 @@ export const Copy = styled('p')<CopyProps>`
 
     const responsive = getResponsiveStyles({
       color: theme.palette.copy,
-      backgroundColor: theme.palette.primary,
       ...variantDiff,
       ...($sx ?? {}),
     })

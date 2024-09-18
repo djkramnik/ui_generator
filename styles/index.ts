@@ -13,7 +13,7 @@ export const themes: Record<string, Theme> = {
     // youtube
     palette: {
       background: '#fff',
-      copy: '#dd2c00',
+      copy: '#0f0f0f',
       heading: '#212121',
       primary: '#3f51b5',
       secondary: '#c5cae9',

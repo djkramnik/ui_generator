@@ -167,7 +167,7 @@ export const IconButton = ({
 }) => {
   const AltMuiIcon = toMuiIcon(icon as any)
   return (
-    <Button>
+    <Button $variant="noBg">
       <Flex aic jcsb {...rev ? { colrev: true } : { col: true }}
         $sx={{ gap: '8px', width: '50px'}}>
           {

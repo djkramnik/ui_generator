@@ -270,64 +270,6 @@ enum Icon {
   message = 'message',
 }
 
-// const toMuiIcon = (icon: Icon)=> {
-//   switch(icon) {
-//     case 'house':
-//       return House
-//     case 'magnifying-glass':
-//       return Search
-//     case 'sistrix':
-//       return TravelExplore
-//     case 'user':
-//       return Person
-//     case 'facebook':
-//       return Facebook
-//     case 'check':
-//       return Check
-//     case 'download':
-//       return Download
-//     case 'twitter':
-//       return Twitter
-//     case 'image':
-//       return Image
-//     case 'instagram':
-//       return Instagram
-//     case 'phone':
-//       return Phone
-//     case 'tiktok':
-//       return FacebookTwoTone
-//     case 'reddit':
-//       return Reddit
-//     case 'bars':
-//       return Menu
-//     case 'envelope':
-//       return Email
-//     case 'linkedin':
-//       return LinkedIn
-//     case 'star':
-//       return Star
-//     case 'location-dot':
-//       return Place
-//     case 'github':
-//       return GitHub
-//     case 'wand-magic-sparkles':
-//       return AutoFixHigh
-//     case 'heart':
-//       return Favorite
-//     case 'discord':
-//       return Gamepad
-//     case 'circle-x-mark':
-//       return Error
-//     case 'x-mark':
-//       return ErrorOutline
-//     case 'youtube':
-//       return YouTube
-
-//     default:
-//       return BrokenImage
-//   }
-// }
-
 // gpt supplied mapping
 export const toMuiIcon = (
   icon: Icon

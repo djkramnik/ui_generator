@@ -14,7 +14,7 @@ import { ChimericDropdown, Dropdown, DropdownBubble } from '../components/lib/at
 import { Checkbox, ChimericCheckbox, CustomCheckbox } from '../components/lib/atomics/form/checkbox'
 import { Toggle } from '../components/lib/atomics/form/toggle'
 import { AccordionSection, ChimericAccordion, TextAccordion } from '../components/lib/atomics/accordion'
-import { ChimericModal, Modal } from '../components/lib/atomics/modal'
+import { ChimericModal } from '../components/lib/atomics/modal'
 import { useState } from 'react'
 import { ChimericTabs, Tabs } from '../components/lib/atomics/tabs'
 import { getGenericColumns, BasicTable, Pagination, ChimericTable, ChimericPagination } from '../components/lib/atomics/table'
@@ -107,7 +107,7 @@ const Checkout: NextPage = () => {
             <div style={{ width: '600px', margin: 'auto', color: colors.gsapWhite }}>
               <Spacer />
               <Flex col gap="12px">
-                <Heading level={2} $sx={{ fontSize: '36px' }}>
+                <Heading level={2} $variant="white">
                   Sign up
                 </Heading>
                 <Flex gap="6px">
@@ -393,7 +393,8 @@ const Checkout: NextPage = () => {
                   </TextAccordion>
                   <div style={{ width: '500px'}}>
                     <AccordionSection
-                      heading="A Salut">
+                      heading="A Salut"
+                      boxSx={{ borderBottom: 'none'}}>
                       hi
                     </AccordionSection>
                     <AccordionSection

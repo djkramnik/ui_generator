@@ -47,11 +47,13 @@ export const themes: Record<string, Theme> = {
       heading: {
         margin: '0',
         color: palette.heading,
+        fontFamily: typography.primaryff,
       },
       h1: {
         fontSize: '94px',
         lineHeight: '97px',
         fontWeight: 'bold',
+        letterSpacing: '-1.46828px',
       },
       h2: {
         fontSize: '56px',
@@ -64,10 +66,11 @@ export const themes: Record<string, Theme> = {
       },
       h4: {
         fontSize: '22px',
+        fontWeight: 'normal',
       },
       h5: {
         fontSize: '18px',
-        fontFamily: typography.primaryff,
+        fontWeight: 'normal',
       },
       select: {
         outline: 'none',
@@ -99,7 +102,10 @@ export const themes: Record<string, Theme> = {
         cursor: 'pointer'
       },
       copy: {
-        color: palette.copy
+        fontFamily: typography.secondaryff,
+        color: palette.copy,
+        fontSize: '16px',
+        lineHeight: '24px',
       },
       icon: {
         fontSize: '22px'
@@ -343,12 +349,18 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   a {
     color: inherit;
   }
+
   a:hover {
     text-decoration: underline;
   }
+
   button {
     outline: none;
     background: none;
     border: none;
+  }
+
+  p {
+
   }
 `

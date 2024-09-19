@@ -23,6 +23,7 @@ type ModalProps = {
   closeIcon?: React.ReactNode
   closeIconContainerSx?: CssProps
   open?: Boolean
+  handleClose?: () => void
 }
 
 export const Modal = ({
@@ -32,6 +33,7 @@ export const Modal = ({
   closeIcon,
   closeIconContainerSx,
   open,
+  handleClose,
 }: ModalProps) => {
   const theme = useTheme()
   return (
@@ -40,7 +42,9 @@ export const Modal = ({
       ...getComponentStyles('modalBackground', theme),
       ...backgroundSx,
     }}>
-      <Box $sx={{
+      <Box 
+        onClick={handleClose}
+      $sx={{
         ...getComponentStyles('modalCloseIconContainer', theme),
         ...closeIconContainerSx
       }}>
@@ -62,7 +66,6 @@ export const Modal = ({
 
 export const ChimericModal = (props: ModalProps & {
   mui?: boolean
-  handleClose?: () => void
 }) => {
   const theme = useTheme()
   const { children, mui, open, handleClose, ...rest } = props
@@ -80,7 +83,7 @@ export const ChimericModal = (props: ModalProps & {
     )
   }
   return (
-    <Modal {...rest} open={open}>
+    <Modal {...rest} open={open} handleClose={handleClose}>
       {children}
     </Modal>
   )

@@ -1,7 +1,7 @@
 import { styled, useTheme } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
 import { Typography } from "@mui/material"
-import { getComponentStyles, mergeStyles, parseVariant, parseVariants, sxToStyle } from "../../utils"
+import { mergeStyles, sxToStyle } from "../../utils"
 
 export type CopyProps = WithTheme<ResponsiveComponent<'p'>>
 

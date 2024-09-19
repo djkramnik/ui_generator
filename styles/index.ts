@@ -308,6 +308,21 @@ export const themes: Record<string, Theme> = {
         left: '50%',
         transform: 'translate(-50%, -50%)',
       },
+      iconButtonInner: {
+        gap: spacing.smallGap,
+        color: palette.copy,
+      },
+      iconButtonIcon: {
+        fontSize: '40px',
+        fill: 'currentColor',
+        color: 'currentColor',
+      },
+      iconButtonLabel: {
+
+      },
+      iconButtonContainer: {
+        width: '50px'
+      }
     }
   }
 }

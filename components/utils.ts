@@ -62,7 +62,6 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
       return {
         color: theme.palette.grey
       }
-    case 'noBg':
     case 'transparent':
       return {
         backgroundColor: 'transparent'

@@ -108,6 +108,10 @@ export type ThemeConfig = {
     modalCloseIconContainer: CssProps
     modalContainer: CssProps
     modalMuiContainer: CssProps
+    iconButtonContainer: CssProps
+    iconButtonInner: CssProps
+    iconButtonIcon: CssProps
+    iconButtonLabel: CssProps
   }
 }
 

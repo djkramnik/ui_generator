@@ -1,11 +1,16 @@
-import { styled, useTheme } from "styled-components"
-import { CssProps, getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../theme"
-import { CSSProperties } from "react"
-import { Flex, FlexProps } from "../layout"
-import { Copy, CopyProps } from "./copy"
-import { Button as MuiButton } from "@mui/material"
-import { getComponentStyles, mergeStyles, parseVariant, parseVariants, sxToStyle } from "../../utils"
-import { toMuiIcon } from "./icon"
+import { styled, useTheme } from 'styled-components'
+import {
+  getResponsiveStyles,
+  ResponsiveComponent,
+  ResponsiveMixin,
+  WithTheme,
+} from '../../theme'
+import { CSSProperties } from 'react'
+import { Flex, FlexProps } from '../layout'
+import { Copy, CopyProps } from './copy'
+import { Button as MuiButton } from '@mui/material'
+import { getComponentStyles, mergeStyles, sxToStyle } from '../../utils'
+import { ChimericIcon, Icon } from './icon'
 
 export type ButtonProps = WithTheme<ResponsiveComponent<'button'>>
 
@@ -26,11 +31,13 @@ export const Button = styled('button')<ButtonProps>`
   }}
 `
 
-export const ChimericButton = (props: Omit<ButtonProps, 'theme'> & {
-  mui?: boolean
-}) => {
+export const ChimericButton = (
+  props: Omit<ButtonProps, 'theme'> & {
+    mui?: boolean
+  }
+) => {
   const theme = useTheme()
-  const {children, $sx, mui, $variant, ...rest} = props
+  const { children, $sx, mui, $variant, ...rest } = props
   if (mui) {
     const diff = mergeStyles({
       theme,
@@ -38,20 +45,19 @@ export const ChimericButton = (props: Omit<ButtonProps, 'theme'> & {
       $variant,
     })
     return (
-      <MuiButton 
+      <MuiButton
         style={{
           ...sxToStyle(diff),
           ...sxToStyle($sx ?? {}),
           ...rest.style,
-        }}>
+        }}
+      >
         {children}
       </MuiButton>
     )
   }
   return (
-    <Button
-      $variant={$variant}
-      $sx={$sx} {...rest} theme={theme}>
+    <Button $variant={$variant} $sx={$sx} {...rest} theme={theme}>
       {children}
     </Button>
   )
@@ -79,35 +85,46 @@ export const ButtonWithIcon = ({
   $variant,
   iconStyle,
   flexProps,
-} : ButtonWithIconProps) => {
+}: ButtonWithIconProps) => {
   return (
-    <Button 
+    <Button
       $variant={$variant}
       $sx={{
         backgroundColor: bgc,
         padding: p,
         color: c,
         ...$sx,
-      }}>
-      <Flex aic jcsb {...flexProps} $sx={{ gap: '20px', ...flexProps?.$sx }} >
+      }}
+    >
+      <Flex aic jcsb {...flexProps} $sx={{ gap: '20px', ...flexProps?.$sx }}>
         <span>{text}</span>
-        <i className={`fa-solid fa-${icon}`} style={{
-          fontSize: '22px',
-          ...iconStyle
-        }} />
+        <i
+          className={`fa-solid fa-${icon}`}
+          style={{
+            fontSize: '22px',
+            ...iconStyle,
+          }}
+        />
       </Flex>
     </Button>
   )
 }
 
-export const ChimericButtonWithIcon = (props: ButtonWithIconProps & {
-  mui?: boolean
-}) => {
+export const ChimericButtonWithIcon = (
+  props: ButtonWithIconProps & {
+    mui?: boolean
+  }
+) => {
   const theme = useTheme()
-  const Icon = () => <i className={`fa-solid fa-${props.icon}`} style={{
-    fontSize: '22px',
-    ...props.iconStyle
-  }} />
+  const Icon = () => (
+    <i
+      className={`fa-solid fa-${props.icon}`}
+      style={{
+        fontSize: '22px',
+        ...props.iconStyle,
+      }}
+    />
+  )
   const { text, mui, $sx, $variant, ...rest } = props
 
   if (mui) {
@@ -117,39 +134,33 @@ export const ChimericButtonWithIcon = (props: ButtonWithIconProps & {
       $variant,
     })
     return (
-      <MuiButton startIcon={<Icon />}
+      <MuiButton
+        startIcon={<Icon />}
         style={{
           ...sxToStyle(diff),
-          ...(
-            typeof props.bgc === 'string'
-              ? {
+          ...(typeof props.bgc === 'string'
+            ? {
                 backgroundColor: props.bgc,
               }
-              : {}
-          ),
-          ...(
-            typeof props.p === 'string'
-              ? {
+            : {}),
+          ...(typeof props.p === 'string'
+            ? {
                 padding: props.p,
               }
-              : {}
-          ),
-          ...(
-            typeof props.c === 'string'
-              ? {
+            : {}),
+          ...(typeof props.c === 'string'
+            ? {
                 color: props.c,
               }
-              : {}
-          ),
+            : {}),
           ...sxToStyle($sx ?? {}),
-        }}>
+        }}
+      >
         {text}
       </MuiButton>
     )
   }
-  return (
-    <ButtonWithIcon text={text} $sx={$sx} $variant={$variant} {...rest} />
-  )
+  return <ButtonWithIcon text={text} $sx={$sx} $variant={$variant} {...rest} />
 }
 
 export const IconButton = ({
@@ -160,30 +171,36 @@ export const IconButton = ({
   textSx,
   mui,
 }: {
-  icon: string
+  icon: Icon
   text: string
   rev?: boolean
   iconStyle?: CSSProperties
   textSx?: CopyProps['$sx']
   mui?: boolean
 }) => {
-  const AltMuiIcon = toMuiIcon(icon as any)
+  const theme = useTheme()
   return (
-    <Button $variant="noBg">
-      <Flex aic jcsb {...rev ? { colrev: true } : { col: true }}
-        $sx={{ gap: '8px', width: '50px'}}>
-          {
-            mui
-              ? (
-                <AltMuiIcon style={{ ...iconStyle }} />
-              )
-              : (
-                <i className={`fa-solid fa-${icon}`} style={{
-                  fontSize: '30px',
-                  ...iconStyle,
-                }} />
-              )
-          }
+    <Button $variant="transparent" $sx={{
+      ...getComponentStyles('iconButtonContainer', theme),
+    }}>
+      <Flex
+        aic
+        jcsb
+        {...(rev ? { colrev: true } : { col: true })}
+        $sx={{
+          ...getComponentStyles('iconButtonInner', theme),
+        }}
+      >
+        {
+          <ChimericIcon
+            mui={mui === true}
+            icon={icon}
+            iconStyle={{
+              ...sxToStyle(getComponentStyles('iconButtonIcon', theme)),
+              ...iconStyle,
+            }}
+          />
+        }
         <Copy $sx={textSx}>{text}</Copy>
       </Flex>
     </Button>

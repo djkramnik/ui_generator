@@ -3,12 +3,12 @@ import { useTheme } from 'styled-components'
 import { CssProps, ResponsiveMixin } from '../../theme'
 import { Box, BoxProps, Flex, FlexProps } from '../layout'
 import { CloseIcon } from '../../svg/common/close'
-import { Heading } from '../atomics'
+import { Anchor, Heading } from '../atomics'
 
 // need anchor with sx....
 export const NavbarLink = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <a
+    <Anchor
       href="#"
       style={{
         fontSize: 'inherit',
@@ -18,7 +18,7 @@ export const NavbarLink = ({ children }: { children?: React.ReactNode }) => {
       }}
     >
       {children}
-    </a>
+    </Anchor>
   )
 }
 

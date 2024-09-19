@@ -48,16 +48,18 @@ const Home: NextPage = () => {
         </NavbarLinks>
       </Navbar>
       <Navbar bgc="#fff" c="#000" h="90px" w="90vw">
-        <NavbarLinks gap="40px" $sx={{ alignItems: 'stretch' }}>
+        <NavbarLinks $sx={{ alignItems: 'center', justifyContent: 'space-around', flexGrow: '1',
+          paddingRight: '40px'
+         }}>
           <div style={{ marginRight: '20px'}}>
             <EnercareLogo />
           </div>
-          <IconButton icon="shop" text="Shop" iconStyle={{ fontSize: '40px'}} />
-          <IconButton icon="truck-front" text="Delivery" iconStyle={{ fontSize: '40px '}} />
-          <IconButton icon="snowflake" text="Cooling" iconStyle={{ fontSize: '40px '}} />
-          <IconButton mui icon="fire" text="Heating" iconStyle={{ fontSize: '40px '}} />
-          <IconButton icon="umbrella" text="Waterproofing" iconStyle={{ fontSize: '40px '}} />
-          <IconButton icon="headset" text="Support" iconStyle={{ fontSize: '40px' }} />
+          <IconButton mui icon={Icon.shoppingCart} text="Shop"  />
+          <IconButton icon={Icon.envelope} text="Delivery" />
+          <IconButton icon={Icon.fire} text="Cooling" />
+          <IconButton mui icon={Icon.fire} text="Heating" />
+          <IconButton icon={Icon.volumeHigh} text="Waterproofing" />
+          <IconButton icon={Icon.headset} text="Support" />
         </NavbarLinks>
         <NavbarLinks>
           <Flex col $sx={{ gap: '4px' }}>
@@ -150,7 +152,7 @@ const Home: NextPage = () => {
             }}>
             <Flex row aic>
               <Flex col jcc $sx={{ flexGrow: '1', width: '50%', color: '#fff', height: '80%', gap: '24px' }}>
-                <ChimericHeading mui level={2}>
+                <ChimericHeading mui level={2} $variant="white">
                   EXPLORE TORONTO,<br />
                   CAR BABIES
                 </ChimericHeading>

@@ -49,7 +49,7 @@ export const ThreeColCnn = () => {
       <Spacer />
       <Heading
         level={4}
-        $variant={['center', 'muted']}
+        $variant={['center']}
       >
         DEMOCRACY IN ACTION
       </Heading>

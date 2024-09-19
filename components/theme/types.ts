@@ -91,6 +91,12 @@ export type ThemeConfig = {
     customCheckboxContainer: CssProps
     customCheckboxInput: CssProps
     customCheckboxLabel: CssProps
+    dropdownContainer: CssProps
+    dropdownIcon: CssProps
+    dropdownPopup: CssProps
+    dropdownOptionContainer: CssProps
+    dropdownOption: CssProps
+    dropdownBubbleArrow: CssProps
   }
 }
 

@@ -205,7 +205,47 @@ export const themes: Record<string, Theme> = {
       },
       customCheckboxLabel: {
 
-      }
+      },
+      dropdownContainer: {
+        position: 'relative',
+        display: 'inline-block',
+        width: 'fit-content'
+      },
+      dropdownIcon: {
+        fontSize: '12px',
+      },
+      dropdownPopup: {
+        position: 'relative',
+        fontSize: '16px',
+        padding: '9px 6px',
+        borderRadius: '0.25rem',
+        fontWeight: '400',
+        border: '2px solid rgba(0, 0, 0, 0.6)',
+        backgroundColor: '#fff',
+      },
+      dropdownOptionContainer: {
+        position: 'absolute',
+        top: 'calc(100% + 5px)',
+        left: '0',
+        width: '100%',
+        height: 'auto',
+        borderRadius: '0.25rem',
+        padding: '6px',
+        backgroundColor: '#fff',
+        boxShadow: shadows.lichessCard
+      },
+      dropdownOption: {
+        padding: '4px 6px'
+      },
+      dropdownBubbleArrow: {
+        position: 'absolute',
+        top: '100%',
+        width: '0', 
+        height: '0', 
+        borderLeft: '5px solid transparent',
+        borderRight: '5px solid transparent',
+        borderBottom: '5px solid #fff',
+      },
     }
   }
 }

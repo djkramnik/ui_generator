@@ -10,6 +10,7 @@ import {
   ChimericHeading,
   Copy,
   Heading,
+  Icon,
   IconButton,
   Image,
   InputWithIcon
@@ -43,7 +44,7 @@ const Home: NextPage = () => {
           {'About Us'}
         </NavbarLinks>
         <NavbarLinks>
-          <InputWithIcon mui icon="magnifying-glass" placeholder="Search" />
+          <InputWithIcon mui icon={Icon.search} placeholder="Search" />
         </NavbarLinks>
       </Navbar>
       <Navbar bgc="#fff" c="#000" h="90px" w="90vw">

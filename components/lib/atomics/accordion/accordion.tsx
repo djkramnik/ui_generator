@@ -1,6 +1,6 @@
 import { AccordionDetails, AccordionSummary } from "@mui/material";
-import { colors, CssProps } from "../../../theme"
-import { Box, Flex } from "../../layout"
+import { CssProps } from "../../../theme"
+import { Box } from "../../layout"
 import { Heading } from "../heading"
 import MuiAccordion from '@mui/material/Accordion';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -108,7 +108,16 @@ export const ChimericAccordion = (props: AccordionProps & {
   mui?: boolean
 }) => {
   const theme = useTheme()
-  const { children, mui, open, icon, summaryVariant, expandedVariant, ...rest } = props
+  const { 
+    children,
+    mui,
+    open,
+    icon,
+    summaryVariant,
+    expandedVariant,
+    headingVariant,
+    ...rest
+  } = props
   
   if (mui) {
     const summaryDiff = mergeStyles({
@@ -116,6 +125,12 @@ export const ChimericAccordion = (props: AccordionProps & {
       $variant: summaryVariant,
       component: 'accordionSummary',
     })
+    const summaryHeadingDiff = mergeStyles({
+      theme,
+      $variant: headingVariant,
+      component: 'accordionHeading'
+    })
+
     const expandedDiff = mergeStyles({
       theme, 
       $variant: expandedVariant,
@@ -126,7 +141,10 @@ export const ChimericAccordion = (props: AccordionProps & {
       <MuiAccordion defaultExpanded={open === true}>
         <AccordionSummary 
           style={{
-            ...sxToStyle(summaryDiff)
+            ...sxToStyle({
+              ...summaryDiff,
+              ...summaryHeadingDiff,
+            })
           }}
         expandIcon={icon ?? <ExpandMoreIcon />}>
           {rest.heading}

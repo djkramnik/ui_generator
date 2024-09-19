@@ -401,7 +401,8 @@ const Checkout: NextPage = () => {
                       heading="Hi Jack" open>
                       Bye Jack
                     </AccordionSection>
-                    <ChimericAccordion mui heading="Hi Jack" open>
+                    <ChimericAccordion mui heading="Hi Jack" open
+                      headingVariant="h3">
                       Bye Jack
                     </ChimericAccordion>
                     <Spacer />

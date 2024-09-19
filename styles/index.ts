@@ -14,7 +14,7 @@ const palette = {
   error: '#dd2c00',
   success: '#303f9f',
   white: '#fff',
-  grey: 'rgb(146,146,146)',
+  grey: colors.amazonGrey,
 }
 
 export const themes: Record<string, Theme> = {

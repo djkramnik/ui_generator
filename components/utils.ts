@@ -71,7 +71,28 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
       return {
         boxShadow: shadows.w3Schools
       }
+    case 'h1':
+      return {
+        ...theme.components.h1,
+      }
+    case 'h2':
+      return {
+        ...theme.components.h2,
+      }
+    case 'h3':
+      return {
+        ...theme.components.h3,
+      }
+    case 'h4':
+      return {
+        ...theme.components.h4,
+      }
+    case 'h5':
+      return {
+        ...theme.components.h5,
+      }
     default:
+      console.error('invalid variant: ', $variant)
       return {
 
       }

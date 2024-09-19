@@ -183,7 +183,16 @@ export const themes: Record<string, Theme> = {
         padding: '6px',
         backgroundColor: '#fff',
         boxShadow: shadows.card,
-      }
+      },
+      checkboxContainer: {
+        
+      },
+      checkboxInput: {
+
+      },
+      checkboxLabel: {
+
+      },
     }
   }
 }

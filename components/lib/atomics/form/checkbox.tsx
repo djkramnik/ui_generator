@@ -4,11 +4,13 @@ import { Box, Flex } from "../../layout"
 import { Copy } from "../copy"
 import MuiCheckbox from '@mui/material/Checkbox'
 import MuiRadio from '@mui/material/Radio'
+import { useTheme } from "styled-components"
+import { Input } from "./input"
+import { getComponentStyles, sxToStyle } from "../../../utils"
 
 type CheckboxProps = {
   checked?: boolean
   label: string
-  gap?: ResponsiveMixin
   radio?: boolean
   labelSx?: CssProps
 }
@@ -16,14 +18,28 @@ type CheckboxProps = {
 export const Checkbox = ({
   checked,
   label,
-  gap,
   radio,
   labelSx,
 }: CheckboxProps) => {
+  const {
+    theme
+  } = useTheme()
   return (
-    <Flex row gap={gap ?? '12px'}>
-      <input type={radio ? 'radio' : 'checkbox'} checked={checked === true} />
-      <Copy $sx={{ ...labelSx }}>{label}</Copy>
+    <Flex $sx={{
+      ...getComponentStyles('checkboxContainer', theme),
+    }} 
+      row gap={theme.spacing.gap}>
+      <Input
+        $sx={{
+          ...getComponentStyles('checkboxLabel', theme),
+        }}
+        type={radio ? 'radio' : 'checkbox'}
+        checked={checked === true}
+      />
+      <Copy $sx={{ 
+        ...getComponentStyles('checkboxLabel', theme),
+        ...labelSx
+        }}>{label}</Copy>
     </Flex>
   )
 }
@@ -31,18 +47,35 @@ export const Checkbox = ({
 export const ChimericCheckbox = (props: CheckboxProps & {
   mui?: boolean
 }) => {
+  const theme = useTheme()
   const {mui, ...rest} = props
   if (mui) {
     return (
       <FormControlLabel
+        style={{
+          ...sxToStyle(
+            getComponentStyles('checkboxContainer', theme),
+          )
+        }}
         required={true}
         control={
           rest.radio
             ? (
-              <MuiRadio defaultChecked={rest.checked === true} />
+              <MuiRadio style={{
+                ...sxToStyle(
+                  getComponentStyles('checkboxInput', theme),
+                ),
+              }}
+                defaultChecked={rest.checked === true} />
             )
             : (
-              <MuiCheckbox defaultChecked={rest.checked === true} />
+              <MuiCheckbox defaultChecked={rest.checked === true} 
+                style={{
+                  ...sxToStyle(
+                    getComponentStyles('checkboxInput', theme),
+                  ),
+                }}
+              />
             )
           
         }

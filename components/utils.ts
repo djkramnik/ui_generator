@@ -46,6 +46,10 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
       return {
         fontFamily: theme.typography.secondaryff 
       }
+    case 'secondarycolor':
+      return {
+        color: theme.palette.secondary,
+      }
     case 'center':
       return {
         textAlign: 'center'

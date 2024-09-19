@@ -29,7 +29,8 @@ export const TextAccordion = ({
       <Flex row aic $sx={{
         ...getComponentStyles('textAccordionSummary', theme)
       }}>
-        <ChimericIcon icon={icon} mui={mui === true} iconStyle={{ fontSize: 'inherit' }} />
+        <ChimericIcon icon={icon} mui={mui === true} 
+          iconStyle={{ fontSize: 'inherit' }} />
         <Copy $sx={{ 
           ...getComponentStyles('textAccordionHeading', theme),
           ...copySx,

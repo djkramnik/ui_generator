@@ -138,7 +138,11 @@ export type LabelProps = WithTheme<ResponsiveComponent<'label'>>
 export const Label = styled('label')<LabelProps>`
   ${({ theme, $variant, $sx }: LabelProps) => {
     const responsive = getResponsiveStyles({
-      // default styles??? theme???
+      ...mergeStyles({
+        theme,
+        $variant,
+        component: 'label',
+      }),
       ...($sx ?? {}),
     })
     return responsive
@@ -150,16 +154,12 @@ export const Label = styled('label')<LabelProps>`
 export const LabelizeIt = ({
   label,
   secondaryLabel,
-  secondaryColor,
-  secondaryStyles,
   flexDir = 'column',
   labelSx,
   children,
 }: {
   label: string
   secondaryLabel?: string
-  secondaryColor?: string
-  secondaryStyles?: CSSProperties
   flexDir?: ResponsiveMixin
   labelSx?: CssProps
   children?: React.ReactNode
@@ -168,9 +168,6 @@ export const LabelizeIt = ({
     <Flex $sx={{ flexDirection: flexDir, gap: '6px' }}>
       <Flex row gap="12px" aic>
         <Label $sx={{
-          color: 'inherit',
-          fontSize: '16px',
-          fontWeight: 'bold',
           ...labelSx,
           }}>
           {label}
@@ -178,11 +175,9 @@ export const LabelizeIt = ({
         {
           secondaryLabel
             ? (
-              <label style={{
-                color: secondaryColor,
-                fontSize: '16px',
-                ...secondaryStyles
-              }}>{secondaryLabel}</label>
+              <Label $variant="secondarycolor">
+                {secondaryLabel}
+              </Label>
             )
             : null
         }
@@ -195,24 +190,29 @@ export const LabelizeIt = ({
 // not a component a normal rational human would make
 export const WithErrata = ({
   errorMessage,
-  color = '#da1b27',
   messageStyles,
   errorIcon,
   children,
 }: {
   errorMessage: string
-  color?: string
   messageStyles?: CSSProperties
   errorIcon?: React.ReactNode
   children?: React.ReactNode
 }) => {
+  const {
+    spacing: { smallGap },
+    palette: { error },
+  } = useTheme()
+
   return (
-    <Flex col gap="6px">
+    <Flex col gap={smallGap}>
       {children}
-      <Flex row gap="6px">
+      <Flex row gap={smallGap} aic>
         {errorIcon ?? null}
         <span style={{
-          color,
+          ...sxToStyle({
+            color: error,
+          }),
           ...messageStyles
         }}>{errorMessage}</span>
       </Flex>

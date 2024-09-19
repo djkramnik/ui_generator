@@ -116,17 +116,18 @@ const Checkout: NextPage = () => {
                     fontWeight: 'normal',
                     color: colors.gsapGrey,
                   }}>Already signed up?</Heading>
-                  <ChimericAnchor href="#" mui>Sign In</ChimericAnchor>
+                  <ChimericAnchor href="#" mui>
+                    <Copy $sx={{ color: 'inherit', fontSize: '16px' }}>
+                      Sign In
+                    </Copy>
+                  </ChimericAnchor>
                 </Flex>
               </Flex>
               <Spacer h="12px" />
               <hr />
               <Spacer />
               <SimpleForm flexProps={{ gap: '30px' }}>
-                <LabelizeIt label="Display Name" secondaryLabel="REQUIRED" secondaryStyles={{
-                  fontSize: '12px'
-                }}
-                  secondaryColor={colors.gsapGreen}>
+                <LabelizeIt label="Display Name" secondaryLabel="REQUIRED">
                   <Input placeholder="Display Name" $sx={gsapInputSx} />
                 </LabelizeIt>
                 <WithErrata
@@ -135,9 +136,7 @@ const Checkout: NextPage = () => {
                     style={{ color: colors.enercareRed }} />
                   }
                   errorMessage="I can be normal! I know I can!">
-                  <LabelizeIt label="Email Address" secondaryLabel="REQUIRED" secondaryStyles={{
-                    fontSize: '12px'
-                  }} secondaryColor={colors.gsapGreen}>
+                  <LabelizeIt label="Email Address">
                     <Input 
                       placeholder="Email Address"
                       $sx={{
@@ -147,18 +146,14 @@ const Checkout: NextPage = () => {
                     />
                   </LabelizeIt>
                 </WithErrata>
-                <LabelizeIt label="Password" secondaryLabel="REQUIRED" secondaryStyles={{
-                  fontSize: '12px'
-                }} secondaryColor={colors.gsapGreen}>
-                  <Input type="password" placeholder="Password" $sx={{ fontSize: '14px', padding: '12px' }} />
+                <LabelizeIt label="Password" secondaryLabel="REQUIRED">
+                  <Input type="password" placeholder="Password" />
                 </LabelizeIt>
-                <LabelizeIt label="Confirm Password" secondaryLabel="REQUIRED" secondaryStyles={{
-                  fontSize: '12px'
-                }} secondaryColor={colors.gsapGreen}>
-                  <Input type="password" placeholder="Confirm Password" $sx={{ fontSize: '14px', padding: '12px' }} />
+                <LabelizeIt label="Confirm Password" secondaryLabel="REQUIRED">
+                  <Input type="password" placeholder="Confirm Password" />
                 </LabelizeIt>
                 <hr />
-                <ChimericButton mui $variant="pill" $sx={{ fontSize: '18px' }}>
+                <ChimericButton mui $variant="pill">
                   Create Account
                 </ChimericButton>
               </SimpleForm>

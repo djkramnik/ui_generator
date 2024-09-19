@@ -17,16 +17,21 @@ const palette = {
   grey: colors.amazonGrey,
 }
 
+const typography = {
+  primaryff: 'Noto Sans, sans-serif',
+  secondaryff: 'helveticaneue'
+}
+
 export const themes: Record<string, Theme> = {
   primary: {
-    typography: {
-      primaryff: 'Noto Sans, sans-serif',
-      secondaryff: 'helveticaneue'
-    },
-    // youtube
+    typography,
     palette,
     spacing: {
-      containerWidth: ['96%', '94%', '92%']
+      containerWidth: ['96%', '94%', '92%'],
+      smallGap: '6px',
+      gap: '12px',
+      biggishGap: '20px',
+      bigGap: '40px',
     },
     components: {
       button: {
@@ -35,6 +40,7 @@ export const themes: Record<string, Theme> = {
         backgroundColor: palette.primary,
         fontSize: '16px',
         cursor: 'pointer',
+        fontFamily: typography.primaryff
       },
       heading: {
         margin: '0',
@@ -43,12 +49,12 @@ export const themes: Record<string, Theme> = {
       h1: {
         fontSize: '94px',
         lineHeight: '97px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
       },
       h2: {
         fontSize: '56px',
         lineHeight: '64px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
       },
       h3: {
         fontSize: '30px',
@@ -58,7 +64,8 @@ export const themes: Record<string, Theme> = {
         fontSize: '22px',
       },
       h5: {
-        fontSize: '18px'
+        fontSize: '18px',
+        fontFamily: typography.primaryff,
       },
       select: {
         outline: 'none',
@@ -69,6 +76,7 @@ export const themes: Record<string, Theme> = {
         borderRadius: '0.25rem',
         fontWeight: '400',
         border: '2px solid rgba(0, 0, 0, 0.6)',
+        fontFamily: typography.primaryff,
       },
       option: {
         padding: '9px 6px',
@@ -135,7 +143,7 @@ export const themes: Record<string, Theme> = {
         fontSize: '14px',
       },
       textAccordionExpanded: {
-        padding: '12px 18px',
+
       },
       inputWithIconContainer: {
         position: 'relative'
@@ -149,7 +157,12 @@ export const themes: Record<string, Theme> = {
         top: '25%',
       },
       inputWithIconInput: {
-
+        paddingLeft: '40px',
+      },
+      label: {
+        color: 'inherit',
+        fontSize: '16px',
+        fontWeight: 'bold',
       }
     }
   }

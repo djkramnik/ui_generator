@@ -47,6 +47,10 @@ export type ThemeConfig = {
   }
   spacing: {
     containerWidth: ResponsiveMixin
+    smallGap: ResponsiveMixin,
+    gap: ResponsiveMixin,
+    biggishGap: ResponsiveMixin,
+    bigGap: ResponsiveMixin,
   }
   components: {
     link: CssProps
@@ -77,6 +81,7 @@ export type ThemeConfig = {
     inputWithIconContainer: CssProps
     inputWithIconIcon: CssProps
     inputWithIconInput: CssProps
+    label: CssProps
   }
 }
 

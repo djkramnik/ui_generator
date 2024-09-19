@@ -1,9 +1,9 @@
 import { CSSProperties, styled, useTheme } from "styled-components"
 import { CssProps, getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../../theme"
-import { Flex } from "../../layout"
-import { Input as MuiInput } from "@mui/material"
-import { getComponentStyles, parseVariant, parseVariants, sxToStyle } from "../../../utils"
-import { toMuiIcon } from "../icon"
+import { Box, Flex } from "../../layout"
+import { InputAdornment, Input as MuiInput } from "@mui/material"
+import { getComponentStyles, mergeStyles, sxToStyle } from "../../../utils"
+import { ChimericIcon, Icon, toMuiIcon } from "../icon"
 import { Position } from "../position"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>
@@ -11,20 +11,13 @@ export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 // in the future theme and variant will come into play???
 export const Input = styled('input')<InputProps>`
   ${({ theme, $variant, $sx }: InputProps) => {
-    const variantDiff = typeof $variant === 'string'
-      ? parseVariant($variant, theme)
-      : (
-        Array.isArray($variant)
-          ? parseVariants($variant, theme)
-          : {}
-      )
-    const componentDiff = getComponentStyles(
-      'input',
+    const diff = mergeStyles({
       theme,
-    )
+      $variant,
+      component: 'input',
+    })
     const responsive = getResponsiveStyles({
-      ...componentDiff,
-      ...variantDiff,
+      ...diff,
       ...($sx ?? {}),
     })
     return responsive
@@ -33,13 +26,41 @@ export const Input = styled('input')<InputProps>`
 
 export const ChimericInput = (props: Omit<InputProps, 'theme'> & {
   mui?: boolean
+  muiIcon?: Icon
+  muiIconEnd?: boolean
+  muiIconStyle?: CSSProperties
 }) => {
   const theme = useTheme()
-  const { mui, $sx, style, ...rest } = props
+  const { $sx, style, mui, muiIconEnd, muiIcon, muiIconStyle, ...rest } = props
   if (mui) {
+    const AltMuiIcon = muiIcon ? toMuiIcon(muiIcon) : () => null
+    const diff = mergeStyles({
+      theme,
+      $variant: props.$variant,
+      component: 'input',
+    })
     return (
       <MuiInput
+        startAdornment={(
+          muiIconEnd !== true
+            ? (
+              <InputAdornment position={'start'}>
+                <AltMuiIcon style={muiIconStyle} />
+              </InputAdornment>
+            )
+            : null
+        )}
+        endAdornment={(
+          muiIconEnd === true
+            ? (
+              <InputAdornment position={'end'}>
+                <AltMuiIcon style={muiIconStyle} />
+              </InputAdornment>
+            )
+            : null
+        )}
         style={{
+          ...sxToStyle(diff),
           ...sxToStyle($sx ?? {}),
           ...style,
         }}
@@ -59,9 +80,11 @@ export type TextAreaProps = WithTheme<ResponsiveComponent<'textarea'>>
 export const TextArea = styled('textarea')<InputProps>`
   ${({ theme, $variant, $sx }: InputProps) => {
     const responsive = getResponsiveStyles({
-      padding: '9px 18px',
-      borderRadius: '0.25rem',
-      border: '2px solid rgba(0, 0, 0, 0.6)',
+      ...mergeStyles({
+        theme,
+        $variant,
+        component: 'textArea',
+      }),
       ...($sx ?? {}),
     })
     return responsive
@@ -77,40 +100,36 @@ export const InputWithIcon = ({
 }: {
   placeholder?: string
   inputProps?: Omit<InputProps, 'theme'>
-  icon: string
+  icon: Icon
   iconStyles?: CSSProperties
   mui?: boolean
 }) => {
-  const AltMuiIcon = toMuiIcon(icon as any) // let it be
-  return (
-    <div style={{ position: 'relative'}}>
-      {
+  const theme = useTheme()
+  if (mui) {
+    return (
+      <ChimericInput
         mui
-          ? (
-            <Position tlbr={{ top: 'calc(50% - 12px)', left: '10px' }}>
-              <AltMuiIcon style={{ ...iconStyles }} />
-            </Position>
-          )
-          : (
-            <i className={`fa-solid fa-${icon}`} style={{
-              color: '#da1b27',
-              fontSize: '18px',
-              zIndex: 1,
-              position: 'absolute',
-              left: '15px',
-              top: '25%',
-              ...iconStyles,
-            }}/>
-          )
-      }
+        muiIcon={icon}
+        muiIconStyle={iconStyles}
+        {...inputProps}
+      />
+    )
+  }
+
+  // HEY MIGRATE TO THEMES
+  return (
+    <Box $sx={{
+      ...getComponentStyles('inputWithIconContainer', theme),
+    }}>
+      <ChimericIcon icon={icon} iconStyle={{
+        ...sxToStyle(getComponentStyles('inputWithIconIcon', theme)),
+        ...iconStyles,
+      }}/>
       <Input placeholder={placeholder} {...inputProps} $sx={{ 
-        width: '300px',
-        paddingLeft: '40px',
-        fontSize: '15px',
-        borderRadius: '6px',
+        ...getComponentStyles('inputWithIconInput', theme),
         ...inputProps?.$sx
       }} />
-    </div>
+    </Box>
   )
 }
 

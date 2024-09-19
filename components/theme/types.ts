@@ -54,6 +54,7 @@ export type ThemeConfig = {
     select: CssProps
     option: CssProps
     input: CssProps
+    textArea: CssProps
     heading: CssProps
     h1: CssProps
     h2: CssProps
@@ -73,6 +74,9 @@ export type ThemeConfig = {
     textAccordionContainer: CssProps
     textAccordionExpanded: CssProps
     textAccordionHeading: CssProps
+    inputWithIconContainer: CssProps
+    inputWithIconIcon: CssProps
+    inputWithIconInput: CssProps
   }
 }
 

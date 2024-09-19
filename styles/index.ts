@@ -74,7 +74,12 @@ export const themes: Record<string, Theme> = {
         padding: '9px 6px',
       },
       input: {
-        padding: '9px 18px',
+        padding: '9px 12px',
+      },
+      textArea: {
+        padding: '9px 12px',
+        borderRadius: '0.25rem',
+        border: '2px solid rgba(0, 0, 0, 0.6)',
       },
       link: {
         fontSize: '14px',
@@ -131,6 +136,20 @@ export const themes: Record<string, Theme> = {
       },
       textAccordionExpanded: {
         padding: '12px 18px',
+      },
+      inputWithIconContainer: {
+        position: 'relative'
+      },
+      inputWithIconIcon: {
+        color: '#da1b27',
+        fontSize: '18px',
+        zIndex: '1',
+        position: 'absolute',
+        left: '15px',
+        top: '25%',
+      },
+      inputWithIconInput: {
+
       }
     }
   }

@@ -1,5 +1,6 @@
 import { CssProps, shadows } from "../../../theme"
 import { Box } from "../../layout"
+import { Icon } from "../icon"
 import { InputProps, InputWithIcon } from "./input"
 import { Autocomplete as MuiAutocomplete, TextField } from "@mui/material"
 
@@ -23,7 +24,7 @@ export const Autocomplete = ({
       width: 'fit-content'
     }}>
     <InputWithIcon 
-      icon="search" 
+      icon={Icon.search} 
       inputProps={inputProps}
       iconStyles={{
         color: 'inherit'

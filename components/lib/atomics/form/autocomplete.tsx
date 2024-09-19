@@ -9,15 +9,16 @@ import { Autocomplete as MuiAutocomplete, TextField } from "@mui/material"
 type AutocompleteProps = {
   inputProps?: Omit<InputProps, 'theme'>
   expandedSx?: CssProps
-  children?: React.ReactNode
   open?: boolean
+  options: string[]
+  noSummarize?: boolean
 }
 
 export const Autocomplete = ({
   inputProps,
   expandedSx,
-  children,
   open,
+  options,
 }: AutocompleteProps) => {
   const theme = useTheme()
   return (
@@ -44,7 +45,21 @@ export const Autocomplete = ({
               ...expandedSx,
             }}>
               {
-                children
+                options.map((optionText, index) => {
+                  return (
+                    <Box $sx={{
+                      padding: '4px 6px',
+                      fontWeight: index === 0
+                        ? 'bold'
+                        : 'initial',
+                      backgroundColor: index === 1
+                        ? colors.antBlueLight
+                        : 'transparent'
+                    }}>
+                      {movie}
+                    </Box>
+                  )
+                })
               }
             </Box>
           )
@@ -55,13 +70,9 @@ export const Autocomplete = ({
 }
 
 export const ChimericAutocomplete = (props: AutocompleteProps & {
-  mui?: boolean
-  options?: {
-    label: string
-    id: number
-  }[] 
+  mui?: boolean 
 }) => {
-  const { children, mui, options, open, ...rest } = props
+  const { mui, options, open, ...rest } = props
   if (mui) {
     return (
       <MuiAutocomplete
@@ -73,8 +84,6 @@ export const ChimericAutocomplete = (props: AutocompleteProps & {
     )
   }
   return (
-    <Autocomplete {...rest}>
-      {children}
-    </Autocomplete>
+    <Autocomplete {...rest} open={open} options={options} />
   )
 }

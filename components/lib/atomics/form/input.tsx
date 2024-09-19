@@ -4,7 +4,6 @@ import { Box, Flex } from "../../layout"
 import { InputAdornment, Input as MuiInput } from "@mui/material"
 import { getComponentStyles, mergeStyles, sxToStyle } from "../../../utils"
 import { ChimericIcon, Icon, toMuiIcon } from "../icon"
-import { Position } from "../position"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>
 

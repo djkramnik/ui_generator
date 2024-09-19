@@ -21,9 +21,7 @@ export const Checkbox = ({
   radio,
   labelSx,
 }: CheckboxProps) => {
-  const {
-    theme
-  } = useTheme()
+  const theme = useTheme()
   return (
     <Flex $sx={{
       ...getComponentStyles('checkboxContainer', theme),

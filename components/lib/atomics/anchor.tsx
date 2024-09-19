@@ -10,10 +10,7 @@ import {
 } from '../../theme'
 import Link from '@mui/material/Link'
 import {
-  getComponentStyles,
   mergeStyles,
-  parseVariant,
-  parseVariants,
   sxToStyle,
 } from '../../utils'
 export type AnchorProps = WithTheme<ResponsiveComponent<'a'>>

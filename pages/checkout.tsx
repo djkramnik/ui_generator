@@ -513,7 +513,7 @@ const Checkout: NextPage = () => {
                 <DropdownBubble 
                 selectSx={{ width: '300px' }}
                 label="Accomplish great things?">
-                  <Image $sx={{ width: '300px'}} 
+                  <Image $sx={{ width: '100%'}} 
                     src="/thumbs/cnn88.jpg"
                   />
                 </DropdownBubble>

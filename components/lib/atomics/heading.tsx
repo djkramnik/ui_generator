@@ -17,7 +17,7 @@ export const Heading = styled(
       component: 'heading',
       $variant,
     })
-    const levelDiff = getComponentStyles(`h${level}`, theme)
+    const levelDiff = getComponentStyles(`h${level === 6 ? 5 : level}`, theme)
     
     return getResponsiveStyles({
       ...diff,
@@ -39,7 +39,7 @@ export const ChimericHeading = (props: Omit<HeadingProps, 'theme'> & {
       component: 'heading',
       $variant: props.$variant,
     })
-    const levelDiff = getComponentStyles(`h${level}`, theme)
+    const levelDiff = getComponentStyles(`h${level === 6 ? 5 : level}`, theme)
 
     return (
       <Typography variant={`h${level}`}

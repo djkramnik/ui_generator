@@ -88,6 +88,9 @@ export type ThemeConfig = {
     checkboxContainer: CssProps
     checkboxInput: CssProps
     checkboxLabel: CssProps
+    customCheckboxContainer: CssProps
+    customCheckboxInput: CssProps
+    customCheckboxLabel: CssProps
   }
 }
 

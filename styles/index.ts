@@ -185,7 +185,7 @@ export const themes: Record<string, Theme> = {
         boxShadow: shadows.card,
       },
       checkboxContainer: {
-        
+        gap: '12px',
       },
       checkboxInput: {
 
@@ -193,6 +193,19 @@ export const themes: Record<string, Theme> = {
       checkboxLabel: {
 
       },
+      customCheckboxContainer: {
+        gap: '12px'
+      },
+      customCheckboxInput: {
+        border: '1px solid #333',
+        width: '20px',
+        aspectRatio: '1',
+        textAlign: 'center',
+        cursor: 'pointer',
+      },
+      customCheckboxLabel: {
+
+      }
     }
   }
 }

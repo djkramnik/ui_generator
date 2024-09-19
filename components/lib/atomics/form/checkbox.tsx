@@ -107,21 +107,20 @@ export const CustomCheckbox = ({
   icon?: React.ReactNode
   iconSx?: CssProps
 }) => {
-  const Icon = icon ?
-  () => icon
-  : 
-  (
-    () => <Copy $sx={{...iconSx}}>&#x2714;</Copy>
-  )
+  const theme = useTheme()
+  const Icon =
+    icon
+      ? () => icon
+      : (
+        () => <Copy $sx={{...iconSx}}>&#x2714;</Copy>
+      )
   return (
-    <Flex row gap={gap ?? '12px'} aic>
+    <Flex row aic $sx={{
+      ...getComponentStyles('customCheckboxContainer', theme),
+    }}>
       <Box $sx={{
-        border: '1px solid #333',
-        borderRadius: radio ? '50%' : 'initial',
-        width: '20px',
-        aspectRatio: '1',
-        textAlign: 'center',
-        cursor: 'pointer',
+        ...(radio ? { borderRadius: '50%'} : {}),
+        ...getComponentStyles('customCheckboxInput', theme),
         ...inputSx,
       }}>
         {checked ?
@@ -129,7 +128,12 @@ export const CustomCheckbox = ({
           : null
         }
       </Box>
-      <Copy $sx={{ ...labelSx }}>{label}</Copy>
+      <Copy $sx={{ 
+        ...getComponentStyles('customCheckboxLabel', theme),
+        ...labelSx
+        }}>
+        {label}
+      </Copy>
     </Flex>
   )
 }

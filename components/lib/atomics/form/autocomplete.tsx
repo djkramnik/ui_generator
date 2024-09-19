@@ -19,6 +19,7 @@ export const Autocomplete = ({
   expandedSx,
   open,
   options,
+  noSummarize,
 }: AutocompleteProps) => {
   const theme = useTheme()
   return (
@@ -45,18 +46,26 @@ export const Autocomplete = ({
               ...expandedSx,
             }}>
               {
+                !noSummarize
+                  ? (
+                    <Box $sx={{
+                      ...getComponentStyles('autoCompleteOption', theme),
+                      ...getComponentStyles('autoCompleteResultSummary', theme),
+                    }}>
+                      {`Showing ${options.length} results of ${options.length}`}
+                    </Box>
+                  )
+                  : null
+              }
+
+              {
                 options.map((optionText, index) => {
                   return (
                     <Box $sx={{
-                      padding: '4px 6px',
-                      fontWeight: index === 0
-                        ? 'bold'
-                        : 'initial',
-                      backgroundColor: index === 1
-                        ? colors.antBlueLight
-                        : 'transparent'
+                      ...getComponentStyles('autoCompleteOption', theme),
+                      ...(index === 1 ? getComponentStyles('autoCompleteOptionSelected', theme) : {})
                     }}>
-                      {movie}
+                      {optionText}
                     </Box>
                   )
                 })

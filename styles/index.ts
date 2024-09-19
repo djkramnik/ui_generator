@@ -175,6 +175,12 @@ export const themes: Record<string, Theme> = {
       autoCompleteInput: {
         width: '100%',
       },
+      autoCompleteOption: {
+        padding: '4px 6px',
+      },
+      autoCompleteOptionSelected: {
+        backgroundColor: palette.secondary,
+      },
       autoCompleteExpanded: {
         position: 'absolute',
         top: `calc(100% + 5px)`,
@@ -185,6 +191,9 @@ export const themes: Record<string, Theme> = {
         padding: '6px',
         backgroundColor: '#fff',
         boxShadow: shadows.card,
+      },
+      autoCompleteResultSummary: {
+        fontWeight: 'bold'
       },
       checkboxContainer: {
         gap: '12px',

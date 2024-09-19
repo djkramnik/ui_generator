@@ -85,6 +85,9 @@ export type ThemeConfig = {
     autoCompleteExpanded: CssProps
     autoCompleteContainer: CssProps
     autoCompleteInput: CssProps
+    autoCompleteOption: CssProps
+    autoCompleteOptionSelected: CssProps
+    autoCompleteResultSummary: CssProps
     checkboxContainer: CssProps
     checkboxInput: CssProps
     checkboxLabel: CssProps

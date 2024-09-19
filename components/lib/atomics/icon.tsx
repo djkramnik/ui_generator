@@ -123,7 +123,7 @@ import {
 import { useTheme } from 'styled-components'
 import { getComponentStyles, sxToStyle } from '../../utils'
 
-enum Icon {
+export enum Icon {
   house = 'house',
   search = 'magnifying-glass',
   search2 = 'sistrix',
@@ -158,6 +158,9 @@ enum Icon {
   caretRight = 'caret-right',
   caretLeft = 'caret-left',
   chevronDown = 'chevron-down',
+  chevronUp = 'chevron-up',
+  chevronLeft = 'chevron-left',
+  chevronRight = 'chevron-right',
   sortUp = 'sort-up',
   sortDown = 'sort-down',
 
@@ -345,6 +348,12 @@ export const toMuiIcon = (
       return ArrowBack
     case Icon.chevronDown:
       return KeyboardArrowDown
+    case Icon.chevronRight:
+      return KeyboardArrowRight
+    case Icon.chevronUp:
+      return KeyboardArrowUp
+    case Icon.chevronLeft:
+      return KeyboardArrowLeft
     case Icon.sortUp:
       return Sort
     case Icon.sortDown:

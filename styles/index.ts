@@ -118,6 +118,19 @@ export const themes: Record<string, Theme> = {
       },
       accordionExpanded: {
         padding: '12px 18px',
+      },
+      textAccordionSummary: {
+        gap: '6px',
+        fontSize: '14px',
+      },
+      textAccordionContainer: {
+        gap: '8px'
+      },
+      textAccordionHeading: {
+        fontSize: '14px',
+      },
+      textAccordionExpanded: {
+        padding: '12px 18px',
       }
     }
   }

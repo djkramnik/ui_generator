@@ -69,6 +69,10 @@ export type ThemeConfig = {
     accordionContainer: CssProps
     accordionHeading: CssProps
     accordionExpanded: CssProps
+    textAccordionSummary: CssProps
+    textAccordionContainer: CssProps
+    textAccordionExpanded: CssProps
+    textAccordionHeading: CssProps
   }
 }
 

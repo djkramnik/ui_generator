@@ -1,4 +1,6 @@
-import { CssProps, shadows } from "../../../theme"
+import { useTheme } from "styled-components"
+import { CssProps } from "../../../theme"
+import { getComponentStyles } from "../../../utils"
 import { Box } from "../../layout"
 import { Icon } from "../icon"
 import { InputProps, InputWithIcon } from "./input"
@@ -6,26 +8,31 @@ import { Autocomplete as MuiAutocomplete, TextField } from "@mui/material"
 
 type AutocompleteProps = {
   inputProps?: Omit<InputProps, 'theme'>
-  containerSx?: CssProps
+  expandedSx?: CssProps
   children?: React.ReactNode
   open?: boolean
 }
 
 export const Autocomplete = ({
   inputProps,
-  containerSx,
+  expandedSx,
   children,
   open,
 }: AutocompleteProps) => {
+  const theme = useTheme()
   return (
     <Box $sx={{
-      position: 'relative',
-      display: 'inline-block',
-      width: 'fit-content'
+      ...getComponentStyles('autoCompleteContainer', theme),
     }}>
     <InputWithIcon 
       icon={Icon.search} 
-      inputProps={inputProps}
+      inputProps={{
+        ...inputProps,
+        $sx: {
+          ...getComponentStyles('autoCompleteInput', theme),
+          ...inputProps?.$sx,
+        }
+      }}
       iconStyles={{
         color: 'inherit'
       }} />
@@ -33,16 +40,8 @@ export const Autocomplete = ({
         open
           ? (
             <Box $sx={{
-              position: 'absolute',
-              top: `calc(100% + 5px)`,
-              left: '0',
-              minWidth: '100%',
-              height: 'auto',
-              borderRadius: '0.25rem',
-              padding: '6px',
-              backgroundColor: '#fff',
-              boxShadow: shadows.card,
-              ...containerSx
+              ...getComponentStyles('autoCompleteExpanded', theme),
+              ...expandedSx,
             }}>
               {
                 children

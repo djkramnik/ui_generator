@@ -315,7 +315,7 @@ const Checkout: NextPage = () => {
                     <CustomCheckbox label="Dark souls > Bloodborne" checked />
                     <CustomCheckbox
                       icon={<i className="fa-solid fa-check" />}
-                      label="My name John Leigh Pedimore"
+                      label="My name John Leigh Pettimore"
                       checked />
                      <CustomCheckbox
                       icon={

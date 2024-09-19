@@ -2,7 +2,7 @@ import {
   createGlobalStyle,
 } from 'styled-components'
 
-import { colors, type Theme } from '../components/theme'
+import { colors, shadows, type Theme } from '../components/theme'
 
 const palette = {
   background: '#fff',
@@ -163,6 +163,26 @@ export const themes: Record<string, Theme> = {
         color: 'inherit',
         fontSize: '16px',
         fontWeight: 'bold',
+      },
+      autoCompleteContainer: {
+        position: 'relative',
+        display: 'inline-block',
+        width: 'fit-content',
+        minWidth: '300px'
+      },
+      autoCompleteInput: {
+        width: '100%',
+      },
+      autoCompleteExpanded: {
+        position: 'absolute',
+        top: `calc(100% + 5px)`,
+        left: '0',
+        minWidth: '100%',
+        height: 'auto',
+        borderRadius: '0.25rem',
+        padding: '6px',
+        backgroundColor: '#fff',
+        boxShadow: shadows.card,
       }
     }
   }

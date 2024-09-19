@@ -22,7 +22,7 @@ import {
   Paper,
   Pagination as MuiPagination
 } from '@mui/material' 
-import { parseVariant, parseVariants, sxToStyle } from '../../../utils'
+import { mergeStyles, parseVariant, parseVariants, sxToStyle } from '../../../utils'
 
 // styled component shit
 
@@ -30,18 +30,14 @@ export type TableProps = WithTheme<ResponsiveComponent<'table'>>
 
 export const Table = styled('table')<TableProps>`
   ${({ theme, $variant, $sx }: TableProps) => {
-    const variantDiff = typeof $variant === 'string'
-      ? parseVariant($variant, theme)
-      : (
-        Array.isArray($variant)
-          ? parseVariants($variant, theme)
-          : {}
-      )
+    const diff = mergeStyles({
+      theme,
+      component: 'table',
+      $variant,
+    })
+
     const responsive = getResponsiveStyles({
-      borderSpacing: '0',
-      border: '1px solid #333',
-      borderBottom: 'none',
-      ...variantDiff,
+      ...diff,
       ...($sx ?? {}),
     })
     return responsive
@@ -52,8 +48,13 @@ export type TableCellProps = WithTheme<ResponsiveComponent<'td'>>
 
 export const TableCell = styled('td')<TableCellProps>`
   ${({ theme, $variant, $sx }: TableCellProps) => {
+    const diff = mergeStyles({
+      theme,
+      component: 'td',
+      $variant,
+    })
     const responsive = getResponsiveStyles({
-      borderBottom: '1px solid #333',
+      ...diff,
       ...($sx ?? {}),
     })
     return responsive
@@ -64,11 +65,13 @@ export type TableHeaderProps = WithTheme<ResponsiveComponent<'th'>>
 
 export const TableHeader = styled('th')<TableCellProps>`
   ${({ theme, $variant, $sx }: TableCellProps) => {
+    const diff = mergeStyles({
+      theme,
+      component: 'th',
+      $variant,
+    })
     const responsive = getResponsiveStyles({
-      borderBottom: '1px solid #333',
-      padding: '12px',
-      paddingRight: '40px',
-      textAlign: 'center',
+      ...diff,
       ...($sx ?? {}),
     })
     return responsive

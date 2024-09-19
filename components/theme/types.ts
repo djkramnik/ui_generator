@@ -60,6 +60,11 @@ export type ThemeConfig = {
     h3: CssProps
     h4: CssProps
     h5: CssProps
+    copy: CssProps
+    icon: CssProps
+    table: CssProps
+    td: CssProps
+    th: CssProps
   }
 }
 

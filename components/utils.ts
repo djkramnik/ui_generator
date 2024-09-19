@@ -87,7 +87,31 @@ export const parseVariants = ($variant: string[], theme: Theme): CssProps => {
   }, {})
 }
 
-export const getComponentStyles = (s: string, theme: Theme): CssProps => {
-  // @ts-ignore
-  return theme.components[s] ?? {}
+export const getComponentStyles = (s: keyof Theme['components'], theme: Theme): CssProps => {
+  return theme.components[s]
+}
+
+export const mergeStyles = ({
+  theme,
+  component,
+  $variant,
+}: {
+  theme: Theme
+  component?: keyof Theme['components']
+  $variant?: string | string[]
+}): CssProps => {
+  const variantDiff = typeof $variant === 'string'
+  ? parseVariant($variant, theme)
+  : (
+    Array.isArray($variant)
+      ? parseVariants($variant, theme)
+      : {}
+  )
+const componentDiff = component
+  ? getComponentStyles(component, theme)
+  : {}
+  return {
+    ...componentDiff,
+    ...variantDiff,
+  }
 }

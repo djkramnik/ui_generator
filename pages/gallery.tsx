@@ -80,6 +80,9 @@ const Gallery = () => {
           <Cell bgc="#eee">
             <ChimericAnchor mui href="#">About Us</ChimericAnchor>
           </Cell>
+          <Cell bgc="#333">
+            <ChimericAnchor mui href="#" $variant="white">About Us</ChimericAnchor>
+          </Cell>
         </Flex>
       </Container>
     </>

@@ -34,9 +34,11 @@ export const themes: Record<string, Theme> = {
         color: palette.button,
         backgroundColor: palette.primary,
         fontSize: '16px',
+        cursor: 'pointer',
       },
       heading: {
         margin: '0',
+        color: palette.heading,
       },
       h1: {
         fontSize: '94px',
@@ -78,7 +80,28 @@ export const themes: Record<string, Theme> = {
         fontSize: '14px',
         color: palette.primary,
         fontWeight: 'bold',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        cursor: 'pointer'
+      },
+      copy: {
+        color: palette.copy
+      },
+      icon: {
+        fontSize: '22px'
+      },
+      table: {
+        borderSpacing: '0',
+        border: '1px solid #333',
+        borderBottom: 'none',
+      },
+      td: {
+        borderBottom: '1px solid #333',
+      },
+      th: {
+        borderBottom: '1px solid #333',
+        padding: '12px',
+        paddingRight: '40px',
+        textAlign: 'center',
       }
     }
   }

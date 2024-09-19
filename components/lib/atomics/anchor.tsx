@@ -11,6 +11,7 @@ import {
 import Link from '@mui/material/Link'
 import {
   getComponentStyles,
+  mergeStyles,
   parseVariant,
   parseVariants,
   sxToStyle,
@@ -20,16 +21,13 @@ export type AnchorProps = WithTheme<ResponsiveComponent<'a'>>
 // in the future theme and variant will come into play???
 export const Anchor = styled('a')<AnchorProps>`
   ${({ theme, $variant, $sx }: AnchorProps) => {
-    const variantDiff =
-      typeof $variant === 'string'
-        ? parseVariant($variant, theme)
-        : Array.isArray($variant)
-          ? parseVariants($variant, theme)
-          : {}
-    const componentDiff = getComponentStyles('link', theme)
+    const diff = mergeStyles({
+      theme,
+      component: 'link',
+      $variant,
+    })
     const responsive = getResponsiveStyles({
-      ...componentDiff,
-      ...variantDiff,
+      ...diff,
       ...($sx ?? {}),
     })
     return responsive
@@ -45,22 +43,16 @@ export const ChimericAnchor = (
   const theme = useTheme()
 
   if (mui) {
-    const variantDiff =
-      typeof $variant === 'string'
-        ? parseVariant($variant, theme)
-        : Array.isArray($variant)
-          ? parseVariants($variant, theme)
-          : {}
-    const componentDiff = getComponentStyles('link', theme)
-    const diff = sxToStyle({
-      ...componentDiff,
-      ...variantDiff,
+    const diff = mergeStyles({
+      theme,
+      component: 'link',
+      $variant,
     })
     return (
       <Link
         {...rest}
         style={{
-          ...diff,
+          ...sxToStyle(diff),
           ...sxToStyle($sx ?? {}),
           ...rest.style,
         }}

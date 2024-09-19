@@ -1,23 +1,20 @@
 import { styled, useTheme } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
 import { Typography } from "@mui/material"
-import { parseVariant, parseVariants, sxToStyle } from "../../utils"
+import { getComponentStyles, mergeStyles, parseVariant, parseVariants, sxToStyle } from "../../utils"
 
 export type CopyProps = WithTheme<ResponsiveComponent<'p'>>
 
 export const Copy = styled('p')<CopyProps>`
   ${({ theme, $variant, $sx }: CopyProps) => {
-    const variantDiff = typeof $variant === 'string'
-      ? parseVariant($variant, theme)
-      : (
-        Array.isArray($variant)
-          ? parseVariants($variant, theme)
-          : {}
-      )
-    console.log('variant diff', typeof $variant)
+    const diff = mergeStyles({
+      theme,
+      component: 'copy',
+      $variant,
+    })
+
     const responsive = getResponsiveStyles({
-      color: theme.palette.copy,
-      ...variantDiff,
+      ...diff,
       ...($sx ?? {}),
     })
     return responsive
@@ -30,8 +27,14 @@ export const ChimericCopy = (props: Omit<CopyProps, 'theme'> & {
   const theme = useTheme()
   const { children, $sx, mui, ...rest} = props
   if (mui) {
+    const diff = mergeStyles({
+      theme,
+      component: 'copy',
+      $variant: props.$variant,
+    })
     return (
       <Typography style={{
+        ...sxToStyle(diff),
         ...sxToStyle($sx ?? {}),
         ...rest.style,
       }}>

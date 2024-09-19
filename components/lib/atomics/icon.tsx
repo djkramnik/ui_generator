@@ -120,6 +120,8 @@ import {
   Message,
   BrokenImage,
 } from '@mui/icons-material'
+import { useTheme } from 'styled-components'
+import { getComponentStyles, sxToStyle } from '../../utils'
 
 enum Icon {
   house = 'house',
@@ -566,16 +568,19 @@ export const ChimericIcon = ({
   mui?: boolean
   iconStyle?: CSSProperties
 }) => {
+  const theme = useTheme()
+
+  const componentDiff = getComponentStyles('icon', theme)
+  const style = {
+    ...sxToStyle(componentDiff),
+    ...iconStyle,
+  }
   // any defaults must derive from theme, right here yo
   if (mui) {
     const AltMuiIcon = toMuiIcon(icon)
     return (
-      <AltMuiIcon
-        style={{
-          ...iconStyle,
-        }}
-      />
+      <AltMuiIcon style={style} />
     )
   }
-  return <i className={`fa-solid fa-${icon}`} style={iconStyle} />
+  return <i className={`fa-solid fa-${icon}`} style={style} />
 }

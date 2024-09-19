@@ -2,6 +2,8 @@ import React from "react"
 import { CssProps } from "../../theme"
 import { Box } from "../layout"
 import { Modal as MuiModal } from '@mui/material'
+import { getComponentStyles } from "../../utils"
+import { useTheme } from "styled-components"
 
 const DefaultCloseIcon = ({}) => {
   return (
@@ -31,24 +33,15 @@ export const Modal = ({
   closeIconContainerSx,
   open,
 }: ModalProps) => {
+  const theme = useTheme()
   return (
     <Box $sx={{
-      backgroundColor: 'rgba(0, 0, 0, 0.6)',
       display: open ? 'flex' : 'none',
-      position: 'fixed',
-      top: '0',
-      left: '0',
-      minWidth: '600px',
-      minHeight: '600px',
-      width: '100vw',
-      height: '100vh',
+      ...getComponentStyles('modalBackground', theme),
       ...backgroundSx,
     }}>
       <Box $sx={{
-        position: 'absolute',
-        top: '8px',
-        right: '8px',
-        cursor: 'pointer',
+        ...getComponentStyles('modalCloseIconContainer', theme),
         ...closeIconContainerSx
       }}>
         {
@@ -58,12 +51,7 @@ export const Modal = ({
         }
       </Box>
       <Box $sx={{
-        margin: 'auto',
-        backgroundColor: '#fff',
-        width: '45vw',
-        minWidth: '500px',
-        height: '40vw',
-        minHeight: '300px',
+        ...getComponentStyles('modalContainer', theme),
         ...containerSx,
       }}>
         {children}
@@ -76,22 +64,14 @@ export const ChimericModal = (props: ModalProps & {
   mui?: boolean
   handleClose?: () => void
 }) => {
+  const theme = useTheme()
   const { children, mui, open, handleClose, ...rest } = props
   if (mui) {
     return (
       <MuiModal disableEnforceFocus
         open={open === true} onClose={handleClose}>
         <Box $sx={{
-          margin: 'auto',
-          backgroundColor: '#fff',
-          width: '45vw',
-          minWidth: '500px',
-          height: '40vw',
-          minHeight: '300px',
-          position: 'absolute' as 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
+          ...getComponentStyles('modalMuiContainer', theme),
           ...rest.containerSx,
         }}>
           {children}

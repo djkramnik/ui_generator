@@ -104,6 +104,10 @@ export type ThemeConfig = {
     toggleButtonContainer: CssProps
     toggleButtonButton: CssProps
     toggleButtonSelected: CssProps
+    modalBackground: CssProps
+    modalCloseIconContainer: CssProps
+    modalContainer: CssProps
+    modalMuiContainer: CssProps
   }
 }
 

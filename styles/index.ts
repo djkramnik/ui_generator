@@ -272,6 +272,42 @@ export const themes: Record<string, Theme> = {
         backgroundColor: 'black',
         color: 'white',
       },
+      modalBackground: {
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        minWidth: '600px',
+        minHeight: '600px',
+        width: '100vw',
+        height: '100vh',
+      },
+      modalCloseIconContainer: {
+        position: 'absolute',
+        top: '8px',
+        right: '8px',
+        cursor: 'pointer',
+      },
+      modalContainer: {
+        margin: 'auto',
+        backgroundColor: '#fff',
+        width: '45vw',
+        minWidth: '500px',
+        height: '40vw',
+        minHeight: '300px',
+      },
+      modalMuiContainer: {
+        margin: 'auto',
+        backgroundColor: '#fff',
+        width: '45vw',
+        minWidth: '500px',
+        height: '40vw',
+        minHeight: '300px',
+        position: 'absolute' as 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+      },
     }
   }
 }

@@ -394,7 +394,7 @@ const Checkout: NextPage = () => {
                   <div style={{ width: '500px'}}>
                     <AccordionSection
                       heading="A Salut"
-                      boxSx={{ borderBottom: 'none'}}>
+                      rootSx={{ borderBottom: 'none'}}>
                       hi
                     </AccordionSection>
                     <AccordionSection

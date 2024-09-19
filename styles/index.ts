@@ -2,7 +2,7 @@ import {
   createGlobalStyle,
 } from 'styled-components'
 
-import { type Theme } from '../components/theme'
+import { colors, type Theme } from '../components/theme'
 
 const palette = {
   background: '#fff',
@@ -102,6 +102,22 @@ export const themes: Record<string, Theme> = {
         padding: '12px',
         paddingRight: '40px',
         textAlign: 'center',
+      },
+      accordionSummary: {
+        backgroundColor: palette.grey,
+        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: '12px 18px',
+      },
+      accordionContainer: {
+        border: `1px solid ${palette.copy}`,
+      },
+      accordionHeading: {
+        color: palette.heading,
+      },
+      accordionExpanded: {
+        padding: '12px 18px',
       }
     }
   }

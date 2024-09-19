@@ -1,28 +1,34 @@
+import { useTheme } from "styled-components"
 import { Flex } from "../../layout"
 import { Button } from "../button"
+import { getComponentStyles } from "../../../utils"
 
-// need sx bundles
 export const Toggle = ({
   selectedIndex,
   options,
+  buttonVariant = ['pill', 'border'],
 }: {
   selectedIndex?: number,
   options: string[]
+  buttonVariant?: string | string[]
 }) => {
+  const theme = useTheme()
   return (
-    <Flex row gap="12px">
+    <Flex row $sx={{
+      ...getComponentStyles('toggleButtonContainer', theme),
+    }}>
       {
         options.map((optionText, index) => {
           return (
-            <Button $variant="pill"
+            <Button key={index}
+              $variant={buttonVariant}
               $sx={{
-                backgroundColor: selectedIndex === index
-                  ? 'black'
-                  : 'white',
-                color: selectedIndex === index
-                  ? 'white'
-                  : 'black',
-                border: '2px solid black',
+                ...getComponentStyles('toggleButtonButton', theme),
+                ...(
+                  selectedIndex === index
+                    ? getComponentStyles('toggleButtonSelected', theme)
+                    : {}
+                ),
               }}
             >
               {optionText}

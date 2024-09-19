@@ -96,7 +96,11 @@ export type ThemeConfig = {
     dropdownPopup: CssProps
     dropdownOptionContainer: CssProps
     dropdownOption: CssProps
+    dropdownOptionSelected: CssProps
     dropdownBubbleArrow: CssProps
+    toggleButtonContainer: CssProps
+    toggleButtonButton: CssProps
+    toggleButtonSelected: CssProps
   }
 }
 

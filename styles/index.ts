@@ -2,7 +2,7 @@ import {
   createGlobalStyle,
 } from 'styled-components'
 
-import { colors, shadows, type Theme } from '../components/theme'
+import { colors, ResponsiveMixin, shadows, type Theme } from '../components/theme'
 
 const palette = {
   background: '#fff',
@@ -22,17 +22,19 @@ const typography = {
   secondaryff: 'helveticaneue'
 }
 
+const spacing = {
+  containerWidth: ['96%', '94%', '92%'] as ResponsiveMixin<string>,
+  smallGap: '6px',
+  gap: '12px',
+  biggishGap: '20px',
+  bigGap: '40px',
+}
+
 export const themes: Record<string, Theme> = {
   primary: {
     typography,
     palette,
-    spacing: {
-      containerWidth: ['96%', '94%', '92%'],
-      smallGap: '6px',
-      gap: '12px',
-      biggishGap: '20px',
-      bigGap: '40px',
-    },
+    spacing,
     components: {
       button: {
         padding: '12px 18px',
@@ -237,6 +239,9 @@ export const themes: Record<string, Theme> = {
       dropdownOption: {
         padding: '4px 6px'
       },
+      dropdownOptionSelected: {
+        backgroundColor: palette.secondary
+      },
       dropdownBubbleArrow: {
         position: 'absolute',
         top: '100%',
@@ -245,6 +250,18 @@ export const themes: Record<string, Theme> = {
         borderLeft: '5px solid transparent',
         borderRight: '5px solid transparent',
         borderBottom: '5px solid #fff',
+      },
+      toggleButtonContainer: {
+        gap: spacing.gap,
+      },
+      toggleButtonButton: {
+        border: '2px solid black',
+        backgroundColor: 'white',
+        color: 'black',
+      },
+      toggleButtonSelected: {
+        backgroundColor: 'black',
+        color: 'white',
       },
     }
   }

@@ -4,7 +4,6 @@ import {
   CssProps,
   getResponsiveStyles,
   ResponsiveComponent,
-  shadows,
   WithTheme,
 } from '../../../theme'
 import { Box } from '../../layout'
@@ -115,10 +114,11 @@ export const Dropdown = ({
                 <Box
                   $sx={{
                     ...getComponentStyles('dropdownOption', theme),
-                    backgroundColor:
+                    ...(
                       value === optionText
-                        ? colors.antBlueLight
-                        : 'transparent',
+                        ? getComponentStyles('dropdownOptionSelected', theme)
+                        : {}
+                    ),
                   }}
                 >
                   {optionText}
@@ -138,13 +138,27 @@ export const ChimericDropdown = (
     label?: string
   }
 ) => {
+  const theme = useTheme()
   const { mui, ...rest } = props
   if (mui) {
     return (
-      <MuiSelect label={props.label} value={rest.value}>
+      <MuiSelect label={props.label} value={rest.value} style={{
+        ...sxToStyle(mergeStyles({
+          theme,
+          component: 'select',
+        }))
+      }}>
         {props.options.map((optionText, i) => {
           return (
-            <MenuItem key={`${optionText}_${i}`} value={optionText}>
+            <MenuItem
+              style={{
+                ...sxToStyle(mergeStyles({
+                  theme,
+                  component: 'option',
+                }))
+              }}
+              key={`${optionText}_${i}`}
+              value={optionText}>
               {optionText}
             </MenuItem>
           )
@@ -207,8 +221,7 @@ export const DropdownBubble = ({
           $sx={{
             ...getComponentStyles('dropdownOptionContainer', theme),
             ...containerSx,
-          }}
-        >
+          }}>
           {children}
         </Box>
       </Box>

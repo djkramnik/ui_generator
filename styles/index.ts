@@ -336,7 +336,7 @@ export const themes: Record<string, Theme> = {
         fontSize: '22px',
       },
       buttonWithIconLayout: {
-        gap: '20px'
+        gap: '8px'
       },
     }
   }

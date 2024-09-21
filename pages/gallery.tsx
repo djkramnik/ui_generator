@@ -3,8 +3,10 @@ import { Flex, Box } from '../components/lib'
 import {
   Anchor,
   Button,
+  ButtonWithIcon,
   ChimericAnchor,
   ChimericButton,
+  ChimericButtonWithIcon,
   ChimericCopy,
   ChimericHeading,
   ChimericIcon,
@@ -19,6 +21,7 @@ import { ResponsiveMixin } from '../components/theme'
 import { Spacer } from '../components/lib/layout/spacer'
 import React, { useState } from 'react'
 import { Position } from '../components/lib/atomics/position'
+import { useTheme } from 'styled-components'
 
 const Cell = ({
   children,
@@ -55,6 +58,7 @@ const Row = ({ children }: { children?: React.ReactNode }) => {
 }
 
 const Gallery = () => {
+  const theme = useTheme()
   const [chimericOpen, setChimericOpen] = useState<boolean>(false)
   const [chimericMuiOpen, setChimericMuiOpen] = useState<boolean>(false)
   return (
@@ -62,6 +66,48 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <Button>Subscribe</Button>
+          <Button $variant="pill">Subscribe</Button>
+          <Button $variant="border">Subscribe</Button>
+          <Button $variant={['pill', 'bold', 'border']}>Subscribe</Button>
+          <Button $variant={['bold', 'border', 'shadow']}>Subscribe</Button>
+          <Button
+            $variant={['pill', 'bold', 'border', 'shadow', 'transparent']}
+          >
+            Subscribe
+          </Button>
+          <ChimericButton
+              mui
+              $variant={['pill', 'bold', 'border', 'shadow', 'transparent']}
+            >
+              Subscribe
+            </ChimericButton>
+            <ChimericButton>Subscribe</ChimericButton>
+        </Row>
+        <Row>
+          <ChimericButtonWithIcon $variant="pill" mui text="Suppress Shadow" icon={Icon.figma} />
+          <ChimericButtonWithIcon
+            $variant={['border', 'pill', 'shadow']}
+            text="Too hot"
+            icon={Icon.fire}
+            $sx={{ backgroundColor: theme.palette.error }}
+          />
+          <ChimericButtonWithIcon
+            iconPos="start"
+            mui
+            $variant={['border', 'pill', 'shadow']}
+            text="Too hot"
+            icon={Icon.fire}
+            $sx={{ backgroundColor: theme.palette.error }}
+          />
+          <ChimericButtonWithIcon
+            iconPos="start"
+            $variant={['border', 'pill']}
+            text="Jungian"
+            icon={Icon.anglesRight}
+          />
+        </Row>
         <Row>
           <Flex col gap="6px">
             <Button onClick={() => setChimericMuiOpen(true)}>open mui modal</Button>
@@ -92,61 +138,15 @@ const Gallery = () => {
             }}
           />
         </Row>
-        <Flex row gap="6px">
-          <Cell>
-            <Button>Subscribe</Button>
-          </Cell>
-          <Cell>
-            <Button $variant="pill">Subscribe</Button>
-          </Cell>
-          <Cell>
-            <Button $variant="border">Subscribe</Button>
-          </Cell>
-          <Cell>
-            <Button $variant={['pill', 'bold', 'border']}>Subscribe</Button>
-          </Cell>
-          <Cell>
-            <Button $variant={['bold', 'border', 'shadow']}>Subscribe</Button>
-          </Cell>
-          <Cell>
-            <Button
-              $variant={['pill', 'bold', 'border', 'shadow', 'transparent']}
-            >
-              Subscribe
-            </Button>
-          </Cell>
-          <Cell>
-            <ChimericButton>Subscribe</ChimericButton>
-          </Cell>
-          <Cell>
-            <ChimericButton
-              mui
-              $variant={['pill', 'bold', 'border', 'shadow', 'transparent']}
-            >
-              Subscribe
-            </ChimericButton>
-          </Cell>
-        </Flex>
-        <Flex row gap="6px">
-          <Cell bgc="#eee">
-            <Anchor href="#">About Us</Anchor>
-          </Cell>
-          <Cell bgc="#eee">
-            <ChimericAnchor href="#" $variant="underline">
+        <Row>
+          <Anchor href="#">About Us</Anchor>
+          <ChimericAnchor mui href="#">
               About Us
-            </ChimericAnchor>
-          </Cell>
-          <Cell bgc="#eee">
-            <ChimericAnchor mui href="#">
-              About Us
-            </ChimericAnchor>
-          </Cell>
-          <Cell bgc="#333">
-            <ChimericAnchor mui href="#" $variant="white">
-              About Us
-            </ChimericAnchor>
-          </Cell>
-        </Flex>
+          </ChimericAnchor>
+          <ChimericAnchor href="#" $variant="underline">
+            About Us
+          </ChimericAnchor>
+        </Row>
         <Row>
           <Copy $sx={{ maxWidth: '300px' }}>
             MINE: The attacks in Lebanon required getting deep into the supply

@@ -73,6 +73,7 @@ type ButtonWithIconProps = {
   $variant?: ButtonProps['$variant']
   iconStyle?: CSSProperties
   flexProps?: FlexProps
+  iconPos?: 'start' | 'end'
 }
 
 export const ButtonWithIcon = ({
@@ -82,6 +83,7 @@ export const ButtonWithIcon = ({
   $variant,
   iconStyle,
   flexProps,
+  iconPos = 'end'
 }: ButtonWithIconProps) => {
   const theme = useTheme()
   return (
@@ -92,12 +94,15 @@ export const ButtonWithIcon = ({
         ...$sx,
       }}
     >
-      <Flex aic jcsb {...flexProps}
+      <Flex aic jcc {...flexProps}
         $sx={{ 
           ...getComponentStyles('buttonWithIconLayout', theme),
+          ...(iconPos === 'start' ? {
+            flexDirection: 'row-reverse'
+          } : {}),
           ...flexProps?.$sx
         }}>
-        <span>{text}</span>
+        {text}
         <ChimericIcon
           icon={icon}
           iconStyle={{
@@ -130,7 +135,7 @@ export const ChimericButtonWithIcon = (
       }}
     />
   )
-  const { text, mui, $sx, $variant, ...rest } = props
+  const { text, mui, $sx, $variant, iconPos, ...rest } = props
 
   if (mui) {
     const diff = mergeStyles({
@@ -140,7 +145,15 @@ export const ChimericButtonWithIcon = (
     })
     return (
       <MuiButton
-        startIcon={<Icon />}
+        {
+          ...iconPos === 'start'
+            ? {
+              startIcon: <Icon />
+            }
+            : {
+              endIcon: <Icon />
+            }
+        }
         style={{
           ...sxToStyle({
             ...diff,
@@ -153,7 +166,15 @@ export const ChimericButtonWithIcon = (
       </MuiButton>
     )
   }
-  return <ButtonWithIcon text={text} $sx={$sx} $variant={$variant} {...rest} />
+  return (
+    <ButtonWithIcon
+      text={text}
+      $sx={$sx}
+      $variant={$variant}
+      iconPos={iconPos}
+      {...rest}
+    />
+  )
 }
 
 export const IconButton = ({

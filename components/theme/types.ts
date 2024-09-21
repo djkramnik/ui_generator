@@ -112,6 +112,9 @@ export type ThemeConfig = {
     iconButtonInner: CssProps
     iconButtonIcon: CssProps
     iconButtonLabel: CssProps
+    buttonWithIconButton: CssProps
+    buttonWithIconIcon: CssProps
+    buttonWithIconLayout: CssProps
   }
 }
 

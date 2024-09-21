@@ -65,7 +65,7 @@ export const ChimericButton = (
 
 type ButtonWithIconProps = {
   text: string
-  icon: string
+  icon: Icon
   bgc?: ResponsiveMixin
   p?: ResponsiveMixin
   c?: ResponsiveMixin
@@ -78,30 +78,32 @@ type ButtonWithIconProps = {
 export const ButtonWithIcon = ({
   text,
   icon,
-  bgc,
-  p,
-  c,
   $sx,
   $variant,
   iconStyle,
   flexProps,
 }: ButtonWithIconProps) => {
+  const theme = useTheme()
   return (
     <Button
       $variant={$variant}
       $sx={{
-        backgroundColor: bgc,
-        padding: p,
-        color: c,
+        ...getComponentStyles('buttonWithIconButton', theme),
         ...$sx,
       }}
     >
-      <Flex aic jcsb {...flexProps} $sx={{ gap: '20px', ...flexProps?.$sx }}>
+      <Flex aic jcsb {...flexProps}
+        $sx={{ 
+          ...getComponentStyles('buttonWithIconLayout', theme),
+          ...flexProps?.$sx
+        }}>
         <span>{text}</span>
-        <i
-          className={`fa-solid fa-${icon}`}
-          style={{
-            fontSize: '22px',
+        <ChimericIcon
+          icon={icon}
+          iconStyle={{
+            ...sxToStyle({
+              ...getComponentStyles('buttonWithIconIcon', theme),
+            }),
             ...iconStyle,
           }}
         />
@@ -117,10 +119,13 @@ export const ChimericButtonWithIcon = (
 ) => {
   const theme = useTheme()
   const Icon = () => (
-    <i
-      className={`fa-solid fa-${props.icon}`}
-      style={{
-        fontSize: '22px',
+    <ChimericIcon
+      mui={mui === true}
+      icon={props.icon}
+      iconStyle={{
+        ...sxToStyle({
+          ...getComponentStyles('buttonWithIconIcon', theme),
+        }),
         ...props.iconStyle,
       }}
     />
@@ -137,23 +142,11 @@ export const ChimericButtonWithIcon = (
       <MuiButton
         startIcon={<Icon />}
         style={{
-          ...sxToStyle(diff),
-          ...(typeof props.bgc === 'string'
-            ? {
-                backgroundColor: props.bgc,
-              }
-            : {}),
-          ...(typeof props.p === 'string'
-            ? {
-                padding: props.p,
-              }
-            : {}),
-          ...(typeof props.c === 'string'
-            ? {
-                color: props.c,
-              }
-            : {}),
-          ...sxToStyle($sx ?? {}),
+          ...sxToStyle({
+            ...diff,
+            ...getComponentStyles('buttonWithIconButton', theme),
+            ...($sx ?? {}),
+          }),
         }}
       >
         {text}

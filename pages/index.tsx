@@ -108,7 +108,7 @@ const Home: NextPage = () => {
                   $variant="pill"
                   flexProps={{ row: false, rowrev: true, $sx: { gap: '12px' } }}
                   $sx={{ width: 'fit-content', alignSelf: 'center', borderRadius: '48px' }}
-                  bgc="#da1b27" c="#fff" text="Get Deal" icon="cart-shopping" />
+                  text="Get Deal" icon={Icon.shoppingCart} />
               </Flex>
             </Flex>
           </Container>
@@ -161,19 +161,14 @@ const Home: NextPage = () => {
                 </Heading>
                 <Flex $sx={{ gap: '20px' }}>
                   <ChimericButtonWithIcon
-                    mui icon="arrow-right" text="PAY FOR PARKING"
-                    bgc='#006f51'
-                    p="20px"
-                    c="#fff"
-                    $sx={{ fontWeight: '800', border: '2px solid white' }} />
-                  <ChimericButtonWithIcon icon="arrow-right" text="RIDE A BIKE"
-                    bgc='#006f51'
-                    p="20px"
-                    c="#fff"
-                    $sx={{ 
-                      fontWeight: '800',
-                      border: '2px solid white',
-                    }}
+                    $variant={['white', 'border', 'bold']}
+                    mui icon={Icon.arrowRight}
+                    text="PAY FOR PARKING"
+                  />
+                  <ChimericButtonWithIcon
+                    icon={Icon.arrowRight}
+                    text="RIDE A BIKE"
+                    $variant={['white', 'border', 'bold']}
                   />
                 </Flex>
               </Flex>

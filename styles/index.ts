@@ -328,7 +328,16 @@ export const themes: Record<string, Theme> = {
       },
       iconButtonContainer: {
         width: '50px'
-      }
+      },
+      buttonWithIconButton: {
+
+      },
+      buttonWithIconIcon: {
+        fontSize: '22px',
+      },
+      buttonWithIconLayout: {
+        gap: '20px'
+      },
     }
   }
 }

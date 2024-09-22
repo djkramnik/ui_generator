@@ -40,6 +40,7 @@ export type ThemeConfig = {
     success: ResponsiveMixin
     white: ResponsiveMixin
     grey: ResponsiveMixin
+    inactive: ResponsiveMixin
   }
   typography: {
     primaryff: ResponsiveMixin
@@ -70,6 +71,10 @@ export type ThemeConfig = {
     table: CssProps
     td: CssProps
     th: CssProps
+    thInner: CssProps
+    thSort: CssProps
+    thSortAsc: CssProps
+    thSortDesc: CssProps
     accordionSummary: CssProps
     accordionContainer: CssProps
     accordionHeading: CssProps

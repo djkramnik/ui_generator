@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { styled, useTheme } from 'styled-components'
 import {
   backgrounds,
   colors,
@@ -12,7 +12,7 @@ import {
 import { Box, Flex } from '../../layout'
 import { Position } from '../position'
 import React from 'react'
-import { 
+import {
   Table as MuiTable,
   TableContainer as MuiTableContainer,
   TableBody as MuiTableBody,
@@ -20,9 +20,15 @@ import {
   TableRow as MuiTableRow,
   TableCell as MuiTableCell,
   Paper,
-  Pagination as MuiPagination
-} from '@mui/material' 
-import { mergeStyles, parseVariant, parseVariants, sxToStyle } from '../../../utils'
+  Pagination as MuiPagination,
+} from '@mui/material'
+import {
+  getComponentStyles,
+  mergeStyles,
+  parseVariant,
+  parseVariants,
+  sxToStyle,
+} from '../../../utils'
 
 // styled component shit
 
@@ -124,26 +130,22 @@ const Page = ({
   containerSx?: CssProps
 }) => {
   return (
-    <Box $sx={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '6px',
-      color: selected
-        ? colors.amazonBlue
-        : 'inherit',
-      border: selected
-        ? `1px solid #333`
-        : 'none',
-      boxShadow: selected
-        ? shadows.lichessCard
-        : 'none',
-      width: '30px',
-      height: '30px',
-      background: backgrounds.grey,
-      cursor: 'pointer',
-      ...containerSx,
-    }}>
+    <Box
+      $sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '6px',
+        color: selected ? colors.amazonBlue : 'inherit',
+        border: selected ? `1px solid #333` : 'none',
+        boxShadow: selected ? shadows.lichessCard : 'none',
+        width: '30px',
+        height: '30px',
+        background: backgrounds.grey,
+        cursor: 'pointer',
+        ...containerSx,
+      }}
+    >
       {children}
     </Box>
   )
@@ -170,90 +172,86 @@ export const Pagination = ({
 }: PaginationProps) => {
   const highlighted = {
     background: colors.amazonDark,
-    color: colors.gsapWhite
+    color: colors.gsapWhite,
   }
 
   return (
     <Flex row gap="4px" aic $sx={{ ...containerSx }}>
-      {
-        prefix
-          ? (
-            <>
-              <Page containerSx={{ 
-                ...(highlightedIndex === 0 ? highlighted : {}),
-                ...containerSx,
-                }}>
-                <i className="fa-solid fa-angles-left" />
-              </Page>
-              <Page containerSx={{
-                ...(highlightedIndex === 1 ? highlighted : {}),
-                ...containerSx,
-              }}>
-                <i className="fa-solid fa-chevron-left" />
-              </Page>
-            </>
-          )
-          : null
-      }
-      {
-        pages.map((p, i) => {
-          return (
-            <React.Fragment key={p}>
-              {
-                withEllipsis && i === 5
-                  ? (
-                    <Page containerSx={{...containerSx}}>
-                      {'...'}
-                    </Page>
-                  )
-                  : null
-              }
-              <Page containerSx={{...containerSx}}
-                selected={selectedIndex === i}>
-                {p}
-              </Page>
-            </React.Fragment>
-          )
-        })
-      }
-      {
-        postfix
-          ? (
-            <>
-              <Page containerSx={{
-                ...(highlightedIndex === 2 ? highlighted : {}),
-                ...containerSx,
-              }}>
-                <i className="fa-solid fa-chevron-right" />
-              </Page>
-              <Page containerSx={{
-                ...(highlightedIndex === 3 ? highlighted : {}),
-                ...containerSx,
-              }}>
-                <i className="fa-solid fa-angles-right" />
-              </Page>
-            </>
-          )
-          : null
-      }
+      {prefix ? (
+        <>
+          <Page
+            containerSx={{
+              ...(highlightedIndex === 0 ? highlighted : {}),
+              ...containerSx,
+            }}
+          >
+            <i className="fa-solid fa-angles-left" />
+          </Page>
+          <Page
+            containerSx={{
+              ...(highlightedIndex === 1 ? highlighted : {}),
+              ...containerSx,
+            }}
+          >
+            <i className="fa-solid fa-chevron-left" />
+          </Page>
+        </>
+      ) : null}
+      {pages.map((p, i) => {
+        return (
+          <React.Fragment key={p}>
+            {withEllipsis && i === 5 ? (
+              <Page containerSx={{ ...containerSx }}>{'...'}</Page>
+            ) : null}
+            <Page
+              containerSx={{ ...containerSx }}
+              selected={selectedIndex === i}
+            >
+              {p}
+            </Page>
+          </React.Fragment>
+        )
+      })}
+      {postfix ? (
+        <>
+          <Page
+            containerSx={{
+              ...(highlightedIndex === 2 ? highlighted : {}),
+              ...containerSx,
+            }}
+          >
+            <i className="fa-solid fa-chevron-right" />
+          </Page>
+          <Page
+            containerSx={{
+              ...(highlightedIndex === 3 ? highlighted : {}),
+              ...containerSx,
+            }}
+          >
+            <i className="fa-solid fa-angles-right" />
+          </Page>
+        </>
+      ) : null}
     </Flex>
   )
 }
 
-export const ChimericPagination = (props: PaginationProps & {
-  mui?: boolean
-}) => {
-  const {mui, ...rest} = props
+export const ChimericPagination = (
+  props: PaginationProps & {
+    mui?: boolean
+  }
+) => {
+  const { mui, ...rest } = props
   if (mui) {
     return (
-      <MuiPagination count={props.pages.length}
+      <MuiPagination
+        count={props.pages.length}
         defaultPage={rest.selectedIndex}
-        variant="outlined" />
+        variant="outlined"
+      />
     )
   }
-  return (
-    <Pagination {...rest} />
-  )
+  return <Pagination {...rest} />
 }
 
 type BasicTableProps<T extends RowType = object> = {
@@ -262,6 +260,11 @@ type BasicTableProps<T extends RowType = object> = {
   headers?: string[]
   tableProps?: Omit<TableProps, 'theme'>
   alternateColor?: ResponsiveMixin
+  sort?: {
+    header: string
+    direction: 'asc' | 'desc'
+  }
+  noColumnBorder?: boolean
 }
 
 export const BasicTable = <T extends RowType = object>({
@@ -270,7 +273,10 @@ export const BasicTable = <T extends RowType = object>({
   headers,
   tableProps,
   alternateColor,
+  sort,
+  noColumnBorder
 }: BasicTableProps<T>) => {
+  const theme = useTheme()
   const sortedColumns = Object.entries(columns)
     .map(([k, v]) => {
       const value = v as Columns<T>[typeof k]
@@ -281,6 +287,7 @@ export const BasicTable = <T extends RowType = object>({
       }
     })
     .sort((a, b) => a.order - b.order)
+
   return (
     <Table {...tableProps}>
       {headers ? (
@@ -288,34 +295,53 @@ export const BasicTable = <T extends RowType = object>({
           {sortedColumns.map((_, i) => {
             const header = headers[i]
             return (
-                <TableHeader key={`header_${i}`} $sx={{ 
-                  position: 'relative',
-                  textAlign: 'center',
-                  borderRight: i !== sortedColumns.length - 1
-                    ? '1px solid #333'
-                    : 'none'
-                }}>
+              <TableHeader
+                key={`header_${i}`}
+                $sx={{
+                  borderRight:
+                    !noColumnBorder && i !== sortedColumns.length - 1
+                      ? `1px solid ${theme.palette.copy}`
+                      : 'none',
+                }}
+              >
+                <Box
+                  $sx={{
+                    ...getComponentStyles('thInner', theme),
+                  }}
+                >
                   {header ?? null}
-                  <Position tlbr={{ right: '10%', top: 'calc(50% - 16px)' }}>
-                    <Flex col aic jcc $sx={{ 
-                      display: 'inline-flex',
-                      position: 'relative',
-                      
-                      }}>
-                      <i className="fa-solid fa-chevron-up" style={{
-                        fontSize: '12px',
-                        fontWeight: 'bold',
-                        color: '#aaa',
-                      }} />
-                      <i className="fa-solid fa-chevron-down" style={{
-                        fontSize: '12px',
-                        fontWeight: 'bold',
-                        color: '#333',
-                      }} />
-                    </Flex>
-                  </Position>
-                </TableHeader>
-
+                  <Box
+                    $sx={{
+                      ...getComponentStyles('thSort', theme),
+                    }}
+                  >
+                    <i
+                      className="fa-solid fa-caret-up"
+                      style={{
+                        ...sxToStyle({
+                          ...getComponentStyles('thSortAsc', theme),
+                          color:
+                            (sort?.header === header && sort?.direction === 'asc')
+                              ? theme.palette.copy
+                              : theme.palette.inactive
+                        })
+                      }}
+                    />
+                    <i
+                      className="fa-solid fa-caret-down"
+                      style={{
+                        ...sxToStyle({
+                          ...getComponentStyles('thSortDesc', theme),
+                          color:
+                            (sort?.header === header && sort?.direction === 'desc')
+                              ? theme.palette.copy
+                              : theme.palette.inactive
+                        })
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </TableHeader>
             )
           })}
         </thead>
@@ -328,14 +354,15 @@ export const BasicTable = <T extends RowType = object>({
                 return (
                   <TableCell
                     $sx={{
-                      borderRight: j !== sortedColumns.length - 1
-                        ? '1px solid #333'
-                        : 'none',
-                      backgroundColor: alternateColor && !(i % 2)
-                        ? alternateColor
-                        : 'initial'
-                    }} 
-                    key={`${i}_${j}`}>
+                      borderRight:
+                        !noColumnBorder && j !== sortedColumns.length - 1
+                          ? `1px solid ${theme.palette.copy}`
+                          : 'none',
+                      backgroundColor:
+                        alternateColor && !(i % 2) ? alternateColor : 'initial',
+                    }}
+                    key={`${i}_${j}`}
+                  >
                     {render(row[key], row)}
                   </TableCell>
                 )
@@ -348,75 +375,80 @@ export const BasicTable = <T extends RowType = object>({
   )
 }
 
-export const ChimericTable = <T extends RowType = object>(props: BasicTableProps<T> & {
-  mui?: boolean
-}) => {
-  
+export const ChimericTable = <T extends RowType = object>(
+  props: BasicTableProps<T> & {
+    mui?: boolean
+  }
+) => {
   const sortedColumns = Object.entries(props.columns)
-  .map(([k, v]) => {
-    const value = v as Columns<T>[typeof k]
-    return {
-      key: k,
-      render: value.config.render,
-      order: value.order,
-    }
-  })
-  .sort((a, b) => a.order - b.order)
+    .map(([k, v]) => {
+      const value = v as Columns<T>[typeof k]
+      return {
+        key: k,
+        render: value.config.render,
+        order: value.order,
+      }
+    })
+    .sort((a, b) => a.order - b.order)
 
   if (props.mui) {
     return (
       <MuiTableContainer component={Paper}>
-        <MuiTable {...props.tableProps} style={{
-          ...props.tableProps?.style,
-          ...sxToStyle(props.tableProps?.$sx ?? {})
-        }}>
+        <MuiTable
+          {...props.tableProps}
+          style={{
+            ...props.tableProps?.style,
+            ...sxToStyle(props.tableProps?.$sx ?? {}),
+          }}
+        >
           <MuiTableHead>
             <MuiTableRow>
-              {
-                sortedColumns.map((_, i) => {
-                  const header = props.headers?.[i]
-                  return (
-                    <MuiTableCell style={{
+              {sortedColumns.map((_, i) => {
+                const header = props.headers?.[i]
+                return (
+                  <MuiTableCell
+                    style={{
                       borderBottom: '1px solid #333',
                       textAlign: 'center',
-                      fontWeight: 'bold'
-                    }}>
-                      {header ?? null}
-                    </MuiTableCell>
-                  )
-                })         
-              }
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    {header ?? null}
+                  </MuiTableCell>
+                )
+              })}
             </MuiTableRow>
           </MuiTableHead>
           <MuiTableBody>
             {props.data.map((row, i) => {
-            return (
-              <MuiTableRow>
-                {sortedColumns.map(({ key, render }, j) => {
-                  return (
-                    <MuiTableCell
-                      style={{
-                        borderRight: j !== sortedColumns.length - 1
-                          ? '1px solid #333'
-                          : 'none',
-                        backgroundColor: typeof props.alternateColor === 'string' && !(i % 2)
-                          ? props.alternateColor
-                          : 'initial'
-                      }} 
-                      key={`${i}_${j}`}>
-                      {render(row[key], row)}
-                    </MuiTableCell>
-                  )
-                })}
-              </MuiTableRow>
-            )
-          })}
+              return (
+                <MuiTableRow>
+                  {sortedColumns.map(({ key, render }, j) => {
+                    return (
+                      <MuiTableCell
+                        style={{
+                          borderRight:
+                            j !== sortedColumns.length - 1
+                              ? '1px solid #333'
+                              : 'none',
+                          backgroundColor:
+                            typeof props.alternateColor === 'string' && !(i % 2)
+                              ? props.alternateColor
+                              : 'initial',
+                        }}
+                        key={`${i}_${j}`}
+                      >
+                        {render(row[key], row)}
+                      </MuiTableCell>
+                    )
+                  })}
+                </MuiTableRow>
+              )
+            })}
           </MuiTableBody>
         </MuiTable>
       </MuiTableContainer>
     )
   }
-  return (
-    <BasicTable<T> {...props} />
-  )
+  return <BasicTable<T> {...props} />
 }

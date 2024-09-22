@@ -15,6 +15,7 @@ const palette = {
   success: '#303f9f',
   white: '#fff',
   grey: colors.amazonGrey,
+  inactive: 'rgba(0,0,0,0.3)'
 }
 
 const typography = {
@@ -112,17 +113,40 @@ export const themes: Record<string, Theme> = {
       },
       table: {
         borderSpacing: '0',
-        border: '1px solid #333',
+        border: `1px solid ${palette.copy}`,
         borderBottom: 'none',
       },
       td: {
-        borderBottom: '1px solid #333',
+        borderBottom: `1px solid ${palette.copy}`,
+        padding: '12px 32px'
       },
       th: {
-        borderBottom: '1px solid #333',
-        padding: '12px',
-        paddingRight: '40px',
-        textAlign: 'center',
+        borderBottom: `1px solid ${palette.copy}`,
+        padding: '12px 32px',
+        minWidth: '120px',
+        position: 'relative'
+      },
+      thInner: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '4px',
+        justifyContent: 'center',
+        position: 'relative',
+      },
+      thSort: {
+        position: 'absolute',
+        display: 'flex',
+        flexDirection: 'column',
+        right: '-16px',
+        cursor: 'pointer',
+      },
+      thSortAsc: {
+        position: 'relative',
+        top: '4px',
+      },
+      thSortDesc: {
+        position: 'relative',
+        top: '-4px',
       },
       accordionSummary: {
         backgroundColor: palette.grey,

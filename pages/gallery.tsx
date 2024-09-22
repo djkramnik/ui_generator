@@ -20,6 +20,7 @@ import { Spacer } from '../components/lib/layout/spacer'
 import React, { useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Container } from '../components/lib/layout/container'
+import { BasicTable, getGenericColumns } from '../components/lib/atomics/table'
 
 const Cell = ({
   children,
@@ -45,11 +46,14 @@ const Cell = ({
   )
 }
 
-const Row = ({ children }: { children?: React.ReactNode }) => {
+const Row = ({ children, bgc }: { 
+  children?: React.ReactNode
+  bgc?: string
+ }) => {
   return (
     <Flex row gap="6px">
       {React.Children.map(children, (child, index) => {
-        return <Cell key={index}>{child}</Cell>
+        return <Cell key={index} bgc={bgc}>{child}</Cell>
       })}
     </Flex>
   )
@@ -64,8 +68,46 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
-        <Row>
-          
+        <Row bgc="white">
+          <BasicTable<object>
+            sort={{
+              header: 'Age',
+              direction: 'asc',
+            }}
+            noColumnBorder
+            alternateColor="#eee"
+            headers={['Name', 'Position', 'Office', 'Age', 'Start Date']}
+            data={[
+              {
+                name: 'Greg Plates',
+                position: 'Lifting Guy',
+                office: 'Warehouse',
+                age: '20',
+                startDate: '10/10/2022'
+              },
+              {
+                name: 'Chris Williamson',
+                position: 'CEO',
+                office: 'Glass Pavilion',
+                age: '29',
+                startDate: '8/17/2000'
+              },
+              {
+                name: 'Moldy Residue',
+                position: 'Waste Manager',
+                office: 'Barone Sanitation',
+                age: '44',
+                startDate: '12/12/1978'
+              },
+            ]}
+            columns={getGenericColumns([
+              'name',
+              'position',
+              'office',
+              'age',
+              'startDate',
+            ])}
+          />
         </Row>
         <Row>
           <IconButton icon={Icon.house} text="Home" />

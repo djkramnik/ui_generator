@@ -1,9 +1,7 @@
-import { Container } from '@mui/material'
 import { Flex, Box } from '../components/lib'
 import {
   Anchor,
   Button,
-  ButtonWithIcon,
   ChimericAnchor,
   ChimericButton,
   ChimericButtonWithIcon,
@@ -14,14 +12,14 @@ import {
   Copy,
   Heading,
   Icon,
-  Modal,
+  IconButton,
 } from '../components/lib/atomics'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { ResponsiveMixin } from '../components/theme'
 import { Spacer } from '../components/lib/layout/spacer'
 import React, { useState } from 'react'
-import { Position } from '../components/lib/atomics/position'
 import { useTheme } from 'styled-components'
+import { Container } from '../components/lib/layout/container'
 
 const Cell = ({
   children,
@@ -67,6 +65,24 @@ const Gallery = () => {
       <Spacer />
       <Container>
         <Row>
+          
+        </Row>
+        <Row>
+          <IconButton icon={Icon.house} text="Home" />
+          <IconButton mui icon={Icon.house} text="Home" />
+          <IconButton icon={Icon.youtube} text="Subscription" />
+          <IconButton mui icon={Icon.youtube} text="Subscription" />
+          <IconButton textSx={{ color: '#fff' }}
+            containerSx={{
+              border: '2px solid white'
+            }}
+            iconStyle={{ color: '#fff' }}
+            icon={Icon.stripe} text="Payment" />
+          <IconButton mui textSx={{ color: '#fff' }}
+            iconStyle={{ color: '#fff' }}
+            icon={Icon.stripe} text="Payment" />
+        </Row>
+        <Row> 
           <Button>Subscribe</Button>
           <Button $variant="pill">Subscribe</Button>
           <Button $variant="border">Subscribe</Button>

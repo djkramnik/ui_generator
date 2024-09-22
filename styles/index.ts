@@ -327,7 +327,7 @@ export const themes: Record<string, Theme> = {
 
       },
       iconButtonContainer: {
-        width: '50px'
+        minWidth: '50px'
       },
       buttonWithIconButton: {
 

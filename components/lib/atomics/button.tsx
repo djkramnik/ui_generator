@@ -1,5 +1,6 @@
 import { styled, useTheme } from 'styled-components'
 import {
+  CssProps,
   getResponsiveStyles,
   ResponsiveComponent,
   ResponsiveMixin,
@@ -102,7 +103,7 @@ export const ButtonWithIcon = ({
           } : {}),
           ...flexProps?.$sx
         }}>
-        {text}
+        <span style={{ position: 'relative', top: '-1px'}}>{text}</span>
         <ChimericIcon
           icon={icon}
           iconStyle={{
@@ -183,19 +184,22 @@ export const IconButton = ({
   rev,
   iconStyle,
   textSx,
+  containerSx,
   mui,
 }: {
   icon: Icon
   text: string
   rev?: boolean
   iconStyle?: CSSProperties
-  textSx?: CopyProps['$sx']
+  textSx?: CssProps
+  containerSx?: CssProps
   mui?: boolean
 }) => {
   const theme = useTheme()
   return (
     <Button $variant="transparent" $sx={{
       ...getComponentStyles('iconButtonContainer', theme),
+      ...containerSx,
     }}>
       <Flex
         aic

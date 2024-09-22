@@ -568,6 +568,25 @@ enum MuiStyles {
   Sharp = 'Sharp',
 }
 
+const getFaPrefix = (
+  icon: string
+) => {
+  switch(icon) {
+    case 'facebook':
+    case 'twitter':
+    case 'instagram':
+    case 'tiktok':
+    case 'figma':
+    case 'google':
+    case 'stripe':
+    case 'discord':
+    case 'youtube':
+      return 'brands'
+    default:
+      return 'solid'
+  }
+}
+
 export const ChimericIcon = ({
   icon,
   mui,
@@ -591,5 +610,6 @@ export const ChimericIcon = ({
       <AltMuiIcon style={style} />
     )
   }
-  return <i className={`fa-solid fa-${icon}`} style={style} />
+
+  return <i className={`fa-${getFaPrefix(icon)} fa-${icon}`} style={style} />
 }

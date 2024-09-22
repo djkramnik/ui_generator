@@ -20,7 +20,7 @@ import { Spacer } from '../components/lib/layout/spacer'
 import React, { useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Container } from '../components/lib/layout/container'
-import { BasicTable, getGenericColumns } from '../components/lib/atomics/table'
+import { BasicTable, ChimericTable, getGenericColumns } from '../components/lib/atomics/table'
 
 const Cell = ({
   children,
@@ -69,7 +69,49 @@ const Gallery = () => {
       <Spacer />
       <Container>
         <Row bgc="white">
-          <BasicTable<object>
+        <ChimericTable<object>
+            mui
+            sort={{
+              header: 'Age',
+              direction: 'asc',
+            }}
+            noColumnBorder
+            alternateColor="#eee"
+            headers={['Name', 'Position', 'Office', 'Age', 'Start Date']}
+            data={[
+              {
+                name: 'Greg Plates',
+                position: 'Lifting Guy',
+                office: 'Warehouse',
+                age: '20',
+                startDate: '10/10/2022'
+              },
+              {
+                name: 'Chris Williamson',
+                position: 'CEO',
+                office: 'Glass Pavilion',
+                age: '29',
+                startDate: '8/17/2000'
+              },
+              {
+                name: 'Moldy Residue',
+                position: 'Waste Manager',
+                office: 'Barone Sanitation',
+                age: '44',
+                startDate: '12/12/1978'
+              },
+            ]}
+            columns={getGenericColumns([
+              'name',
+              'position',
+              'office',
+              'age',
+              'startDate',
+            ])}
+          />
+        </Row>
+        <Row bgc="white">
+          <ChimericTable<object>
             sort={{
               header: 'Age',
               direction: 'asc',

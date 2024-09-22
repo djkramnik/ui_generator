@@ -380,6 +380,7 @@ export const ChimericTable = <T extends RowType = object>(
     mui?: boolean
   }
 ) => {
+  const theme = useTheme()
   const sortedColumns = Object.entries(props.columns)
     .map(([k, v]) => {
       const value = v as Columns<T>[typeof k]
@@ -397,8 +398,11 @@ export const ChimericTable = <T extends RowType = object>(
         <MuiTable
           {...props.tableProps}
           style={{
+            ...sxToStyle({
+              ...getComponentStyles('table', theme),
+              ...props.tableProps?.$sx ?? {}
+            }),
             ...props.tableProps?.style,
-            ...sxToStyle(props.tableProps?.$sx ?? {}),
           }}
         >
           <MuiTableHead>
@@ -408,9 +412,9 @@ export const ChimericTable = <T extends RowType = object>(
                 return (
                   <MuiTableCell
                     style={{
-                      borderBottom: '1px solid #333',
-                      textAlign: 'center',
-                      fontWeight: 'bold',
+                      ...sxToStyle({
+                        ...getComponentStyles('th', theme),
+                      })
                     }}
                   >
                     {header ?? null}
@@ -427,9 +431,12 @@ export const ChimericTable = <T extends RowType = object>(
                     return (
                       <MuiTableCell
                         style={{
+                          ...sxToStyle({
+                            ...getComponentStyles('td', theme),
+                          }),
                           borderRight:
-                            j !== sortedColumns.length - 1
-                              ? '1px solid #333'
+                            !props.noColumnBorder && j !== sortedColumns.length - 1
+                              ? `1px solid ${theme.palette.copy}`
                               : 'none',
                           backgroundColor:
                             typeof props.alternateColor === 'string' && !(i % 2)

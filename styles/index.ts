@@ -124,7 +124,9 @@ export const themes: Record<string, Theme> = {
         borderBottom: `1px solid ${palette.copy}`,
         padding: '12px 32px',
         minWidth: '120px',
-        position: 'relative'
+        position: 'relative',
+        textAlign: 'center',
+        fontFamily: typography.primaryff,
       },
       thInner: {
         display: 'flex',

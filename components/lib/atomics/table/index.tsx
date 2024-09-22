@@ -10,7 +10,6 @@ import {
   WithTheme,
 } from '../../../theme'
 import { Box, Flex } from '../../layout'
-import { Position } from '../position'
 import React from 'react'
 import {
   Table as MuiTable,

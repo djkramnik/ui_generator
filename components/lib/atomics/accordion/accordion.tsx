@@ -4,7 +4,7 @@ import { Box } from "../../layout"
 import { Heading } from "../heading"
 import MuiAccordion from '@mui/material/Accordion';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { mergeStyles, sxToStyle } from "../../../utils";
+import { getComponentStyles, mergeStyles, sxToStyle } from "../../../utils";
 import { useTheme } from "styled-components";
 
 const DefaultIcon = ({ open }: { open: boolean }) => {
@@ -138,7 +138,11 @@ export const ChimericAccordion = (props: AccordionProps & {
     })
   
     return (
-      <MuiAccordion defaultExpanded={open === true}>
+      <MuiAccordion defaultExpanded={open === true} sx={{
+        ...sxToStyle({
+          ...getComponentStyles('accordionContainer', theme),
+        })
+      }}>
         <AccordionSummary 
           style={{
             ...sxToStyle({

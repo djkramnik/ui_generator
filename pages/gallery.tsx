@@ -20,14 +20,26 @@ import { Spacer } from '../components/lib/layout/spacer'
 import React, { useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Container } from '../components/lib/layout/container'
-import { BasicTable, ChimericTable, getGenericColumns } from '../components/lib/atomics/table'
+import {
+  BasicTable,
+  ChimericTable,
+  getGenericColumns,
+} from '../components/lib/atomics/table'
+import {
+  AccordionSection,
+  ChimericAccordion,
+  TextAccordion,
+} from '../components/lib/atomics/accordion'
+import { Accordion } from '@mui/material'
 
 const Cell = ({
   children,
   bgc = '#aaa',
+  withGrow,
 }: {
   children?: React.ReactNode
   bgc?: ResponsiveMixin
+  withGrow?: boolean
 }) => {
   return (
     <Box
@@ -39,6 +51,7 @@ const Cell = ({
         alignSelf: 'stretch',
         display: 'flex',
         alignItems: 'center',
+        flexGrow: withGrow ? '1' : '0',
       }}
     >
       {children}
@@ -46,14 +59,23 @@ const Cell = ({
   )
 }
 
-const Row = ({ children, bgc }: { 
+const Row = ({
+  children,
+  bgc,
+  withGrow,
+}: {
   children?: React.ReactNode
   bgc?: string
- }) => {
+  withGrow?: boolean
+}) => {
   return (
     <Flex row gap="6px">
       {React.Children.map(children, (child, index) => {
-        return <Cell key={index} bgc={bgc}>{child}</Cell>
+        return (
+          <Cell withGrow={withGrow === true} key={index} bgc={bgc}>
+            {child}
+          </Cell>
+        )
       })}
     </Flex>
   )
@@ -69,7 +91,61 @@ const Gallery = () => {
       <Spacer />
       <Container>
         <Row bgc="white">
-        <ChimericTable<object>
+          <TextAccordion label="stupido" open>
+            <ul style={{ padding: '0' }}>
+              <li>people love it</li>
+              <li>when you lose</li>
+              <li>dirty laundry</li>
+            </ul>
+          </TextAccordion>
+          <TextAccordion copySx={{
+            fontWeight: 'bold',
+
+          }}
+          label="Show more holidays" open>
+            <Flex col gap="2px">
+              <span>Festivus</span>
+              <span>Kwanza</span>
+              <span>Pilgrimage to the Bolognese</span>
+            </Flex>
+          </TextAccordion>
+        </Row>
+        <Row bgc="white" withGrow>
+          <ChimericAccordion
+            mui
+            heading="Can I write you in jail"
+          >
+            Yes, but only on acidtone paper.
+          </ChimericAccordion>
+        </Row>
+        <Row bgc="white" withGrow>
+          <AccordionSection
+            open
+            icon={<ChimericIcon mui icon={Icon.caretUp} />}
+            heading="Can I supplement with hard drugs"
+          >
+            <Copy>
+              Of course you can. Your individual results, may vary between
+              spectacular, and down right miraculous. The only danger is you
+              don't chuck your money into our trustworthy hands fast enough, and
+              time, unfortunately, may run out on you and all your adorable
+              hopes and dreams.
+            </Copy>
+          </AccordionSection>
+        </Row>
+        <Row bgc="white" withGrow>
+          <AccordionSection heading="Can I supplement with hard drugs">
+            <Copy>
+              Of course you can. Your individual results, may vary between
+              spectacular, and down right miraculous. The only danger is you
+              don't chuck your money into our trustworthy hands fast enough, and
+              time, unfortunately, may run out on you and all your adorable
+              hopes and dreams.
+            </Copy>
+          </AccordionSection>
+        </Row>
+        <Row bgc="white">
+          <ChimericTable<object>
             mui
             sort={{
               header: 'Age',
@@ -84,21 +160,21 @@ const Gallery = () => {
                 position: 'Lifting Guy',
                 office: 'Warehouse',
                 age: '20',
-                startDate: '10/10/2022'
+                startDate: '10/10/2022',
               },
               {
                 name: 'Chris Williamson',
                 position: 'CEO',
                 office: 'Glass Pavilion',
                 age: '29',
-                startDate: '8/17/2000'
+                startDate: '8/17/2000',
               },
               {
                 name: 'Moldy Residue',
                 position: 'Waste Manager',
                 office: 'Barone Sanitation',
                 age: '44',
-                startDate: '12/12/1978'
+                startDate: '12/12/1978',
               },
             ]}
             columns={getGenericColumns([
@@ -125,21 +201,21 @@ const Gallery = () => {
                 position: 'Lifting Guy',
                 office: 'Warehouse',
                 age: '20',
-                startDate: '10/10/2022'
+                startDate: '10/10/2022',
               },
               {
                 name: 'Chris Williamson',
                 position: 'CEO',
                 office: 'Glass Pavilion',
                 age: '29',
-                startDate: '8/17/2000'
+                startDate: '8/17/2000',
               },
               {
                 name: 'Moldy Residue',
                 position: 'Waste Manager',
                 office: 'Barone Sanitation',
                 age: '44',
-                startDate: '12/12/1978'
+                startDate: '12/12/1978',
               },
             ]}
             columns={getGenericColumns([
@@ -156,17 +232,24 @@ const Gallery = () => {
           <IconButton mui icon={Icon.house} text="Home" />
           <IconButton icon={Icon.youtube} text="Subscription" />
           <IconButton mui icon={Icon.youtube} text="Subscription" />
-          <IconButton textSx={{ color: '#fff' }}
+          <IconButton
+            textSx={{ color: '#fff' }}
             containerSx={{
-              border: '2px solid white'
+              border: '2px solid white',
             }}
             iconStyle={{ color: '#fff' }}
-            icon={Icon.stripe} text="Payment" />
-          <IconButton mui textSx={{ color: '#fff' }}
+            icon={Icon.stripe}
+            text="Payment"
+          />
+          <IconButton
+            mui
+            textSx={{ color: '#fff' }}
             iconStyle={{ color: '#fff' }}
-            icon={Icon.stripe} text="Payment" />
+            icon={Icon.stripe}
+            text="Payment"
+          />
         </Row>
-        <Row> 
+        <Row>
           <Button>Subscribe</Button>
           <Button $variant="pill">Subscribe</Button>
           <Button $variant="border">Subscribe</Button>
@@ -178,15 +261,20 @@ const Gallery = () => {
             Subscribe
           </Button>
           <ChimericButton
-              mui
-              $variant={['pill', 'bold', 'border', 'shadow', 'transparent']}
-            >
-              Subscribe
-            </ChimericButton>
-            <ChimericButton>Subscribe</ChimericButton>
+            mui
+            $variant={['pill', 'bold', 'border', 'shadow', 'transparent']}
+          >
+            Subscribe
+          </ChimericButton>
+          <ChimericButton>Subscribe</ChimericButton>
         </Row>
         <Row>
-          <ChimericButtonWithIcon $variant="pill" mui text="Suppress Shadow" icon={Icon.figma} />
+          <ChimericButtonWithIcon
+            $variant="pill"
+            mui
+            text="Suppress Shadow"
+            icon={Icon.figma}
+          />
           <ChimericButtonWithIcon
             $variant={['border', 'pill', 'shadow']}
             text="Too hot"
@@ -210,17 +298,23 @@ const Gallery = () => {
         </Row>
         <Row>
           <Flex col gap="6px">
-            <Button onClick={() => setChimericMuiOpen(true)}>open mui modal</Button>
+            <Button onClick={() => setChimericMuiOpen(true)}>
+              open mui modal
+            </Button>
             <ChimericModal
               handleClose={() => setChimericMuiOpen(false)}
-              mui open={chimericMuiOpen}>
+              mui
+              open={chimericMuiOpen}
+            >
               <Heading level={3}>Everything Vibrates</Heading>
             </ChimericModal>
           </Flex>
           <Flex col gap="6px">
             <Button onClick={() => setChimericOpen(true)}>open modal</Button>
-            <ChimericModal open={chimericOpen}
-              handleClose={() => setChimericOpen(false)}>
+            <ChimericModal
+              open={chimericOpen}
+              handleClose={() => setChimericOpen(false)}
+            >
               <Heading level={3}>Everything Vibrates</Heading>
             </ChimericModal>
           </Flex>
@@ -241,7 +335,7 @@ const Gallery = () => {
         <Row>
           <Anchor href="#">About Us</Anchor>
           <ChimericAnchor mui href="#">
-              About Us
+            About Us
           </ChimericAnchor>
           <ChimericAnchor href="#" $variant="underline">
             About Us

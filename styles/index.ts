@@ -156,12 +156,18 @@ export const themes: Record<string, Theme> = {
         display: 'flex',
         justifyContent: 'space-between',
         padding: '12px 18px',
+        gap: '20px',
+        alignItems: 'center',
+        fontSize: '30px',
+        fontWeight: 'bold',
       },
       accordionContainer: {
         border: `1px solid ${palette.copy}`,
+        width: '100%'
       },
       accordionHeading: {
         color: palette.heading,
+        fontWeight: 'bold',
       },
       accordionExpanded: {
         padding: '12px 18px',
@@ -175,9 +181,11 @@ export const themes: Record<string, Theme> = {
       },
       textAccordionHeading: {
         fontSize: '14px',
+        color: palette.primary,
+        fontWeight: 'bold'
       },
       textAccordionExpanded: {
-
+        paddingLeft: '22px'
       },
       inputWithIconContainer: {
         position: 'relative'

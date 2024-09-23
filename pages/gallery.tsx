@@ -96,6 +96,7 @@ const Row = ({
 
 const Gallery = () => {
   const theme = useTheme()
+  const bgc = theme.palette.background as any as string
   const [chimericOpen, setChimericOpen] = useState<boolean>(false)
   const [chimericMuiOpen, setChimericMuiOpen] = useState<boolean>(false)
   return (
@@ -201,7 +202,7 @@ const Gallery = () => {
           <Checkbox label="Drawing conclusions" checked />
           <ChimericCheckbox mui label="Great pan is dead" checked />
         </Row>
-        <Row bgc="white" withGrow>
+        <Row bgc={bgc} withGrow>
           <Box $variant="fullwidth">
             <InputWithIcon
               rev
@@ -216,7 +217,7 @@ const Gallery = () => {
             />
           </Box>
         </Row>
-        <Row bgc="white" withGrow>
+        <Row bgc={bgc} withGrow>
           <Box $variant="fullwidth">
             <InputWithIcon
               icon={Icon.search}
@@ -230,7 +231,7 @@ const Gallery = () => {
             />
           </Box>
         </Row>
-        <Row bgc="#eee" withGrow>
+        <Row bgc="#eee">
           <Box>
             <Heading level={3} $variant={['fullwidth', 'center']} $sx={{
               width: '100%'
@@ -359,14 +360,14 @@ const Gallery = () => {
             </Flex>
           </Box>
         </Row>
-        <Row bgc="white" withGrow>
+        <Row bgc={bgc} withGrow>
           {/**TODO: componentize this prob in layout / super-components.  the stacked accordions */}
           <Flex col $sx={{ width: '100%' }}>
             <ChimericAccordion
               icon={<ChimericIcon icon={Icon.plus} />}
               heading="Will it irriate me skin"
               summarySx={{
-                backgroundColor: 'white',
+                backgroundColor: bgc,
               }}
               rootVariant={['borderless:b', 'borderless:l', 'borderless:r']}
             />
@@ -375,7 +376,7 @@ const Gallery = () => {
               icon={<ChimericIcon icon={Icon.minus} />}
               heading="Will it dry out me eyes"
               summarySx={{
-                backgroundColor: 'white',
+                backgroundColor: bgc,
               }}
               rootVariant={['borderless:l', 'borderless:r']}
             >
@@ -389,7 +390,7 @@ const Gallery = () => {
             </ChimericAccordion>
           </Flex>
         </Row>
-        <Row bgc="white">
+        <Row bgc={bgc}>
           <TextAccordion label="stupido" open>
             <ul style={{ padding: '0' }}>
               <li>people love it</li>
@@ -411,12 +412,12 @@ const Gallery = () => {
             </Flex>
           </TextAccordion>
         </Row>
-        <Row bgc="white" withGrow>
+        <Row bgc={bgc} withGrow>
           <ChimericAccordion mui heading="Can I write you in jail">
             Yes, but only on acidtone paper.
           </ChimericAccordion>
         </Row>
-        <Row bgc="white" withGrow>
+        <Row bgc={bgc} withGrow>
           <AccordionSection
             open
             icon={<ChimericIcon mui icon={Icon.caretUp} />}

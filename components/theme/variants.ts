@@ -1,6 +1,27 @@
 import { CSSProperties } from "react"
 import { CssProps, Theme } from "./types"
-import { shadows } from "."
+
+export const colors: Record<string, string> = {
+  gsapWhite: '#FFFCE1',
+  gsapGrey: '#7c7c6f',
+  gsapGrey2: 'rgba(255, 255, 255, 0.1)',
+  gsapGreen: '#0ae448',
+  enercareRed: '#da1b27',
+  amazonDark: '#131921',
+  amazonGrey: '#F8F8F8',
+  amazonBlue: '#007185',
+  antBlueLight: '#e6f4ff'
+}
+
+export const shadows: Record<string, string> = {
+  lichessCard: '0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)',
+  card: '0 3px 6px rgba(149,157,165,.15)',
+  w3Schools: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
+}
+
+export const backgrounds: Record<string, string> = {
+  grey: 'linear-gradient(to bottom, rgba(230, 230, 230, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);'
+}
 
 export const sxToStyle = ($sx: CssProps): CSSProperties => {
   return Object.entries($sx).reduce((acc, [k,v]) => {

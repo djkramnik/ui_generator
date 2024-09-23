@@ -1,10 +1,21 @@
-import {
-  createGlobalStyle,
-} from 'styled-components'
+import { randomPick, shuffle } from "../utils";
+import { ResponsiveMixin, Theme } from "./types";
+import { shadows } from "./variants";
 
-import { colors, ResponsiveMixin, shadows, type Theme } from '../components/theme'
+const fontFamilies = [
+  'helveticaneue',
+  'Noto Sans, sans-serif',
+]
 
-const palette = {
+const spacing = {
+  containerWidth: ['96%', '94%', '92%'] as ResponsiveMixin<string>,
+  smallGap: '6px',
+  gap: '12px',
+  biggishGap: '20px',
+  bigGap: '40px',
+}
+
+const colorPalettes: Theme['palette'][] = [{ // youtube.com?
   background: '#fff',
   copy: '#0f0f0f',
   heading: '#212121',
@@ -16,23 +27,40 @@ const palette = {
   white: '#fff',
   grey: '#eee',
   inactive: 'rgba(0,0,0,0.3)'
-}
+}, { // chess.com
+  background: '#302E2B',
+  copy: '#fff',
+  heading: '#fff',
+  button: '#fff',
+  primary: '#302E2B',
+  secondary: 'rgba(255, 255, 255, 0.1)',
+  error: 'rgb(224, 40, 40)',
+  success: 'rgb(129, 182, 76)',
+  white: '#fff',
+  grey: 'rgba(255, 255, 255, 0.5)',
+  inactive: 'rgba(255, 255, 255, 0.5)'
+}, { // reddit.com
+  background: 'rgb(14, 17, 19)',
+  copy: 'rgb(242, 242, 242)',
+  heading: 'rgb(241, 243, 245)',
+  button: '#fff',
+  primary: 'rgb(217, 57, 0)',
+  secondary: 'rgb(17, 91, 202)',
+  error: 'rgb(224, 40, 40)',
+  success: 'rgb(129, 182, 76)',
+  white: '#fff',
+  grey: 'rgb(116, 135, 145)',
+  inactive: '#FFFFFF26'
+}]
 
-const typography = {
-  primaryff: 'Noto Sans, sans-serif',
-  secondaryff: 'helveticaneue'
-}
-
-const spacing = {
-  containerWidth: ['96%', '94%', '92%'] as ResponsiveMixin<string>,
-  smallGap: '6px',
-  gap: '12px',
-  biggishGap: '20px',
-  bigGap: '40px',
-}
-
-export const themes: Record<string, Theme> = {
-  primary: {
+export const generateTheme = (): Theme => {
+  const palette = colorPalettes[randomPick(0, colorPalettes.length - 1)]
+  const [primaryff, secondaryff] = shuffle(fontFamilies)
+  const typography = {
+    primaryff,
+    secondaryff,
+  }
+  return {
     typography,
     palette,
     spacing,
@@ -392,35 +420,3 @@ export const themes: Record<string, Theme> = {
     }
   }
 }
-
-export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
-  * {
-    box-sizing: border-box;
-    font-family: ${({ theme }) => theme.typography?.primaryff ?? 'fantasy'};
-    margin: 0;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: ${({ theme }) => theme.palette?.background}
-  }
-
-  a {
-    color: inherit;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  button {
-    outline: none;
-    background: none;
-    border: none;
-  }
-
-  p {
-
-  }
-`

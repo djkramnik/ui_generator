@@ -4,26 +4,27 @@ import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import { themes, GlobalStyles } from '../styles/index'
 import { ActiveThemeContext } from '../components/active_theme'
+import { Theme } from '../components/theme/styled'
 
 export default class MyApp extends App<
   {},
   {},
   {
-    activeTheme: string
-    toggleTheme: (activeTheme: string) => void
+    activeTheme: Theme
+    toggleTheme: (newTheme: Theme) => void
   }
 > {
-  toggleTheme: (activeTheme: string) => void
+  toggleTheme: (newTheme: Theme) => void
 
   constructor(props: any) {
     super(props)
-    this.toggleTheme = (activeTheme: string) => {
+    this.toggleTheme = (newTheme: Theme) => {
       this.setState({
-        activeTheme,
+        activeTheme: newTheme,
       })
     }
     this.state = {
-      activeTheme: 'primary',
+      activeTheme: themes['primary'],
       toggleTheme: this.toggleTheme,
     }
   }
@@ -32,14 +33,14 @@ export default class MyApp extends App<
 
     return (
       <ActiveThemeContext.Provider value={this.state}>
-        <ThemeProvider theme={themes[this.state.activeTheme]}>
+        <ThemeProvider theme={this.state.activeTheme}>
           <Head>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
             />
           </Head>
-          <GlobalStyles theme={themes[this.state.activeTheme]}/>
+          <GlobalStyles theme={this.state.activeTheme}/>
           <Component {...pageProps} />
           <Script src="https://kit.fontawesome.com/8624cac04a.js" crossOrigin="anonymous" />
         </ThemeProvider>

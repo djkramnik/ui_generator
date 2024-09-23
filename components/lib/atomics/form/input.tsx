@@ -30,7 +30,9 @@ export const ChimericInput = (props: Omit<InputProps, 'theme'> & {
   muiIconStyle?: CSSProperties
 }) => {
   const theme = useTheme()
-  const { $sx, style, mui, muiIconEnd, muiIcon, muiIconStyle, ...rest } = props
+  const { 
+    $sx,
+    style, mui, muiIconEnd, muiIcon, muiIconStyle, ...rest } = props
   if (mui) {
     const AltMuiIcon = muiIcon ? toMuiIcon(muiIcon) : () => null
     const diff = mergeStyles({
@@ -38,13 +40,16 @@ export const ChimericInput = (props: Omit<InputProps, 'theme'> & {
       $variant: props.$variant,
       component: 'input',
     })
+
     return (
       <MuiInput
         startAdornment={(
           muiIconEnd !== true
             ? (
               <InputAdornment position={'start'}>
-                <AltMuiIcon style={muiIconStyle} />
+                <AltMuiIcon style={
+                  muiIconStyle
+                  } />
               </InputAdornment>
             )
             : null
@@ -107,16 +112,21 @@ export const InputWithIcon = ({
 }) => {
   const theme = useTheme()
   if (mui) {
+    const iconColor = getComponentStyles('inputWithIconIcon', theme).color
     return (
       <ChimericInput
         mui
         muiIcon={icon}
-        muiIconStyle={iconStyles}
+        muiIconStyle={{
+          ...sxToStyle({
+            color: iconColor,
+          }),
+          ...iconStyles,
+        }}
         {...inputProps}
       />
     )
   }
-  console.log('rev? rev??', rev)
   // HEY MIGRATE TO THEMES
   return (
     <Box $sx={{

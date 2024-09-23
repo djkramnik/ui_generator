@@ -1,20 +1,12 @@
-import { useCallback, useContext, useRef, useState } from "react";
+import { useCallback, useContext } from "react";
 import { ActiveThemeContext } from "../active_theme";
-
-export const themeNames = [
-  'primary',
-  'alt',
-  'tertiary',
-]
+import { generateTheme } from "../theme";
 
 export const ThemeToggle = () => {
-  const toggleIndex = useRef(0)
-  const { activeTheme, toggleTheme } = useContext(ActiveThemeContext)
+  const { toggleTheme } = useContext(ActiveThemeContext)
   const handleClick = useCallback(() => {
-    toggleIndex.current += 1
-
-    toggleTheme(themeNames[toggleIndex.current % themeNames.length])
-  }, [activeTheme, toggleTheme])
+    toggleTheme(generateTheme())
+  }, [toggleTheme])
   
   return (
     <div style={{

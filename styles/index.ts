@@ -188,18 +188,29 @@ export const themes: Record<string, Theme> = {
         paddingLeft: '22px'
       },
       inputWithIconContainer: {
-        position: 'relative'
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
       },
       inputWithIconIcon: {
         color: palette.inactive,
         fontSize: '18px',
         zIndex: '1',
         position: 'absolute',
-        left: '15px',
-        top: '25%',
+        left: '18px',
+      },
+      inputWithIconIconRev: {
+        left: 'initial', 
+        right: '18px'
       },
       inputWithIconInput: {
         paddingLeft: '40px',
+        position: 'relative',
+        top: '-1px'
+      },
+      inputWithIconInputRev: {
+        paddingLeft: '18px', // WARNING: COUPLED WITH INPUT PADDING
+        paddingRight: '40px',
       },
       label: {
         color: 'inherit',

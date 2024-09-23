@@ -95,6 +95,35 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row bgc="white" withGrow>
+          <Box $variant="fullwidth">
+            <InputWithIcon
+              rev
+              icon={Icon.search}
+              inputProps={{
+                placeholder: 'Search Biblical Passages',
+                $variant: ['fullwidth', 'pill', 'border'],
+                $sx: {
+                  borderColor: theme.palette.secondary
+                }
+              }}
+            />
+          </Box>
+        </Row>
+        <Row bgc="white" withGrow>
+          <Box $variant="fullwidth">
+            <InputWithIcon
+              icon={Icon.search}
+              inputProps={{
+                placeholder: 'Search Biblical Passages',
+                $variant: ['fullwidth', 'pill', 'border'],
+                $sx: {
+                  borderColor: theme.palette.secondary
+                }
+              }}
+            />
+          </Box>
+        </Row>
         <Row bgc="#eee" withGrow>
           <Box>
             <Heading level={3} $variant={['fullwidth', 'center']} $sx={{

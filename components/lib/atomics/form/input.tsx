@@ -96,12 +96,14 @@ export const InputWithIcon = ({
   icon,
   iconStyles,
   mui,
+  rev,
 }: {
   placeholder?: string
   inputProps?: Omit<InputProps, 'theme'>
   icon: Icon
   iconStyles?: CSSProperties
   mui?: boolean
+  rev?: boolean
 }) => {
   const theme = useTheme()
   if (mui) {
@@ -114,18 +116,28 @@ export const InputWithIcon = ({
       />
     )
   }
-
+  console.log('rev? rev??', rev)
   // HEY MIGRATE TO THEMES
   return (
     <Box $sx={{
       ...getComponentStyles('inputWithIconContainer', theme),
     }}>
       <ChimericIcon icon={icon} iconStyle={{
-        ...sxToStyle(getComponentStyles('inputWithIconIcon', theme)),
+        ...sxToStyle({
+          ...getComponentStyles('inputWithIconIcon', theme),
+          ...(rev
+            ? getComponentStyles('inputWithIconIconRev', theme)
+            : {}
+          ),
+      }),
         ...iconStyles,
       }}/>
       <Input placeholder={placeholder} {...inputProps} $sx={{ 
         ...getComponentStyles('inputWithIconInput', theme),
+        ...(rev
+          ? getComponentStyles('inputWithIconInputRev', theme)
+          : {}
+        ),
         ...inputProps?.$sx
       }} />
     </Box>

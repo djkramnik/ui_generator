@@ -86,6 +86,8 @@ export type ThemeConfig = {
     inputWithIconContainer: CssProps
     inputWithIconIcon: CssProps
     inputWithIconInput: CssProps
+    inputWithIconIconRev: CssProps
+    inputWithIconInputRev: CssProps
     label: CssProps
     autoCompleteExpanded: CssProps
     autoCompleteContainer: CssProps

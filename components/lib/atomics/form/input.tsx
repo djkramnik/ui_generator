@@ -155,14 +155,17 @@ export const LabelizeIt = ({
   secondaryLabel,
   flexDir = 'column',
   labelSx,
+  secondaryLabelSx,
   children,
 }: {
   label: string
   secondaryLabel?: string
   flexDir?: ResponsiveMixin
   labelSx?: CssProps
+  secondaryLabelSx?: CssProps
   children?: React.ReactNode
 }) => {
+  const theme = useTheme()
   return (
     <Flex $sx={{ flexDirection: flexDir, gap: '6px' }}>
       <Flex row gap="12px" aic>
@@ -174,7 +177,10 @@ export const LabelizeIt = ({
         {
           secondaryLabel
             ? (
-              <Label $variant="secondarycolor">
+              <Label $sx={{
+                color: theme.palette.success,
+                ...secondaryLabelSx
+                }}>
                 {secondaryLabel}
               </Label>
             )

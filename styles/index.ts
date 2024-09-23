@@ -191,7 +191,7 @@ export const themes: Record<string, Theme> = {
         position: 'relative'
       },
       inputWithIconIcon: {
-        color: '#da1b27',
+        color: palette.inactive,
         fontSize: '18px',
         zIndex: '1',
         position: 'absolute',

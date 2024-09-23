@@ -17,6 +17,10 @@ export const sxToStyle = ($sx: CssProps): CSSProperties => {
 
 export const parseVariant = ($variant: string, theme: Theme): CssProps => {
   switch($variant) {
+    case 'fullwidth':
+      return {
+        width: '100%'
+      }
     case 'border': 
       return {
         border: '2px solid currentColor'
@@ -77,6 +81,11 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
     case 'transparent':
       return {
         backgroundColor: 'transparent'
+      }
+    case 'bgc:secondary':
+      return {
+        backgroundColor: theme.palette.secondary,
+        color: theme.palette.copy
       }
     case 'shadow':
       return {
@@ -139,9 +148,11 @@ export const mergeStyles = ({
       ? parseVariants($variant, theme)
       : {}
   )
+
 const componentDiff = component
   ? getComponentStyles(component, theme)
   : {}
+
   return {
     ...componentDiff,
     ...variantDiff,

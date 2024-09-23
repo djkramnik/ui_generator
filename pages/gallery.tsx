@@ -8,11 +8,16 @@ import {
   ChimericCopy,
   ChimericHeading,
   ChimericIcon,
+  ChimericInput,
   ChimericModal,
   Copy,
   Heading,
   Icon,
   IconButton,
+  Input,
+  InputWithIcon,
+  LabelizeIt,
+  WithErrata,
 } from '../components/lib/atomics'
 import { ThemeToggle } from '../components/lib/theme_toggle'
 import { ResponsiveMixin } from '../components/theme'
@@ -30,7 +35,7 @@ import {
   ChimericAccordion,
   TextAccordion,
 } from '../components/lib/atomics/accordion'
-import { Accordion } from '@mui/material'
+import { sxToStyle } from '../components/theme/variants'
 
 const Cell = ({
   children,
@@ -90,6 +95,135 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row bgc="#eee" withGrow>
+          <Box>
+            <Heading level={3} $variant={['fullwidth', 'center']} $sx={{
+              width: '100%'
+            }}>
+              Sign up to Ancient Folklore
+            </Heading>
+            <Spacer h="12px" />
+            <Flex col gap="6px">
+              <LabelizeIt label="Name" secondaryLabel="required">
+                <ChimericInput mui placeholder="Sinking back" />
+              </LabelizeIt>
+              <WithErrata errorMessage="Error: Required" errorIcon={(
+                <ChimericIcon icon={Icon.circleExclamation} iconStyle={{
+                  ...sxToStyle({
+                    color: theme.palette.error
+                  })
+                }} />
+              )}>
+                <LabelizeIt label="Town" secondaryLabel='*required'
+                secondaryLabelSx={{ color: theme.palette.error }}
+                >
+                  <InputWithIcon
+                    mui
+                    placeholder="Mystikal"
+                    icon={Icon.house}
+                    iconStyles={{
+                      ...sxToStyle({ 
+                        color: theme.palette.error,
+                        borderColor: theme.palette.error,
+                      }),
+                    }}
+                    inputProps={{
+                      $variant: 'fullwidth',
+                      $sx: {
+                        color: theme.palette.error,
+                      }
+
+                    }}
+                  />
+                </LabelizeIt>
+              </WithErrata>
+              <LabelizeIt label="Love life">
+                <InputWithIcon
+                  mui
+                  icon={Icon.envelope}
+                  inputProps={{
+                    placeholder: 'Vain and Unadjusted',
+                    type: 'email',
+                    $variant: 'fullwidth'
+                  }}
+                />
+              </LabelizeIt>
+              <LabelizeIt label="Crocodiles,Dragons">
+                <InputWithIcon
+                  mui
+                  icon={Icon.heart}
+                  inputProps={{
+                    placeholder: 'Active Imagination Password',
+                    type: 'password',
+                    $variant: 'fullwidth'
+                  }}
+                />
+              </LabelizeIt>
+            </Flex>
+            <Spacer h="12px"/>
+            <Flex row gap="12px">
+              <Button $variant="bold" $sx={{ flexGrow: '1'}}>
+                Depths of the Mind
+              </Button>
+              <Button $variant={["bgc:secondary", "bold"]}>
+                Cancel
+              </Button>
+            </Flex>
+          </Box>
+          <Box>
+          <Heading level={3} $variant={['fullwidth', 'center']} $sx={{
+              width: '100%'
+            }}>
+              Needing to change everything as I go
+            </Heading>
+            <Spacer h="12px" />
+            <Flex col gap="6px">
+              <LabelizeIt label="Name">
+                <Input type="name" placeholder="Sinking back" />
+              </LabelizeIt>
+              <LabelizeIt label="Town">
+                <InputWithIcon
+                  placeholder="Anima image"
+                  icon={Icon.house}
+                  inputProps={{
+                    $variant: 'fullwidth'
+                  }}
+                />
+              </LabelizeIt>
+              <LabelizeIt label="Love life">
+                <InputWithIcon
+                  placeholder="Overvaluation"
+                  icon={Icon.envelope}
+                  inputProps={{
+                    placeholder: 'Vain and Unadjusted',
+                    type: 'email',
+                    $variant: 'fullwidth'
+                  }}
+                />
+              </LabelizeIt>
+              <LabelizeIt label="Affects">
+                <InputWithIcon
+                  placeholder="Falsifies"
+                  icon={Icon.heart}
+                  inputProps={{
+                    placeholder: 'PHAntasies',
+                    type: 'email',
+                    $variant: 'fullwidth'
+                  }}
+                />
+              </LabelizeIt>
+            </Flex>
+            <Spacer h="12px"/>
+            <Flex row gap="12px">
+              <Button $variant="bold" $sx={{ flexGrow: '1'}}>
+                Depths of the Mind
+              </Button>
+              <Button $variant={["bgc:secondary", "bold"]}>
+                Cancel
+              </Button>
+            </Flex>
+          </Box>
+        </Row>
         <Row bgc="white" withGrow>
           {/**TODO: componentize this prob in layout / super-components.  the stacked accordions */}
           <Flex col $sx={{ width: '100%' }}>

@@ -2,15 +2,18 @@ import { Flex, Box } from '../components/lib'
 import {
   Anchor,
   Button,
+  Checkbox,
   ChimericAnchor,
   ChimericButton,
   ChimericButtonWithIcon,
+  ChimericCheckbox,
   ChimericCopy,
   ChimericHeading,
   ChimericIcon,
   ChimericInput,
   ChimericModal,
   Copy,
+  CustomCheckbox,
   Heading,
   Icon,
   IconButton,
@@ -20,7 +23,7 @@ import {
   WithErrata,
 } from '../components/lib/atomics'
 import { ThemeToggle } from '../components/lib/theme_toggle'
-import { ResponsiveMixin } from '../components/theme'
+import { ResponsiveMixin, shadows } from '../components/theme'
 import { Spacer } from '../components/lib/layout/spacer'
 import React, { useState } from 'react'
 import { useTheme } from 'styled-components'
@@ -95,6 +98,41 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <CustomCheckbox label="Swelled to include" />
+          <CustomCheckbox label="To quote"
+          iconSx={{ color: 'white' }}
+          checked inputSx={{ 
+            backgroundColor: 'green',
+            border: 'none',
+            boxShadow: shadows.lichessCard
+          }} />
+          <CustomCheckbox radio label="Preaching to myself" />
+          <CustomCheckbox radio label="A variation"
+          icon={
+            <Box
+            $sx={{
+              backgroundColor: 'blue',
+              borderRadius: '50%',
+              width: '90%',
+              aspectRatio: '1',
+            }}
+          />
+          }
+          checked  />
+        </Row>
+        <Row>
+          <ChimericCheckbox label="Synchronicity" radio checked />
+          <ChimericCheckbox label="Rationality can explain" radio />
+          <ChimericCheckbox mui label="Synchronicity" radio checked />
+          <ChimericCheckbox mui label="Rationality can explain" radio />
+        </Row>
+        <Row>
+          <Checkbox label="Ego and brain" />
+          <ChimericCheckbox mui label="God is dead" />
+          <Checkbox label="Drawing conclusions" checked />
+          <ChimericCheckbox mui label="Great pan is dead" checked />
+        </Row>
         <Row bgc="white" withGrow>
           <Box $variant="fullwidth">
             <InputWithIcon

@@ -261,8 +261,10 @@ export const themes: Record<string, Theme> = {
       customCheckboxInput: {
         border: '1px solid #333',
         width: '20px',
-        aspectRatio: '1',
-        textAlign: 'center',
+        height: '20px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         cursor: 'pointer',
       },
       customCheckboxLabel: {

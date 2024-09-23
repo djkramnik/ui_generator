@@ -79,16 +79,17 @@ export const Autocomplete = ({
 }
 
 export const ChimericAutocomplete = (props: AutocompleteProps & {
-  mui?: boolean 
+  mui?: boolean
+  label?: string
 }) => {
-  const { mui, options, open, ...rest } = props
+  const { mui, options, open, label, ...rest } = props
   if (mui) {
     return (
       <MuiAutocomplete
         open={open}
         options={options ?? []}
         sx={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="Movie" />}
+        renderInput={(params) => <TextField {...params} label={label} />}
       />
     )
   }

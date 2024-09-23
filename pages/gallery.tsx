@@ -1,9 +1,11 @@
 import { Flex, Box } from '../components/lib'
 import {
   Anchor,
+  Autocomplete,
   Button,
   Checkbox,
   ChimericAnchor,
+  ChimericAutocomplete,
   ChimericButton,
   ChimericButtonWithIcon,
   ChimericCheckbox,
@@ -98,6 +100,31 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <Autocomplete
+            inputProps={{
+              placeholder: 'Enter sport'
+            }}
+            open
+            options={[
+              'NBA',
+              'MLB',
+            ]}
+          />
+          <ChimericAutocomplete
+            mui
+            label="Favorite sport"
+            inputProps={{
+              placeholder: 'Enter sport', 
+            }}
+            open
+            options={[
+              'NBA',
+              'MLB',
+            ]}
+          />
+        </Row>
+        <Spacer h="120px"/>
         <Row>
           <CustomCheckbox label="Swelled to include" />
           <CustomCheckbox label="To quote"

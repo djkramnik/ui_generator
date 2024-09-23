@@ -234,7 +234,8 @@ const Gallery = () => {
         <Row bgc="#eee">
           <Box>
             <Heading level={3} $variant={['fullwidth', 'center']} $sx={{
-              width: '100%'
+              width: '100%',
+              color: '#333'
             }}>
               Sign up to Ancient Folklore
             </Heading>
@@ -308,7 +309,8 @@ const Gallery = () => {
           </Box>
           <Box>
           <Heading level={3} $variant={['fullwidth', 'center']} $sx={{
-              width: '100%'
+              width: '100%',
+              color: '#333'
             }}>
               Needing to change everything as I go
             </Heading>

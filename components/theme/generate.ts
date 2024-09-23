@@ -15,7 +15,92 @@ const spacing = {
   bigGap: '40px',
 }
 
-const colorPalettes: Theme['palette'][] = [{ // youtube.com?
+const colorPalettes: Theme['palette'][] = [
+  // happy hues
+  {
+  background: '#16161a',
+  copy: '#94a1b2',
+  heading: '#fffffe',
+  button: '#fffffe',
+  primary: '#7f5af0',
+  secondary: '#72757e',
+  grey: '#eee',
+  inactive: 'rgba(0,0,0,0.3)',
+  error: '#dd2c00',
+  success: '#2cb67d',
+  white: '#fff',
+},
+// happy hues2
+{
+  background: '#FFFFFF',
+  copy: '#1f1235',
+  heading: '#1f1235',
+  button: '#1f1235',
+  primary: '#ff6e6c',
+  secondary: '#67568c',
+  grey: '#eee',
+  inactive: 'rgba(0,0,0,0.3)',
+  error: '#dd2c00',
+  success: '#2cb67d',
+  white: '#fff',
+},
+// happy hues 3
+{
+  background: '#55423d',
+  copy: '#fffffe',
+  heading: '#fffffe',
+  button: '#271c19',
+  primary: '#ff6e6c',
+  secondary: '#e78fb3',
+  grey: '#eee',
+  inactive: 'rgba(0,0,0,0.3)',
+  error: '#dd2c00',
+  success: '#2cb67d',
+  white: '#fff',
+},
+// happy hues 4
+{
+  background: '#fffffe',
+  copy: '#2d334a',
+  heading: '#272343',
+  button: '#272343',
+  primary: '#ffd803',
+  secondary: '#e3f6f5',
+  grey: '#eee',
+  inactive: 'rgba(0,0,0,0.3)',
+  error: '#dd2c00',
+  success: '#2cb67d',
+  white: '#fff',
+},
+// happy hues 5
+{
+  background: '#f2f7f5',
+  copy: '#475d5b',
+  heading: '#00473e',
+  button: '#00473e',
+  primary: '#faae2b',
+  secondary: '#ffa8ba',
+  grey: '#eee',
+  inactive: 'rgba(0,0,0,0.3)',
+  error: '#dd2c00',
+  success: '#2cb67d',
+  white: '#fff',
+},
+// happy hues 6
+{
+  background: '#232946',
+  copy: '#b8c1ec',
+  heading: '#fffffe',
+  button: '#232946',
+  primary: '#eebbc3',
+  secondary: '#fffffe',
+  grey: '#eee',
+  inactive: 'rgba(0,0,0,0.3)',
+  error: '#dd2c00',
+  success: '#2cb67d',
+  white: '#fff',
+},
+{ // youtube.com?
   background: '#fff',
   copy: '#0f0f0f',
   heading: '#212121',
@@ -28,12 +113,12 @@ const colorPalettes: Theme['palette'][] = [{ // youtube.com?
   grey: '#eee',
   inactive: 'rgba(0,0,0,0.3)'
 }, { // chess.com
-  background: '#302E2B',
+  background: 'rgb(49, 46, 43)',
   copy: '#fff',
   heading: '#fff',
   button: '#fff',
-  primary: '#302E2B',
-  secondary: 'rgba(255, 255, 255, 0.1)',
+  primary: 'rgb(129, 182, 76)',
+  secondary: '#302E2B',
   error: 'rgb(224, 40, 40)',
   success: 'rgb(129, 182, 76)',
   white: '#fff',
@@ -141,7 +226,7 @@ export const generateTheme = (): Theme => {
       },
       icon: {
         fontSize: '22px',
-        color: palette.copy,
+        color: palette.button,
       },
       table: {
         borderSpacing: '0',
@@ -183,7 +268,8 @@ export const generateTheme = (): Theme => {
         top: '-4px',
       },
       accordionSummary: {
-        backgroundColor: palette.grey,
+        backgroundColor: palette.secondary,
+        color: palette.button,
         cursor: 'pointer',
         display: 'flex',
         justifyContent: 'space-between',
@@ -198,7 +284,7 @@ export const generateTheme = (): Theme => {
         width: '100%'
       },
       accordionHeading: {
-        color: palette.heading,
+        color: palette.button,
         fontWeight: 'bold',
       },
       accordionExpanded: {
@@ -217,7 +303,8 @@ export const generateTheme = (): Theme => {
         fontWeight: 'bold'
       },
       textAccordionExpanded: {
-        paddingLeft: '22px'
+        paddingLeft: '22px',
+        color: palette.copy,
       },
       inputWithIconContainer: {
         position: 'relative',
@@ -300,7 +387,7 @@ export const generateTheme = (): Theme => {
         cursor: 'pointer',
       },
       customCheckboxLabel: {
-
+        color: palette.copy,
       },
       dropdownContainer: {
         position: 'relative',
@@ -395,7 +482,7 @@ export const generateTheme = (): Theme => {
       },
       iconButtonInner: {
         gap: spacing.smallGap,
-        color: palette.copy,
+        color: palette.button,
       },
       iconButtonIcon: {
         fontSize: '40px',
@@ -413,6 +500,7 @@ export const generateTheme = (): Theme => {
       },
       buttonWithIconIcon: {
         fontSize: '22px',
+        color: palette.button,
       },
       buttonWithIconLayout: {
         gap: '8px'

@@ -35,9 +35,7 @@ export const Autocomplete = ({
           ...inputProps?.$sx,
         }
       }}
-      iconStyles={{
-        color: 'inherit'
-      }} />
+    />
       {
         open
           ? (

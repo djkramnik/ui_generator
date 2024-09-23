@@ -8,9 +8,9 @@ import {
 } from '../../theme'
 import { CSSProperties } from 'react'
 import { Flex, FlexProps } from '../layout'
-import { Copy, CopyProps } from './copy'
+import { Copy } from './copy'
 import { Button as MuiButton } from '@mui/material'
-import { getComponentStyles, mergeStyles, sxToStyle } from '../../utils'
+import { getComponentStyles, mergeStyles, sxToStyle } from "../../theme/variants"
 import { ChimericIcon, Icon } from './icon'
 
 export type ButtonProps = WithTheme<ResponsiveComponent<'button'>>

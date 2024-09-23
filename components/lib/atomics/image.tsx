@@ -1,6 +1,6 @@
 import { styled } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
-import { mergeStyles } from "../../utils"
+import { mergeStyles } from "../../theme/variants"
 
 export type ImageProps = WithTheme<ResponsiveComponent<'img'>>
 

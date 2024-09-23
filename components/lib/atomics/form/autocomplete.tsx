@@ -1,6 +1,6 @@
 import { useTheme } from "styled-components"
 import { CssProps } from "../../../theme"
-import { getComponentStyles } from "../../../utils"
+import { getComponentStyles } from "../../../theme/variants"
 import { Box } from "../../layout"
 import { Icon } from "../icon"
 import { InputProps, InputWithIcon } from "./input"

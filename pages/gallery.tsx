@@ -90,6 +90,36 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row bgc="white" withGrow>
+          {/**TODO: componentize this prob in layout / super-components.  the stacked accordions */}
+          <Flex col $sx={{ width: '100%' }}>
+            <ChimericAccordion
+              icon={<ChimericIcon icon={Icon.plus} />}
+              heading="Will it irriate me skin"
+              summarySx={{
+                backgroundColor: 'white',
+              }}
+              rootVariant={['borderless:b', 'borderless:l', 'borderless:r']}
+            />
+            <ChimericAccordion
+              open
+              icon={<ChimericIcon icon={Icon.minus} />}
+              heading="Will it dry out me eyes"
+              summarySx={{
+                backgroundColor: 'white',
+              }}
+              rootVariant={['borderless:l', 'borderless:r']}
+            >
+              <Copy>
+                I saw two toddlers interacting with one another
+                near a Starbucks. They were both around one, and
+                they took turns staring curiously or joyously at one another,
+                and a small bird pecking at crumbs nearby. One was a Chinese boy,
+                the one closer to the bird, and the other was an Iranian girl.
+              </Copy>
+            </ChimericAccordion>
+          </Flex>
+        </Row>
         <Row bgc="white">
           <TextAccordion label="stupido" open>
             <ul style={{ padding: '0' }}>
@@ -98,11 +128,13 @@ const Gallery = () => {
               <li>dirty laundry</li>
             </ul>
           </TextAccordion>
-          <TextAccordion copySx={{
-            fontWeight: 'bold',
-
-          }}
-          label="Show more holidays" open>
+          <TextAccordion
+            copySx={{
+              fontWeight: 'bold',
+            }}
+            label="Show more holidays"
+            open
+          >
             <Flex col gap="2px">
               <span>Festivus</span>
               <span>Kwanza</span>
@@ -111,10 +143,7 @@ const Gallery = () => {
           </TextAccordion>
         </Row>
         <Row bgc="white" withGrow>
-          <ChimericAccordion
-            mui
-            heading="Can I write you in jail"
-          >
+          <ChimericAccordion mui heading="Can I write you in jail">
             Yes, but only on acidtone paper.
           </ChimericAccordion>
         </Row>

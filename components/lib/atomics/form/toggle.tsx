@@ -1,7 +1,7 @@
 import { useTheme } from "styled-components"
 import { Flex } from "../../layout"
 import { Button } from "../button"
-import { getComponentStyles } from "../../../utils"
+import { getComponentStyles } from "../../../theme/variants"
 
 export const Toggle = ({
   selectedIndex,

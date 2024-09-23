@@ -1,6 +1,6 @@
 import { useTheme } from "styled-components"
 import { CssProps } from "../../../theme"
-import { getComponentStyles } from "../../../utils"
+import { getComponentStyles } from "../../../theme/variants";
 import { Box, Flex } from "../../layout"
 import { Copy } from "../copy"
 import { ChimericIcon, Icon } from "../icon"

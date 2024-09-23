@@ -2,7 +2,7 @@ import React from "react"
 import { CssProps } from "../../theme"
 import { Box } from "../layout"
 import { Modal as MuiModal } from '@mui/material'
-import { getComponentStyles } from "../../utils"
+import { getComponentStyles } from "../../theme/variants"
 import { useTheme } from "styled-components"
 
 const DefaultCloseIcon = ({}) => {

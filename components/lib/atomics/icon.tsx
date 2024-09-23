@@ -121,7 +121,7 @@ import {
   BrokenImage,
 } from '@mui/icons-material'
 import { useTheme } from 'styled-components'
-import { getComponentStyles, sxToStyle } from '../../utils'
+import { getComponentStyles, sxToStyle } from "../../theme/variants";
 
 export enum Icon {
   house = 'house',

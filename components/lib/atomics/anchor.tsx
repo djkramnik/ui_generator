@@ -12,7 +12,7 @@ import Link from '@mui/material/Link'
 import {
   mergeStyles,
   sxToStyle,
-} from '../../utils'
+} from "../../theme/variants"
 export type AnchorProps = WithTheme<ResponsiveComponent<'a'>>
 
 // in the future theme and variant will come into play???

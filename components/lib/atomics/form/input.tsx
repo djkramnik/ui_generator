@@ -2,7 +2,7 @@ import { CSSProperties, styled, useTheme } from "styled-components"
 import { CssProps, getResponsiveStyles, ResponsiveComponent, ResponsiveMixin, WithTheme } from "../../../theme"
 import { Box, Flex } from "../../layout"
 import { InputAdornment, Input as MuiInput } from "@mui/material"
-import { getComponentStyles, mergeStyles, sxToStyle } from "../../../utils"
+import { getComponentStyles, mergeStyles, sxToStyle } from "../../../theme/variants"
 import { ChimericIcon, Icon, toMuiIcon } from "../icon"
 
 export type InputProps = WithTheme<ResponsiveComponent<'input'>>

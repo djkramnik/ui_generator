@@ -2,7 +2,7 @@ import React from "react"
 import { styled, useTheme } from "styled-components"
 import { getResponsiveStyles, ResponsiveComponent, WithTheme } from "../../theme"
 import { Typography } from "@mui/material"
-import { getComponentStyles, mergeStyles, sxToStyle } from "../../utils"
+import { getComponentStyles, mergeStyles, sxToStyle } from "../../theme/variants"
 
 export type HeadingProps = WithTheme<ResponsiveComponent<'h1'>> & { level: | 1 | 2 | 3 | 4 | 5 | 6 }
 

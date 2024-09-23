@@ -27,7 +27,7 @@ import {
   parseVariant,
   parseVariants,
   sxToStyle,
-} from '../../../utils'
+} from '../../../theme/variants'
 
 // styled component shit
 

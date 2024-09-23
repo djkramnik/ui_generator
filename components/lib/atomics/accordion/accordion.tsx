@@ -1,16 +1,21 @@
-import { AccordionDetails, AccordionSummary } from "@mui/material";
-import { CssProps } from "../../../theme"
-import { Box } from "../../layout"
-import { Heading } from "../heading"
-import MuiAccordion from '@mui/material/Accordion';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { getComponentStyles, mergeStyles, sxToStyle } from "../../../utils";
-import { useTheme } from "styled-components";
+import { AccordionDetails, AccordionSummary } from '@mui/material'
+import { CssProps } from '../../../theme'
+import { Box } from '../../layout'
+import { Heading } from '../heading'
+import MuiAccordion from '@mui/material/Accordion'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import {
+  getComponentStyles,
+  mergeStyles,
+  sxToStyle,
+} from '../../../theme/variants'
+import { useTheme } from 'styled-components'
 
 const DefaultIcon = ({ open }: { open: boolean }) => {
   return (
-    <i style={{ fontSize: '18px' }}
-    className={`fa-solid fa-chevron-${open ? 'up' : 'down'}`}
+    <i
+      style={{ fontSize: '18px' }}
+      className={`fa-solid fa-chevron-${open ? 'up' : 'down'}`}
     />
   )
 }
@@ -67,48 +72,54 @@ export const AccordionSection = ({
   const expandedDiff = mergeStyles({
     theme,
     $variant: expandedVariant,
-    component: 'accordionExpanded'
+    component: 'accordionExpanded',
   })
 
   return (
-    <Box $sx={{
-      ...rootDiff,
-      ...rootSx,
-    }}>
-      <Box $sx={{ 
-        ...summaryDiff,
-        ...summarySx,
-        }}>
-        <Heading level={3}
+    <Box
+      $sx={{
+        ...rootDiff,
+        ...rootSx,
+      }}
+    >
+      <Box
+        $sx={{
+          ...summaryDiff,
+          ...summarySx,
+        }}
+      >
+        <Heading
+          level={3}
           $sx={{
             ...headingDiff,
-            ...headingSx
-            }}>
+            ...headingSx,
+          }}
+        >
           {heading}
         </Heading>
         {icon ?? <DefaultIcon open={open === true} />}
       </Box>
-      {
-        open
-          ? (
-            <Box $sx={{
-              ...expandedDiff,
-              ...expandedSx,
-            }}>
-            {children}
-            </Box>
-          )
-          : null
-      }
+      {open ? (
+        <Box
+          $sx={{
+            ...expandedDiff,
+            ...expandedSx,
+          }}
+        >
+          {children}
+        </Box>
+      ) : null}
     </Box>
   )
 }
 
-export const ChimericAccordion = (props: AccordionProps & {
-  mui?: boolean
-}) => {
+export const ChimericAccordion = (
+  props: AccordionProps & {
+    mui?: boolean
+  }
+) => {
   const theme = useTheme()
-  const { 
+  const {
     children,
     mui,
     open,
@@ -118,7 +129,7 @@ export const ChimericAccordion = (props: AccordionProps & {
     headingVariant,
     ...rest
   } = props
-  
+
   if (mui) {
     const summaryDiff = mergeStyles({
       theme,
@@ -128,41 +139,54 @@ export const ChimericAccordion = (props: AccordionProps & {
     const summaryHeadingDiff = mergeStyles({
       theme,
       $variant: headingVariant,
-      component: 'accordionHeading'
+      component: 'accordionHeading',
     })
 
     const expandedDiff = mergeStyles({
-      theme, 
+      theme,
       $variant: expandedVariant,
-      component: 'accordionExpanded'
+      component: 'accordionExpanded',
     })
-  
+
     return (
-      <MuiAccordion defaultExpanded={open === true} sx={{
-        ...sxToStyle({
-          ...getComponentStyles('accordionContainer', theme),
-        })
-      }}>
-        <AccordionSummary 
+      <MuiAccordion
+        defaultExpanded={open === true}
+        sx={{
+          ...sxToStyle({
+            ...getComponentStyles('accordionContainer', theme),
+          }),
+        }}
+      >
+        <AccordionSummary
           style={{
             ...sxToStyle({
               ...summaryDiff,
               ...summaryHeadingDiff,
-            })
+            }),
           }}
-        expandIcon={icon ?? <ExpandMoreIcon />}>
+          expandIcon={icon ?? <ExpandMoreIcon />}
+        >
           {rest.heading}
         </AccordionSummary>
-        <AccordionDetails style={{
-          ...sxToStyle(expandedDiff)
-        }}>
+        <AccordionDetails
+          style={{
+            ...sxToStyle(expandedDiff),
+          }}
+        >
           {children}
         </AccordionDetails>
       </MuiAccordion>
     )
   }
   return (
-    <AccordionSection icon={icon} {...rest}>
+    <AccordionSection
+      summaryVariant={summaryVariant}
+      expandedVariant={expandedVariant}
+      headingVariant={headingVariant}
+      open={open}
+      icon={icon}
+      {...rest}
+    >
       {children}
     </AccordionSection>
   )

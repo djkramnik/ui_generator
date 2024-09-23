@@ -6,7 +6,7 @@ import MuiCheckbox from '@mui/material/Checkbox'
 import MuiRadio from '@mui/material/Radio'
 import { useTheme } from "styled-components"
 import { Input } from "./input"
-import { getComponentStyles, sxToStyle } from "../../../utils"
+import { getComponentStyles, sxToStyle } from "../../../theme/variants"
 
 type CheckboxProps = {
   checked?: boolean

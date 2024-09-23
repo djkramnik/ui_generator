@@ -1,6 +1,5 @@
 import { styled, useTheme } from 'styled-components'
 import {
-  colors,
   CssProps,
   getResponsiveStyles,
   ResponsiveComponent,
@@ -10,7 +9,7 @@ import { Box } from '../../layout'
 import React from 'react'
 import MuiSelect from '@mui/material/Select'
 import { MenuItem } from '@mui/material'
-import { getComponentStyles, mergeStyles, sxToStyle } from '../../../utils'
+import { getComponentStyles, mergeStyles, sxToStyle } from '../../../theme/variants'
 import { ChimericIcon, Icon } from '../icon'
 
 export type SelectProps = WithTheme<ResponsiveComponent<'select'>>

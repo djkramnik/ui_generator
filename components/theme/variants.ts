@@ -25,9 +25,19 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
       return {
         border: '2px solid currentColor'
       }
+    case 'borderless':
+      return {
+        border: 'none'
+      }
     case 'borderless:b': {
       return {
         borderBottom: 'none'
+      }
+    }
+    case 'padding:small': {
+      return {
+        padding: theme.spacing.gap,
+        fontSize: '14px'
       }
     }
     case 'borderless:l': {
@@ -111,6 +121,19 @@ export const parseVariant = ($variant: string, theme: Theme): CssProps => {
       return {
         ...theme.components.h5,
       }
+    case 'background:inactive':
+      return {
+        backgroundColor: theme.palette.inactive
+      }
+    case 'background:grey':
+      return {
+        backgroundColor: theme.palette.grey
+      }
+    case 'color:copy':
+      return {
+        color: theme.palette.copy
+      }
+    
     default:
       console.error('invalid variant: ', $variant)
       return {

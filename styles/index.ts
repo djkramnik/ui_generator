@@ -14,7 +14,7 @@ const palette = {
   error: '#dd2c00',
   success: '#303f9f',
   white: '#fff',
-  grey: colors.amazonGrey,
+  grey: '#eee',
   inactive: 'rgba(0,0,0,0.3)'
 }
 
@@ -83,6 +83,7 @@ export const themes: Record<string, Theme> = {
         fontWeight: '400',
         border: '2px solid rgba(0, 0, 0, 0.6)',
         fontFamily: typography.primaryff,
+        width: '100%'
       },
       option: {
         padding: '9px 6px',
@@ -273,7 +274,7 @@ export const themes: Record<string, Theme> = {
       dropdownContainer: {
         position: 'relative',
         display: 'inline-block',
-        width: 'fit-content'
+        width: '100%',
       },
       dropdownIcon: {
         fontSize: '12px',
@@ -296,13 +297,13 @@ export const themes: Record<string, Theme> = {
         borderRadius: '0.25rem',
         padding: '6px',
         backgroundColor: '#fff',
-        boxShadow: shadows.lichessCard
+        boxShadow: shadows.lichessCard,
       },
       dropdownOption: {
         padding: '4px 6px'
       },
       dropdownOptionSelected: {
-        backgroundColor: palette.secondary
+        backgroundColor: palette.secondary,
       },
       dropdownBubbleArrow: {
         position: 'absolute',

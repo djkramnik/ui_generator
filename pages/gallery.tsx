@@ -10,18 +10,22 @@ import {
   ChimericButtonWithIcon,
   ChimericCheckbox,
   ChimericCopy,
+  ChimericDropdown,
   ChimericHeading,
   ChimericIcon,
   ChimericInput,
   ChimericModal,
   Copy,
   CustomCheckbox,
+  Dropdown,
   Heading,
   Icon,
   IconButton,
   Input,
   InputWithIcon,
   LabelizeIt,
+  Select,
+  Toggle,
   WithErrata,
 } from '../components/lib/atomics'
 import { ThemeToggle } from '../components/lib/theme_toggle'
@@ -31,7 +35,6 @@ import React, { useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Container } from '../components/lib/layout/container'
 import {
-  BasicTable,
   ChimericTable,
   getGenericColumns,
 } from '../components/lib/atomics/table'
@@ -100,6 +103,44 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <Toggle
+            buttonVariant={[
+              'transparent',
+              'pill',
+              'color:copy',
+              'background:grey',
+              'borderless',
+              'padding:small'
+            ]}
+            selectedIndex={0}
+            options={['Monday', 'Toosday', 'Whensday', 'Hersday']}
+          />
+        </Row>
+        <Row withGrow>
+          <Dropdown
+            selectSx={{
+              paddingLeft: '12px',
+              width: '100%'
+            }}
+            options={[
+              'Sorry to interrupt',
+              'Leave it alone'
+            ]}
+          />
+          <ChimericDropdown
+            mui
+            value="Sorry to interrupt"
+            selectSx={{
+              paddingLeft: '12px',
+              width: '100%'
+            }}
+            options={[
+              'Sorry to interrupt',
+              'Leave it alone'
+            ]}
+          />
+        </Row>
         <Row>
           <Autocomplete
             inputProps={{

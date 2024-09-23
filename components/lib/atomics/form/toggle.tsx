@@ -1,7 +1,7 @@
 import { useTheme } from "styled-components"
 import { Flex } from "../../layout"
 import { Button } from "../button"
-import { getComponentStyles } from "../../../theme/variants"
+import { getComponentStyles, mergeStyles } from "../../../theme/variants"
 
 export const Toggle = ({
   selectedIndex,
@@ -13,6 +13,11 @@ export const Toggle = ({
   buttonVariant?: string | string[]
 }) => {
   const theme = useTheme()
+  const buttonDiff = mergeStyles({
+    theme,
+    $variant: buttonVariant,
+    component: 'toggleButtonButton'
+  })
   return (
     <Flex row $sx={{
       ...getComponentStyles('toggleButtonContainer', theme),
@@ -23,7 +28,7 @@ export const Toggle = ({
             <Button key={index}
               $variant={buttonVariant}
               $sx={{
-                ...getComponentStyles('toggleButtonButton', theme),
+                ...buttonDiff,
                 ...(
                   selectedIndex === index
                     ? getComponentStyles('toggleButtonSelected', theme)

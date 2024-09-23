@@ -382,7 +382,6 @@ const Checkout: NextPage = () => {
                     <Dropdown
                       value="kookamunga"
                       options={['hi', 'hey', 'ayo', 'kookamunga']}
-                      selectSx={{ width: '300px' }}
                     />
                   </LabelizeIt>
                   <LabelizeIt label="Random shit">
@@ -529,7 +528,6 @@ const Checkout: NextPage = () => {
                       artificial
                       value="reggae"
                       options={['reggae', 'hey', 'ayo', 'kookamunga']}
-                      selectSx={{ width: '300px' }}
                     />
                   </LabelizeIt>
                   <LabelizeIt label="Reggae">
@@ -537,7 +535,6 @@ const Checkout: NextPage = () => {
                       artificial
                       value="reggae"
                       options={['reggae', 'hey', 'ayo', 'kookamunga']}
-                      selectSx={{ width: '300px' }}
                     />
                   </LabelizeIt>
                   <Spacer />

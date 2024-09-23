@@ -141,15 +141,16 @@ export const ChimericDropdown = (
   const { mui, ...rest } = props
   if (mui) {
     return (
-      <MuiSelect label={props.label} value={rest.value} style={{
-        // ...sxToStyle(mergeStyles({
-        //   theme,
-        //   component: 'select',
-        // }))
+      <MuiSelect native={false} label={props.label} value={rest.value} style={{
+        ...sxToStyle(mergeStyles({
+          theme,
+          component: 'dropdownContainer',
+        }))
       }}>
         {props.options.map((optionText, i) => {
           return (
             <MenuItem
+              selected={optionText === rest.value}
               style={{
                 ...sxToStyle(mergeStyles({
                   theme,

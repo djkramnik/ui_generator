@@ -1,6 +1,100 @@
 import { randomPick, shuffle } from "../utils";
-import { ResponsiveMixin, Theme } from "./types";
+import { CssProps, ResponsiveMixin, Theme } from "./types";
 import { shadows } from "./variants";
+
+const fsBundles: Partial<Record<keyof Theme['components'], CssProps>>[] = [{
+  copy: {
+    fontSize: '14px',
+    lineHeight: '20px'
+  },
+  heading: {
+    fontSize: '20px',
+    lineHeight: '28px'
+  },
+  h1: {
+    fontSize: '24px',
+    lineHeight: '32px'
+  },
+  h2: {
+    fontSize: '24px',
+    lineHeight: '32px'
+  },
+  h5: { fontSize: '16px', lineHeight: '24px'},
+}, {
+  copy: {
+    fontSize: '16px',
+    lineHeight: '27.2px'
+  },
+  heading: {
+    fontSize: '44px',
+    lineHeight: '52.8px',
+  }
+}, {
+  heading: {
+    fontSize: '21px',
+    lineHeight: '27.3px',
+  },
+  copy: {
+    fontSize: '14px',
+    lineHeight: '20px'
+  },
+  h1: {
+    fontSize: '66px',
+    lineHeight: '73px'
+  },
+  h2: {
+    fontSize: '28px',
+    lineHeight: '36px'
+  },
+  h3: {
+    fontSize: '24px',
+    lineHeight: '32px',
+  },
+  h4: { fontSize: '18px', lineHeight: '24px'},
+  h5: { fontSize: '16px', lineHeight: '20px'}
+}, {
+  h1: {
+    fontSize: '142.5px',
+    lineHeight: '132px',
+  },
+  h2: {
+    fontSize: '71.25px',
+    lineHeight: '66px',
+  },
+  copy: {
+    fontSize: '16px',
+    lineHeight: '22.4px'
+  },
+  link: {
+    fontSize: '14px'
+  },
+  heading: {
+    fontSize: '18px',
+    lineHeight: '26.1px'
+  },
+  h3: {
+    fontSize: '36px',
+    lineHeight: '36px'
+  },
+  h4: {
+    fontSize: '22px',
+  },
+
+}, {
+  h2: {
+    fontSize: '32px',
+    lineHeight: '38px'
+  },
+  h3: {
+    fontSize: '24px',
+    lineHeight: '28px',
+  },
+  copy: {
+    fontSize: '18px',
+    lineHeight: '24px'
+  }
+}]
+
 
 const fontFamilies = [
   'helveticaneue',

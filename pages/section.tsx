@@ -2,7 +2,7 @@ import { useTheme } from "styled-components"
 import { DashboardSection } from "../components/lib/section"
 import { RandomBrandLogo } from "../components/lib/super_components/brand"
 import { Menu, MenuItem } from "../components/lib/super_components"
-import { Anchor, ChimericIcon, Copy, Icon, Input } from "../components/lib/atomics"
+import { Anchor, Button, ChimericIcon, Copy, Icon, Input } from "../components/lib/atomics"
 import { Flex } from "../components/lib"
 import { sxToStyle } from "../components/theme"
 
@@ -27,9 +27,20 @@ const SectionsGallery = () => {
             <MenuItem label="More" icon={Icon.code} />
           </>
           <>
-            <Input placeholder="Search"
-              $variant={['transparent', 'border', 'white']}
-            />
+            <Flex col gap={theme.spacing.smallGap}>
+              <Input placeholder="Search"
+                $variant={['transparent', 'border', 'white']}
+              />
+              <Button $variant={['pill', 'transparent', 'border']}>
+                Sign Up
+              </Button>
+              <Button $variant="pill" $sx={{
+                backgroundColor: theme.palette.secondary
+              }}>
+                Log In
+              </Button>
+            </Flex>
+
           </>
           <>
           {/**TODO make this a component in menu.  menu item links or something**/}

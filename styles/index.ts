@@ -423,12 +423,13 @@ export const themes: Record<string, Theme> = {
       menuItemGroup: {
         display: 'flex',
         flexDirection: 'column',
-        gap: spacing.bigGap,
+        gap: spacing.biggishGap,
         paddingRight: '12px'
       },
       menuItem: {
         paddingLeft: '0', // need a rtl version of this :(
         gap: spacing.gap,
+        cursor: 'pointer'
       },
       menuItemIcon: {
         color: 'inherit'
@@ -490,7 +491,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     border: none;
   }
 
-  p {
-
+  input::placeholder {
+    color: currentColor;
   }
 `

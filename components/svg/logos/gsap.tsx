@@ -1,7 +1,7 @@
 import { CSSProperties } from "react"
 
 export const GsapLogo = ({
-  style,
+  style = {width: '100px'},
   fill = '#FFFCE1',
 }: {
   style?: CSSProperties

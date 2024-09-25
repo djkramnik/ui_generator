@@ -1,7 +1,7 @@
 import { SVGProps } from "react"
 
 export const CnnLogo = ({
-  fill = '#cc0000',
+  fill,
   style,
 }: {
   fill?: string
@@ -9,7 +9,7 @@ export const CnnLogo = ({
 }) => {
   return (
     <svg style={style}
-      width="40" height="40px" viewBox="0 0 240 240" fill={fill}
+      width="40" height="40px" viewBox="0 0 240 240" fill={'#cc0000'}
       xmlns="https://www.w3.org/2000/svg"
       aria-hidden="true">
         <rect x="0" y="0" width="100%" height="100%" fill="#fff"></rect>

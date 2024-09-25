@@ -2,6 +2,7 @@
 import { StripeLogo } from "../../svg"
 import { Box, Flex } from "../layout"
 import { Navbar, NavbarShortcut } from "../super_components"
+import { RandomBrandLogo } from "../super_components/brand"
 
 export const DashboardSection = ({
   sidebarChildren,
@@ -23,7 +24,7 @@ export const DashboardSection = ({
         withNav
           ? (
             <NavbarShortcut
-              logo={<StripeLogo fill="#fff" />}
+              logo={<RandomBrandLogo fill="#fff" />}
               links={[['About', 'Contact Us', 'Sign in']]}
             />
           )

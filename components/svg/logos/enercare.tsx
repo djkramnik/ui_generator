@@ -1,7 +1,7 @@
 export const EnercareLogo = ({
-
+  fill
 }: {
-
+  fill?: string
 }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="176" height="57" viewBox="0 0 176 57" fill="none"><g clip-path="url(#clip0_373_1869)">

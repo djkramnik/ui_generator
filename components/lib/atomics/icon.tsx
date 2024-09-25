@@ -581,6 +581,7 @@ const getFaPrefix = (
     case 'stripe':
     case 'discord':
     case 'youtube':
+    case 'docker':
       return 'brands'
     default:
       return 'solid'

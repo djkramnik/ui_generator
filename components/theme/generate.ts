@@ -2,6 +2,7 @@ import { randomPick, shuffle } from "../utils";
 import { CssProps, ResponsiveMixin, Theme } from "./types";
 import { shadows } from "./variants";
 
+// NOTE: THE DEFAULT TEMPLATE SHOULD LIVE HERE.  STYLES/INDEX CAN IMPORT FROM HERE
 const fsBundles: Partial<Record<keyof Theme['components'], CssProps>>[] = [{
   copy: {
     fontSize: '14px',
@@ -626,6 +627,16 @@ export const generateTheme = (): Theme => {
       navbar: {},
       navbarInner: {},
       navbarGroup: {},
+      menu: {},
+      menuItem: {},
+      menuItemIcon: {},
+      menuItemIconContainer: {},
+      menuItemLabel: {},
+      sidebarLeft: {},
+      menuItemGroup: {},
+      dashboardContainer: {},
+      dashboardContent: {},
+      dashboardSubNav: {},
     },
     typography,
     palette,

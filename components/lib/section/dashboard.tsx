@@ -1,9 +1,12 @@
 
+import { useTheme } from "styled-components"
 import { StripeLogo } from "../../svg"
+import { getSuperComponentStyles } from "../../theme"
 import { Box, Flex } from "../layout"
 import { Navbar, NavbarShortcut, NavbarShortcutProps } from "../super_components"
 import { RandomBrandLogo } from "../super_components/brand"
 
+// NEED A RTL VERSION OF THIS PLZ
 export const DashboardSection = ({
   sidebarChildren,
   navbarShortcutProps = {
@@ -19,10 +22,13 @@ export const DashboardSection = ({
   children?: React.ReactNode
   withNav?: boolean
 }) => {
+  const theme = useTheme()
   return (
     <Flex col $sx={{
-      height: '100vh',
-      width: '100vw'
+      ...getSuperComponentStyles(
+        'dashboardContainer',
+        theme,
+      )
     }}>
       {
         withNav
@@ -34,17 +40,24 @@ export const DashboardSection = ({
           )
       }
       <Flex $sx={{
-        width: '100%',
-        flexGrow: '1',
-        alignItems: 'stretch',
-        backgroundColor: 'cornsilk'
+        ...getSuperComponentStyles(
+          'dashboardSubNav',
+          theme,
+        )
         }}>
-          <Box>
+          <Box $sx={{
+            ...getSuperComponentStyles(
+              'sidebarLeft', // TODO: based on prop; sidebarright
+              theme,
+            )
+          }}>
             {sidebarChildren}
           </Box>
           <Box $sx={{
-            flexGrow: '1',
-            backgroundColor: 'aliceblue'
+            ...getSuperComponentStyles(
+              'dashboardContent',
+              theme,
+            )
             }}>
             {children}
           </Box>

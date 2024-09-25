@@ -128,6 +128,16 @@ export type ThemeConfig = {
     navbar: CssProps
     navbarInner: CssProps
     navbarGroup: CssProps
+    menu: CssProps
+    menuItemGroup: CssProps
+    menuItem: CssProps
+    menuItemLabel: CssProps
+    menuItemIcon: CssProps
+    menuItemIconContainer: CssProps
+    sidebarLeft: CssProps
+    dashboardContainer: CssProps
+    dashboardSubNav: CssProps
+    dashboardContent: CssProps
   }
 }
 

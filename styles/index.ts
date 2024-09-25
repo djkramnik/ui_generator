@@ -411,7 +411,54 @@ export const themes: Record<string, Theme> = {
         display: 'flex',
         alignItems: 'center',
         gap: spacing.gap,
-      }
+      },
+      menu: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        paddingTop: spacing.gap,
+        paddingBottom: spacing.gap,
+        height: '100%'
+      },
+      menuItemGroup: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: spacing.bigGap,
+        paddingRight: '12px'
+      },
+      menuItem: {
+        paddingLeft: '0', // need a rtl version of this :(
+        gap: spacing.gap,
+      },
+      menuItemIcon: {
+        color: 'inherit'
+      },
+      menuItemIconContainer: {
+        minWidth: '30px',
+      },
+      menuItemLabel: {
+        color: 'inherit',
+        fontSize: '18px',
+        fontWeight: 'bold'
+      },
+      sidebarLeft: {
+        paddingLeft: spacing.containerMargins,
+        backgroundColor: palette.primary,
+        color: palette.button
+      },
+      dashboardContainer: {
+        height: '100vh',
+        width: '100vw',
+      },
+      dashboardContent: {
+        backgroundColor: palette.background,
+        padding: spacing.containerMargins
+      },
+      dashboardSubNav: {
+        width: '100%',
+        flexGrow: '1',
+        alignItems: 'stretch',
+      },
     }
   }
 }

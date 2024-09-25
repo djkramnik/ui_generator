@@ -48,6 +48,7 @@ export type ThemeConfig = {
   }
   spacing: {
     containerWidth: ResponsiveMixin
+    containerMargins: ResponsiveMixin
     smallGap: ResponsiveMixin,
     gap: ResponsiveMixin,
     biggishGap: ResponsiveMixin,
@@ -122,6 +123,11 @@ export type ThemeConfig = {
     buttonWithIconButton: CssProps
     buttonWithIconIcon: CssProps
     buttonWithIconLayout: CssProps
+  }
+  superComponents: {
+    navbar: CssProps
+    navbarInner: CssProps
+    navbarGroup: CssProps
   }
 }
 

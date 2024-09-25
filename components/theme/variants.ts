@@ -176,6 +176,10 @@ export const getComponentStyles = (s: keyof Theme['components'], theme: Theme): 
   return theme.components[s]
 }
 
+export const getSuperComponentStyles = (s: keyof Theme['superComponents'], theme: Theme): CssProps => {
+  return theme.superComponents[s]
+}
+
 export const mergeStyles = ({
   theme,
   component,

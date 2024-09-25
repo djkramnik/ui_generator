@@ -1,5 +1,7 @@
-import { Navbar } from "../applied"
+
+import { StripeLogo } from "../../svg"
 import { Box, Flex } from "../layout"
+import { Navbar, NavbarShortcut } from "../super_components"
 
 export const DashboardSection = ({
   sidebarChildren,
@@ -20,9 +22,10 @@ export const DashboardSection = ({
       {
         withNav
           ? (
-            <Navbar bgc="teal">
-              {navbarChildren}
-            </Navbar>
+            <NavbarShortcut
+              logo={<StripeLogo fill="#fff" />}
+              links={[['About', 'Contact Us', 'Sign in']]}
+            />
           )
           : (
             null

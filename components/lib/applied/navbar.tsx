@@ -5,6 +5,10 @@ import { Box, BoxProps, Flex, FlexProps } from '../layout'
 import { CloseIcon } from '../../svg/common/close'
 import { Anchor, Heading } from '../atomics'
 
+// randomize navbar height
+// randomize logo 
+// randomize number and grouping of links 
+
 // need anchor with sx....
 export const NavbarLink = ({ children }: { children?: React.ReactNode }) => {
   return (

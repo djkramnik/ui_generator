@@ -101,7 +101,8 @@ const fontFamilies = [
 ]
 
 const spacing = {
-  containerWidth: ['96%', '94%', '92%'] as ResponsiveMixin<string>,
+  containerWidth: ['96vw', '94vw', '92vw'] as ResponsiveMixin<string>,
+  containerMargins: ['2vw', '3vw', '4vw'] as ResponsiveMixin<string>,
   smallGap: '6px',
   gap: '12px',
   biggishGap: '20px',
@@ -621,6 +622,11 @@ export const generateTheme = (): Theme => {
     secondaryff,
   }
   return {
+    superComponents: {
+      navbar: {},
+      navbarInner: {},
+      navbarGroup: {},
+    },
     typography,
     palette,
     spacing,

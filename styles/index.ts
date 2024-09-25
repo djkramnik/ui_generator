@@ -24,7 +24,8 @@ const typography = {
 }
 
 const spacing = {
-  containerWidth: ['96%', '94%', '92%'] as ResponsiveMixin<string>,
+  containerWidth: ['96vw', '94vw', '92vw'] as ResponsiveMixin<string>,
+  containerMargins: ['2vw', '3vw', '4vw'] as ResponsiveMixin<string>,
   smallGap: '6px',
   gap: '12px',
   biggishGap: '20px',
@@ -389,6 +390,26 @@ export const themes: Record<string, Theme> = {
       buttonWithIconLayout: {
         gap: '8px'
       },
+    },
+    superComponents: {
+      navbar: {
+        height: '60px',
+        backgroundColor: palette.primary,
+        position: 'initial'
+      },
+      navbarInner: {
+        margin: 'auto',
+        display: 'flex',
+        width: spacing.containerWidth,
+        justifyContent: 'space-between',
+        height: '100%',
+        alignItems: 'stretch'
+      },
+      navbarGroup: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: spacing.gap,
+      }
     }
   }
 }

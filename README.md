@@ -120,11 +120,17 @@ lander:ecommerce,
 * avatar
 
 ## todo
-* dashboard template, navbar, sidenav
-  * menu, menu item, icon +, circle loader, collapsible menu item,
-  toast, dashboard table, dashboard table filters
-
-
+* dashboard template [x]
+- [ ] navbar
+- [ ] sidenav
+- [ ] menu
+  - [ ] menu item,
+  - [ ] collapsible menu item
+  - [ ] icon +
+- [ ] circle loader,
+- [ ] toast
+- [ ] dashboard table
+- [ ] dashboard table filters
 
 ## Roadmap 
 - [x] create script to extract all custom styles from a given element on page... for the purpose of grabbing mock assets for use in the simulator.

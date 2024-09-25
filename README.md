@@ -32,40 +32,98 @@ signup:flow, signup:payment, signup:confirmation, checkout-page, product-added p
 sign in page, forgot password page, 
 lander:ecommerce,
 
-## Sections to simulate (provides context to components )
+## Sections to simulate (provides context to components)
+* navbar
+* sidenav
+* footer
+* hero carousel
+* lander two col
+* lander center
+* lander testimonials
+* sign in/ sign up workflow
+* search results
+* cookie popup
+* bottom up popover
+* squarespace type hero
+* comments
+* media recommends
+* wiki section
+* table of contents
+* news directory
+* news story
+* news / blog article
+* file upload modal
+* three col cards
+* dashboard template
+* dashboard section (heading, icons)
+* dashboard list with options
+* dashboard two col cards
+* table filters
+* dashboard table
+* secondary nav
+* shopping cart summary
+* products card
+* product section
+* purchase confirmation section
+* side login (ie rbc)
+* email list (gmail)
 
-sidenav, navbar, hamburger menu, menu-section,
-search-results, result-filters, title, description, 
-profile, avatar, video-controls, recommends, comments, hero:video, 
-nav-link, lander:section:marketing, lander:section:photo-collage, 
-contact-form, footer, form:login, data-table, table-controls, modal:form,
-card-option, modal:upload, list:links, marketing:carousel, secondary-nav, 
-links-bar, product-metadata, report-issue/help, technical-details, 
-disclaimer, legalese, customer-reviews, search-pane, product-confirmation, 
-order summary, order item, order detail, radio group, button-options,
-cookie-popup, popup, hero, tabs, removable-card, graph, filters, 
+## Super components
+* thumbnail
+* special searchbar
+* video player
+* share button
+* thumbsup, thumbsdown
+* card
+* comment
+* add-comment
+* menu
+* nested collapsible list
+* article paragraph
+* captcha
+* file uploader
+* legalese
+* toast/notification
+* activity timeline
+* workflow progress
+* cart button with num
+* product
+* list o links
+* star rating
+* price
+* discount ui
+* slider
+* cart item
+* checkout add ons
+* order summary
+* time filter
+* password w eye
+* links card
+* help bar?
+* important info card
+* collapsible menu item
+* icon option (icon +)
+* refresh icon
+* select all
+* scroll to top
+* content progression
+* social media links
+* download app
+* decorational phone(ie stripe)
+* reddit posts card
+* comment textarea
+* circle loader
+* box score
+* standings
+* sport score
+* code snippet
+* avatar
 
-## Components (do not comment on context)
+## todo
+* dashboard template, navbar, sidenav
+  * menu, menu item, icon +, circle loader, collapsible menu item,
+  toast, dashboard table, dashboard table filters
 
-button:icon:labelled, button:icon:unlabelled, button:text:hasicon,
-card, heading, copy, searchbar, logo, icon:hamburger, icon:settings,
-category-filter, copy:metadata, media-preview, thumbnail, video-player, play, next, audio, 
-button:option, icon:cc, card:expandable, media-metadata, comment, input, icon:like,
-icon:dislike, button:text:no-outline, button:text, qr-code, image, grouped-info(?), 
-address, social-icons, table-row, secondary-links, pagination, table-header 
-dropdown, input:time, textarea, image-download, flow-progress-bar, 
-input:cc-number,input:cc-expiry, input:cc-cvc, file-upload,
-carousel, link, link:card, nav:dropdown, region:toggle, icon:cart, icon:right,
-icon:left, search-result, price, accordion, rating, locale-switcher,
-input:radio, input:checkbox, svg-decoration, {back to top (the literal text bro)},
-menu-item:icon, button:toggle, 
-
-component labels that are context-free, and those that have a different meaning placed in their section
-or parent component.  i.e. a tab being just text context free, within the context of tabs it is a tab
-
-what is actually needed for these workflows... 
-you need not just the visual understanding but also semantic. 
-ie. back to top bar with small centered font.  what the hell is that 
 
 
 ## Roadmap 

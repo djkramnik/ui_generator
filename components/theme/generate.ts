@@ -95,7 +95,6 @@ const fsBundles: Partial<Record<keyof Theme['components'], CssProps>>[] = [{
   }
 }]
 
-
 const fontFamilies = [
   'helveticaneue',
   'Noto Sans, sans-serif',
@@ -232,9 +231,391 @@ const colorPalettes: Theme['palette'][] = [
   inactive: '#FFFFFF26'
 }]
 
+const getComponents = ({
+  palette,
+  typography,
+  components,
+}: {
+  palette: Theme['palette']
+  typography: Theme['typography']
+  components: Partial<Theme['components']>
+}): Theme['components'] => {
+  const template = {
+    button: {
+      padding: '12px 18px',
+      color: palette.button,
+      backgroundColor: palette.primary,
+      fontSize: '16px',
+      cursor: 'pointer',
+      fontFamily: typography.primaryff
+    },
+    heading: {
+      margin: '0',
+      color: palette.heading,
+      fontFamily: typography.primaryff,
+    },
+    h1: {
+      fontSize: '94px',
+      lineHeight: '97px',
+      fontWeight: 'bold',
+      letterSpacing: '-1.46828px',
+    },
+    h2: {
+      fontSize: '56px',
+      lineHeight: '64px',
+      fontWeight: 'bold',
+    },
+    h3: {
+      fontSize: '30px',
+      fontWeight: 'bold',
+    },
+    h4: {
+      fontSize: '22px',
+      fontWeight: 'normal',
+    },
+    h5: {
+      fontSize: '18px',
+      fontWeight: 'normal',
+    },
+    select: {
+      outline: 'none',
+      appearance: 'none',
+      cursor: 'pointer',
+      fontSize: '16px',
+      padding: '9px 6px',
+      borderRadius: '0.25rem',
+      fontWeight: '400',
+      border: '2px solid rgba(0, 0, 0, 0.6)',
+      fontFamily: typography.primaryff,
+      width: '100%'
+    },
+    option: {
+      padding: '9px 6px',
+    },
+    input: {
+      padding: '9px 12px',
+      backgroundColor: palette.background,
+      color: palette.copy,
+    },
+    textArea: {
+      padding: '9px 12px',
+      borderRadius: '0.25rem',
+      border: '2px solid rgba(0, 0, 0, 0.6)',
+    },
+    link: {
+      fontSize: '14px',
+      color: palette.primary,
+      fontWeight: 'bold',
+      textDecoration: 'none',
+      cursor: 'pointer'
+    },
+    copy: {
+      fontFamily: typography.secondaryff,
+      color: palette.copy,
+      fontSize: '16px',
+      lineHeight: '24px',
+    },
+    icon: {
+      fontSize: '22px',
+      color: palette.copy,
+    },
+    table: {
+      borderSpacing: '0',
+      border: `1px solid ${palette.copy}`,
+      borderBottom: 'none',
+    },
+    td: {
+      borderBottom: `1px solid ${palette.copy}`,
+      padding: '12px 32px'
+    },
+    th: {
+      borderBottom: `1px solid ${palette.copy}`,
+      padding: '12px 32px',
+      minWidth: '120px',
+      position: 'relative',
+      textAlign: 'center',
+      fontFamily: typography.primaryff,
+    },
+    thInner: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '4px',
+      justifyContent: 'center',
+      position: 'relative',
+    },
+    thSort: {
+      position: 'absolute',
+      display: 'flex',
+      flexDirection: 'column',
+      right: '-16px',
+      cursor: 'pointer',
+    },
+    thSortAsc: {
+      position: 'relative',
+      top: '4px',
+    },
+    thSortDesc: {
+      position: 'relative',
+      top: '-4px',
+    },
+    accordionSummary: {
+      backgroundColor: palette.secondary,
+      color: palette.button,
+      cursor: 'pointer',
+      display: 'flex',
+      justifyContent: 'space-between',
+      padding: '12px 18px',
+      gap: '20px',
+      alignItems: 'center',
+      fontSize: '30px',
+      fontWeight: 'bold',
+    },
+    accordionContainer: {
+      border: `1px solid ${palette.copy}`,
+      width: '100%'
+    },
+    accordionHeading: {
+      color: palette.heading,
+      fontWeight: 'bold',
+    },
+    accordionExpanded: {
+      padding: '12px 18px',
+    },
+    textAccordionSummary: {
+      gap: '6px',
+      fontSize: '14px',
+    },
+    textAccordionContainer: {
+      gap: '8px'
+    },
+    textAccordionHeading: {
+      fontSize: '14px',
+      color: palette.primary,
+      fontWeight: 'bold'
+    },
+    textAccordionExpanded: {
+      paddingLeft: '22px',
+      color: palette.copy
+    },
+    inputWithIconContainer: {
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+    },
+    inputWithIconIcon: {
+      color: palette.inactive,
+      fontSize: '18px',
+      zIndex: '1',
+      position: 'absolute',
+      left: '18px',
+    },
+    inputWithIconIconRev: {
+      left: 'initial', 
+      right: '18px'
+    },
+    inputWithIconInput: {
+      paddingLeft: '40px',
+      position: 'relative',
+      top: '-1px'
+    },
+    inputWithIconInputRev: {
+      paddingLeft: '18px', // WARNING: COUPLED WITH INPUT PADDING
+      paddingRight: '40px',
+    },
+    label: {
+      color: 'inherit',
+      fontSize: '16px',
+      fontWeight: 'bold',
+    },
+    autoCompleteContainer: {
+      position: 'relative',
+      display: 'inline-block',
+      width: 'fit-content',
+      minWidth: '300px'
+    },
+    autoCompleteInput: {
+      width: '100%',
+    },
+    autoCompleteOption: {
+      padding: '4px 6px',
+    },
+    autoCompleteOptionSelected: {
+      backgroundColor: palette.secondary,
+    },
+    autoCompleteExpanded: {
+      position: 'absolute',
+      top: `calc(100% + 5px)`,
+      left: '0',
+      minWidth: '100%',
+      height: 'auto',
+      borderRadius: '0.25rem',
+      padding: '6px',
+      backgroundColor: '#fff',
+      boxShadow: shadows.card,
+    },
+    autoCompleteResultSummary: {
+      fontWeight: 'bold'
+    },
+    checkboxContainer: {
+      gap: '12px',
+    },
+    checkboxInput: {
+
+    },
+    checkboxLabel: {
+
+    },
+    customCheckboxContainer: {
+      gap: '12px'
+    },
+    customCheckboxInput: {
+      border: '1px solid #333',
+      width: '20px',
+      height: '20px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+    },
+    customCheckboxLabel: {
+
+    },
+    dropdownContainer: {
+      position: 'relative',
+      display: 'inline-block',
+      width: '100%',
+    },
+    dropdownIcon: {
+      fontSize: '12px',
+    },
+    dropdownPopup: {
+      position: 'relative',
+      fontSize: '16px',
+      padding: '9px 6px',
+      borderRadius: '0.25rem',
+      fontWeight: '400',
+      border: '2px solid rgba(0, 0, 0, 0.6)',
+      backgroundColor: '#fff',
+    },
+    dropdownOptionContainer: {
+      position: 'absolute',
+      top: 'calc(100% + 5px)',
+      left: '0',
+      width: '100%',
+      height: 'auto',
+      borderRadius: '0.25rem',
+      padding: '6px',
+      backgroundColor: '#fff',
+      boxShadow: shadows.lichessCard,
+    },
+    dropdownOption: {
+      padding: '4px 6px'
+    },
+    dropdownOptionSelected: {
+      backgroundColor: palette.secondary,
+    },
+    dropdownBubbleArrow: {
+      position: 'absolute',
+      top: '100%',
+      width: '0', 
+      height: '0', 
+      borderLeft: '5px solid transparent',
+      borderRight: '5px solid transparent',
+      borderBottom: '5px solid #fff',
+    },
+    toggleButtonContainer: {
+      gap: spacing.gap,
+    },
+    toggleButtonButton: {
+      border: '2px solid black',
+      backgroundColor: 'white',
+      color: 'black',
+    },
+    toggleButtonSelected: {
+      backgroundColor: 'black',
+      color: 'white',
+    },
+    modalBackground: {
+      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+      position: 'fixed',
+      top: '0',
+      left: '0',
+      minWidth: '600px',
+      minHeight: '600px',
+      width: '100vw',
+      height: '100vh',
+    },
+    modalCloseIconContainer: {
+      position: 'absolute',
+      top: '8px',
+      right: '8px',
+      cursor: 'pointer',
+    },
+    modalContainer: {
+      margin: 'auto',
+      backgroundColor: '#fff',
+      width: '45vw',
+      minWidth: '500px',
+      height: '40vw',
+      minHeight: '300px',
+    },
+    modalMuiContainer: {
+      margin: 'auto',
+      backgroundColor: '#fff',
+      width: '45vw',
+      minWidth: '500px',
+      height: '40vw',
+      minHeight: '300px',
+      position: 'absolute' as 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+    },
+    iconButtonInner: {
+      gap: spacing.smallGap,
+      color: palette.copy,
+    },
+    iconButtonIcon: {
+      fontSize: '40px',
+      fill: 'currentColor',
+      color: 'currentColor',
+    },
+    iconButtonLabel: {
+
+    },
+    iconButtonContainer: {
+      minWidth: '50px'
+    },
+    buttonWithIconButton: {
+
+    },
+    buttonWithIconIcon: {
+      fontSize: '22px',
+    },
+    buttonWithIconLayout: {
+      gap: '8px'
+    },
+  }
+  return (
+    Object.entries(template)
+      .reduce((acc, [k,v]) => {
+        const diff = components[k as keyof Theme['components']]
+        return {
+          ...acc,
+          [k]: {
+            ...v,
+            ...diff,
+          }
+        }
+      }, {} as Theme['components'])
+  ) as Theme['components']
+}
+
 export const generateTheme = (): Theme => {
   const palette = colorPalettes[randomPick(0, colorPalettes.length - 1)]
   const [primaryff, secondaryff] = shuffle(fontFamilies)
+  const fontSizes = fsBundles[randomPick(0, fsBundles.length - 1)]
+  
   const typography = {
     primaryff,
     secondaryff,
@@ -243,362 +624,12 @@ export const generateTheme = (): Theme => {
     typography,
     palette,
     spacing,
-    components: {
-      button: {
-        padding: '12px 18px',
-        color: palette.button,
-        backgroundColor: palette.primary,
-        fontSize: '16px',
-        cursor: 'pointer',
-        fontFamily: typography.primaryff
-      },
-      heading: {
-        margin: '0',
-        color: palette.heading,
-        fontFamily: typography.primaryff,
-      },
-      h1: {
-        fontSize: '94px',
-        lineHeight: '97px',
-        fontWeight: 'bold',
-        letterSpacing: '-1.46828px',
-      },
-      h2: {
-        fontSize: '56px',
-        lineHeight: '64px',
-        fontWeight: 'bold',
-      },
-      h3: {
-        fontSize: '30px',
-        fontWeight: 'bold',
-      },
-      h4: {
-        fontSize: '22px',
-        fontWeight: 'normal',
-      },
-      h5: {
-        fontSize: '18px',
-        fontWeight: 'normal',
-      },
-      select: {
-        outline: 'none',
-        appearance: 'none',
-        cursor: 'pointer',
-        fontSize: '16px',
-        padding: '9px 6px',
-        borderRadius: '0.25rem',
-        fontWeight: '400',
-        border: '2px solid rgba(0, 0, 0, 0.6)',
-        fontFamily: typography.primaryff,
-        width: '100%'
-      },
-      option: {
-        padding: '9px 6px',
-      },
-      input: {
-        padding: '9px 12px',
-        backgroundColor: palette.background,
-        color: palette.copy,
-      },
-      textArea: {
-        padding: '9px 12px',
-        borderRadius: '0.25rem',
-        border: '2px solid rgba(0, 0, 0, 0.6)',
-      },
-      link: {
-        fontSize: '14px',
-        color: palette.primary,
-        fontWeight: 'bold',
-        textDecoration: 'none',
-        cursor: 'pointer'
-      },
-      copy: {
-        fontFamily: typography.secondaryff,
-        color: palette.copy,
-        fontSize: '16px',
-        lineHeight: '24px',
-      },
-      icon: {
-        fontSize: '22px',
-        color: palette.button,
-      },
-      table: {
-        borderSpacing: '0',
-        border: `1px solid ${palette.copy}`,
-        borderBottom: 'none',
-      },
-      td: {
-        borderBottom: `1px solid ${palette.copy}`,
-        padding: '12px 32px'
-      },
-      th: {
-        borderBottom: `1px solid ${palette.copy}`,
-        padding: '12px 32px',
-        minWidth: '120px',
-        position: 'relative',
-        textAlign: 'center',
-        fontFamily: typography.primaryff,
-      },
-      thInner: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: '4px',
-        justifyContent: 'center',
-        position: 'relative',
-      },
-      thSort: {
-        position: 'absolute',
-        display: 'flex',
-        flexDirection: 'column',
-        right: '-16px',
-        cursor: 'pointer',
-      },
-      thSortAsc: {
-        position: 'relative',
-        top: '4px',
-      },
-      thSortDesc: {
-        position: 'relative',
-        top: '-4px',
-      },
-      accordionSummary: {
-        backgroundColor: palette.secondary,
-        color: palette.button,
-        cursor: 'pointer',
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: '12px 18px',
-        gap: '20px',
-        alignItems: 'center',
-        fontSize: '30px',
-        fontWeight: 'bold',
-      },
-      accordionContainer: {
-        border: `1px solid ${palette.copy}`,
-        width: '100%'
-      },
-      accordionHeading: {
-        color: palette.button,
-        fontWeight: 'bold',
-      },
-      accordionExpanded: {
-        padding: '12px 18px',
-      },
-      textAccordionSummary: {
-        gap: '6px',
-        fontSize: '14px',
-      },
-      textAccordionContainer: {
-        gap: '8px'
-      },
-      textAccordionHeading: {
-        fontSize: '14px',
-        color: palette.primary,
-        fontWeight: 'bold'
-      },
-      textAccordionExpanded: {
-        paddingLeft: '22px',
-        color: palette.copy,
-      },
-      inputWithIconContainer: {
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center',
-      },
-      inputWithIconIcon: {
-        color: palette.inactive,
-        fontSize: '18px',
-        zIndex: '1',
-        position: 'absolute',
-        left: '18px',
-      },
-      inputWithIconIconRev: {
-        left: 'initial', 
-        right: '18px'
-      },
-      inputWithIconInput: {
-        paddingLeft: '40px',
-        position: 'relative',
-        top: '-1px'
-      },
-      inputWithIconInputRev: {
-        paddingLeft: '18px', // WARNING: COUPLED WITH INPUT PADDING
-        paddingRight: '40px',
-      },
-      label: {
-        color: 'inherit',
-        fontSize: '16px',
-        fontWeight: 'bold',
-      },
-      autoCompleteContainer: {
-        position: 'relative',
-        display: 'inline-block',
-        width: 'fit-content',
-        minWidth: '300px'
-      },
-      autoCompleteInput: {
-        width: '100%',
-      },
-      autoCompleteOption: {
-        padding: '4px 6px',
-      },
-      autoCompleteOptionSelected: {
-        backgroundColor: palette.secondary,
-      },
-      autoCompleteExpanded: {
-        position: 'absolute',
-        top: `calc(100% + 5px)`,
-        left: '0',
-        minWidth: '100%',
-        height: 'auto',
-        borderRadius: '0.25rem',
-        padding: '6px',
-        backgroundColor: '#fff',
-        boxShadow: shadows.card,
-      },
-      autoCompleteResultSummary: {
-        fontWeight: 'bold'
-      },
-      checkboxContainer: {
-        gap: '12px',
-      },
-      checkboxInput: {
-
-      },
-      checkboxLabel: {
-
-      },
-      customCheckboxContainer: {
-        gap: '12px'
-      },
-      customCheckboxInput: {
-        border: '1px solid #333',
-        width: '20px',
-        height: '20px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: 'pointer',
-      },
-      customCheckboxLabel: {
-        color: palette.copy,
-      },
-      dropdownContainer: {
-        position: 'relative',
-        display: 'inline-block',
-        width: '100%',
-      },
-      dropdownIcon: {
-        fontSize: '12px',
-      },
-      dropdownPopup: {
-        position: 'relative',
-        fontSize: '16px',
-        padding: '9px 6px',
-        borderRadius: '0.25rem',
-        fontWeight: '400',
-        border: '2px solid rgba(0, 0, 0, 0.6)',
-        backgroundColor: '#fff',
-      },
-      dropdownOptionContainer: {
-        position: 'absolute',
-        top: 'calc(100% + 5px)',
-        left: '0',
-        width: '100%',
-        height: 'auto',
-        borderRadius: '0.25rem',
-        padding: '6px',
-        backgroundColor: '#fff',
-        boxShadow: shadows.lichessCard,
-      },
-      dropdownOption: {
-        padding: '4px 6px'
-      },
-      dropdownOptionSelected: {
-        backgroundColor: palette.secondary,
-      },
-      dropdownBubbleArrow: {
-        position: 'absolute',
-        top: '100%',
-        width: '0', 
-        height: '0', 
-        borderLeft: '5px solid transparent',
-        borderRight: '5px solid transparent',
-        borderBottom: '5px solid #fff',
-      },
-      toggleButtonContainer: {
-        gap: spacing.gap,
-      },
-      toggleButtonButton: {
-        border: '2px solid black',
-        backgroundColor: 'white',
-        color: 'black',
-      },
-      toggleButtonSelected: {
-        backgroundColor: 'black',
-        color: 'white',
-      },
-      modalBackground: {
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        minWidth: '600px',
-        minHeight: '600px',
-        width: '100vw',
-        height: '100vh',
-      },
-      modalCloseIconContainer: {
-        position: 'absolute',
-        top: '8px',
-        right: '8px',
-        cursor: 'pointer',
-      },
-      modalContainer: {
-        margin: 'auto',
-        backgroundColor: '#fff',
-        width: '45vw',
-        minWidth: '500px',
-        height: '40vw',
-        minHeight: '300px',
-      },
-      modalMuiContainer: {
-        margin: 'auto',
-        backgroundColor: '#fff',
-        width: '45vw',
-        minWidth: '500px',
-        height: '40vw',
-        minHeight: '300px',
-        position: 'absolute' as 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-      },
-      iconButtonInner: {
-        gap: spacing.smallGap,
-        color: palette.button,
-      },
-      iconButtonIcon: {
-        fontSize: '40px',
-        fill: 'currentColor',
-        color: 'currentColor',
-      },
-      iconButtonLabel: {
-
-      },
-      iconButtonContainer: {
-        minWidth: '50px'
-      },
-      buttonWithIconButton: {
-
-      },
-      buttonWithIconIcon: {
-        fontSize: '22px',
-        color: palette.button,
-      },
-      buttonWithIconLayout: {
-        gap: '8px'
-      },
-    }
+    components: getComponents({ 
+      palette,
+      typography,
+      components: {
+        ...fontSizes
+      }
+    })
   }
 }

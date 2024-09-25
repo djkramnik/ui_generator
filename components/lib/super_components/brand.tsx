@@ -34,6 +34,5 @@ export const RandomBrandLogo = ({
       )
       : () => null
   )
-  console.log('randomIndex', randomIndex, Logo)
   return <Logo fill={resolvedFill} />
 }

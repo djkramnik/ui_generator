@@ -51,6 +51,9 @@ type DropdownProps = {
   value?: string
   selectSx?: CssProps
   artificial?: boolean
+  containerSx?: CssProps
+  icon?: Icon
+  open?: boolean
 }
 
 // ego lifting
@@ -59,6 +62,9 @@ export const Dropdown = ({
   selectSx,
   value,
   artificial,
+  containerSx,
+  icon = Icon.chevronDown,
+  open,
 }: DropdownProps) => {
   const theme = useTheme()
   return (
@@ -77,7 +83,7 @@ export const Dropdown = ({
         }}
       >
         <ChimericIcon
-          icon={Icon.chevronDown}
+          icon={icon}
           iconStyle={{
             ...sxToStyle({
               ...getComponentStyles('dropdownIcon', theme),
@@ -103,28 +109,35 @@ export const Dropdown = ({
           }}
         >
           {value}
-          <Box
-            $sx={{
-              ...getComponentStyles('dropdownOptionContainer', theme),
-            }}
-          >
-            {options.map((optionText) => {
-              return (
+          {
+            open
+              ? (
                 <Box
                   $sx={{
-                    ...getComponentStyles('dropdownOption', theme),
-                    ...(
-                      value === optionText
-                        ? getComponentStyles('dropdownOptionSelected', theme)
-                        : {}
-                    ),
+                    ...getComponentStyles('dropdownOptionContainer', theme),
+                    ...containerSx,
                   }}
                 >
-                  {optionText}
+                  {options.map((optionText) => {
+                    return (
+                      <Box
+                        $sx={{
+                          ...getComponentStyles('dropdownOption', theme),
+                          ...(
+                            value === optionText
+                              ? getComponentStyles('dropdownOptionSelected', theme)
+                              : {}
+                          ),
+                        }}
+                      >
+                        {optionText}
+                      </Box>
+                    )
+                  })}
                 </Box>
               )
-            })}
-          </Box>
+              : null
+          }
         </Box>
       )}
     </Box>

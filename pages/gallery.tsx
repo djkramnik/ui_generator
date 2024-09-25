@@ -44,6 +44,7 @@ import {
   TextAccordion,
 } from '../components/lib/atomics/accordion'
 import { sxToStyle } from '../components/theme/variants'
+import { ContentFitter } from '../components/lib/exotic/content-fitter'
 
 const Cell = ({
   children,
@@ -117,6 +118,33 @@ const Gallery = () => {
             selectedIndex={0}
             options={['Monday', 'Toosday', 'Whensday', 'Hersday']}
           />
+        </Row>
+        <Row>
+          <ContentFitter extraPx={20}>
+            <Dropdown
+              selectSx={{
+                border: 'none',
+                backgroundColor: 'transparent'
+              }}
+              icon={Icon.caretDown}
+              value={'v.5.0.0'}
+              artificial
+              options={['v5.0.0', 'v4.0.0']}
+            />
+          </ContentFitter>
+          <ContentFitter extraPx={20}>
+            <Dropdown
+              open
+              selectSx={{
+                border: 'none',
+                backgroundColor: 'transparent'
+              }}
+              icon={Icon.caretDown}
+              value={'v.5.0.0'}
+              artificial
+              options={['v5.0.0', 'v4.0.0']}
+            />
+          </ContentFitter>
         </Row>
         <Row withGrow>
           <Dropdown

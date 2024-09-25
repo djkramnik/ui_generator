@@ -291,6 +291,7 @@ export const themes: Record<string, Theme> = {
         fontWeight: '400',
         border: '2px solid rgba(0, 0, 0, 0.6)',
         backgroundColor: '#fff',
+        zIndex: '1'
       },
       dropdownOptionContainer: {
         position: 'absolute',

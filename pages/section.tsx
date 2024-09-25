@@ -1,29 +1,16 @@
-import { NavbarLinks } from "../components/lib/applied"
-import { Anchor } from "../components/lib/atomics"
+import { useTheme } from "styled-components"
 import { DashboardSection } from "../components/lib/section"
-import { StripeLogo } from "../components/svg"
+import { RandomBrandLogo } from "../components/lib/super_components/brand"
 
 const SectionsGallery = () => {
+  const theme = useTheme()
   return (
     <DashboardSection
-      navbarChildren={
-        <>
-          <NavbarLinks wrapChildren>
-            <StripeLogo />
-          </NavbarLinks>
-          <NavbarLinks>
-            <Anchor href="#">
-              About
-            </Anchor>
-            <Anchor href="#">
-              Charities
-            </Anchor>
-            <Anchor href="#">
-              Goodness
-            </Anchor>
-          </NavbarLinks>
-        </>
-      }
+      navbarShortcutProps={{
+        logo: <RandomBrandLogo />,
+        links: [['v5.0.0', 'Contact Us', 'Sign in']],
+        dropdowns: [[0, 0]]
+      }}
       sidebarChildren={'bye'}
       >
       hi

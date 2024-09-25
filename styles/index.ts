@@ -282,6 +282,7 @@ export const themes: Record<string, Theme> = {
       },
       dropdownIcon: {
         fontSize: '12px',
+        color: palette.button
       },
       dropdownPopup: {
         position: 'relative',

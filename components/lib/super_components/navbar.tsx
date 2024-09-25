@@ -1,7 +1,7 @@
 
 import { useTheme } from "styled-components"
 import { Box, Flex } from "../layout"
-import { getSuperComponentStyles } from "../../theme"
+import { getComponentStyles, getSuperComponentStyles } from "../../theme"
 import { Anchor, Dropdown, Icon } from "../atomics"
 import React from "react"
 import { ContentFitter } from "../exotic/content-fitter"
@@ -25,22 +25,22 @@ export const Navbar = ({
   )
 }
 
-
-{/*  */}
+export type NavbarShortcutProps = {
+  logo: React.ReactNode
+  links: string[][]
+  dropdowns?: [number, number][]
+}
 
 // an index to render certain links as dropdowns of the type above,
 // later to be randomized
 // need icons eventually... :(
+// that is, an icons thing that will take links and interpret and assert them as icons
 
 export const NavbarShortcut = ({
   links,
   logo,
   dropdowns,
-}: {
-  logo: React.ReactNode
-  links: string[][]
-  dropdowns?: [number, number][]
-}) => {
+}: NavbarShortcutProps) => {
   const theme = useTheme()
 
   const isDropdown = (row: number, col: number) => {
@@ -67,16 +67,18 @@ export const NavbarShortcut = ({
                 group.map((l, colIndex) => {
                   return isDropdown(rowIndex, colIndex)
                     ? (
-                      <ContentFitter extraPx={20}>
+                      <ContentFitter extraPx={18}>
                         <Dropdown
                           selectSx={{
                             border: 'none',
-                            backgroundColor: 'transparent'
+                            backgroundColor: 'transparent',
+                            ...getComponentStyles('link', theme),
+                            color: theme.palette.button,
                           }}
                           icon={Icon.caretDown}
-                          value={'v.5.0.0'}
+                          value={l}
                           artificial
-                          options={['v5.0.0', 'v4.0.0']}
+                          options={[]}
                         />
                       </ContentFitter>
                     ) 

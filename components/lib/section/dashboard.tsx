@@ -1,17 +1,21 @@
 
 import { StripeLogo } from "../../svg"
 import { Box, Flex } from "../layout"
-import { Navbar, NavbarShortcut } from "../super_components"
+import { Navbar, NavbarShortcut, NavbarShortcutProps } from "../super_components"
 import { RandomBrandLogo } from "../super_components/brand"
 
 export const DashboardSection = ({
   sidebarChildren,
-  navbarChildren,
+  navbarShortcutProps = {
+    logo: <RandomBrandLogo fill="#fff" />,
+    links: [['About', 'Contact Us', 'Sign in']],
+    dropdowns: [[0, 0]]
+  },
   children,
   withNav = true // randomize
 }: {
   sidebarChildren?: React.ReactNode
-  navbarChildren?: React.ReactNode
+  navbarShortcutProps?: NavbarShortcutProps
   children?: React.ReactNode
   withNav?: boolean
 }) => {
@@ -23,10 +27,7 @@ export const DashboardSection = ({
       {
         withNav
           ? (
-            <NavbarShortcut
-              logo={<RandomBrandLogo fill="#fff" />}
-              links={[['About', 'Contact Us', 'Sign in']]}
-            />
+            <NavbarShortcut {...navbarShortcutProps} />
           )
           : (
             null

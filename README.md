@@ -122,9 +122,9 @@ lander:ecommerce,
 ## todo
 * dashboard template [x]
   - [x] navbar
-  - [ ] sidenav
-    - [ ] menu
-      - [ ] menu item,
+  - [x] sidenav
+    - [x] menu
+      - [x] menu item,
       - [ ] collapsible menu item
       - [ ] icon +
   - [ ] circle loader,

@@ -1,7 +1,7 @@
 import { useTheme } from "styled-components"
 import { DashboardSection } from "../components/lib/section"
 import { RandomBrandLogo } from "../components/lib/super_components/brand"
-import { Menu, MenuItem } from "../components/lib/super_components"
+import { Menu, MenuItem, MenuItemsShortcut } from "../components/lib/super_components"
 import { Anchor, Button, ChimericIcon, Copy, Icon, Input } from "../components/lib/atomics"
 import { Flex } from "../components/lib"
 import { sxToStyle } from "../components/theme"
@@ -18,6 +18,12 @@ const SectionsGallery = () => {
       sidebarChildren={
         <Menu>
           <>
+            {
+              <MenuItemsShortcut items={[
+
+              ]} />
+              
+            }
             <MenuItem label="Play" icon={Icon.gamepad} />
             <MenuItem label="Puzzler" icon={Icon.figma} />
             <MenuItem label="Learn" icon={Icon.docker} />
@@ -45,7 +51,7 @@ const SectionsGallery = () => {
           <>
           {/**TODO make this a component in menu.  menu item links or something**/}
             <Flex col gap={theme.spacing.smallGap}>
-                <Flex gap={theme.spacing.smallGap} aic>
+              <Flex gap={theme.spacing.smallGap} aic>
                 <ChimericIcon 
                   icon={Icon.circleExclamation}
                   iconStyle={{

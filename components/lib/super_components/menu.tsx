@@ -66,3 +66,19 @@ export const MenuItem = ({
     </Flex>
   )
 }
+
+export const MenuItemsShortcut = ({
+  items
+}: {
+  items: { label: string, icon?: Icon }[]
+}) => {
+  return (
+    <>
+      {
+        items.map((item, index) => {
+          return <MenuItem key={index} {...item} />
+        })
+      }
+    </>
+  )
+}

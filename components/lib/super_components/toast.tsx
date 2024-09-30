@@ -15,11 +15,8 @@ export const Toast = ({
   const theme = useTheme()
   return (
     <Position
-      position="fixed"
       containerSx={{
-        top: '0',
-        zIndex: '2',
-        height: 'fit-content',
+        ...getSuperComponentStyles('toastContainer', theme)
       }}>
       <Box $sx={{
         ...getSuperComponentStyles('toast', theme),

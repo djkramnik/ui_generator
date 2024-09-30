@@ -140,6 +140,7 @@ export type ThemeConfig = {
     dashboardContainer: CssProps
     dashboardSubNav: CssProps
     dashboardContent: CssProps
+    toastContainer: CssProps
     toast: CssProps
     success: CssProps
     error: CssProps

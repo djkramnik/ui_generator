@@ -697,14 +697,24 @@ export const getSuperComponents = ({
       flexGrow: '1',
       alignItems: 'stretch',
     },
+    toastContainer: {
+      top: '0',
+      left: '0',
+      zIndex: '2',
+      height: 'fit-content',
+      width: '100vw',
+      position: 'fixed',
+    },
     toast: {
       fontSize: '18px',
       color: palette.button,
       display: 'flex',
       justifyContent: 'center',
       borderRadius: '0.25rem',
-      border: `1px solid ${palette.button}`,
-      boxShadow: shadows.lichessCard
+      boxShadow: shadows.lichessCard,
+      padding: '18px 36px',
+      width: 'fit-content',
+      margin: 'auto'
     },
     success: {
       backgroundColor: palette.success,
@@ -715,7 +725,6 @@ export const getSuperComponents = ({
     info: {
       backgroundColor: palette.background,
       color: palette.copy,
-      border: `1px solid ${palette.copy}`
     }
   }
 }

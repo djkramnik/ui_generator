@@ -5,11 +5,13 @@ import { CollapsibleMenuItem, Menu, MenuItem, MenuItemsShortcut } from "../compo
 import { Anchor, Button, ChimericIcon, Copy, Icon, Input } from "../components/lib/atomics"
 import { Flex } from "../components/lib"
 import { sxToStyle } from "../components/theme"
-import { Progress, ProgressOverlay } from "../components/lib/super_components/progress"
+import { ProgressOverlay } from "../components/lib/super_components/progress"
+import { Toast } from "../components/lib/super_components/toast"
 
 const SectionsGallery = () => {
   const theme = useTheme()
   return (
+    
     <DashboardSection
       navbarShortcutProps={{
         logo: <RandomBrandLogo />,
@@ -85,6 +87,9 @@ const SectionsGallery = () => {
         </Menu>
       }
       >
+      {/* <Toast type="error" message="Error: Hopelessly Delusional Attempt by you" /> */}
+      {/* <Toast type="success" message="Glad tidings from New York!" /> */}
+      <Toast type="info" message="Note to self: believe no lies" />
       <ProgressOverlay />
     </DashboardSection>
   )

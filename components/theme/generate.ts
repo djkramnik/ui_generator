@@ -697,6 +697,26 @@ export const getSuperComponents = ({
       flexGrow: '1',
       alignItems: 'stretch',
     },
+    toast: {
+      fontSize: '18px',
+      color: palette.button,
+      display: 'flex',
+      justifyContent: 'center',
+      borderRadius: '0.25rem',
+      border: `1px solid ${palette.button}`,
+      boxShadow: shadows.lichessCard
+    },
+    success: {
+      backgroundColor: palette.success,
+    },
+    error: {
+      backgroundColor: palette.error,
+    },
+    info: {
+      backgroundColor: palette.background,
+      color: palette.copy,
+      border: `1px solid ${palette.copy}`
+    }
   }
 }
 

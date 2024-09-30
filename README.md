@@ -129,7 +129,7 @@ lander:ecommerce,
       - [x] menu item,
       - [x] collapsible menu item
   - [x] circle loader
-  - [ ] toast
+  - [x] toast
   - [ ] dashboard table
   - [ ] dashboard table filters
 

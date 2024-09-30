@@ -33,8 +33,8 @@ sign in page, forgot password page,
 lander:ecommerce,
 
 ## Sections to simulate (provides context to components)
-* navbar
-* sidenav
+- [x] navbar
+- [x] sidenav
 * footer
 * hero carousel
 * lander two col
@@ -54,12 +54,12 @@ lander:ecommerce,
 * news / blog article
 * file upload modal
 * three col cards
-* dashboard template
+- [x] dashboard template
 * dashboard section (heading, icons)
 * dashboard list with options
 * dashboard two col cards
-* table filters
-* dashboard table
+- [ ] table filters
+- [ ] dashboard table
 * secondary nav
 * shopping cart summary
 * products card
@@ -119,7 +119,9 @@ lander:ecommerce,
 * code snippet
 * avatar
 
-## todo
+## schedule
+
+### day zero
 * dashboard template [x]
   - [x] navbar
   - [x] sidenav
@@ -131,6 +133,45 @@ lander:ecommerce,
   - [ ] toast
   - [ ] dashboard table
   - [ ] dashboard table filters
+
+### day one (tues)
+- [ ] footer
+- [ ] hero carousel
+- [ ] lander two col
+- [ ] lander center
+- [ ] lander testimonials 
+
+### day two (wed)
+- [ ] sign in/ sign up workflow
+- [ ] search results
+- [ ] cookie popup
+- [ ] bottom up popover
+- [ ] squarespace type hero
+- [ ] comments
+
+### day three (rsday)
+- [ ] media recommends
+- [ ] wiki section
+- [ ] table of contents
+- [ ] news directory
+- [ ] news story
+- [ ] news / blog article
+
+### day four (sunday)
+- [ ] file upload modal
+- [ ] three col cards
+- [ ] dashboard section (heading, icons)
+- [ ] dashboard list with options
+- [ ] dashboard two col cards
+- [ ] secondary nav
+
+### day five (monday)
+- [ ] shopping cart summary
+- [ ] products card
+- [ ] product section
+- [ ] purchase confirmation section
+- [ ] side login (ie rbc)
+- [ ] email list (gmail)
 
 ## Roadmap 
 - [x] create script to extract all custom styles from a given element on page... for the purpose of grabbing mock assets for use in the simulator.

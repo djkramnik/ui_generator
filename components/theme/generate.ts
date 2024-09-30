@@ -667,6 +667,15 @@ export const getSuperComponents = ({
       fontSize: '18px',
       fontWeight: 'bold'
     },
+    collapsibleMenuItem: {
+    },
+    collapsibleMenuItemExpanded: {
+      paddingTop: spacing.gap,
+      paddingLeft: spacing.gap,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.gap,
+    },
     sidebarLeft: {
       paddingLeft: spacing.containerMargins,
       backgroundColor: palette.primary,

@@ -67,8 +67,38 @@ export const MenuItem = ({
   )
 }
 
-export const CollapsibleMenuItem = () => {
-
+export const CollapsibleMenuItem = ({
+  label,
+  children,
+  open,
+}: {
+  label: string
+  children?: React.ReactNode
+  open?: boolean
+}) => {
+  const theme = useTheme()
+  return (
+    <Flex col $sx={{
+      ...getSuperComponentStyles('collapsibleMenuItem', theme),
+    }}>
+      <MenuItem label={label} icon={open ? Icon.caretUp : Icon.caretDown} />
+      <Box $sx={{
+        ...getSuperComponentStyles(
+          'collapsibleMenuItemExpanded',
+          theme
+        ),
+        ...(
+          !open ? {display: 'none'} : {}
+        ),
+      }}>
+        {
+          open
+            ? children
+            : null
+        }
+      </Box>
+    </Flex>
+  )
 }
 
 export const MenuItemsShortcut = ({

@@ -134,6 +134,8 @@ export type ThemeConfig = {
     menuItemLabel: CssProps
     menuItemIcon: CssProps
     menuItemIconContainer: CssProps
+    collapsibleMenuItem: CssProps
+    collapsibleMenuItemExpanded: CssProps
     sidebarLeft: CssProps
     dashboardContainer: CssProps
     dashboardSubNav: CssProps

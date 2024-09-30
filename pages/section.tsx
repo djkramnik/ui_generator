@@ -1,7 +1,7 @@
 import { useTheme } from "styled-components"
 import { DashboardSection } from "../components/lib/section"
 import { RandomBrandLogo } from "../components/lib/super_components/brand"
-import { Menu, MenuItem, MenuItemsShortcut } from "../components/lib/super_components"
+import { CollapsibleMenuItem, Menu, MenuItem, MenuItemsShortcut } from "../components/lib/super_components"
 import { Anchor, Button, ChimericIcon, Copy, Icon, Input } from "../components/lib/atomics"
 import { Flex } from "../components/lib"
 import { sxToStyle } from "../components/theme"
@@ -20,17 +20,15 @@ const SectionsGallery = () => {
           <>
             {
               <MenuItemsShortcut items={[
-
-              ]} />
-              
+                {label: 'Play', icon: Icon.gamepad},
+                {label: 'Puzzler', icon: Icon.figma},
+              ]} /> 
             }
-            <MenuItem label="Play" icon={Icon.gamepad} />
-            <MenuItem label="Puzzler" icon={Icon.figma} />
-            <MenuItem label="Learn" icon={Icon.docker} />
-            <MenuItem label="Watch" icon={Icon.eye} />
-            <MenuItem label="News" icon={Icon.instagram} />
-            <MenuItem label="Social" icon={Icon.facebook} />
-            <MenuItem label="More" icon={Icon.code} />
+            <CollapsibleMenuItem label="Learn" />
+            <CollapsibleMenuItem label="Watch" open>
+              <MenuItem label="News" icon={Icon.instagram} />
+              <MenuItem label="Social" icon={Icon.facebook} />
+            </CollapsibleMenuItem>
           </>
           <>
             <Flex col gap={theme.spacing.smallGap}>

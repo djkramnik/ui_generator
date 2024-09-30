@@ -1,6 +1,6 @@
 import { useTheme } from "styled-components"
 import { Box, Flex } from "../layout"
-import { getComponentStyles, getSuperComponentStyles, sxToStyle } from "../../theme"
+import { getSuperComponentStyles, sxToStyle } from "../../theme"
 import { ChimericIcon, Copy, Icon } from "../atomics"
 import React from "react"
 
@@ -65,6 +65,10 @@ export const MenuItem = ({
       </Copy>
     </Flex>
   )
+}
+
+export const CollapsibleMenuItem = () => {
+
 }
 
 export const MenuItemsShortcut = ({

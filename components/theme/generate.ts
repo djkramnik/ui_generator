@@ -233,7 +233,7 @@ const colorPalettes: Theme['palette'][] = [
   inactive: '#FFFFFF26'
 }]
 
-const getComponents = ({
+export const getComponents = ({
   palette,
   typography,
   components,
@@ -613,6 +613,81 @@ const getComponents = ({
   ) as Theme['components']
 }
 
+export const getSuperComponents = ({
+  palette
+}: {
+  palette: Theme['palette']
+}): Theme['superComponents'] => {
+  return {
+    navbar: {
+      height: '60px',
+      backgroundColor: palette.primary,
+      position: 'initial'
+    },
+    navbarInner: {
+      margin: 'auto',
+      display: 'flex',
+      width: spacing.containerWidth,
+      justifyContent: 'space-between',
+      height: '100%',
+      alignItems: 'stretch'
+    },
+    navbarGroup: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: spacing.gap,
+    },
+    menu: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      paddingTop: spacing.gap,
+      paddingBottom: spacing.gap,
+      height: '100%'
+    },
+    menuItemGroup: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.biggishGap,
+      paddingRight: '12px'
+    },
+    menuItem: {
+      paddingLeft: '0', // need a rtl version of this :(
+      gap: spacing.gap,
+      cursor: 'pointer'
+    },
+    menuItemIcon: {
+      color: 'inherit'
+    },
+    menuItemIconContainer: {
+      minWidth: '30px',
+    },
+    menuItemLabel: {
+      color: 'inherit',
+      fontSize: '18px',
+      fontWeight: 'bold'
+    },
+    sidebarLeft: {
+      paddingLeft: spacing.containerMargins,
+      backgroundColor: palette.primary,
+      color: palette.button
+    },
+    dashboardContainer: {
+      height: '100vh',
+      width: '100vw',
+    },
+    dashboardContent: {
+      backgroundColor: palette.background,
+      padding: spacing.containerMargins
+    },
+    dashboardSubNav: {
+      width: '100%',
+      flexGrow: '1',
+      alignItems: 'stretch',
+    },
+  }
+}
+
 export const generateTheme = (): Theme => {
   const palette = colorPalettes[randomPick(0, colorPalettes.length - 1)]
   const [primaryff, secondaryff] = shuffle(fontFamilies)
@@ -623,21 +698,7 @@ export const generateTheme = (): Theme => {
     secondaryff,
   }
   return {
-    superComponents: {
-      navbar: {},
-      navbarInner: {},
-      navbarGroup: {},
-      menu: {},
-      menuItem: {},
-      menuItemIcon: {},
-      menuItemIconContainer: {},
-      menuItemLabel: {},
-      sidebarLeft: {},
-      menuItemGroup: {},
-      dashboardContainer: {},
-      dashboardContent: {},
-      dashboardSubNav: {},
-    },
+    superComponents: getSuperComponents({ palette }),
     typography,
     palette,
     spacing,

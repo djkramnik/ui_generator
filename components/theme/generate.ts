@@ -102,7 +102,7 @@ const fontFamilies = [
 ]
 
 const spacing = {
-  containerWidth: ['96vw', '94vw', '92vw'] as ResponsiveMixin<string>,
+  containerWidth: ['96%', '94%', '92%'] as ResponsiveMixin<string>,
   containerMargins: ['2vw', '3vw', '4vw'] as ResponsiveMixin<string>,
   smallGap: '6px',
   gap: '12px',
@@ -687,7 +687,10 @@ export const getSuperComponents = ({
     },
     dashboardContent: {
       backgroundColor: palette.background,
-      padding: spacing.containerMargins
+      padding: spacing.containerMargins,
+      position: 'relative',
+      width: '100%',
+      height: '100%'
     },
     dashboardSubNav: {
       width: '100%',

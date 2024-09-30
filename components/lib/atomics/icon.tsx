@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 import { OverridableComponent } from '@mui/material/OverridableComponent'
-import { SvgIconTypeMap } from '@mui/material'
+import { CircularProgress, SvgIconTypeMap } from '@mui/material'
 import {
   Comment,
   List,
@@ -124,6 +124,7 @@ import { useTheme } from 'styled-components'
 import { getComponentStyles, sxToStyle } from "../../theme/variants";
 
 export enum Icon {
+  spinner = 'spinner',
   house = 'house',
   search = 'magnifying-glass',
   search2 = 'sistrix',
@@ -606,7 +607,9 @@ export const ChimericIcon = ({
   }
   // any defaults must derive from theme, right here yo
   if (mui) {
-    const AltMuiIcon = toMuiIcon(icon)
+    const AltMuiIcon = icon === Icon.spinner
+      ? CircularProgress
+      : toMuiIcon(icon)
     return (
       <AltMuiIcon style={style} />
     )

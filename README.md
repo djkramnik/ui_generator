@@ -127,9 +127,8 @@ lander:ecommerce,
   - [x] sidenav
     - [x] menu
       - [x] menu item,
-      - [ ] collapsible menu item
-      - [ ] icon +
-  - [ ] circle loader,
+      - [x] collapsible menu item
+  - [ ] circle loader
   - [ ] toast
   - [ ] dashboard table
   - [ ] dashboard table filters

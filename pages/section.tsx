@@ -5,6 +5,7 @@ import { CollapsibleMenuItem, Menu, MenuItem, MenuItemsShortcut } from "../compo
 import { Anchor, Button, ChimericIcon, Copy, Icon, Input } from "../components/lib/atomics"
 import { Flex } from "../components/lib"
 import { sxToStyle } from "../components/theme"
+import { Progress, ProgressOverlay } from "../components/lib/super_components/progress"
 
 const SectionsGallery = () => {
   const theme = useTheme()
@@ -84,7 +85,7 @@ const SectionsGallery = () => {
         </Menu>
       }
       >
-      <Copy>dodododo</Copy>
+      <ProgressOverlay />
     </DashboardSection>
   )
 }

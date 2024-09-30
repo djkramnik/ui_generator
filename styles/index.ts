@@ -1,8 +1,10 @@
-import {
-  createGlobalStyle,
-} from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
-import { colors, getSuperComponents, ResponsiveMixin, shadows, type Theme } from '../components/theme'
+import {
+  getSuperComponents,
+  ResponsiveMixin,
+  type Theme,
+} from '../components/theme'
 import { getComponents } from '../components/theme'
 const palette = {
   background: '#fff',
@@ -15,16 +17,16 @@ const palette = {
   success: '#303f9f',
   white: '#fff',
   grey: '#eee',
-  inactive: 'rgba(0,0,0,0.3)'
+  inactive: 'rgba(0,0,0,0.3)',
 }
 
 const typography = {
   primaryff: 'Noto Sans, sans-serif',
-  secondaryff: 'helveticaneue'
+  secondaryff: 'helveticaneue',
 }
 
 const spacing = {
-  containerWidth: ['96vw', '94vw', '92vw'] as ResponsiveMixin<string>,
+  containerWidth: ['96%', '94%', '92%'] as ResponsiveMixin<string>,
   containerMargins: ['2vw', '3vw', '4vw'] as ResponsiveMixin<string>,
   smallGap: '6px',
   gap: '12px',
@@ -40,10 +42,10 @@ export const themes: Record<string, Theme> = {
     components: getComponents({
       typography,
       palette,
-      components: {}
+      components: {},
     }),
-    superComponents: getSuperComponents({ palette })
-  }
+    superComponents: getSuperComponents({ palette }),
+  },
 }
 
 export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
@@ -75,5 +77,44 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 
   input::placeholder {
     color: currentColor;
+  }
+
+  @-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  .rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+    transform-origin: center;
+    width: fit-content;
+    height: fit-content;
   }
 `

@@ -24,8 +24,6 @@ import {
 import {
   getComponentStyles,
   mergeStyles,
-  parseVariant,
-  parseVariants,
   sxToStyle,
 } from '../../../theme/variants'
 
@@ -83,7 +81,7 @@ export const TableHeader = styled('th')<TableCellProps>`
   }}
 `
 
-type RowType = Record<string, any>
+export type RowType = Record<string, any>
 
 interface Row<T = RowType, K extends keyof T = keyof T> {
   render: (value: T[K], row: T) => string
@@ -150,7 +148,7 @@ const Page = ({
   )
 }
 
-type PaginationProps = {
+export type PaginationProps = {
   selectedIndex: number
   pages: number[]
   withEllipsis?: boolean
@@ -253,7 +251,7 @@ export const ChimericPagination = (
   return <Pagination {...rest} />
 }
 
-type BasicTableProps<T extends RowType = object> = {
+export type BasicTableProps<T extends RowType = object> = {
   data: T[]
   columns: Columns<T>
   headers?: string[]

@@ -145,6 +145,10 @@ export type ThemeConfig = {
     success: CssProps
     error: CssProps
     info: CssProps
+    dashboardTable: CssProps
+    dashboardTablePagination: CssProps
+    dashboardTableFilters: CssProps
+    dashboardTableFiltersContainer: CssProps
   }
 }
 

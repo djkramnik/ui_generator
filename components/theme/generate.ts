@@ -725,6 +725,21 @@ export const getSuperComponents = ({
     info: {
       backgroundColor: palette.background,
       color: palette.copy,
+    },
+    dashboardTable: {
+      gap: spacing.biggishGap
+    },
+    dashboardTablePagination: {},
+    dashboardTableFilters: {
+      gap: spacing.biggishGap,
+      flexWrap: 'wrap',
+      alignItems: 'center'
+    },
+    dashboardTableFiltersContainer: {
+      gap: spacing.biggishGap,
+      backgroundColor: palette.grey,
+      padding: spacing.bigGap,
+      borderRadius: '0.25rem'
     }
   }
 }

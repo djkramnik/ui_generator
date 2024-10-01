@@ -130,8 +130,8 @@ lander:ecommerce,
       - [x] collapsible menu item
   - [x] circle loader
   - [x] toast
-  - [ ] dashboard table
-  - [ ] dashboard table filters
+  - [x] dashboard table
+  - [x] dashboard table filters
 
 ### day one (tues)
 - [ ] footer

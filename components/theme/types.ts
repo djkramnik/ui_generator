@@ -149,6 +149,11 @@ export type ThemeConfig = {
     dashboardTablePagination: CssProps
     dashboardTableFilters: CssProps
     dashboardTableFiltersContainer: CssProps
+    brandLogoContainer: CssProps
+    directoryLink: CssProps
+    directoryLinksHeader: CssProps
+    directoryLinksContainer: CssProps
+    footer: CssProps
   }
 }
 

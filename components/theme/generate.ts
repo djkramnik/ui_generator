@@ -620,16 +620,16 @@ export const getSuperComponents = ({
 }): Theme['superComponents'] => {
   return {
     navbar: {
-      height: '60px',
+      height: '80px',
       backgroundColor: palette.primary,
-      position: 'initial'
+      position: 'relative'
     },
     navbarInner: {
       margin: 'auto',
       display: 'flex',
       width: spacing.containerWidth,
       justifyContent: 'space-between',
-      height: '100%',
+      height: '80px',
       alignItems: 'stretch'
     },
     navbarGroup: {
@@ -677,9 +677,10 @@ export const getSuperComponents = ({
       gap: spacing.gap,
     },
     sidebarLeft: {
+      height: 'calc(100vh - 80px)',
       paddingLeft: spacing.containerMargins,
       backgroundColor: palette.primary,
-      color: palette.button
+      color: palette.button,
     },
     dashboardContainer: {
       height: '100vh',
@@ -690,12 +691,14 @@ export const getSuperComponents = ({
       padding: spacing.containerMargins,
       position: 'relative',
       width: '100%',
-      height: '100%'
+      height: '100%',
+      overflow: 'auto'
     },
     dashboardSubNav: {
       width: '100%',
       flexGrow: '1',
       alignItems: 'stretch',
+      overflow: 'hidden'
     },
     toastContainer: {
       top: '0',
@@ -733,13 +736,40 @@ export const getSuperComponents = ({
     dashboardTableFilters: {
       gap: spacing.biggishGap,
       flexWrap: 'wrap',
-      alignItems: 'center'
+      flexDirection: 'column',
+      width: '50%'
     },
     dashboardTableFiltersContainer: {
       gap: spacing.biggishGap,
       backgroundColor: palette.grey,
       padding: spacing.bigGap,
-      borderRadius: '0.25rem'
+      borderRadius: '0.25rem',
+    },
+    brandLogoContainer: {
+    },
+    directoryLink: {
+      fontSize: '14px',
+      color: palette.button,
+      fontWeight: 'normal'
+    },
+    directoryLinksHeader: {
+      fontSize: '14px',
+      fontWeight: 'bold',
+      color: palette.button,
+      marginBottom: spacing.smallGap
+    },
+    directoryLinksContainer: {
+      gap: '4px',
+      width: 'fit-content'
+    },
+    footer: {
+      color: palette.button,
+      backgroundColor: palette.primary,
+      paddingTop: spacing.bigGap,
+      paddingBottom: spacing.gap,
+      paddingRight: spacing.bigGap,
+      paddingLeft: spacing.gap,
+      fontSize: '14px'
     }
   }
 }

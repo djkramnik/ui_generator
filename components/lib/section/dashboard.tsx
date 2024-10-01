@@ -1,9 +1,8 @@
 
 import { useTheme } from "styled-components"
-import { StripeLogo } from "../../svg"
 import { getSuperComponentStyles } from "../../theme"
 import { Box, Flex } from "../layout"
-import { Navbar, NavbarShortcut, NavbarShortcutProps } from "../super_components"
+import { NavbarShortcut, NavbarShortcutProps } from "../super_components"
 import { RandomBrandLogo } from "../super_components/brand"
 
 // NEED A RTL VERSION OF THIS PLZ

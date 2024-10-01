@@ -2,6 +2,8 @@ import { useTheme } from "styled-components"
 import { useEffect, useState } from "react"
 import { CnnLogo, EnercareLogo, GsapLogo, ShopifyLogo, StripeLogo } from "../../svg"
 import { randomPick } from "../../utils"
+import { Box } from "../layout"
+import { getSuperComponentStyles } from "../../theme"
 
 const randomLogos = [
   StripeLogo,
@@ -34,5 +36,12 @@ export const RandomBrandLogo = ({
       )
       : () => null
   )
-  return <Logo fill={resolvedFill} />
+  return (
+    <Box $sx={{
+      ...getSuperComponentStyles('brandLogoContainer', theme)
+    }}>
+      <Logo fill={resolvedFill}
+      />
+    </Box>
+  )
 }

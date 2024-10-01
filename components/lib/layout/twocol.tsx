@@ -10,7 +10,7 @@ export const TwoCol = ({
   children,
   halvsies,
 }: {
-  hGap?: string
+  hGap?: ResponsiveMixin
   widthLeft?: ResponsiveMixin
   widthRight?: ResponsiveMixin
   growLeft?: boolean

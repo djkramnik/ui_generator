@@ -846,6 +846,37 @@ export const getSuperComponents = ({
     landerTwoColRight: {
       flexGrow: '1',
       alignItems: 'center'
+    },
+    avatar: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.gap,
+    },
+    avatarInner: {
+      display: 'flex',
+      gap: spacing.gap,
+      alignItems: 'stretch'
+    },
+    avatarImg: {
+      borderRadius: '50%'
+    },
+    avatarLeft: {
+      width: '30%',
+      display: 'flex',
+      alignItems: 'center'
+    },
+    avatarRight: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignSelf: 'stretch',
+      justifyContent: 'center',
+      gap: spacing.smallGap
+    },
+    avatarBig: {
+      fontWeight: 'bold'
+    },
+    avatarLittle: {
+      fontSize: '14px'
     }
   }
 }

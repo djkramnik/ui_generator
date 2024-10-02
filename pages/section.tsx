@@ -1,10 +1,14 @@
 import { useTheme } from 'styled-components'
-import { DashboardSection, Footer, Fullscreen } from '../components/lib/section'
+import { 
+  DashboardSection,
+  Footer,
+  Fullscreen,
+  LanderTwoCol
+} from '../components/lib/section'
 import { RandomBrandLogo, SocialMediaButtonRow } from '../components/lib/super_components/brand'
 import {
   CollapsibleMenuItem,
   Headings,
-  LanderTwoCol,
   ListOfLinks,
   Menu,
   MenuItem,

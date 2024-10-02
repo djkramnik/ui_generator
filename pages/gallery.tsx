@@ -46,6 +46,7 @@ import {
 import { sxToStyle } from '../components/theme/variants'
 import { ContentFitter } from '../components/lib/exotic/content-fitter'
 import { Headings } from '../components/lib/super_components/headings'
+import { MyAvatar } from '../components/lib/super_components'
 
 const Cell = ({
   children,
@@ -106,6 +107,12 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <MyAvatar asset="superman.jpg"
+            name="Clark Kent"
+            position="Important vital Dave Grrr guy"
+          />
+        </Row>
         <Row>
           <Headings
             little="Online and in Person"

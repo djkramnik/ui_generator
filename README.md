@@ -136,7 +136,7 @@ lander:ecommerce,
 ### day one (wed)
 - [x] footer
 - [x] hero carousel
-- [ ] lander two col
+- [x] lander two col
 - [ ] lander center
 - [ ] lander testimonials 
 - [ ] sign in/ sign up workflow

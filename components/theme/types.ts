@@ -167,6 +167,13 @@ export type ThemeConfig = {
     landerTwoColChild: CssProps
     landerTwoColLeft: CssProps
     landerTwoColRight: CssProps
+    avatar: CssProps
+    avatarInner: CssProps
+    avatarImg: CssProps
+    avatarLeft: CssProps
+    avatarRight: CssProps
+    avatarBig: CssProps
+    avatarLittle: CssProps
   }
 }
 

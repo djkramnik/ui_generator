@@ -6,5 +6,5 @@ export * from './table'
 export * from './toast'
 export * from './linklist'
 export * from './headings'
-export * from './lander'
+export * from './avatar'
 

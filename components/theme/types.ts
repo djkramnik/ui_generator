@@ -163,6 +163,10 @@ export type ThemeConfig = {
     carouselIconVertical: CssProps
     carouselIcon: CssProps
     carouselOverlay: CssProps
+    landerTwoCol: CssProps
+    landerTwoColChild: CssProps
+    landerTwoColLeft: CssProps
+    landerTwoColRight: CssProps
   }
 }
 

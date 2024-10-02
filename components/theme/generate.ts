@@ -828,6 +828,24 @@ export const getSuperComponents = ({
     },
     carouselOverlay: {
       backgroundSize: 'cover'
+    },
+    landerTwoCol: {
+      display: 'flex',
+      alignItems: 'stretch',
+      gap: spacing.bigGap,
+      padding: '40px 0',
+    },
+    landerTwoColChild: {
+      display: 'flex',
+      flexDirection: 'column',
+      padding: '18px 0'
+    },
+    landerTwoColLeft: {
+      width: '40%'
+    },
+    landerTwoColRight: {
+      flexGrow: '1',
+      alignItems: 'center'
     }
   }
 }

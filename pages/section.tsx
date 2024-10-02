@@ -3,6 +3,8 @@ import { DashboardSection, Footer, Fullscreen } from '../components/lib/section'
 import { RandomBrandLogo, SocialMediaButtonRow } from '../components/lib/super_components/brand'
 import {
   CollapsibleMenuItem,
+  Headings,
+  LanderTwoCol,
   ListOfLinks,
   Menu,
   MenuItem,
@@ -41,6 +43,18 @@ const SectionsGallery = () => {
           </Heading>
         </Flex>
       </HeroCarousel>
+      <LanderTwoCol>
+        <Headings
+          little="Online and in Person"
+          big="Now You're the big guy"
+        />
+        <Box $sx={{
+          backgroundColor: theme.palette.primary,
+          aspectRatio: '1',
+          width: '80%'
+        }}>
+        </Box>
+      </LanderTwoCol>
       <Fullscreen>
         <Footer>
           <Flex aic $sx={{

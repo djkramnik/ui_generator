@@ -45,6 +45,7 @@ import {
 } from '../components/lib/atomics/accordion'
 import { sxToStyle } from '../components/theme/variants'
 import { ContentFitter } from '../components/lib/exotic/content-fitter'
+import { Headings } from '../components/lib/super_components/headings'
 
 const Cell = ({
   children,
@@ -105,6 +106,12 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <Headings
+            little="Online and in Person"
+            big="Sell here, there, and everywhere"
+          />
+        </Row>
         <Row>
           <Toggle
             buttonVariant={[

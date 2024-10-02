@@ -154,6 +154,10 @@ export type ThemeConfig = {
     directoryLinksHeader: CssProps
     directoryLinksContainer: CssProps
     footer: CssProps
+    socialMediaButton: CssProps
+    socialMediaRow: CssProps
+    socialMediaLink: CssProps
+    legalese: CssProps
   }
 }
 

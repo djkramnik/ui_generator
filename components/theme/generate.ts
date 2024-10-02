@@ -770,6 +770,30 @@ export const getSuperComponents = ({
       paddingRight: spacing.bigGap,
       paddingLeft: spacing.gap,
       fontSize: '14px'
+    },
+    socialMediaButton: {
+      color: palette.button,
+      backgroundColor: palette.secondary,
+      boxShadow: shadows.card,
+      borderRadius: '50%',
+      padding: spacing.smallGap,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '40px',
+      height: '40px'
+    },
+    socialMediaRow: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: spacing.gap
+    },
+    socialMediaLink: {
+    },
+    legalese: {
+      color: 'currentcolor',
+      fontSize: '12px',
+      lineHeight: '18px'
     }
   }
 }

@@ -1,6 +1,6 @@
 import { useTheme } from 'styled-components'
 import { DashboardSection, Footer, Fullscreen } from '../components/lib/section'
-import { RandomBrandLogo } from '../components/lib/super_components/brand'
+import { RandomBrandLogo, SocialMediaButtonRow } from '../components/lib/super_components/brand'
 import {
   CollapsibleMenuItem,
   ListOfLinks,
@@ -13,6 +13,7 @@ import {
   Button,
   ChimericIcon,
   Copy,
+  Dropdown,
   Heading,
   Icon,
   Input,
@@ -22,6 +23,7 @@ import { sxToStyle } from '../components/theme'
 import { DashboardTable } from '../components/lib/super_components/table'
 import { getGenericColumns } from '../components/lib/atomics/table'
 import { Spacer } from '../components/lib/layout/spacer'
+import { Legalese } from '../components/lib/super_components/legalese'
 
 const SectionsGallery = () => {
   const theme = useTheme()
@@ -29,6 +31,16 @@ const SectionsGallery = () => {
     <>
       <Fullscreen>
         <Footer>
+          <Flex aic $sx={{
+            paddingLeft: theme.spacing.gap
+          }}>
+            <SocialMediaButtonRow icons={[
+              'facebook',
+              'figma',
+              'docker'
+            ]} />
+          </Flex>
+          <Spacer />
           <TwoCol widthLeft="20%" growRight
             hGap={theme.spacing.biggishGap}>
             <Box $sx={{
@@ -98,6 +110,73 @@ const SectionsGallery = () => {
               Terms of Service
             </Box>
           </ThreeCol>
+          <Spacer />
+          <Box $sx={{
+            paddingLeft: theme.spacing.gap
+          }}>
+            <Legalese text="There is more danger in the hidden betrayer than the open foe." />
+            <Legalese text="If you see me again and I'm not smiling you're not gonna like it" />
+            <Legalese text="David Grrrr subconscious is not so nice but I still didn't park in handicap" />
+          </Box>
+          <Spacer />
+          <TwoCol widthRight="20%" growLeft
+            hGap={theme.spacing.biggishGap}>
+            <Flex jcsa>
+              <ListOfLinks
+                links={[
+                  'Presents',
+                  'Ribbons',
+                  'Bow',
+                  'Gift Wrap',
+                  'Cider'
+                ]} 
+                heading="Christmas"
+              />
+              <ListOfLinks
+                links={[
+                  'News',
+                  'Our team',
+                  'Help center',
+                  'Support community',
+                  'Press',
+                  'Share your story'
+                ]} 
+                heading="About"
+              />
+              <ListOfLinks
+                links={[
+                  'Help center',
+                  'Drug center',
+                  'King Lear',
+                  'Let chaos take the world',
+                  'Ah!',
+                  'Let chaos take the world'
+                ]} 
+                heading="Shabriri"
+              />
+              <ListOfLinks
+                links={[
+                  'Video',
+                  'Climate',
+                ]} 
+                heading="Climate"
+              />
+              <ListOfLinks
+                links={[
+                  'Religion',
+                  'Drink',
+                  'Pencil Case'
+                ]} 
+                heading="Old time"
+              />
+            </Flex>
+            <Box $sx={{
+
+            }}>
+             <Dropdown options={['English']} value="English" />
+            </Box>
+
+          </TwoCol>
         </Footer>
       </Fullscreen>
       <DashboardSection

@@ -123,6 +123,18 @@ import {
 import { useTheme } from 'styled-components'
 import { getComponentStyles, sxToStyle } from "../../theme/variants";
 
+export type BrandIcon =
+  | 'facebook'
+  | 'twitter'
+  | 'instagram'
+  | 'tiktok'
+  | 'figma'
+  | 'google'
+  | 'stripe'
+  | 'discord'
+  | 'youtube'
+  | 'docker'
+
 export enum Icon {
   spinner = 'spinner',
   house = 'house',

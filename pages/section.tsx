@@ -187,7 +187,6 @@ const SectionsGallery = () => {
             }}>
              <Dropdown options={['English']} value="English" />
             </Box>
-
           </TwoCol>
         </Footer>
       </Fullscreen>

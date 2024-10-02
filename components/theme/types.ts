@@ -158,6 +158,11 @@ export type ThemeConfig = {
     socialMediaRow: CssProps
     socialMediaLink: CssProps
     legalese: CssProps
+    carouselContainer: CssProps
+    carouselIconHorizontal: CssProps
+    carouselIconVertical: CssProps
+    carouselIcon: CssProps
+    carouselOverlay: CssProps
   }
 }
 

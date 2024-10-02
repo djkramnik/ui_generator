@@ -794,6 +794,40 @@ export const getSuperComponents = ({
       color: 'currentcolor',
       fontSize: '12px',
       lineHeight: '18px'
+    },
+    carouselContainer: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '300px',
+      position: 'relative',
+      backgroundColor: palette.secondary,
+      color: palette.copy
+    },
+    carouselIconHorizontal: {
+      height: '300px',
+      width: '60px',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+    },
+    carouselIconVertical: {
+      width: '100vw',
+      height: '60px',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+    },
+    carouselIcon: {
+      color: '#fff',
+      fontSize: '40px'
+    },
+    carouselOverlay: {
+      backgroundSize: 'cover'
     }
   }
 }

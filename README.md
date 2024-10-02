@@ -133,22 +133,22 @@ lander:ecommerce,
   - [x] dashboard table
   - [x] dashboard table filters
 
-### day one (tues)
-- [ ] footer
-- [ ] hero carousel
+### day one (wed)
+- [x] footer
+- [x] hero carousel
 - [ ] lander two col
 - [ ] lander center
 - [ ] lander testimonials 
-
-### day two (wed)
 - [ ] sign in/ sign up workflow
+
+### day two (rsday)
 - [ ] search results
 - [ ] cookie popup
 - [ ] bottom up popover
 - [ ] squarespace type hero
 - [ ] comments
 
-### day three (rsday)
+### day three (sunday)
 - [ ] media recommends
 - [ ] wiki section
 - [ ] table of contents
@@ -156,7 +156,7 @@ lander:ecommerce,
 - [ ] news story
 - [ ] news / blog article
 
-### day four (sunday)
+### day four (monday)
 - [ ] file upload modal
 - [ ] three col cards
 - [ ] dashboard section (heading, icons)
@@ -164,7 +164,7 @@ lander:ecommerce,
 - [ ] dashboard two col cards
 - [ ] secondary nav
 
-### day five (monday)
+### day five (tuesday)
 - [ ] shopping cart summary
 - [ ] products card
 - [ ] product section

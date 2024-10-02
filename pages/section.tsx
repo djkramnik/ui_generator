@@ -24,11 +24,23 @@ import { DashboardTable } from '../components/lib/super_components/table'
 import { getGenericColumns } from '../components/lib/atomics/table'
 import { Spacer } from '../components/lib/layout/spacer'
 import { Legalese } from '../components/lib/super_components/legalese'
+import { HeroCarousel } from '../components/lib/super_components/carousel'
 
 const SectionsGallery = () => {
   const theme = useTheme()
   return (
     <>
+      <HeroCarousel bgi="amazon1.jpg" mui />
+      <HeroCarousel>
+        <Flex jcc aic col>
+          <Heading level={2}>
+            Hi Ho
+          </Heading>
+          <Heading level={4}>
+            Buy now! Remorse Later!
+          </Heading>
+        </Flex>
+      </HeroCarousel>
       <Fullscreen>
         <Footer>
           <Flex aic $sx={{

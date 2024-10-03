@@ -5,7 +5,7 @@ import { Copy } from "../atomics"
 import { getSuperComponentStyles } from "../../theme"
 import { useTheme } from "styled-components"
 
-type TestimonialProps = AvatarProps & {
+export type TestimonialProps = AvatarProps & {
   testimonial: string
   grey?: boolean
 }

@@ -908,6 +908,16 @@ export const getSuperComponents = ({
       flexDirection: 'column',
       gap: spacing.biggishGap,
       width: '360px'
+    },
+    landerTestimonials: {
+      display: 'flex',
+      gap: spacing.bigGap
+    },
+    landerTestimonialsCol: {
+      flexGrow: '1',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.gap
     }
   }
 }

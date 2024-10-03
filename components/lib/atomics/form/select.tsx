@@ -144,11 +144,13 @@ export const Dropdown = ({
   )
 }
 
+export type ChimericDropdownProps = DropdownProps & {
+  mui?: boolean
+  label?: string
+}
+
 export const ChimericDropdown = (
-  props: DropdownProps & {
-    mui?: boolean
-    label?: string
-  }
+  props: ChimericDropdownProps
 ) => {
   const theme = useTheme()
   const { mui, ...rest } = props

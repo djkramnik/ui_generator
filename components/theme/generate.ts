@@ -942,6 +942,14 @@ export const getSuperComponents = ({
     authCard: { 
       margin: 'auto', minWidth: '600px', minHeight: '500px',
       backgroundColor: palette.white
+    },
+    smallInput: {
+      width: '80px'
+    },
+    ccDetails: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
     }
   }
 }

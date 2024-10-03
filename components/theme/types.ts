@@ -186,6 +186,8 @@ export type ThemeConfig = {
     authContainer: CssProps
     authOverlay: CssProps
     authCard: CssProps
+    smallInput: CssProps
+    ccDetails: CssProps
   }
 }
 

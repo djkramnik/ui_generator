@@ -23,12 +23,14 @@ export const Input = styled('input')<InputProps>`
   }}
 `
 
-export const ChimericInput = (props: Omit<InputProps, 'theme'> & {
+export type ChimericInputProps = Omit<InputProps, 'theme'> & {
   mui?: boolean
   muiIcon?: Icon
   muiIconEnd?: boolean
   muiIconStyle?: CSSProperties
-}) => {
+}
+
+export const ChimericInput = (props: ChimericInputProps) => {
   const theme = useTheme()
   const { 
     $sx,

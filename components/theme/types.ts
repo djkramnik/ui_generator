@@ -190,6 +190,7 @@ export type ThemeConfig = {
     multiInputRow: CssProps
     form: CssProps
     formButtons: CssProps
+    formHeading: CssProps
   }
 }
 

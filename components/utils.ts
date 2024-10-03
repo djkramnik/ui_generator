@@ -16,7 +16,7 @@ export const randomPick = (min: number, max: number) => { // min and max include
 }
 
 export const randomItem = <T extends any = any>(arr: T[]): T => {
-  return randomPick(0, arr.length - 1) as T
+  return arr[randomPick(0, arr.length - 1)] as T
 }
 
 export const shuffle = (arr: any[]): any[] => {

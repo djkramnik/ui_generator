@@ -8,3 +8,20 @@ export const Noop = ({
 } & {[key: string]: any}) => {
   return children
 }
+
+// sugar for condition ? <Component /> : null
+export const Maybe = ({
+  condition,
+  children,
+}: {
+  condition?: any
+  children?: React.ReactNode
+}) => {
+  return (
+    condition
+      ? (
+        children
+      )
+      : null
+  )
+}

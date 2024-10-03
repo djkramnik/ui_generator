@@ -51,14 +51,15 @@ export const themes: Record<string, Theme> = {
 export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   * {
     box-sizing: border-box;
-    font-family: ${({ theme }) => theme.typography?.primaryff ?? 'fantasy'};
     margin: 0;
+    font-family: ${({ theme }) => theme.typography?.primaryff ?? 'fantasy'};
+    font-display: optional;
   }
 
   body {
     margin: 0;
     padding: 0;
-    background-color: ${({ theme }) => theme.palette?.background}
+    background-color: ${({ theme }) => theme.palette?.background};
   }
 
   a {

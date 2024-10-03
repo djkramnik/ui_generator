@@ -19,7 +19,8 @@ import {
   MenuItem,
   MenuItemsShortcut,
   MyAvatar,
-  PersonDetails
+  PersonDetails,
+  RandomizedForm
 } from '../components/lib/super_components'
 import {
   Anchor,
@@ -45,6 +46,18 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <AuthSection background={
+        <Box $sx={{
+          backgroundColor: theme.palette.grey,
+          width: '100%',
+          height: '100%'
+        }} />
+      }>
+        <RandomizedForm
+          heading="Random form"
+          buttonTwoLabel='Back'
+        />
+      </AuthSection>
       <AuthSection background={
         <Box $sx={{
           backgroundColor: theme.palette.grey,

@@ -940,7 +940,7 @@ export const getSuperComponents = ({
       zIndex: '-1'
     },
     authCard: { 
-      margin: 'auto', minWidth: '600px', minHeight: '500px',
+      margin: 'auto', minWidth: '600px',
       backgroundColor: palette.white
     },
     smallInput: {
@@ -954,9 +954,15 @@ export const getSuperComponents = ({
       flexWrap: 'wrap'
     },
     form: {
-
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      height: '100%',
+      gap: spacing.gap
     },
-    formButtons: {}
+    formButtons: {
+      gap: spacing.gap
+    },
+    formHeading: {}
   }
 }
 

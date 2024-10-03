@@ -1,8 +1,10 @@
 import { useTheme } from "styled-components"
 import { getSuperComponentStyles } from "../../theme"
-import { ChimericDropdown, ChimericDropdownProps, ChimericInput, ChimericInputProps, LabelizeIt, WithErrata } from "../atomics"
+import { Button, ChimericDropdown, ChimericDropdownProps, ChimericInput, ChimericInputProps, Heading, LabelizeIt, Maybe, WithErrata } from "../atomics"
 import { Box, Flex } from "../layout"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { randomItem, randomPick } from "../../utils"
+import { FitContent } from "../atomics/utility"
 
 // i.e. age
 export const SmallInput = (props: ChimericInputProps) => {
@@ -131,12 +133,14 @@ export const PersonDetails = ({
           )
           : null
       }
-      <LabelizeIt label={firstName}>
-        <ChimericInput
-          mui={mui}
-          placeholder={firstName}
-        />
-      </LabelizeIt>
+      <Box>
+        <LabelizeIt label={firstName}>
+          <ChimericInput
+            mui={mui}
+            placeholder={firstName}
+          />
+        </LabelizeIt>
+      </Box>
       {
         middleName
           ? (
@@ -149,12 +153,16 @@ export const PersonDetails = ({
           )
           : null
       }
-      <LabelizeIt label={lastName}>
-        <ChimericInput
-          mui={mui}
-          placeholder={lastName}
-        />
-      </LabelizeIt>
+      <Box $sx={{
+        flexGrow: '1'
+      }}>
+        <LabelizeIt label={lastName}>
+          <ChimericInput
+            mui={mui}
+            placeholder={lastName}
+          />
+        </LabelizeIt>
+      </Box>
       {
         postfix
           ? (
@@ -276,9 +284,25 @@ type FormDomain =
 type MultilineInput =
   | 'payment' | 'address' | 'person'
 
+const MultilineInputByType = ({
+  type
+}: {
+  type: MultilineInput
+}) => {
+  switch(type) {
+    case 'address':
+      return <AddressDetails />
+    case 'payment':
+      return <CreditCardDetails />
+    default:
+      return <PersonDetails />
+  }
+}
+
+
 // randomized form 
 export const RandomizedForm = ({
-  withMultiline,
+  withMultiline = true,
   domain,
   heading,
   checkboxSection,
@@ -310,18 +334,58 @@ export const RandomizedForm = ({
     setTextAreaIndex
   ] = useState<number[]>([])
 
+  useEffect(() => {
+    if (withMultiline) {
+      const multilinePick = randomItem([
+        'address', 'payment', 'person'
+      ])
+      console.log('multilinePick?', multilinePick)
+      setMultilineRandom(multilinePick as MultilineInput)
+    }
+  }, [
+    setMultilineRandom,
+    withMultiline
+  ])
+  
   return (
     <form>
       <Flex $sx={{
         ...getSuperComponentStyles('form', theme)
       }}>
+        <Maybe condition={heading}>
+          <Heading level={3} $sx={{
+            ...getSuperComponentStyles(
+              'formHeading',
+              theme,
+            )
+          }}>
+            {heading}
+          </Heading>
+        </Maybe>
+        <Maybe condition={multilineRandom}>
+          <MultilineInputByType type={multilineRandom!} />
+        </Maybe>
+        {checkboxSection}
+
+        
         <Flex $sx={{
           ...getSuperComponentStyles(
             'formButtons',
             theme,
           )
         }}>
-
+          <Button>
+            {buttonOneLabel}
+          </Button>
+          {
+            buttonTwoLabel
+              ? (
+                <Button $variant="bgc:secondary">
+                  {buttonTwoLabel}
+                </Button>
+              )
+              : null
+          }
         </Flex>
       </Flex>
     </form>

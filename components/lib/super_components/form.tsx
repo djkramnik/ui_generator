@@ -3,8 +3,9 @@ import { getSuperComponentStyles } from "../../theme"
 import { Button, ChimericDropdown, ChimericDropdownProps, ChimericInput, ChimericInputProps, Heading, LabelizeIt, Maybe, WithErrata } from "../atomics"
 import { Box, Flex } from "../layout"
 import { useEffect, useState } from "react"
-import { randomItem, randomPick } from "../../utils"
+import { randomItem, randomPick, shuffle } from "../../utils"
 import { FitContent } from "../atomics/utility"
+import React from "react"
 
 // i.e. age
 export const SmallInput = (props: ChimericInputProps) => {
@@ -299,6 +300,17 @@ const MultilineInputByType = ({
   }
 }
 
+const fieldNames = [
+  'Name',
+  'Reason',
+  'Purpose',
+  'Password',
+  'Email',
+  'Username',
+  'Confirm Password',
+  'OTP',
+  'Security Code'
+]
 
 // randomized form 
 export const RandomizedForm = ({
@@ -335,11 +347,18 @@ export const RandomizedForm = ({
   ] = useState<number[]>([])
 
   useEffect(() => {
+    const numFields = randomPick(2, 6)
+    const shuffledNames = shuffle(fieldNames)
+    setFields(
+      shuffledNames.slice(0, numFields)
+    )
+  }, [setFields])
+
+  useEffect(() => {
     if (withMultiline) {
       const multilinePick = randomItem([
         'address', 'payment', 'person'
       ])
-      console.log('multilinePick?', multilinePick)
       setMultilineRandom(multilinePick as MultilineInput)
     }
   }, [
@@ -366,8 +385,19 @@ export const RandomizedForm = ({
           <MultilineInputByType type={multilineRandom!} />
         </Maybe>
         {checkboxSection}
-
-        
+        <Maybe condition={fields.length > 0}>
+          <React.Fragment>
+            {
+              fields.map(field => {
+                return (
+                  <LabelizeIt label={field}>
+                    <ChimericInput key={field} placeholder={field} />
+                  </LabelizeIt>
+                )
+              })
+            }
+          </React.Fragment>
+        </Maybe>
         <Flex $sx={{
           ...getSuperComponentStyles(
             'formButtons',

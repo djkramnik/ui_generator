@@ -960,7 +960,8 @@ export const getSuperComponents = ({
       gap: spacing.gap
     },
     formButtons: {
-      gap: spacing.gap
+      gap: spacing.gap,
+      marginTop: spacing.bigGap
     },
     formHeading: {}
   }

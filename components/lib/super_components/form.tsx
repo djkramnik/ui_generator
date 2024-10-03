@@ -169,6 +169,103 @@ export const PersonDetails = ({
   )
 }
 
-// randomized payment details form
-// randomized 
+// address details
+export const AddressDetails = ({
+  mui,
+  address = 'Address',
+  address2,
+  postalCode = 'Postal Code',
+  provinceOptions,
+  provinceLabel = 'Province',
+  unit,
+  bigProvince,
+}: {
+  mui?: boolean
+  address?: string
+  address2?: string
+  postalCode?: string
+  provinceLabel?: string
+  provinceOptions?: string[]
+  unit?: string
+  bigProvince?: boolean
+}) => {
+  const theme = useTheme()
+  return (
+    <Flex $sx={{
+      ...getSuperComponentStyles(
+        'multiInputRow',
+        theme,
+      ),
+      justifyContent: 'flex-start'
+    }}>
+      <Box $sx={{
+        minWidth: '50%',
+        flexGrow: '1'
+      }}>
+        <LabelizeIt label={address}>
+          <ChimericInput
+            mui={mui}
+            placeholder={address}
+          />
+        </LabelizeIt>
+      </Box>
+      {
+        address2
+          ? (
+            <Box $sx={{
+              minWidth: '45%'
+            }}>
+             <LabelizeIt label={address2}>
+              <ChimericInput
+                mui={mui}
+                placeholder={address2}
+              />
+            </LabelizeIt>
+            </Box>
+          )
+          : null
+      }
+      {
+        unit
+          ? (
+            <LabelizeIt label={unit}>
+              <SmallInput mui={mui} placeholder={unit} />
+            </LabelizeIt>
+          )
+          : null
+      }
+      <LabelizeIt label={postalCode}>
+        <ChimericInput
+          mui={mui}
+          placeholder={postalCode}
+        />
+      </LabelizeIt>
+      {
+        provinceOptions
+          ? (
+            <LabelizeIt label={provinceLabel}>
+              {
+                bigProvince
+                  ? (
+                    <ChimericDropdown
+                      options={provinceOptions}
+                    />
+                  )
+                  : (
+                    <SmallDropdown
+                      options={provinceOptions}
+                    />
+                  )
+              }
+            </LabelizeIt>
+          )
+          : null
+      }
+    </Flex>
+  )
+}
+
+
+// randomized form 
+
 // make sure labelize it can be rendered horizontally

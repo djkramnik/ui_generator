@@ -10,6 +10,7 @@ import {
 } from '../components/lib/section'
 import { RandomBrandLogo, SocialMediaButtonRow } from '../components/lib/super_components/brand'
 import {
+  AddressDetails,
   CollapsibleMenuItem,
   CreditCardDetails,
   Headings,
@@ -63,8 +64,14 @@ const SectionsGallery = () => {
               'Mrs.',
               'I prefer not to say'
             ]}
-            prefixOpen={true}
           />
+          <div style={{ width: 'fit-content'}}>
+            <AddressDetails address2='Address Line 2'
+            provinceOptions={['ON', 'AB']} />
+          </div> 
+          <div style={{ width: 'fit-content'}}>
+            <AddressDetails />
+          </div> 
         </Flex>
       </AuthSection>
       <LanderTestimonials

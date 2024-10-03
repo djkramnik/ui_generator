@@ -8,4 +8,4 @@ export * from './linklist'
 export * from './headings'
 export * from './avatar'
 export * from './card'
-
+export * from './form'

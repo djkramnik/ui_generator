@@ -187,7 +187,7 @@ export type ThemeConfig = {
     authOverlay: CssProps
     authCard: CssProps
     smallInput: CssProps
-    ccDetails: CssProps
+    multiInputRow: CssProps
   }
 }
 

@@ -53,9 +53,10 @@ export const CreditCardDetails = ({
 }) => {
   const theme = useTheme()
 
-  const CcInput = () => (
+  const CcInput = ({ mui }: { mui?: boolean }) => (
     <LabelizeIt label={ccLabel}>
       <ChimericInput
+        mui={mui}
         placeholder={ccPlaceholder}
       />
   </LabelizeIt>
@@ -63,7 +64,7 @@ export const CreditCardDetails = ({
   return (
     <Flex $sx={{
       ...getSuperComponentStyles(
-        'ccDetails',
+        'multiInputRow',
         theme,
       )
     }}>
@@ -72,18 +73,102 @@ export const CreditCardDetails = ({
           ccError
             ? (
               <WithErrata errorMessage={ccError}>
-                <CcInput />
+                <CcInput mui={mui} />
               </WithErrata>
             )
-            : <CcInput />
+            : <CcInput mui={mui} />
         }
       </Box>
       <LabelizeIt label={expiryLabel}>
-        <SmallInput placeholder={expiryLabel} />
+        <SmallInput mui={mui} placeholder={expiryLabel} />
       </LabelizeIt>
       <LabelizeIt label={cscLabel}>
-        <SmallInput placeholder={cscLabel} />
+        <SmallInput mui={mui} placeholder={cscLabel} />
       </LabelizeIt>
     </Flex>
   )
 }
+
+export const PersonDetails = ({
+  mui,
+  firstName = 'First Name',
+  lastName = 'Last Name',
+  middleName,
+  prefixOptions,
+  postfix,
+  prefixOpen,
+  prefixArtificial,
+}: {
+  mui?: boolean
+  firstName?: string
+  lastName?: string
+  middleName?: string
+  prefixOptions?: string[]
+  postfix?: string
+  prefixOpen?: boolean
+  prefixArtificial?: boolean
+}) => {
+  const theme = useTheme()
+  return (
+    <Flex $sx={{
+      ...getSuperComponentStyles(
+        'multiInputRow',
+        theme,
+      )
+    }}>
+      {
+        prefixOptions
+          ? (
+            <LabelizeIt label="Prefix">
+              <SmallDropdown
+                options={prefixOptions}
+                open={prefixOpen}
+                artificial={prefixArtificial}
+              />
+            </LabelizeIt>
+          )
+          : null
+      }
+      <LabelizeIt label={firstName}>
+        <ChimericInput
+          mui={mui}
+          placeholder={firstName}
+        />
+      </LabelizeIt>
+      {
+        middleName
+          ? (
+            <LabelizeIt label={middleName}>
+              <ChimericInput
+                mui={mui}
+                placeholder={middleName}
+              />
+            </LabelizeIt>
+          )
+          : null
+      }
+      <LabelizeIt label={lastName}>
+        <ChimericInput
+          mui={mui}
+          placeholder={lastName}
+        />
+      </LabelizeIt>
+      {
+        postfix
+          ? (
+            <LabelizeIt label={postfix}>
+              <SmallInput
+                mui={mui}
+                placeholder={postfix}
+              />
+            </LabelizeIt>
+          )
+          : null
+      }
+    </Flex>
+  )
+}
+
+// randomized payment details form
+// randomized 
+// make sure labelize it can be rendered horizontally

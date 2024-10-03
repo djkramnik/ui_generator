@@ -11,12 +11,14 @@ import {
 import { RandomBrandLogo, SocialMediaButtonRow } from '../components/lib/super_components/brand'
 import {
   CollapsibleMenuItem,
+  CreditCardDetails,
   Headings,
   ListOfLinks,
   Menu,
   MenuItem,
   MenuItemsShortcut,
-  MyAvatar
+  MyAvatar,
+  PersonDetails
 } from '../components/lib/super_components'
 import {
   Anchor,
@@ -49,7 +51,21 @@ const SectionsGallery = () => {
           height: '100%'
         }} />
       }>
-        hi jack bye jack?
+        <Flex col gap="6px">
+          <CreditCardDetails />
+          <div style={{ width: 'fit-content'}}>
+            <PersonDetails />
+          </div>
+          <PersonDetails
+            middleName='Middle Name'
+            prefixOptions={[
+              'Mr.',
+              'Mrs.',
+              'I prefer not to say'
+            ]}
+            prefixOpen={true}
+          />
+        </Flex>
       </AuthSection>
       <LanderTestimonials
         bgc="#eee"

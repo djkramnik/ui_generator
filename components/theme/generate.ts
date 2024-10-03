@@ -946,10 +946,12 @@ export const getSuperComponents = ({
     smallInput: {
       width: '80px'
     },
-    ccDetails: {
+    multiInputRow: {
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center'
+      alignItems: 'center',
+      gap: spacing.gap,
+      flexWrap: 'wrap'
     }
   }
 }

@@ -24,6 +24,7 @@ import {
   Input,
   InputWithIcon,
   LabelizeIt,
+  Noop,
   Select,
   Toggle,
   WithErrata,
@@ -108,6 +109,11 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <Noop label="haha">
+            <Input placeholder="Pina Colada mix" /> 
+          </Noop>
+        </Row>
         <Row>
           <MyAvatar asset="superman.jpg"
             name="Clark Kent"

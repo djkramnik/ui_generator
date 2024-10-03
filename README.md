@@ -142,12 +142,12 @@ lander:ecommerce,
 - [x] sign in/ sign up workflow
 
 ### day two (rsday)
-- [ ] random forms
-- [ ] search results
+- [x] random forms
+- [ ] youtube search results
+- [ ] google search results
+- [ ] amazon search results
+- [ ] wiki search results
 - [ ] cookie popup
-- [ ] bottom up popover
-- [ ] squarespace type hero
-- [ ] comments
 
 ### day three (sunday)
 - [ ] media recommends
@@ -172,6 +172,11 @@ lander:ecommerce,
 - [ ] purchase confirmation section
 - [ ] side login (ie rbc)
 - [ ] email list (gmail)
+
+### day six (wednesdsay)
+- [ ] bottom up popover
+- [ ] squarespace type hero
+- [ ] comments
 
 ## Roadmap 
 - [x] create script to extract all custom styles from a given element on page... for the purpose of grabbing mock assets for use in the simulator.

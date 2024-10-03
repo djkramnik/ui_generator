@@ -182,6 +182,7 @@ export type ThemeConfig = {
     testimonialContainer: CssProps
     landerTestimonials: CssProps
     landerTestimonialsCol: CssProps
+    landerTestimonialsTwoCol: CssProps
   }
 }
 

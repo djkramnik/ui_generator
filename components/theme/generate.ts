@@ -620,7 +620,7 @@ export const getSuperComponents = ({
 }): Theme['superComponents'] => {
   return {
     navbar: {
-      height: '80px',
+      height: '60px',
       backgroundColor: palette.primary,
       position: 'relative'
     },
@@ -629,7 +629,7 @@ export const getSuperComponents = ({
       display: 'flex',
       width: spacing.containerWidth,
       justifyContent: 'space-between',
-      height: '80px',
+      height: '60px',
       alignItems: 'stretch'
     },
     navbarGroup: {
@@ -677,7 +677,7 @@ export const getSuperComponents = ({
       gap: spacing.gap,
     },
     sidebarLeft: {
-      height: 'calc(100vh - 80px)',
+      height: 'calc(100vh - 60px)',
       paddingLeft: spacing.containerMargins,
       backgroundColor: palette.primary,
       color: palette.button,
@@ -858,7 +858,8 @@ export const getSuperComponents = ({
       alignItems: 'stretch'
     },
     avatarImg: {
-      borderRadius: '50%'
+      borderRadius: '50%',
+      width: '100%'
     },
     avatarLeft: {
       width: '30%',
@@ -907,17 +908,22 @@ export const getSuperComponents = ({
       display: 'flex',
       flexDirection: 'column',
       gap: spacing.biggishGap,
-      width: '360px'
+      maxWidth: '360px'
     },
     landerTestimonials: {
       display: 'flex',
-      gap: spacing.bigGap
+      gap: spacing.bigGap,
+      padding: '60px 0'
     },
     landerTestimonialsCol: {
       flexGrow: '1',
       display: 'flex',
       flexDirection: 'column',
       gap: spacing.gap
+    },
+    landerTestimonialsTwoCol: {
+      width: '70%',
+      margin: 'auto'
     }
   }
 }

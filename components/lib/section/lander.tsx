@@ -1,5 +1,5 @@
 import { useTheme } from 'styled-components'
-import { getSuperComponentStyles } from '../../theme'
+import { getSuperComponentStyles, sxToStyle } from '../../theme'
 import { Box, Flex, ThreeCol } from '../layout'
 import { Container } from '../layout/container'
 import React from 'react'
@@ -54,40 +54,46 @@ export const LanderCenter = ({
 }) => {
   const theme = useTheme()
   return (
-    <Flex
-      $sx={{
-        ...getSuperComponentStyles('landerCenter', theme),
-      }}
-    >
-      <Heading
-        level={2}
-        $sx={{
-          ...getSuperComponentStyles('landerHeading', theme),
-        }}
-      >
-        {heading}
-      </Heading>
-      <Copy
-        $sx={{
-          ...getSuperComponentStyles('landerCopy', theme),
-        }}
-      >
-        {copy}
-      </Copy>
-      <Box
-        $sx={{
-          ...getSuperComponentStyles('landerChild', theme),
-        }}
-      >
-        {children}
-      </Box>
-    </Flex>
+    <section>
+      <Container>
+        <Flex
+          $sx={{
+            ...getSuperComponentStyles('landerCenter', theme),
+          }}
+        >
+          <Heading
+            level={2}
+            $sx={{
+              ...getSuperComponentStyles('landerHeading', theme),
+            }}
+          >
+            {heading}
+          </Heading>
+          <Copy
+            $sx={{
+              ...getSuperComponentStyles('landerCopy', theme),
+            }}
+          >
+            {copy}
+          </Copy>
+          <Box
+            $sx={{
+              ...getSuperComponentStyles('landerChild', theme),
+            }}
+          >
+            {children}
+          </Box>
+        </Flex>
+      </Container>
+    </section>
   )
 }
 
 export const LanderTestimonials = ({
   testimonials,
+  bgc,
 }: {
+  bgc?: string
   testimonials:
     | [TestimonialProps[], TestimonialProps[]]
     | [TestimonialProps[], TestimonialProps[], TestimonialProps[]]
@@ -95,40 +101,55 @@ export const LanderTestimonials = ({
   const theme = useTheme()
   const cols = testimonials.length
   return (
-    <Flex
-      $sx={{
-        ...getSuperComponentStyles('landerTestimonials', theme),
-      }}
-    >
-      <Flex
-        $sx={{
-          ...getSuperComponentStyles('landerTestimonialsCol', theme),
-        }}
-      >
-        {testimonials[0].map((tProps, index) => {
-          return <Testimonial {...tProps} key={index} />
-        })}
-      </Flex>
-      <Flex
-        $sx={{
-          ...getSuperComponentStyles('landerTestimonialsCol', theme),
-        }}
-      >
-        {testimonials[1].map((tProps, index) => {
-          return <Testimonial {...tProps} key={index} />
-        })}
-      </Flex>
-      {cols === 3 ? (
+    <section style={{
+      ...sxToStyle({
+        backgroundColor: bgc ?? theme.palette.background
+      })
+    }}>
+      <Container>
         <Flex
           $sx={{
-            ...getSuperComponentStyles('landerTestimonialsCol', theme),
+            ...getSuperComponentStyles(
+              'landerTestimonials', theme),
+            ...(
+              cols === 2
+                ? getSuperComponentStyles(
+                  'landerTestimonialsTwoCol', theme)
+                : {}
+            )
           }}
         >
-          {testimonials[2].map((tProps, index) => {
-            return <Testimonial {...tProps} key={index} />
-          })}
+          <Flex
+            $sx={{
+              ...getSuperComponentStyles('landerTestimonialsCol', theme),
+            }}
+          >
+            {testimonials[0].map((tProps, index) => {
+              return <Testimonial {...tProps} key={index} />
+            })}
+          </Flex>
+          <Flex
+            $sx={{
+              ...getSuperComponentStyles('landerTestimonialsCol', theme),
+            }}
+          >
+            {testimonials[1].map((tProps, index) => {
+              return <Testimonial {...tProps} key={index} />
+            })}
+          </Flex>
+          {cols === 3 ? (
+            <Flex
+              $sx={{
+                ...getSuperComponentStyles('landerTestimonialsCol', theme),
+              }}
+            >
+              {testimonials[2].map((tProps, index) => {
+                return <Testimonial {...tProps} key={index} />
+              })}
+            </Flex>
+          ) : null}
         </Flex>
-      ) : null}
-    </Flex>
+      </Container>
+    </section>
   )
 }

@@ -4,6 +4,7 @@ import {
   Footer,
   Fullscreen,
   LanderCenter,
+  LanderTestimonials,
   LanderTwoCol
 } from '../components/lib/section'
 import { RandomBrandLogo, SocialMediaButtonRow } from '../components/lib/super_components/brand'
@@ -38,6 +39,84 @@ const SectionsGallery = () => {
   const theme = useTheme()
   return (
     <>
+      <LanderTestimonials
+        bgc="#eee"
+        testimonials={[
+          [
+            {
+              asset: 'a.jpg',
+              name: 'Seance Lady',
+              position: 'High Priestess',
+              testimonial: `I talked to the aliens, they are really
+              very disappointed with all of us.  The lying, the stealing,
+              the killing, the monkeying around.`
+            }, {
+              asset: 'hulk.jpg',
+              name: 'The Tower',
+              position: 'Precarious at best',
+              testimonial: `All my hopes rest on an outlandish
+              weed fuelled fantasy`
+            }
+          ],
+          [{
+            asset: 'historian.jpg',
+            name: 'Angry boy',
+            position: 'Crazy man',
+            testimonial: 'Your best weapon against lunatics'
+          }, {
+            asset: 'hulk.jpg',
+            name: 'The Tower',
+            position: 'Precarious at best',
+            testimonial: `All my hopes rest on an outlandish
+            weed fuelled fantasy`
+          }],
+          [{
+            asset: 'historian.jpg',
+            name: 'Colosseum',
+            position: 'Crazy man',
+            testimonial: 'Your best weapon against lunatics'
+          },
+          {
+            asset: 'beetle.jpg',
+            name: 'Dev Boi',
+            position: 'Slinging hot snippets of React',
+            testimonial: `I know you think it is so uncomfortable
+            that I won't bring it up`,
+            grey: true,
+          }]
+        ]}
+      />
+      <LanderTestimonials 
+        bgc="#eee"
+        testimonials={[
+          [{
+            asset: 'historian.jpg',
+            name: 'Angry boy',
+            position: 'Crazy man',
+            testimonial: 'Your best weapon against lunatics'
+          }, {
+            asset: 'hulk.jpg',
+            name: 'The Tower',
+            position: 'Precarious at best',
+            testimonial: `All my hopes rest on an outlandish
+            weed fuelled fantasy`
+          }],
+          [{
+            asset: 'historian.jpg',
+            name: 'Colosseum',
+            position: 'Crazy man',
+            testimonial: 'Your best weapon against lunatics'
+          },
+          {
+            asset: 'beetle.jpg',
+            name: 'Dev Boi',
+            position: 'Slinging hot snippets of React',
+            testimonial: `I know you think it is so uncomfortable
+            that I won't bring it up`,
+            grey: true,
+          }]
+        ]}
+      />
       <LanderCenter
         heading="Err, Kanban ain't mean nuttin to me"
         copy="I've written a couple of few things about

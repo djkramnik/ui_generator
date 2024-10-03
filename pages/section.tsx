@@ -3,6 +3,7 @@ import {
   DashboardSection,
   Footer,
   Fullscreen,
+  LanderCenter,
   LanderTwoCol
 } from '../components/lib/section'
 import { RandomBrandLogo, SocialMediaButtonRow } from '../components/lib/super_components/brand'
@@ -13,6 +14,7 @@ import {
   Menu,
   MenuItem,
   MenuItemsShortcut,
+  MyAvatar
 } from '../components/lib/super_components'
 import {
   Anchor,
@@ -36,6 +38,16 @@ const SectionsGallery = () => {
   const theme = useTheme()
   return (
     <>
+      <LanderCenter
+        heading="Err, Kanban ain't mean nuttin to me"
+        copy="I've written a couple of few things about
+        why I don't want to be estimating story points or organizing work into tickets.
+        I just do what I do, feel me???">
+        <MyAvatar asset="superman.jpg"
+          name="Clark Kent"
+          position="Important vital Dave Grrr guy"
+        />
+      </LanderCenter>
       <HeroCarousel bgi="amazon1.jpg" mui />
       <HeroCarousel>
         <Flex jcc aic col>

@@ -174,6 +174,10 @@ export type ThemeConfig = {
     avatarRight: CssProps
     avatarBig: CssProps
     avatarLittle: CssProps
+    landerCenter: CssProps
+    landerCopy: CssProps
+    landerHeading: CssProps
+    landerChild: CssProps
   }
 }
 

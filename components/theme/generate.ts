@@ -877,7 +877,26 @@ export const getSuperComponents = ({
     },
     avatarLittle: {
       fontSize: '14px'
+    },
+    landerCenter: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: spacing.biggishGap,
+      padding: '40px 0'
+    },
+    landerCopy: {
+      fontSize: '20px',
+      width: '50%',
+      textAlign: 'center'
+    },
+    landerHeading: {
+      
+    },
+    landerChild: {
+
     }
+    
   }
 }
 

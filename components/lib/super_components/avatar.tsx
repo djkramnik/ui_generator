@@ -3,15 +3,17 @@ import { getSuperComponentStyles } from "../../theme"
 import { Box, Flex } from "../layout"
 import { Copy, Heading, Image } from '../atomics'
 
+export type AvatarProps = {
+  asset: string
+  name: string
+  position?: string
+}
+
 export const MyAvatar = ({
   asset,
   name,
   position,
-}: {
-  asset: string
-  name: string
-  position?: string
-}) => {
+}: AvatarProps) => {
   const theme = useTheme()
   return (
     <Box $sx={{

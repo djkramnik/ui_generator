@@ -895,8 +895,20 @@ export const getSuperComponents = ({
     },
     landerChild: {
 
+    },
+    card: {
+      borderRadius: '0.25rem',
+      backgroundColor: palette.background,
+      color: palette.copy,
+      padding: spacing.biggishGap,
+      boxShadow: shadows.card
+    },
+    testimonialContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.biggishGap,
+      width: '360px'
     }
-    
   }
 }
 

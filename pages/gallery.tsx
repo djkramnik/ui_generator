@@ -1,4 +1,4 @@
-import { Flex, Box } from '../components/lib'
+import { Flex, Box, Card } from '../components/lib'
 import {
   Anchor,
   Autocomplete,
@@ -47,6 +47,7 @@ import { sxToStyle } from '../components/theme/variants'
 import { ContentFitter } from '../components/lib/exotic/content-fitter'
 import { Headings } from '../components/lib/super_components/headings'
 import { MyAvatar } from '../components/lib/super_components'
+import { Testimonial } from '../components/lib/super_components/testimonial'
 
 const Cell = ({
   children,
@@ -112,6 +113,23 @@ const Gallery = () => {
             name="Clark Kent"
             position="Important vital Dave Grrr guy"
           />
+          <Testimonial
+            asset="superman.jpg"
+            name="Clark Kent"
+            position="Important vital Dave Grrr guy"
+            testimonial={
+              `I feel safe and smug, I mean snug, in my new atomic bunker.  Now who is laughing!`
+            }
+          />
+          <Card>
+            <Spacer />
+            <Spacer />
+            <Heading level={3}>
+              Sick to my stomach
+            </Heading>
+            <Spacer />
+            <Spacer />
+          </Card>
         </Row>
         <Row>
           <Headings

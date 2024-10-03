@@ -178,6 +178,8 @@ export type ThemeConfig = {
     landerCopy: CssProps
     landerHeading: CssProps
     landerChild: CssProps
+    card: CssProps
+    testimonialContainer: CssProps
   }
 }
 

@@ -137,7 +137,7 @@ lander:ecommerce,
 - [x] footer
 - [x] hero carousel
 - [x] lander two col
-- [ ] lander center
+- [x] lander center
 - [ ] lander testimonials 
 - [ ] sign in/ sign up workflow
 

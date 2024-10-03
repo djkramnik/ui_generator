@@ -952,7 +952,11 @@ export const getSuperComponents = ({
       alignItems: 'center',
       gap: spacing.gap,
       flexWrap: 'wrap'
-    }
+    },
+    form: {
+
+    },
+    formButtons: {}
   }
 }
 

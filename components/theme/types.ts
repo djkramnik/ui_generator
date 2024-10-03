@@ -188,6 +188,8 @@ export type ThemeConfig = {
     authCard: CssProps
     smallInput: CssProps
     multiInputRow: CssProps
+    form: CssProps
+    formButtons: CssProps
   }
 }
 

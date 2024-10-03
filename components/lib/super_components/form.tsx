@@ -2,6 +2,7 @@ import { useTheme } from "styled-components"
 import { getSuperComponentStyles } from "../../theme"
 import { ChimericDropdown, ChimericDropdownProps, ChimericInput, ChimericInputProps, LabelizeIt, WithErrata } from "../atomics"
 import { Box, Flex } from "../layout"
+import { useState } from "react"
 
 // i.e. age
 export const SmallInput = (props: ChimericInputProps) => {
@@ -89,6 +90,7 @@ export const CreditCardDetails = ({
   )
 }
 
+// gender? 
 export const PersonDetails = ({
   mui,
   firstName = 'First Name',
@@ -266,6 +268,65 @@ export const AddressDetails = ({
 }
 
 
+type FormDomain =
+  | 'application'
+  | 'payment'
+  | ''
+
+type MultilineInput =
+  | 'payment' | 'address' | 'person'
+
 // randomized form 
+export const RandomizedForm = ({
+  withMultiline,
+  domain,
+  heading,
+  checkboxSection,
+  buttonOneLabel = 'Save',
+  buttonTwoLabel,
+}: {
+  withMultiline?: boolean
+  domain?: FormDomain
+  heading?: string
+  checkboxSection?: React.ReactNode
+  buttonOneLabel?: string
+  buttonTwoLabel?: string
+}) => {
+  const theme = useTheme()
+  const [
+    multilineRandom,
+    setMultilineRandom
+  ] = useState<MultilineInput | null>(null)
+  const [
+    fields,
+    setFields,
+  ] = useState<string[]>([])
+  const [
+    dropdownIndex,
+    setDropdownIndex
+  ] = useState<number[]>([])
+  const [
+    textareaIndex,
+    setTextAreaIndex
+  ] = useState<number[]>([])
+
+  return (
+    <form>
+      <Flex $sx={{
+        ...getSuperComponentStyles('form', theme)
+      }}>
+        <Flex $sx={{
+          ...getSuperComponentStyles(
+            'formButtons',
+            theme,
+          )
+        }}>
+
+        </Flex>
+      </Flex>
+    </form>
+  )
+}
+
 
 // make sure labelize it can be rendered horizontally

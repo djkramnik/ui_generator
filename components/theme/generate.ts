@@ -924,6 +924,24 @@ export const getSuperComponents = ({
     landerTestimonialsTwoCol: {
       width: '70%',
       margin: 'auto'
+    },
+    authContainer: {
+      width: '100vw',
+      height: '100vh',
+      position: 'relative',
+      display: 'flex'
+    },
+    authOverlay: {
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      width: '100%',
+      height: '100%',
+      zIndex: '-1'
+    },
+    authCard: { 
+      margin: 'auto', minWidth: '600px', minHeight: '500px',
+      backgroundColor: palette.white
     }
   }
 }

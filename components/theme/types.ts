@@ -183,6 +183,9 @@ export type ThemeConfig = {
     landerTestimonials: CssProps
     landerTestimonialsCol: CssProps
     landerTestimonialsTwoCol: CssProps
+    authContainer: CssProps
+    authOverlay: CssProps
+    authCard: CssProps
   }
 }
 

@@ -1,13 +1,15 @@
 import { useTheme } from "styled-components"
-import { getSuperComponentStyles } from "../../theme"
+import { CssProps, getSuperComponentStyles } from "../../theme"
 import { Box } from "../layout"
 
 export const Card = ({
   grey,
   children,
+  cardSx,
 }: {
   grey?: boolean
   children?: React.ReactNode
+  cardSx?: CssProps
 }) => {
   const theme = useTheme()
   return (
@@ -16,6 +18,7 @@ export const Card = ({
         'card',
         theme
       ),
+      ...cardSx,
       ...(
         grey === true 
           ? {

@@ -138,10 +138,11 @@ lander:ecommerce,
 - [x] hero carousel
 - [x] lander two col
 - [x] lander center
-- [ ] lander testimonials 
-- [ ] sign in/ sign up workflow
+- [x] lander testimonials 
+- [x] sign in/ sign up workflow
 
 ### day two (rsday)
+- [ ] random forms
 - [ ] search results
 - [ ] cookie popup
 - [ ] bottom up popover

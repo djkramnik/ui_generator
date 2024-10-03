@@ -1,5 +1,6 @@
 import { useTheme } from 'styled-components'
 import { 
+  AuthSection,
   DashboardSection,
   Footer,
   Fullscreen,
@@ -34,11 +35,22 @@ import { getGenericColumns } from '../components/lib/atomics/table'
 import { Spacer } from '../components/lib/layout/spacer'
 import { Legalese } from '../components/lib/super_components/legalese'
 import { HeroCarousel } from '../components/lib/super_components/carousel'
+import { ThemeToggle } from '../components/lib/theme_toggle'
 
 const SectionsGallery = () => {
   const theme = useTheme()
   return (
     <>
+      <ThemeToggle />
+      <AuthSection background={
+        <Box $sx={{
+          backgroundColor: theme.palette.grey,
+          width: '100%',
+          height: '100%'
+        }} />
+      }>
+        hi jack bye jack?
+      </AuthSection>
       <LanderTestimonials
         bgc="#eee"
         testimonials={[

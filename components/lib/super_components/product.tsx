@@ -1,6 +1,8 @@
+import { sizedArray } from "../../../util"
 import { useThemeHelper } from "../../hooks"
-import { Maybe } from "../atomics"
-import { Box, Span } from "../layout"
+import { sxToStyle } from "../../theme"
+import { ChimericIcon, Icon, Maybe } from "../atomics"
+import { Box, Flex, Span } from "../layout"
 
 const padCents = (n: number): string => {
   if (n < 10) {
@@ -8,7 +10,6 @@ const padCents = (n: number): string => {
   }
   return String(n)
 }
-
 
 export const Price = ({
   symbol = '$',
@@ -51,5 +52,43 @@ export const Price = ({
         </Span>
       </Maybe>
     </Box>
+  )
+}
+
+export const Starz = ({
+  max = 5,
+  rating,
+  mui,
+}: {
+  max?: number
+  rating: number
+  mui?: boolean
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex row $sx={{
+      ...hookSc('starRating')
+    }}>
+      {
+        sizedArray(max)
+          .map((_, index) => {
+            const type = ((index + 1) <= rating)
+              ? 'starRatingFilled'
+              : 'starRatingEmpty'
+            return (
+              <ChimericIcon
+                mui={mui === true}
+                key={index}
+                icon={Icon.star}
+                iconStyle={{
+                  ...sxToStyle({
+                    ...hookSc(type)
+                  })
+                }}
+              />
+            )
+          })
+      }
+    </Flex>
   )
 }

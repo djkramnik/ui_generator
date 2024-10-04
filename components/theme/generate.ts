@@ -1005,12 +1005,30 @@ export const getSuperComponents = ({
     priceSymbol: {
       fontSize: '13px',
       top: '-5px',
+      position: 'relative',
+      fontWeight: 'bold'
+    },
+    priceDollars: {
+      fontWeight: 'bold'
+    },
+    priceCents: {
+      fontSize: '13px',
+      top: '-3px',
       position: 'relative'
     },
-    priceDollars: {},
-    priceCents: {},
     priceCurrency: {
       fontSize: '13px'
+    },
+    starRating: {
+      alignItems: 'center',
+      gap: '2px',
+      cursor: 'pointer'
+    },
+    starRatingFilled: {
+      color: 'gold'
+    },
+    starRatingEmpty: {
+      color: palette.grey
     }
   }
 }

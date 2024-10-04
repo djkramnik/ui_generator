@@ -208,6 +208,9 @@ export type ThemeConfig = {
     priceDollars: CssProps
     priceCents: CssProps
     priceCurrency: CssProps
+    starRating: CssProps
+    starRatingFilled: CssProps
+    starRatingEmpty: CssProps
   }
 }
 

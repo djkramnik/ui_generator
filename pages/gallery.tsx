@@ -50,7 +50,7 @@ import { Headings } from '../components/lib/super_components/headings'
 import { MyAvatar } from '../components/lib/super_components'
 import { Testimonial } from '../components/lib/super_components/testimonial'
 import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
-import { Price } from '../components/lib/super_components/product'
+import { Price, Starz } from '../components/lib/super_components/product'
 
 const Cell = ({
   children,
@@ -125,6 +125,7 @@ const Gallery = () => {
             symbol={'€'}
             currency={'EUR'}
           />
+          <Starz rating={4} />
         </Row>
         <Row>
           <Noop label="haha">

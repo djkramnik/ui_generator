@@ -1,0 +1,1 @@
+export const sizedArray = (n: number) => new Array(n).fill(null)

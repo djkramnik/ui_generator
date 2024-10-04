@@ -20,7 +20,8 @@ import {
   MenuItemsShortcut,
   MyAvatar,
   PersonDetails,
-  RandomizedForm
+  RandomizedForm,
+  VideoSearchResult
 } from '../components/lib/super_components'
 import {
   Anchor,
@@ -46,6 +47,19 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <Box $sx={{
+
+      }}>
+        <VideoSearchResult
+          title="Rizz AI Strong woman"
+          meta="11M Ews"
+          avatar={{
+            name: 'Internet Historian',
+            position: 'Plumber'
+          }}
+          description="Only I may snark.  Only I may live laugh and love."
+        />
+      </Box>
       <AuthSection background={
         <Box $sx={{
           backgroundColor: theme.palette.grey,

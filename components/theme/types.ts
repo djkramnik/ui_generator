@@ -195,6 +195,14 @@ export type ThemeConfig = {
     thumbnailSm: CssProps
     thumbnailMd: CssProps
     thumbnailLg: CssProps
+    videoSearchResult: CssProps
+    videoSearchInfo: CssProps
+    searchResultTitle: CssProps
+    searchResultMeta: CssProps
+    searchResultDescription: CssProps
+    searchResultAvatar: CssProps
+    searchResultAvatarHeading: CssProps
+    searchResultAvatarCopy: CssProps
   }
 }
 

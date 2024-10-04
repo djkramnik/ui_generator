@@ -976,6 +976,27 @@ export const getSuperComponents = ({
     },
     thumbnailLg: {
       width: '500px'
+    },
+    videoSearchResult: {
+      gap: spacing.biggishGap
+    },
+    videoSearchInfo: {
+      gap: spacing.biggishGap
+    },
+    searchResultTitle: {
+      fontWeight: 'normal',
+    },
+    searchResultMeta: {},
+    searchResultDescription: {},
+    searchResultAvatar: {
+      width: '40px'
+    },
+    searchResultAvatarHeading: {
+      fontSize: '14px'
+    },
+    searchResultAvatarCopy: {
+      fontSize: '12px',
+      color: 'rgba(0,0,0,0.5)'
     }
   }
 }

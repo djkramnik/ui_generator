@@ -1,5 +1,5 @@
 import { useTheme } from 'styled-components'
-import { getSuperComponentStyles } from '../../theme'
+import { CssProps, getSuperComponentStyles } from '../../theme'
 import { Box, Flex } from '../layout'
 import { Copy, Heading, Image } from '../atomics'
 import { useEffect, useState } from 'react'
@@ -9,6 +9,10 @@ export type AvatarProps = {
   asset: string
   name: string
   position?: string
+  avatarSx?: CssProps
+  headingSx?: CssProps
+  copySx?: CssProps
+  avatarRightSx?: CssProps
 }
 
 const avatars = [
@@ -33,7 +37,15 @@ const avatars = [
   'superman.jpg',
 ]
 
-export const MyAvatar = ({ asset, name, position }: AvatarProps) => {
+export const MyAvatar = ({ 
+  asset,
+  name,
+  position,
+  avatarSx,
+  avatarRightSx,
+  headingSx,
+  copySx,
+}: AvatarProps) => {
   const theme = useTheme()
   return (
     <Box
@@ -49,6 +61,7 @@ export const MyAvatar = ({ asset, name, position }: AvatarProps) => {
         <Box
           $sx={{
             ...getSuperComponentStyles('avatarLeft', theme),
+            ...avatarSx,
           }}
         >
           <Image
@@ -61,12 +74,14 @@ export const MyAvatar = ({ asset, name, position }: AvatarProps) => {
         <Flex
           $sx={{
             ...getSuperComponentStyles('avatarRight', theme),
+            ...avatarRightSx,
           }}
         >
           <Heading
             level={4}
             $sx={{
               ...getSuperComponentStyles('avatarBig', theme),
+              ...headingSx,
             }}
           >
             {name}
@@ -75,6 +90,7 @@ export const MyAvatar = ({ asset, name, position }: AvatarProps) => {
             <Copy
               $sx={{
                 ...getSuperComponentStyles('avatarLittle', theme),
+                ...copySx,
               }}
             >
               {position}
@@ -86,13 +102,9 @@ export const MyAvatar = ({ asset, name, position }: AvatarProps) => {
   )
 }
 
-export const RandomAvatar = ({
-  name,
-  position,
-}: {
-  name: string
-  position?: string
-}) => {
+export type RandomAvatarProps = Omit<AvatarProps, 'asset'>
+
+export const RandomAvatar = (props: RandomAvatarProps) => {
   const [asset, setAsset] = useState<string | null>(null)
   useEffect(() => {
     if (asset !== null) {
@@ -104,5 +116,5 @@ export const RandomAvatar = ({
   if (!asset) {
     return
   }
-  return <MyAvatar asset={asset} name={name} position={position} />
+  return <MyAvatar asset={asset} {...props} />
 }

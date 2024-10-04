@@ -126,6 +126,8 @@ const Gallery = () => {
             currency={'EUR'}
           />
           <Starz rating={4} />
+          <Starz mui rating={5} />
+          <Starz mui rating={3} />
         </Row>
         <Row>
           <Noop label="haha">

@@ -50,7 +50,9 @@ export const VideoSearchResult = ({
             {title}
           </Heading>
           <Maybe condition="meta">
-            <Heading level={5}>
+            <Heading level={5} $sx={{
+              ...hookah('searchResultMeta')
+            }}>
               {meta}
             </Heading>
           </Maybe>
@@ -76,4 +78,10 @@ export const VideoSearchResult = ({
       </Flex>
     </Flex>
   )
+}
+
+export const AmazonSearchResult = ({
+
+}) => {
+
 }

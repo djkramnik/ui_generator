@@ -963,7 +963,20 @@ export const getSuperComponents = ({
       gap: spacing.gap,
       marginTop: spacing.bigGap
     },
-    formHeading: {}
+    formHeading: {},
+    thumbnailImage: {
+      width: '100%',
+      border: `1px solid currentcolor`
+    },
+    thumbnailSm: {
+      width: '160px'
+    },
+    thumbnailMd: {
+      width: '382px'
+    },
+    thumbnailLg: {
+      width: '500px'
+    }
   }
 }
 

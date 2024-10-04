@@ -191,6 +191,10 @@ export type ThemeConfig = {
     form: CssProps
     formButtons: CssProps
     formHeading: CssProps
+    thumbnailImage: CssProps
+    thumbnailSm: CssProps
+    thumbnailMd: CssProps
+    thumbnailLg: CssProps
   }
 }
 

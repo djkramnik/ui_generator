@@ -1,10 +1,9 @@
 import { useTheme } from "styled-components"
 import { getSuperComponentStyles } from "../../theme"
-import { Button, ChimericDropdown, ChimericDropdownProps, ChimericInput, ChimericInputProps, Heading, LabelizeIt, Maybe, WithErrata } from "../atomics"
+import { Button, ChimericDropdown, ChimericDropdownProps, ChimericInput, ChimericInputProps, FitContent, Heading, LabelizeIt, Maybe, WithErrata } from "../atomics"
 import { Box, Flex } from "../layout"
 import { useEffect, useState } from "react"
 import { randomItem, randomPick, shuffle } from "../../utils"
-import { FitContent } from "../atomics/utility"
 import React from "react"
 
 // i.e. age
@@ -296,7 +295,11 @@ const MultilineInputByType = ({
     case 'payment':
       return <CreditCardDetails />
     default:
-      return <PersonDetails />
+      return (
+        <FitContent>
+          <PersonDetails />
+        </FitContent>
+      )
   }
 }
 
@@ -352,7 +355,7 @@ export const RandomizedForm = ({
     setFields(
       shuffledNames.slice(0, numFields)
     )
-  }, [setFields])
+  }, [setFields, setTextAreaIndex, setDropdownIndex])
 
   useEffect(() => {
     if (withMultiline) {

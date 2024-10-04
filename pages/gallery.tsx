@@ -49,6 +49,7 @@ import { ContentFitter } from '../components/lib/exotic/content-fitter'
 import { Headings } from '../components/lib/super_components/headings'
 import { MyAvatar } from '../components/lib/super_components'
 import { Testimonial } from '../components/lib/super_components/testimonial'
+import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
 
 const Cell = ({
   children,
@@ -87,7 +88,7 @@ const Row = ({
   withGrow?: boolean
 }) => {
   return (
-    <Flex row gap="6px">
+    <Flex row gap="6px" wrap>
       {React.Children.map(children, (child, index) => {
         return (
           <Cell withGrow={withGrow === true} key={index} bgc={bgc}>
@@ -113,6 +114,12 @@ const Gallery = () => {
           <Noop label="haha">
             <Input placeholder="Pina Colada mix" /> 
           </Noop>
+          <Box $sx={{ width: '160px' }}>
+            <RandomThumbnailImage />
+          </Box>
+          <RandomThumbnail size="sm" />
+          <RandomThumbnail size="md" />
+          <RandomThumbnail size="lg" />
         </Row>
         <Row>
           <MyAvatar asset="superman.jpg"

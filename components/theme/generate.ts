@@ -997,6 +997,20 @@ export const getSuperComponents = ({
     searchResultAvatarCopy: {
       fontSize: '12px',
       color: 'rgba(0,0,0,0.5)'
+    },
+    price: {
+      display: 'inline',
+      fontSize: '18px'
+    },
+    priceSymbol: {
+      fontSize: '13px',
+      top: '-5px',
+      position: 'relative'
+    },
+    priceDollars: {},
+    priceCents: {},
+    priceCurrency: {
+      fontSize: '13px'
     }
   }
 }

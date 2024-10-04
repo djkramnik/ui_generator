@@ -80,8 +80,23 @@ export const VideoSearchResult = ({
   )
 }
 
+// price component small dollerydoo sign, big dollar, small cents
+// stars component
+
 export const AmazonSearchResult = ({
 
 }) => {
+  return null
+}
 
+export const WikiSearchResult = ({
+
+}) => {
+  return null
+}
+
+export const GoogleSearchResult = ({
+  
+}) => {
+  return null
 }

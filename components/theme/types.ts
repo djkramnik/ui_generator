@@ -203,6 +203,11 @@ export type ThemeConfig = {
     searchResultAvatar: CssProps
     searchResultAvatarHeading: CssProps
     searchResultAvatarCopy: CssProps
+    price: CssProps
+    priceSymbol: CssProps
+    priceDollars: CssProps
+    priceCents: CssProps
+    priceCurrency: CssProps
   }
 }
 

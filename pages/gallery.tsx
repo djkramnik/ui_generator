@@ -50,6 +50,7 @@ import { Headings } from '../components/lib/super_components/headings'
 import { MyAvatar } from '../components/lib/super_components'
 import { Testimonial } from '../components/lib/super_components/testimonial'
 import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
+import { Price } from '../components/lib/super_components/product'
 
 const Cell = ({
   children,
@@ -110,6 +111,21 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <Price
+            dollars={199}
+          />
+          <Price
+            dollars={199}
+            cents={1}
+          />
+          <Price
+            dollars={199}
+            cents={15}
+            symbol={'€'}
+            currency={'EUR'}
+          />
+        </Row>
         <Row>
           <Noop label="haha">
             <Input placeholder="Pina Colada mix" /> 

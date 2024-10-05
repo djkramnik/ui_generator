@@ -1,7 +1,8 @@
+import { useTheme } from "styled-components"
 import { sizedArray } from "../../../util"
 import { useThemeHelper } from "../../hooks"
-import { sxToStyle } from "../../theme"
-import { ChimericIcon, Icon, Maybe } from "../atomics"
+import { CssProps, sxToStyle } from "../../theme"
+import { ChimericIcon, Copy, Heading, Icon, Maybe } from "../atomics"
 import { Box, Flex, Span } from "../layout"
 
 const padCents = (n: number): string => {
@@ -16,16 +17,19 @@ export const Price = ({
   dollars,
   cents,
   currency,
+  priceSx,
 }: {
   dollars: number
   cents?: number
   currency?: string
   symbol?: string
+  priceSx?: CssProps
 }) => {
   const { hookSc } = useThemeHelper()
   return (
     <Box $sx={{
-      ...hookSc('price')
+      ...hookSc('price'),
+      ...priceSx
     }}>
       <Span $sx={{
         ...hookSc('priceSymbol')
@@ -89,6 +93,93 @@ export const Starz = ({
             )
           })
       }
+    </Flex>
+  )
+}
+
+export const ProductInfo = ({
+  tags,
+  star,
+  price,
+  title,
+  children,
+  description
+}: {
+  tags?: string[]
+  star?: {
+    max?: number
+    rating: number
+    reviews?: number
+  }
+  price: number
+  title: string,
+  children?: React.ReactNode[]
+  description?: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  const dollars = parseInt(String(price))
+  const cents = Number((price - dollars).toFixed(2)) * 100
+  return (
+    <Flex col $sx={{
+      ...hookSc('product')
+    }}>
+      <Heading level={3} $sx={{
+        ...hookSc('productName')
+      }}>
+        {title}
+      </Heading>
+      <Maybe condition={tags}>
+        <Flex row gap="6px">
+          {
+            tags?.map(t => {
+              return (
+                <Box key={t} $sx={{
+                  ...hookSc('productTag')
+                }}>
+                  {t}
+                </Box>
+              )
+            })
+          } 
+        </Flex>
+      </Maybe>
+      {children?.[0] ?? null}
+      <Maybe condition={star}>
+        <Flex row $sx={{
+            ...hookSc('productRating')
+          }}>
+          <Starz rating={star?.rating ?? 0}
+
+            {
+              ...(
+                star?.max
+                  ? {
+                    max: star?.max
+                  }
+                  : {}
+              )
+            }
+          />
+          <Maybe condition={star?.reviews}>
+            <Copy $sx={{
+              position: 'relative',
+              top: '2px'
+            }}>{star?.reviews} Reviews</Copy>
+          </Maybe>
+        </Flex>
+      </Maybe>
+      {children?.[1] ?? null}
+      <Price
+        dollars={dollars}
+        cents={cents}
+        priceSx={hookSc('productPrice')}
+      />
+      <Copy $sx={{
+        ...hookSc('productMeta')
+      }}>
+        {description}
+      </Copy>
+      {children?.[2] ?? null}
     </Flex>
   )
 }

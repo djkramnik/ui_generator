@@ -211,6 +211,12 @@ export type ThemeConfig = {
     starRating: CssProps
     starRatingFilled: CssProps
     starRatingEmpty: CssProps
+    product: CssProps
+    productName: CssProps
+    productTag: CssProps
+    productMeta: CssProps
+    productRating: CssProps
+    productPrice: CssProps
   }
 }
 

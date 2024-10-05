@@ -1003,8 +1003,8 @@ export const getSuperComponents = ({
       fontSize: '18px'
     },
     priceSymbol: {
-      fontSize: '13px',
-      top: '-5px',
+      fontSize: '0.7em',
+      top: '-0.4em',
       position: 'relative',
       fontWeight: 'bold'
     },
@@ -1012,12 +1012,12 @@ export const getSuperComponents = ({
       fontWeight: 'bold'
     },
     priceCents: {
-      fontSize: '13px',
-      top: '-3px',
+      fontSize: '0.7em',
+      top: '-0.3em',
       position: 'relative'
     },
     priceCurrency: {
-      fontSize: '13px'
+      fontSize: '0.7em'
     },
     starRating: {
       alignItems: 'center',
@@ -1029,6 +1029,30 @@ export const getSuperComponents = ({
     },
     starRatingEmpty: {
       color: palette.grey
+    },
+    product: {
+      display: 'flex',
+      gap: spacing.gap
+    },
+    productName: {
+      fontSize: '24px',
+      lineHeight: '28px',
+      fontWeight: 'normal'
+    },
+    productTag: {
+      background: palette.grey,
+      padding: '8px 12px',
+      fontSize: '14px',
+      fontWeight: 'bold'
+    },
+    productMeta: {},
+    productRating: {
+      display: 'flex',
+      gap: spacing.smallGap,
+      alignItems: 'center'
+    },
+    productPrice: {
+      fontSize: '32px'
     }
   }
 }

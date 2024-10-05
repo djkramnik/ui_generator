@@ -50,7 +50,7 @@ import { Headings } from '../components/lib/super_components/headings'
 import { MyAvatar } from '../components/lib/super_components'
 import { Testimonial } from '../components/lib/super_components/testimonial'
 import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
-import { Price, Starz } from '../components/lib/super_components/product'
+import { Price, ProductInfo, Starz } from '../components/lib/super_components/product'
 
 const Cell = ({
   children,
@@ -111,6 +111,17 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <ProductInfo
+            title="Host Defense Stamets Mushroom Power Roar Capsules"
+            tags={['Medicinal', 'Voodoo', 'Fear']}
+            star={{
+              rating: 4,
+              reviews: 88
+            }}
+            price={23.96}
+          />
+        </Row>
         <Row>
           <Price
             dollars={199}

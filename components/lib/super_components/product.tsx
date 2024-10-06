@@ -1,4 +1,3 @@
-import { useTheme } from "styled-components"
 import { sizedArray } from "../../../util"
 import { useThemeHelper } from "../../hooks"
 import { CssProps, sxToStyle } from "../../theme"
@@ -103,7 +102,8 @@ export const ProductInfo = ({
   price,
   title,
   children,
-  description
+  description,
+  sm,
 }: {
   tags?: string[]
   star?: {
@@ -115,21 +115,33 @@ export const ProductInfo = ({
   title: string,
   children?: React.ReactNode[]
   description?: string
+  sm?: boolean
 }) => {
   const { hookSc } = useThemeHelper()
   const dollars = parseInt(String(price))
   const cents = Number((price - dollars).toFixed(2)) * 100
   return (
     <Flex col $sx={{
-      ...hookSc('product')
+      ...hookSc('product'),
+      ...(sm ? hookSc('productSm') : {})
     }}>
-      <Heading level={3} $sx={{
-        ...hookSc('productName')
-      }}>
-        {title}
-      </Heading>
+      {children?.[0] ?? null}
+      <Flex col>
+        <Heading level={3} $sx={{
+          ...hookSc('productName')
+        }}>
+          {title}
+        </Heading>
+        <Maybe condition={description}>
+          <Copy $sx={{
+            ...hookSc('productMeta')
+          }}>
+            {description}
+          </Copy>
+        </Maybe>
+      </Flex>
       <Maybe condition={tags}>
-        <Flex row gap="6px">
+        <Flex row gap="6px" wrap>
           {
             tags?.map(t => {
               return (
@@ -143,7 +155,6 @@ export const ProductInfo = ({
           } 
         </Flex>
       </Maybe>
-      {children?.[0] ?? null}
       <Maybe condition={star}>
         <Flex row $sx={{
             ...hookSc('productRating')
@@ -163,22 +174,20 @@ export const ProductInfo = ({
           <Maybe condition={star?.reviews}>
             <Copy $sx={{
               position: 'relative',
-              top: '2px'
+              top: '2px',
+              fontSize: '0.8em'
             }}>{star?.reviews} Reviews</Copy>
           </Maybe>
         </Flex>
       </Maybe>
       {children?.[1] ?? null}
-      <Price
-        dollars={dollars}
-        cents={cents}
-        priceSx={hookSc('productPrice')}
-      />
-      <Copy $sx={{
-        ...hookSc('productMeta')
-      }}>
-        {description}
-      </Copy>
+      <Flex col>
+        <Price
+          dollars={dollars}
+          cents={cents}
+          priceSx={hookSc('productPrice')}
+        />
+      </Flex>
       {children?.[2] ?? null}
     </Flex>
   )

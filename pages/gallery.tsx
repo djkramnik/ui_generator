@@ -51,6 +51,7 @@ import { MyAvatar } from '../components/lib/super_components'
 import { Testimonial } from '../components/lib/super_components/testimonial'
 import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
 import { Price, ProductInfo, Starz } from '../components/lib/super_components/product'
+import { useThemeHelper } from '../components/hooks'
 
 const Cell = ({
   children,
@@ -103,6 +104,7 @@ const Row = ({
 
 const Gallery = () => {
   const theme = useTheme()
+  const { hookSc } = useThemeHelper()
   const bgc = theme.palette.background as any as string
   const [chimericOpen, setChimericOpen] = useState<boolean>(false)
   const [chimericMuiOpen, setChimericMuiOpen] = useState<boolean>(false)
@@ -112,15 +114,55 @@ const Gallery = () => {
       <Spacer />
       <Container>
         <Row>
-          <ProductInfo
-            title="Host Defense Stamets Mushroom Power Roar Capsules"
-            tags={['Medicinal', 'Voodoo', 'Fear']}
-            star={{
-              rating: 4,
-              reviews: 88
-            }}
-            price={23.96}
-          />
+          <Box $sx={{ width: '606px', border: '1px solid black'}}>
+            <ProductInfo
+              title={`Waters of Babylon,
+                that we `}
+              tags={['Medicinal', 'Voodoo', 'Fear']}
+              star={{
+                rating: 4,
+                reviews: 88
+              }}
+              price={23.96}
+              description={
+                `Options: 3 Sizes`
+              }
+            >
+              {
+                [
+                  <Copy $sx={{
+                    ...hookSc('productMeta'),
+                    fontWeight: 'bold'
+                  }}>ASHUR SPECIAL</Copy>,
+                  <Copy $sx={{
+                    ...hookSc('productMeta')
+                  }}
+                  >Yaaa we wept</Copy>,
+                  <Copy>All I know is that I will never dish
+                    another raw deal, playing making believe,
+                    tellin I'll be true, holdin in my laugh as I say
+                    that I love you
+                  </Copy>
+                ]
+              }
+              
+            </ProductInfo>
+          </Box>
+          <Box $sx={{ width: '225px', display: 'flex',
+            justifyContent: 'center',
+            border: '1px solid black'
+          }}>
+            <ProductInfo
+              title="Host Defense Stamets Mushroom Power Roar Capsules"
+              tags={['Medicinal', 'Voodoo', 'Fear']}
+              star={{
+                rating: 4,
+                reviews: 88
+              }}
+              price={23.96}
+              sm={true}
+            />
+          </Box>
         </Row>
         <Row>
           <Price

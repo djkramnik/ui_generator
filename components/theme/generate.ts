@@ -1032,27 +1032,33 @@ export const getSuperComponents = ({
     },
     product: {
       display: 'flex',
-      gap: spacing.gap
+      gap: spacing.gap,
+      fontSize: '24px'
+    },
+    productSm: {
+      fontSize: '20px'
     },
     productName: {
-      fontSize: '24px',
-      lineHeight: '28px',
+      fontSize: '1em',
+      lineHeight: '1.1em',
       fontWeight: 'normal'
     },
     productTag: {
       background: palette.grey,
       padding: '8px 12px',
-      fontSize: '14px',
+      fontSize: '0.6em',
       fontWeight: 'bold'
     },
-    productMeta: {},
+    productMeta: {
+      fontSize: '0.6em'
+    },
     productRating: {
       display: 'flex',
       gap: spacing.smallGap,
       alignItems: 'center'
     },
     productPrice: {
-      fontSize: '32px'
+      fontSize: '1.2em'
     }
   }
 }

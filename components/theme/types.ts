@@ -217,6 +217,7 @@ export type ThemeConfig = {
     productMeta: CssProps
     productRating: CssProps
     productPrice: CssProps
+    productSm: CssProps
   }
 }
 

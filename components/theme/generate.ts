@@ -1059,6 +1059,10 @@ export const getSuperComponents = ({
     },
     productPrice: {
       fontSize: '1.2em'
+    },
+    amazonSearchSm: {
+      flexDirection: 'column',
+      width: '382px'
     }
   }
 }

@@ -96,6 +96,21 @@ export const Starz = ({
   )
 }
 
+export type ProductInfoProps = {
+  tags?: string[]
+  star?: {
+    max?: number
+    rating: number
+    reviews?: number
+    mui?: boolean
+  }
+  price: number
+  title: string,
+  children?: React.ReactNode[]
+  description?: string
+  sm?: boolean
+}
+
 export const ProductInfo = ({
   tags,
   star,
@@ -104,19 +119,7 @@ export const ProductInfo = ({
   children,
   description,
   sm,
-}: {
-  tags?: string[]
-  star?: {
-    max?: number
-    rating: number
-    reviews?: number
-  }
-  price: number
-  title: string,
-  children?: React.ReactNode[]
-  description?: string
-  sm?: boolean
-}) => {
+}: ProductInfoProps) => {
   const { hookSc } = useThemeHelper()
   const dollars = parseInt(String(price))
   const cents = Number((price - dollars).toFixed(2)) * 100
@@ -159,7 +162,7 @@ export const ProductInfo = ({
         <Flex row $sx={{
             ...hookSc('productRating')
           }}>
-          <Starz rating={star?.rating ?? 0}
+          <Starz mui={star?.mui} rating={star?.rating ?? 0}
 
             {
               ...(

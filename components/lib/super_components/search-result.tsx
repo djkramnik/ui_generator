@@ -4,6 +4,8 @@ import { RandomAvatar, RandomAvatarProps } from "./avatar"
 import { getSuperComponentStyles, Theme } from "../../theme"
 import { RandomThumbnail } from "./thumbnail"
 import { Copy, Heading, Maybe } from "../atomics"
+import { ProductInfo, ProductInfoProps } from "./product"
+import { useThemeHelper } from "../../hooks"
 
 // do not try to conflate this with the vertical version
 export const VideoSearchResult = ({
@@ -84,9 +86,28 @@ export const VideoSearchResult = ({
 // stars component
 
 export const AmazonSearchResult = ({
-
+  sm,
+  productInfo,
+}: {
+  sm?: boolean
+  productInfo: Omit<ProductInfoProps, 'sm'>
 }) => {
-  return null
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex $sx={{
+      ...hookSc('videoSearchResult'),
+      ...(sm
+        ? hookSc('amazonSearchSm')
+        : {}
+      )
+    }}>
+      <RandomThumbnail size={sm ? 'md' : 'lg'} />
+      <ProductInfo
+        {...productInfo}
+        sm={sm}
+      />
+    </Flex>
+  )
 }
 
 export const WikiSearchResult = ({

@@ -218,6 +218,7 @@ export type ThemeConfig = {
     productRating: CssProps
     productPrice: CssProps
     productSm: CssProps
+    amazonSearchSm: CssProps
   }
 }
 

@@ -1,16 +1,20 @@
 import { useTheme } from 'styled-components'
-import { 
+import {
   AuthSection,
   DashboardSection,
   Footer,
   Fullscreen,
   LanderCenter,
   LanderTestimonials,
-  LanderTwoCol
+  LanderTwoCol,
 } from '../components/lib/section'
-import { RandomBrandLogo, SocialMediaButtonRow } from '../components/lib/super_components/brand'
+import {
+  RandomBrandLogo,
+  SocialMediaButtonRow,
+} from '../components/lib/super_components/brand'
 import {
   AddressDetails,
+  AmazonSearchResult,
   CollapsibleMenuItem,
   CreditCardDetails,
   Headings,
@@ -21,7 +25,7 @@ import {
   MyAvatar,
   PersonDetails,
   RandomizedForm,
-  VideoSearchResult
+  VideoSearchResult,
 } from '../components/lib/super_components'
 import {
   Anchor,
@@ -41,64 +45,143 @@ import { Spacer } from '../components/lib/layout/spacer'
 import { Legalese } from '../components/lib/super_components/legalese'
 import { HeroCarousel } from '../components/lib/super_components/carousel'
 import { ThemeToggle } from '../components/lib/theme_toggle'
+import { ProductInfo } from '../components/lib/super_components/product'
+import { useThemeHelper } from '../components/hooks'
+import { Container } from '../components/lib/layout/container'
 
 const SectionsGallery = () => {
-  const theme = useTheme()
+  const { theme, hookSc } = useThemeHelper()
+
   return (
     <>
       <ThemeToggle />
-      <Box $sx={{
+      <Box>
+        <Container>
+          <Spacer />
+          <Flex gap="8px" $sx={{ alignItems: 'stretch', justifyContent: 'center' }}>
+            <AmazonSearchResult
+              sm={true}
+              productInfo={{
+                title: "Host Defense Stamets Mushroom Power Roar Capsules",
+                tags: ['Medicinal', 'Voodoo', 'Fear'],
+                star: {
+                  rating: 4,
+                  reviews: 88
+                },
+                price: 23.96,
+              }}
+            />
+            <AmazonSearchResult
+              sm={true}
+              productInfo={{
+                title: "Host Defense Stamets Mushroom Power Roar Capsules",
+                tags: ['Medicinal', 'Voodoo', 'Fear'],
+                star: {
+                  rating: 4,
+                  reviews: 88
+                },
+                price: 23.96,
+              }}
+            />
+            <AmazonSearchResult
+              sm={true}
+              productInfo={{
+                title: "Host Defense Stamets Mushroom Power Roar Capsules",
+                tags: ['Medicinal', 'Voodoo', 'Fear'],
+                star: {
+                  rating: 4,
+                  reviews: 88
+                },
+                price: 23.96,
+              }}
+            />
+          </Flex>
+          <Spacer />
+        </Container>
+      </Box>
 
-      }}>
+      <Box $sx={{}}>
+        <AmazonSearchResult
+          productInfo={{
+            title:`Waters of Babylon, that we `,
+            tags: ['Medicinal', 'Voodoo', 'Fear'],
+            star: {
+              rating: 4,
+              reviews: 88,
+              mui: true,
+            },
+            price: 23.96,
+            description: `Options: 3 Sizes`,
+            children: [
+              <Copy
+                $sx={{
+                  ...hookSc('productMeta'),
+                  fontWeight: 'bold',
+                }}
+              >
+                ASHUR SPECIAL
+              </Copy>,
+              null,
+              <Copy>
+                All I know is that I will never dish another raw deal
+              </Copy>
+            ]
+          }}
+        />
+      </Box>
+      <Box $sx={{}}>
         <VideoSearchResult
           title="Rizz AI Strong woman"
           meta="11M Ews"
           avatar={{
             name: 'Internet Historian',
-            position: 'Plumber'
+            position: 'Plumber',
           }}
           description="Only I may snark.  Only I may live laugh and love."
         />
       </Box>
-      <AuthSection background={
-        <Box $sx={{
-          backgroundColor: theme.palette.grey,
-          width: '100%',
-          height: '100%'
-        }} />
-      }>
-        <RandomizedForm
-          heading="Random form"
-          buttonTwoLabel='Back'
-        />
+      <AuthSection
+        background={
+          <Box
+            $sx={{
+              backgroundColor: theme.palette.grey,
+              width: '100%',
+              height: '100%',
+            }}
+          />
+        }
+      >
+        <RandomizedForm heading="Random form" buttonTwoLabel="Back" />
       </AuthSection>
-      <AuthSection background={
-        <Box $sx={{
-          backgroundColor: theme.palette.grey,
-          width: '100%',
-          height: '100%'
-        }} />
-      }>
+      <AuthSection
+        background={
+          <Box
+            $sx={{
+              backgroundColor: theme.palette.grey,
+              width: '100%',
+              height: '100%',
+            }}
+          />
+        }
+      >
         <Flex col gap="6px">
           <CreditCardDetails />
-          <div style={{ width: 'fit-content'}}>
+          <div style={{ width: 'fit-content' }}>
             <PersonDetails />
           </div>
           <PersonDetails
-            middleName='Middle Name'
-            prefixOptions={[
-              'Mr.',
-              'Mrs.',
-              'I prefer not to say'
-            ]}
+            middleName="Middle Name"
+            prefixOptions={['Mr.', 'Mrs.', 'I prefer not to say']}
           />
-          <div style={{ width: 'fit-content'}}>
-            <AddressDetails address2='Address Line 2'
-            provinceOptions={['ON', 'AB']} />
-          </div> 
-          <div style={{ width: 'fit-content'}}>
+          <div style={{ width: 'fit-content' }}>
+            <AddressDetails
+              address2="Address Line 2"
+              provinceOptions={['ON', 'AB']}
+            />
+          </div>
+          <div style={{ width: 'fit-content' }}>
             <AddressDetails />
-          </div> 
+          </div>
         </Flex>
       </AuthSection>
       <LanderTestimonials
@@ -111,80 +194,93 @@ const SectionsGallery = () => {
               position: 'High Priestess',
               testimonial: `I talked to the aliens, they are really
               very disappointed with all of us.  The lying, the stealing,
-              the killing, the monkeying around.`
-            }, {
+              the killing, the monkeying around.`,
+            },
+            {
               asset: 'hulk.jpg',
               name: 'The Tower',
               position: 'Precarious at best',
               testimonial: `All my hopes rest on an outlandish
-              weed fuelled fantasy`
-            }
+              weed fuelled fantasy`,
+            },
           ],
-          [{
-            asset: 'historian.jpg',
-            name: 'Angry boy',
-            position: 'Crazy man',
-            testimonial: 'Your best weapon against lunatics'
-          }, {
-            asset: 'hulk.jpg',
-            name: 'The Tower',
-            position: 'Precarious at best',
-            testimonial: `All my hopes rest on an outlandish
-            weed fuelled fantasy`
-          }],
-          [{
-            asset: 'historian.jpg',
-            name: 'Colosseum',
-            position: 'Crazy man',
-            testimonial: 'Your best weapon against lunatics'
-          },
-          {
-            asset: 'beetle.jpg',
-            name: 'Dev Boi',
-            position: 'Slinging hot snippets of React',
-            testimonial: `I know you think it is so uncomfortable
+          [
+            {
+              asset: 'historian.jpg',
+              name: 'Angry boy',
+              position: 'Crazy man',
+              testimonial: 'Your best weapon against lunatics',
+            },
+            {
+              asset: 'hulk.jpg',
+              name: 'The Tower',
+              position: 'Precarious at best',
+              testimonial: `All my hopes rest on an outlandish
+            weed fuelled fantasy`,
+            },
+          ],
+          [
+            {
+              asset: 'historian.jpg',
+              name: 'Colosseum',
+              position: 'Crazy man',
+              testimonial: 'Your best weapon against lunatics',
+            },
+            {
+              asset: 'beetle.jpg',
+              name: 'Dev Boi',
+              position: 'Slinging hot snippets of React',
+              testimonial: `I know you think it is so uncomfortable
             that I won't bring it up`,
-            grey: true,
-          }]
+              grey: true,
+            },
+          ],
         ]}
       />
-      <LanderTestimonials 
+      <LanderTestimonials
         bgc="#eee"
         testimonials={[
-          [{
-            asset: 'historian.jpg',
-            name: 'Angry boy',
-            position: 'Crazy man',
-            testimonial: 'Your best weapon against lunatics'
-          }, {
-            asset: 'hulk.jpg',
-            name: 'The Tower',
-            position: 'Precarious at best',
-            testimonial: `All my hopes rest on an outlandish
-            weed fuelled fantasy`
-          }],
-          [{
-            asset: 'historian.jpg',
-            name: 'Colosseum',
-            position: 'Crazy man',
-            testimonial: 'Your best weapon against lunatics'
-          },
-          {
-            asset: 'beetle.jpg',
-            name: 'Dev Boi',
-            position: 'Slinging hot snippets of React',
-            testimonial: `I know you think it is so uncomfortable
+          [
+            {
+              asset: 'historian.jpg',
+              name: 'Angry boy',
+              position: 'Crazy man',
+              testimonial: 'Your best weapon against lunatics',
+            },
+            {
+              asset: 'hulk.jpg',
+              name: 'The Tower',
+              position: 'Precarious at best',
+              testimonial: `All my hopes rest on an outlandish
+            weed fuelled fantasy`,
+            },
+          ],
+          [
+            {
+              asset: 'historian.jpg',
+              name: 'Colosseum',
+              position: 'Crazy man',
+              testimonial: 'Your best weapon against lunatics',
+            },
+            {
+              asset: 'beetle.jpg',
+              name: 'Dev Boi',
+              position: 'Slinging hot snippets of React',
+              testimonial: `I know you think it is so uncomfortable
             that I won't bring it up`,
-            grey: true,
-          }]
+              grey: true,
+            },
+          ],
         ]}
       />
       <LanderCenter
         heading="Err, Kanban ain't mean nuttin to me"
         copy="I've written a couple of few things about
         why I don't want to be estimating story points or organizing work into tickets.
-        I just do what I do, feel me???">
-        <MyAvatar asset="superman.jpg"
+        I just do what I do, feel me???"
+      >
+        <MyAvatar
+          asset="superman.jpg"
           name="Clark Kent"
           position="Important vital Dave Grrr guy"
         />
@@ -192,50 +288,46 @@ const SectionsGallery = () => {
       <HeroCarousel bgi="amazon1.jpg" mui />
       <HeroCarousel>
         <Flex jcc aic col>
-          <Heading level={2}>
-            Hi Ho
-          </Heading>
-          <Heading level={4}>
-            Buy now! Remorse Later!
-          </Heading>
+          <Heading level={2}>Hi Ho</Heading>
+          <Heading level={4}>Buy now! Remorse Later!</Heading>
         </Flex>
       </HeroCarousel>
       <LanderTwoCol>
-        <Headings
-          little="Online and in Person"
-          big="Now You're the big guy"
-        />
-        <Box $sx={{
-          backgroundColor: theme.palette.primary,
-          aspectRatio: '1',
-          width: '80%'
-        }}>
-        </Box>
+        <Headings little="Online and in Person" big="Now You're the big guy" />
+        <Box
+          $sx={{
+            backgroundColor: theme.palette.primary,
+            aspectRatio: '1',
+            width: '80%',
+          }}
+        ></Box>
       </LanderTwoCol>
       <Fullscreen>
         <Footer>
-          <Flex aic $sx={{
-            paddingLeft: theme.spacing.gap
-          }}>
-            <SocialMediaButtonRow icons={[
-              'facebook',
-              'figma',
-              'docker'
-            ]} />
+          <Flex
+            aic
+            $sx={{
+              paddingLeft: theme.spacing.gap,
+            }}
+          >
+            <SocialMediaButtonRow icons={['facebook', 'figma', 'docker']} />
           </Flex>
           <Spacer />
-          <TwoCol widthLeft="20%" growRight
-            hGap={theme.spacing.biggishGap}>
-            <Box $sx={{
-              borderRight: `1px solid white`,
-              height: '100%',
-              padding: theme.spacing.gap
-            }}>
-              <Copy $sx={{
-                color: 'currentColor'
-              }}>Our mission is to
-                heal the world, make it a better place,
-                for you me and the entire hooman race
+          <TwoCol widthLeft="20%" growRight hGap={theme.spacing.biggishGap}>
+            <Box
+              $sx={{
+                borderRight: `1px solid white`,
+                height: '100%',
+                padding: theme.spacing.gap,
+              }}
+            >
+              <Copy
+                $sx={{
+                  color: 'currentColor',
+                }}
+              >
+                Our mission is to heal the world, make it a better place, for
+                you me and the entire hooman race
               </Copy>
             </Box>
             <Flex jcsa>
@@ -246,8 +338,8 @@ const SectionsGallery = () => {
                   'Help center',
                   'Support community',
                   'Press',
-                  'Share your story'
-                ]} 
+                  'Share your story',
+                ]}
                 heading="About"
               />
               <ListOfLinks
@@ -257,62 +349,38 @@ const SectionsGallery = () => {
                   'King Lear',
                   'Let chaos take the world',
                   'Ah!',
-                  'Let chaos take the world'
-                ]} 
+                  'Let chaos take the world',
+                ]}
                 heading="Shabriri"
               />
+              <ListOfLinks links={['Video', 'Climate']} heading="Climate" />
               <ListOfLinks
-                links={[
-                  'Video',
-                  'Climate',
-                ]} 
-                heading="Climate"
-              />
-              <ListOfLinks
-                links={[
-                  'Religion',
-                  'Drink',
-                  'Pencil Case'
-                ]} 
+                links={['Religion', 'Drink', 'Pencil Case']}
                 heading="Old time"
               />
             </Flex>
           </TwoCol>
           <Spacer />
           <ThreeCol>
-            <Box $variant="center">
-              A Browser Daemon company
-            </Box>
-            <Box $variant="center">
-              Copyright © 2024 Year of the Rat
-            </Box>
-            <Box $variant={[
-              'center',
-              'underline'
-            ]}>
-              Terms of Service
-            </Box>
+            <Box $variant="center">A Browser Daemon company</Box>
+            <Box $variant="center">Copyright © 2024 Year of the Rat</Box>
+            <Box $variant={['center', 'underline']}>Terms of Service</Box>
           </ThreeCol>
           <Spacer />
-          <Box $sx={{
-            paddingLeft: theme.spacing.gap
-          }}>
+          <Box
+            $sx={{
+              paddingLeft: theme.spacing.gap,
+            }}
+          >
             <Legalese text="There is more danger in the hidden betrayer than the open foe." />
             <Legalese text="If you see me again and I'm not smiling you're not gonna like it" />
             <Legalese text="David Grrrr subconscious is not so nice but I still didn't park in handicap" />
           </Box>
           <Spacer />
-          <TwoCol widthRight="20%" growLeft
-            hGap={theme.spacing.biggishGap}>
+          <TwoCol widthRight="20%" growLeft hGap={theme.spacing.biggishGap}>
             <Flex jcsa>
               <ListOfLinks
-                links={[
-                  'Presents',
-                  'Ribbons',
-                  'Bow',
-                  'Gift Wrap',
-                  'Cider'
-                ]} 
+                links={['Presents', 'Ribbons', 'Bow', 'Gift Wrap', 'Cider']}
                 heading="Christmas"
               />
               <ListOfLinks
@@ -322,8 +390,8 @@ const SectionsGallery = () => {
                   'Help center',
                   'Support community',
                   'Press',
-                  'Share your story'
-                ]} 
+                  'Share your story',
+                ]}
                 heading="About"
               />
               <ListOfLinks
@@ -333,30 +401,18 @@ const SectionsGallery = () => {
                   'King Lear',
                   'Let chaos take the world',
                   'Ah!',
-                  'Let chaos take the world'
-                ]} 
+                  'Let chaos take the world',
+                ]}
                 heading="Shabriri"
               />
+              <ListOfLinks links={['Video', 'Climate']} heading="Climate" />
               <ListOfLinks
-                links={[
-                  'Video',
-                  'Climate',
-                ]} 
-                heading="Climate"
-              />
-              <ListOfLinks
-                links={[
-                  'Religion',
-                  'Drink',
-                  'Pencil Case'
-                ]} 
+                links={['Religion', 'Drink', 'Pencil Case']}
                 heading="Old time"
               />
             </Flex>
-            <Box $sx={{
-
-            }}>
-             <Dropdown options={['English']} value="English" />
+            <Box $sx={{}}>
+              <Dropdown options={['English']} value="English" />
             </Box>
           </TwoCol>
         </Footer>
@@ -452,15 +508,18 @@ const SectionsGallery = () => {
         {/* <Toast type="info" message="Note to self: believe no lies" /> */}
         {/* <ProgressOverlay /> */}
         <DashboardTable<object>
-          filters={[{
-            type: 'input',
-            placeholder: 'Name',
-            label: 'Name'
-          },{
-            type: 'checkbox',
-            label: 'Executives only',
-            value: 'checked'
-          }]}
+          filters={[
+            {
+              type: 'input',
+              placeholder: 'Name',
+              label: 'Name',
+            },
+            {
+              type: 'checkbox',
+              label: 'Executives only',
+              value: 'checked',
+            },
+          ]}
           mui
           heading="This month's earnings"
           tableProps={{
@@ -503,7 +562,6 @@ const SectionsGallery = () => {
             ]),
           }}
           paginationProps={{}}
-
         />
       </DashboardSection>
     </>

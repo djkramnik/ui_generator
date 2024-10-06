@@ -219,6 +219,11 @@ export type ThemeConfig = {
     productPrice: CssProps
     productSm: CssProps
     amazonSearchSm: CssProps
+    googleSearchResult: CssProps
+    googleSearchResultHeading: CssProps
+    googleSearchResultDescription: CssProps
+    googleSearchResultTags: CssProps
+    googleSearchResultTag: CssProps
   }
 }
 

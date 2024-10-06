@@ -1,5 +1,5 @@
 import { useTheme } from "styled-components"
-import { Flex } from "../layout"
+import { Box, Flex } from "../layout"
 import { RandomAvatar, RandomAvatarProps } from "./avatar"
 import { getSuperComponentStyles, Theme } from "../../theme"
 import { RandomThumbnail } from "./thumbnail"
@@ -117,7 +117,51 @@ export const WikiSearchResult = ({
 }
 
 export const GoogleSearchResult = ({
-  
+  avatar,
+  heading,
+  description,
+  tags,
+}: {
+  avatar: RandomAvatarProps
+  heading: string
+  description: string
+  tags?: string[]
 }) => {
-  return null
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex $sx={hookSc('googleSearchResult')}>
+      <RandomAvatar {...avatar}
+        avatarSx={{
+          ...hookSc('searchResultAvatar')
+        }}
+        headingSx={{
+          ...hookSc('searchResultAvatarHeading')
+        }}
+        copySx={{
+          ...hookSc('searchResultAvatarCopy')
+        }}
+        avatarRightSx={{
+          gap: '0'
+        }}
+      />
+      <Heading level={4} $sx={hookSc('googleSearchResultHeading')}>
+        {heading}
+      </Heading>
+      <Copy $sx={hookSc('googleSearchResultDescription')}>
+        {description}
+      </Copy>
+      <Maybe condition={tags}>
+        <Flex $sx={hookSc('googleSearchResultTags')}>
+          {
+            (tags!).map(t => (
+              <Box key={t}
+                $sx={hookSc('googleSearchResultTag')}>
+                {t}
+              </Box>
+            ))
+          }
+        </Flex>
+      </Maybe>
+    </Flex>
+  )
 }

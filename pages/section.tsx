@@ -17,6 +17,7 @@ import {
   AmazonSearchResult,
   CollapsibleMenuItem,
   CreditCardDetails,
+  GoogleSearchResult,
   Headings,
   ListOfLinks,
   Menu,
@@ -55,6 +56,25 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <Box>
+        <Container>
+          <GoogleSearchResult
+            avatar={{
+              name: 'Merriam-Webster',
+              position: 'https://www.merriam-webster.com > dictionary > test'
+            }}
+            heading="Test Definition & Meaning"
+            description={`Sep 23, 2024 — Kids Definition · 
+              1 of 3 noun. ˈtest. 1. : a means of finding out the nature, quality, or value of something. put the new car to the test. 2. : ...`}
+            tags={[
+              'Synonyms of test',
+              'Litmus test',
+              'Bechdel test',
+              'Acid test'
+            ]}
+          />
+        </Container>
+      </Box>
       <Box>
         <Container>
           <Spacer />

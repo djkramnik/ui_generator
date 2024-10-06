@@ -1063,7 +1063,23 @@ export const getSuperComponents = ({
     amazonSearchSm: {
       flexDirection: 'column',
       width: '382px'
-    }
+    },
+    googleSearchResult: {
+      flexDirection: 'column',
+      gap: spacing.smallGap,
+      width: '600px'
+    },
+    googleSearchResultHeading: {
+      color: 'blue'
+    },
+    googleSearchResultDescription: {},
+    googleSearchResultTags: {
+      gap: spacing.gap,
+      alignItems: 'center',
+      fontSize: '12px',
+      fontWeight: 'bold'
+    },
+    googleSearchResultTag: {},
   }
 }
 

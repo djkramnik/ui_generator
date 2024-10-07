@@ -317,6 +317,9 @@ export const getComponents = ({
       fontSize: '16px',
       lineHeight: '24px',
     },
+    span: {
+      color: palette.copy
+    },
     icon: {
       fontSize: '22px',
       color: palette.copy,
@@ -996,7 +999,7 @@ export const getSuperComponents = ({
     },
     searchResultAvatarCopy: {
       fontSize: '12px',
-      color: 'rgba(0,0,0,0.5)'
+      color: palette.copy
     },
     price: {
       display: 'inline',
@@ -1079,7 +1082,13 @@ export const getSuperComponents = ({
       fontSize: '12px',
       fontWeight: 'bold'
     },
-    googleSearchResultTag: {},
+    googleSearchResultTag: {
+      color: palette.copy
+    },
+    searchPage: {
+      flexDirection: 'column',
+      gap: spacing.gap
+    }
   }
 }
 

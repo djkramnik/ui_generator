@@ -23,6 +23,7 @@ export const Span = styled.span<SpanProps>`
       const diff = mergeStyles({
         theme,
         $variant,
+        component: 'span'
       })
       return getResponsiveStyles({ ...diff, ...$sx })
     }

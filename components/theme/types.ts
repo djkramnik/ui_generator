@@ -55,6 +55,7 @@ export type ThemeConfig = {
     bigGap: ResponsiveMixin,
   }
   components: {
+    span: CssProps
     link: CssProps
     button: CssProps
     select: CssProps
@@ -224,6 +225,7 @@ export type ThemeConfig = {
     googleSearchResultDescription: CssProps
     googleSearchResultTags: CssProps
     googleSearchResultTag: CssProps
+    searchPage: CssProps
   }
 }
 

@@ -144,9 +144,10 @@ lander:ecommerce,
 ### day two (rsday)
 - [x] random forms
 - [x] youtube search results
-- [ ] google search results
-- [ ] amazon search results
+- [x] google search results
+- [x] amazon search results
 - [ ] wiki search results
+- [ ] search result SECTION
 - [ ] cookie popup
 
 ### day three (sunday)

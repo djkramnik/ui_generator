@@ -1112,7 +1112,30 @@ export const getSuperComponents = ({
     },
     accordionChild: {
       fontSize: '18px'
-    }
+    },
+    cookieSection: {
+      position: 'fixed',
+      width: '100vw',
+      backgroundColor: palette.primary,
+    },
+    cookieInner: {
+      padding: spacing.gap,
+      display: 'flex',
+      gap: spacing.bigGap,
+      justifyContent: 'center',
+    },
+    cookieCopy: {
+      color: palette.button,
+      maxWidth: '600px'
+    },
+    cookieOptions: {
+      display: 'flex',
+      gap: spacing.gap,
+      alignItems: 'center',
+      flexWrap: 'wrap'
+    },
+    cookieOption: {},
+    cookieReject: {}
   }
 }
 

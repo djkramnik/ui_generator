@@ -149,7 +149,7 @@ lander:ecommerce,
 - [x] search result SECTION
 
 ### day three (sunday)
-- [ ] accordion SECTION
+- [x] accordion SECTION
 - [ ] cookie popup
 - [ ] media recommends
 - [ ] wiki section

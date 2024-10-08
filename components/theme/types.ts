@@ -233,6 +233,12 @@ export type ThemeConfig = {
     accordionSectionIcon: CssProps
     accordionSectionRoot: CssProps
     accordionChild: CssProps
+    cookieSection: CssProps
+    cookieInner: CssProps
+    cookieOptions: CssProps
+    cookieOption: CssProps
+    cookieCopy: CssProps
+    cookieReject: CssProps
   }
 }
 

@@ -1,7 +1,5 @@
-import { useTheme } from "styled-components"
 import { Box, Flex } from "../layout"
 import { RandomAvatar, RandomAvatarProps } from "./avatar"
-import { getSuperComponentStyles, Theme } from "../../theme"
 import { RandomThumbnail } from "./thumbnail"
 import { Copy, Heading, Maybe } from "../atomics"
 import { ProductInfo, ProductInfoProps } from "./product"
@@ -13,68 +11,76 @@ export const VideoSearchResult = ({
   avatar,
   meta,
   description,
+  sm,
+  md,
+  vertical,
+  noDescription,
+  noAvatar,
 }: {
   title: string
   avatar: RandomAvatarProps
   meta?: string
   description: string
+  sm?: boolean
+  md?: boolean
+  vertical?: boolean
+  noDescription?: boolean
+  noAvatar?: boolean
 }) => {
-  const theme = useTheme()
-  const hookah = (s: keyof Theme['superComponents']) => {
-    return {
-      ...getSuperComponentStyles(
-        s,
-        theme,
-      )
-    }
-  }
+  const { hookSc } = useThemeHelper()
+
   return (
     <Flex $sx={{
-      ...getSuperComponentStyles(
-        'videoSearchResult',
-        theme,
-      )
+      ...hookSc('videoSearchResult'),
+      ...(md ? hookSc('videoSearchResultMd'): {}),
+      ...(sm ? hookSc('videoSearchResultSm'): {}),
+      ...(vertical ? hookSc('videoSearchVertical'): {}),
     }}>
-      <RandomThumbnail size="lg" />
+      <RandomThumbnail size={
+        md
+          ? 'md'
+          : (
+            sm
+              ? 'sm'
+              : 'lg'
+          )
+      } />
       <Flex col $sx={{
-        ...getSuperComponentStyles(
-          'videoSearchInfo',
-          theme,
-        )
+        ...hookSc('videoSearchInfo'),
+        ...(md ? hookSc('videoSearchResultMd'): {}),
+        ...(sm ? hookSc('videoSearchResultSm'): {}),
       }}>
-        <Flex col>
-          <Heading level={4} $sx={{
-            ...getSuperComponentStyles(
-              'searchResultTitle',
-              theme,
-            )
-          }}>
-            {title}
-          </Heading>
-          <Maybe condition="meta">
-            <Heading level={5} $sx={{
-              ...hookah('searchResultMeta')
-            }}>
-              {meta}
+        <Maybe condition={!noDescription}>
+          <Flex col>
+            <Heading level={4}
+              $sx={hookSc('searchResultTitle')}>
+              {title}
             </Heading>
-          </Maybe>
-        </Flex>
+            <Maybe condition="meta">
+              <Heading level={5}
+                $sx={hookSc('searchResultMeta')}>
+                {meta}
+              </Heading>
+            </Maybe>
+          </Flex>
+        </Maybe>
 
-        <RandomAvatar {...avatar}
-          avatarSx={{
-            ...hookah('searchResultAvatar')
-          }}
-          headingSx={{
-            ...hookah('searchResultAvatarHeading')
-          }}
-          copySx={{
-            ...hookah('searchResultAvatarCopy')
-          }}
-          avatarRightSx={{
-            gap: '0'
-          }}
-        />
-        <Copy>
+        <Maybe condition={!noAvatar}>
+          <RandomAvatar {...avatar}
+            avatarSx={hookSc('searchResultAvatar')}
+            headingSx={hookSc('searchResultAvatarHeading')}
+            copySx={hookSc('searchResultAvatarCopy')}
+            avatarRightSx={{
+              gap: '0'
+            }}
+          />
+        </Maybe>
+
+        <Copy $sx={{
+          ...(md ? hookSc('videoSearchResultMd'): {}),
+          ...(sm ? hookSc('videoSearchResultSm'): {}),
+          fontWeight: 'normal'
+        }}>
           {description}
         </Copy>
       </Flex>

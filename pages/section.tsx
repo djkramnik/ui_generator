@@ -72,6 +72,72 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <Box $sx={{}}>
+        <Container>
+          <Flex gap={theme.spacing.gap}>
+            <VideoSearchResult
+              md={true}
+              title=""
+              avatar={{
+                name: 'Internet Historian',
+                position: 'Plumber',
+              }}
+              description={'gah gah gah gah gah '}
+            />
+            <VideoSearchResult
+              vertical
+              md={true}
+              title=""
+              avatar={{
+                name: 'Internet Historian',
+                position: 'Plumber',
+              }}
+              description={''}
+            />
+          </Flex>
+
+        </Container>
+      </Box>
+      <Box $sx={{}}>
+        <Container>
+          <Flex gap={theme.spacing.gap}>
+            <VideoSearchResult
+              vertical
+              sm={true}
+              title=""
+              avatar={{
+                name: 'Internet Historian',
+                position: 'Plumber',
+              }}
+              description={''}
+              noDescription
+            />
+            <VideoSearchResult
+              vertical
+              sm={true}
+              title=""
+              avatar={{
+                name: 'Internet Historian',
+                position: 'Plumber',
+              }}
+              description={''}
+              noDescription
+            />
+            <VideoSearchResult
+              vertical
+              sm={true}
+              title=""
+              avatar={{
+                name: 'Internet Historian',
+                position: 'Plumber',
+              }}
+              description={'gah gah gah gah gah '}
+              noDescription
+            />
+          </Flex>
+
+        </Container>
+      </Box>
       <Box>
         <CookieSection
           handleClose={() => setCookieOpen(false)}

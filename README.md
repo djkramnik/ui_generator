@@ -150,20 +150,33 @@ lander:ecommerce,
 
 ### day three (sunday)
 - [x] accordion SECTION
-- [ ] cookie popup
+- [x] cookie popup
 - [ ] media recommends
+
+  - [ ] shorts? 
+  - [ ] small video results?
+  - [ ] vertical video results? 
+
+
 - [ ] wiki section
 - [ ] table of contents
-- [ ] news directory
+
+
+- [ ] news directory (thematize cnn news? )
 - [ ] news story
 - [ ] news / blog article
 
 ### day four (monday)
 - [ ] file upload modal
-- [ ] three col cards
-- [ ] dashboard section (heading, icons)
+- [ ] three col cards ??
+
+(gandi.net, stripe)
+
+- [ ] dashboard section (heading, icons) 
 - [ ] dashboard list with options
 - [ ] dashboard two col cards
+
+
 - [ ] secondary nav
 
 ### day five (tuesday)

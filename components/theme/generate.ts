@@ -882,7 +882,8 @@ export const getSuperComponents = ({
       fontWeight: 'bold'
     },
     avatarLittle: {
-      fontSize: '14px'
+      fontSize: '14px',
+      fontWeight: 'normal'
     },
     landerCenter: {
       display: 'flex',
@@ -971,7 +972,8 @@ export const getSuperComponents = ({
     formHeading: {},
     thumbnailImage: {
       width: '100%',
-      border: `1px solid currentcolor`
+      borderRadius: '0.25em',
+      // border: `1px solid currentcolor`
     },
     thumbnailSm: {
       width: '160px'
@@ -983,24 +985,40 @@ export const getSuperComponents = ({
       width: '500px'
     },
     videoSearchResult: {
-      gap: spacing.biggishGap
+      gap: '1.25em'
+    },
+    videoSearchVertical: {
+      flexDirection: 'column',
+    },
+    videoSearchResultMd: {
+      fontSize: '14px',
+      gap: spacing.smallGap
+    },
+    videoSearchResultSm: {
+      fontSize: '12px',
+      gap: spacing.smallGap,
+      fontWeight: 'bold',
+      alignItems: 'center'
     },
     videoSearchInfo: {
-      gap: spacing.biggishGap
+      gap: '1.25em'
     },
     searchResultTitle: {
-      fontWeight: 'normal',
+      fontWeight: 'inherit',
+      fontSize: '1.3em'
     },
-    searchResultMeta: {},
+    searchResultMeta: {
+      fontSize: '1em'
+    },
     searchResultDescription: {},
     searchResultAvatar: {
-      width: '40px'
+      width: '2em'
     },
     searchResultAvatarHeading: {
-      fontSize: '14px'
+      fontSize: '1.1em'
     },
     searchResultAvatarCopy: {
-      fontSize: '12px',
+      fontSize: '1em',
       color: palette.copy
     },
     price: {

@@ -146,8 +146,7 @@ lander:ecommerce,
 - [x] youtube search results
 - [x] google search results
 - [x] amazon search results
-- [ ] wiki search results
-- [ ] search result SECTION
+- [x] search result SECTION
 - [ ] cookie popup
 
 ### day three (sunday)

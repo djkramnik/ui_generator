@@ -1,4 +1,3 @@
-import { useTheme } from 'styled-components'
 import {
   AuthSection,
   DashboardSection,
@@ -7,6 +6,7 @@ import {
   LanderCenter,
   LanderTestimonials,
   LanderTwoCol,
+  SearchSection,
 } from '../components/lib/section'
 import {
   RandomBrandLogo,
@@ -18,6 +18,7 @@ import {
   CollapsibleMenuItem,
   CreditCardDetails,
   GoogleSearchResult,
+  GoogleSearchResultProps,
   Headings,
   ListOfLinks,
   Menu,
@@ -46,16 +47,46 @@ import { Spacer } from '../components/lib/layout/spacer'
 import { Legalese } from '../components/lib/super_components/legalese'
 import { HeroCarousel } from '../components/lib/super_components/carousel'
 import { ThemeToggle } from '../components/lib/theme_toggle'
-import { ProductInfo } from '../components/lib/super_components/product'
 import { useThemeHelper } from '../components/hooks'
 import { Container } from '../components/lib/layout/container'
+import { genGoogleSearchResults } from '../data'
+import { useEffect, useState } from 'react'
 
 const SectionsGallery = () => {
   const { theme, hookSc } = useThemeHelper()
+  const [googleSearchResults, setGoogleSearchResults] = useState<GoogleSearchResultProps[] | null>(null)
+  useEffect(() => {
+    if (googleSearchResults !== null) {
+      return
+    }
+    const searchResults = genGoogleSearchResults(6)
+    setGoogleSearchResults(searchResults)
+  }, [googleSearchResults, setGoogleSearchResults])
 
+  if (!googleSearchResults) {
+    return null
+  }
   return (
     <>
       <ThemeToggle />
+      <Box>
+        <DashboardSection
+          withNav={false}
+          sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}
+        >
+            <SearchSection
+              interludes={[
+                null,
+                'Yo yo ma!'
+              ]}>
+              {
+                (googleSearchResults ?? []).map((props, index) => {
+                  return <GoogleSearchResult {...props} key={index} />
+                })
+              }
+            </SearchSection>
+        </DashboardSection>
+      </Box>
       <Box>
         <Container>
           <GoogleSearchResult

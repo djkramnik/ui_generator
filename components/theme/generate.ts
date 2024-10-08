@@ -680,13 +680,16 @@ export const getSuperComponents = ({
       gap: spacing.gap,
     },
     sidebarLeft: {
-      height: 'calc(100vh - 60px)',
+      minHeight: 'calc(100vh - 60px)',
       paddingLeft: spacing.containerMargins,
       backgroundColor: palette.primary,
       color: palette.button,
     },
+    sidebarLeftNoNav: {
+      minHeight: '100vh'
+    },
     dashboardContainer: {
-      height: '100vh',
+      minHeight: '100vh',
       width: '100vw',
     },
     dashboardContent: {
@@ -701,7 +704,6 @@ export const getSuperComponents = ({
       width: '100%',
       flexGrow: '1',
       alignItems: 'stretch',
-      overflow: 'hidden'
     },
     toastContainer: {
       top: '0',

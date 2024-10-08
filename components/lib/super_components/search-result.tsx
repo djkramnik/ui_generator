@@ -85,13 +85,15 @@ export const VideoSearchResult = ({
 // price component small dollerydoo sign, big dollar, small cents
 // stars component
 
+export type AmazonSearchResultProps = {
+  sm?: boolean
+  productInfo: Omit<ProductInfoProps, 'sm'>
+}
+
 export const AmazonSearchResult = ({
   sm,
   productInfo,
-}: {
-  sm?: boolean
-  productInfo: Omit<ProductInfoProps, 'sm'>
-}) => {
+}: AmazonSearchResultProps) => {
   const { hookSc } = useThemeHelper()
   return (
     <Flex $sx={{
@@ -116,17 +118,19 @@ export const WikiSearchResult = ({
   return null
 }
 
+export type GoogleSearchResultProps = {
+  avatar: RandomAvatarProps
+  heading: string
+  description: string
+  tags?: string[]
+}
+
 export const GoogleSearchResult = ({
   avatar,
   heading,
   description,
   tags,
-}: {
-  avatar: RandomAvatarProps
-  heading: string
-  description: string
-  tags?: string[]
-}) => {
+}: GoogleSearchResultProps) => {
   const { hookSc } = useThemeHelper()
   return (
     <Flex $sx={hookSc('googleSearchResult')}>
@@ -153,7 +157,7 @@ export const GoogleSearchResult = ({
       <Maybe condition={tags}>
         <Flex $sx={hookSc('googleSearchResultTags')}>
           {
-            (tags!).map(t => (
+            (tags ?? []).map(t => (
               <Box key={t}
                 $sx={hookSc('googleSearchResultTag')}>
                 {t}

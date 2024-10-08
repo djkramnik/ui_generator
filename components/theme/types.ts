@@ -138,6 +138,7 @@ export type ThemeConfig = {
     collapsibleMenuItem: CssProps
     collapsibleMenuItemExpanded: CssProps
     sidebarLeft: CssProps
+    sidebarLeftNoNav: CssProps
     dashboardContainer: CssProps
     dashboardSubNav: CssProps
     dashboardContent: CssProps

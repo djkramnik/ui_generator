@@ -48,6 +48,10 @@ export const DashboardSection = ({
             ...getSuperComponentStyles(
               'sidebarLeft', // TODO: based on prop; sidebarright
               theme,
+            ),
+            ...(withNav === false
+                ? getSuperComponentStyles('sidebarLeftNoNav', theme)
+                : {}
             )
           }}>
             {sidebarChildren}

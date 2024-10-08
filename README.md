@@ -153,9 +153,9 @@ lander:ecommerce,
 - [x] cookie popup
 - [x] media recommends
 
-  - [ ] shorts? (203.8 x 361.4)
+  - [x] shorts? (203.8 x 361.4)
   - [x] small video results?
-  - [x] vertical video results? 
+  - [x] vertical video results?  
 
 
 - [ ] wiki section

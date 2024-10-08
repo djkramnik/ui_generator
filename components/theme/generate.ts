@@ -1163,7 +1163,6 @@ export const getSuperComponents = ({
       display: 'flex',
       flexDirection: 'column',
       gap: spacing.gap,
-      alignItems: 'center',
       width: '203px'
     },
     shortsImg: {
@@ -1173,6 +1172,26 @@ export const getSuperComponents = ({
     shortsTitle: {},
     shortsMeta: {
       fontSize: '14px'
+    },
+    wikiHeading: {
+      fontWeight: 'normal',
+      fontSize: '24px'
+    },
+    wikiHeadingLg: {
+      fontSize: '30px'
+    },
+    wikiHeadingContainer: {
+      borderBottom: '1px solid rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      gap: spacing.bigGap,
+      alignItems: 'center'
+    },
+    wikiSection: {
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    wikiCopy: {
+      
     }
   }
 }

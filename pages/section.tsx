@@ -28,8 +28,10 @@ import {
   MenuItemsShortcut,
   MyAvatar,
   PersonDetails,
+  PortraitVideoResult,
   RandomizedForm,
   VideoSearchResult,
+  WikiHeading,
 } from '../components/lib/super_components'
 import {
   Anchor,
@@ -72,6 +74,45 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <Spacer />
+      <Box $sx={{}}>
+        <Container>
+          <Box $sx={{ width: '800px'}}>
+            <WikiHeading title="2024 Pont-Sondé Attack" lg>
+              <Anchor>[ Edit ]</Anchor>
+            </WikiHeading>
+          </Box>
+          <Spacer />
+          <Box $sx={{ width: '300px'}}>
+            <WikiHeading title="The phrase 'OMG'" />
+          </Box>
+          
+        </Container>
+      </Box>
+      <Spacer />
+      <Spacer />
+      <Box $sx={{}}>
+        <Container>
+          <Flex gap={theme.spacing.gap}>
+            <PortraitVideoResult
+              asset="short1.jpg"
+              title="Did Lifting Stunt Her Growth"
+              meta="95M Views"
+            />
+            <PortraitVideoResult
+              asset="short2.jpg"
+              title="Dog shower for 99 dollars"
+              meta="95M Views"
+            />
+            <PortraitVideoResult
+              asset="short3.jpg"
+              title="How little can you move...."
+              meta="433K Views"
+            />
+          </Flex>
+        </Container>
+      </Box>
+      <Spacer />
       <Box $sx={{}}>
         <Container>
           <Flex gap={theme.spacing.gap}>

@@ -246,6 +246,11 @@ export type ThemeConfig = {
     shortsImg: CssProps
     shortsTitle: CssProps
     shortsMeta: CssProps
+    wikiHeadingContainer: CssProps
+    wikiHeadingLg: CssProps
+    wikiHeading: CssProps
+    wikiSection: CssProps
+    wikiCopy: CssProps
   }
 }
 

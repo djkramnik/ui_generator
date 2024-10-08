@@ -1,9 +1,37 @@
 import { Box, Flex } from "../layout"
 import { RandomAvatar, RandomAvatarProps } from "./avatar"
 import { RandomThumbnail } from "./thumbnail"
-import { Copy, Heading, Maybe } from "../atomics"
+import { Copy, Heading, Maybe, Image } from "../atomics"
 import { ProductInfo, ProductInfoProps } from "./product"
 import { useThemeHelper } from "../../hooks"
+
+export const PortraitVideoResult = ({
+  asset,
+  title,
+  meta,
+}: {
+  asset: string
+  title: string
+  meta?: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex col $sx={hookSc('shortsContainer')}>
+      <Image $sx={hookSc('shortsImg')}
+        src={`/shorts/${asset}`}
+      />
+      <Heading level={4} $sx={hookSc('shortsTitle')}>
+        {title}
+      </Heading>
+      <Maybe condition={meta}>
+        <Copy $sx={hookSc('shortsMeta')}>
+          {meta ?? ''}
+        </Copy>
+      </Maybe>
+    </Flex>
+  )
+}
+
 
 // do not try to conflate this with the vertical version
 export const VideoSearchResult = ({

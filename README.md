@@ -151,11 +151,11 @@ lander:ecommerce,
 ### day three (sunday)
 - [x] accordion SECTION
 - [x] cookie popup
-- [ ] media recommends
+- [x] media recommends
 
-  - [ ] shorts? 
-  - [ ] small video results?
-  - [ ] vertical video results? 
+  - [ ] shorts? (203.8 x 361.4)
+  - [x] small video results?
+  - [x] vertical video results? 
 
 
 - [ ] wiki section

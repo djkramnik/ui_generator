@@ -242,6 +242,10 @@ export type ThemeConfig = {
     cookieOption: CssProps
     cookieCopy: CssProps
     cookieReject: CssProps
+    shortsContainer: CssProps
+    shortsImg: CssProps
+    shortsTitle: CssProps
+    shortsMeta: CssProps
   }
 }
 

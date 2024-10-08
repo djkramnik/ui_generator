@@ -1158,7 +1158,22 @@ export const getSuperComponents = ({
       border: '1px solid white',
       borderRadius: '0.25rem'
     },
-    cookieReject: {}
+    cookieReject: {},
+    shortsContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.gap,
+      alignItems: 'center',
+      width: '203px'
+    },
+    shortsImg: {
+      width: '203px',
+      height: 'auto'
+    },
+    shortsTitle: {},
+    shortsMeta: {
+      fontSize: '14px'
+    }
   }
 }
 

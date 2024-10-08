@@ -227,6 +227,12 @@ export type ThemeConfig = {
     googleSearchResultTags: CssProps
     googleSearchResultTag: CssProps
     searchPage: CssProps
+    searchInterlude: CssProps
+    accordionSection: CssProps
+    accordionSectionSummary: CssProps
+    accordionSectionIcon: CssProps
+    accordionSectionRoot: CssProps
+    accordionChild: CssProps
   }
 }
 

@@ -13,6 +13,7 @@ import {
   SocialMediaButtonRow,
 } from '../components/lib/super_components/brand'
 import {
+  AccordionSection,
   AddressDetails,
   AmazonSearchResult,
   CollapsibleMenuItem,
@@ -76,8 +77,27 @@ const SectionsGallery = () => {
         >
             <SearchSection
               interludes={[
-                null,
-                'Yo yo ma!'
+                (
+                  <Flex col gap={theme.spacing.gap}>
+                    <Heading level={4}>
+                      People also ask
+                    </Heading>
+                    <AccordionSection
+                      openText={`It hydrates, refreshes and cleanses
+                        your pores, using Nissan's triple safety protocol`}
+                      openIndex={0}
+                      accordions={[{
+                        heading: 'What does Tongkat Ali do for a man?'
+                      }, {
+                        heading: 'Will I become superman taking this?'
+                      }, {
+                        heading: 'Is this the silver bullet to give me unlimited satisfaction?'
+                      }, {
+                        heading: 'Can I do it if I put my back into it?'
+                      }]}
+                    />
+                  </Flex>
+                )
               ]}>
               {
                 (googleSearchResults ?? []).map((props, index) => {

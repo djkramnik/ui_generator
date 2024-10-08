@@ -1090,6 +1090,28 @@ export const getSuperComponents = ({
     searchPage: {
       flexDirection: 'column',
       gap: spacing.gap
+    },
+    searchInterlude: {
+      paddingTop: spacing.bigGap,
+      paddingBottom: spacing.bigGap
+    },
+    accordionSection: {
+      flexDirection: 'column',
+      width: '600px'
+    },
+    accordionSectionIcon: {
+      color: palette.copy,
+    },
+    accordionSectionSummary: {
+      backgroundColor: palette.background,
+    },
+    accordionSectionRoot: {
+      borderBottom: 'none',
+      borderLeft: 'none',
+      borderRight: 'none'
+    },
+    accordionChild: {
+      fontSize: '18px'
     }
   }
 }

@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { useThemeHelper } from "../../hooks"
-import { Flex } from "../layout"
+import { Box, Flex } from "../layout"
 
 export const SearchSection = ({
   children,
@@ -11,7 +11,6 @@ export const SearchSection = ({
   interludes?: React.ReactNode[]
   interludeInterval?: number
 }) => {
-  const interludesIndex = useRef<number>(0)
   const { hookSc }  = useThemeHelper()
   return (
     <Flex $sx={hookSc('searchPage')}>
@@ -19,10 +18,11 @@ export const SearchSection = ({
         React.Children.map(children,
           (child, index) => {
             if (index > 0 && !(index % interludeInterval)) {
-
               return (
                 <>
-                  {interludes?.[interludesIndex.current++] ?? null}
+                  <Box $sx={hookSc('searchInterlude')}>
+                    {interludes?.[Math.floor(index / interludeInterval) - 1] ?? null}
+                  </Box>
                   {child}
                 </>
               )

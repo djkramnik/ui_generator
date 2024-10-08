@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import { AccordionDetails, AccordionSummary } from '@mui/material'
 import { CssProps } from '../../../theme'
 import { Box } from '../../layout'
@@ -11,16 +12,19 @@ import {
 } from '../../../theme/variants'
 import { useTheme } from 'styled-components'
 
-const DefaultIcon = ({ open }: { open: boolean }) => {
+const DefaultIcon = ({ 
+  open,
+  style,
+}: { open: boolean, style?: CSSProperties }) => {
   return (
     <i
-      style={{ fontSize: '18px' }}
+      style={{ fontSize: '18px', ...style }}
       className={`fa-solid fa-chevron-${open ? 'up' : 'down'}`}
     />
   )
 }
 
-type AccordionProps = {
+export type AccordionProps = {
   heading: string
   open?: boolean
   summarySx?: CssProps
@@ -33,6 +37,7 @@ type AccordionProps = {
   rootVariant?: string | string[]
   headingVariant?: string | string[]
   expandedVariant?: string | string[]
+  iconStyle?: CSSProperties
 }
 
 export const AccordionSection = ({
@@ -48,6 +53,7 @@ export const AccordionSection = ({
   rootVariant,
   headingVariant,
   expandedVariant,
+  iconStyle,
 }: AccordionProps) => {
   const theme = useTheme()
 
@@ -97,7 +103,7 @@ export const AccordionSection = ({
         >
           {heading}
         </Heading>
-        {icon ?? <DefaultIcon open={open === true} />}
+        {icon ?? <DefaultIcon open={open === true} style={iconStyle} />}
       </Box>
       {open ? (
         <Box
@@ -164,7 +170,7 @@ export const ChimericAccordion = (
               ...summaryHeadingDiff,
             }),
           }}
-          expandIcon={icon ?? <ExpandMoreIcon />}
+          expandIcon={icon ?? <ExpandMoreIcon style={rest.iconStyle} />}
         >
           {rest.heading}
         </AccordionSummary>

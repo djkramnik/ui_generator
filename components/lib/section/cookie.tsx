@@ -8,12 +8,14 @@ export const CookieSection = ({
   customizeLabel,
   rigamarole,
   open,
+  handleClose,
 }: {
   rigamarole: string
   agreeLabel?: string
   disagreeLabel?: string
   customizeLabel?: string
   open?: boolean
+  handleClose?: () => void
 }) => {
   const { hookSc } = useThemeHelper()
   if (!open) {
@@ -22,23 +24,26 @@ export const CookieSection = ({
   return (
     <Box $sx={hookSc('cookieSection')}>
       <Box $sx={hookSc('cookieInner')}>
-        <Copy>
+        <Copy $sx={hookSc('cookieCopy')}>
           {rigamarole}
         </Copy>
         <Box $sx={hookSc('cookieOptions')}>
-          <Button $sx={hookSc('cookieOption')}>
+          <Button onClick={handleClose}
+          $sx={hookSc('cookieOption')}>
             {agreeLabel}
           </Button>
           {
             customizeLabel
               ? (
-                <Button $sx={hookSc('cookieOption')}>
+                <Button onClick={handleClose}
+                $sx={hookSc('cookieOption')}>
                   {customizeLabel}
                 </Button>
               )
               : null
           }
-          <Button $sx={{
+          <Button onClick={handleClose}
+          $sx={{
             ...hookSc('cookieOption'),
             ...hookSc('cookieReject')
           }}>

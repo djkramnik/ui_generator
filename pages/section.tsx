@@ -1,5 +1,6 @@
 import {
   AuthSection,
+  CookieSection,
   DashboardSection,
   Footer,
   Fullscreen,
@@ -55,6 +56,7 @@ import { useEffect, useState } from 'react'
 
 const SectionsGallery = () => {
   const { theme, hookSc } = useThemeHelper()
+  const [ cookieOpen, setCookieOpen ] = useState<boolean>(true)
   const [googleSearchResults, setGoogleSearchResults] = useState<GoogleSearchResultProps[] | null>(null)
   useEffect(() => {
     if (googleSearchResults !== null) {
@@ -71,6 +73,14 @@ const SectionsGallery = () => {
     <>
       <ThemeToggle />
       <Box>
+        <CookieSection
+          handleClose={() => setCookieOpen(false)}
+          open={cookieOpen}
+          rigamarole={`This website analyzes your eye movements,
+            in order to match it to a database of user eye movements,
+            in order to find out your weaknesses so we may destroy you.  Please
+            consent to this by blinking.`}
+        />
         <DashboardSection
           withNav={false}
           sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}

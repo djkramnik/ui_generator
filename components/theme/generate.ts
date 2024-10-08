@@ -1117,9 +1117,11 @@ export const getSuperComponents = ({
       position: 'fixed',
       width: '100vw',
       backgroundColor: palette.primary,
+      bottom: '0',
+      zIndex: '5'
     },
     cookieInner: {
-      padding: spacing.gap,
+      padding: spacing.bigGap,
       display: 'flex',
       gap: spacing.bigGap,
       justifyContent: 'center',
@@ -1132,9 +1134,12 @@ export const getSuperComponents = ({
       display: 'flex',
       gap: spacing.gap,
       alignItems: 'center',
-      flexWrap: 'wrap'
+      flexWrap: 'wrap',
     },
-    cookieOption: {},
+    cookieOption: {
+      border: '1px solid white',
+      borderRadius: '0.25rem'
+    },
     cookieReject: {}
   }
 }

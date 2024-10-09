@@ -1203,6 +1203,61 @@ export const getSuperComponents = ({
     tableOfContentsLink: {
       paddingLeft: '22px',
       fontWeight: 'normal'
+    },
+    newsPreviewH: {
+      display: 'flex',
+      gap: '8px',
+      margin: 'auto'
+    },
+    newsPreview: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '8px'
+    },
+    newsPreviewHHeading: {
+      fontSize: '16px',
+      fontWeight: 'normal',
+    },
+    newsPreviewHImg: {
+      width: '40%'
+    },
+    newsPreviewLink: {},
+    newsPreviewTopHeading: {
+      fontSize: '36px',
+      lineHeight: '38px',
+      textAlign: 'center',
+    },
+    newsPreviewImg: {
+      width: '100%',
+      margin: 'auto'
+    },
+    newsPreviewHeading: {
+      fontSize: '20px',
+      lineHeight: '26px',
+      width: '100%',
+      margin: 'auto',
+    },
+    newsPreviewHeadingSm: {
+      fontSize: '16px',
+      fontWeight: 'normal'
+    },
+    newsLink: {
+      fontSize: '18px'
+    },
+    newsLinkContainer: {
+      padding: '20px 0',
+      display: 'flex',
+      alignItems: 'center',
+      borderBottom: '1px solid #e6e4e4',
+      borderTop: `1px solid #eee`
+    },
+    newsLinkList: {
+      width: '100%',
+      margin: 'auto'
+    },  
+    newsLinkDot: {
+      display: 'list-item',
+      marginLeft: '12px'
     }
   }
 }

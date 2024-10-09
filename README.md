@@ -159,14 +159,16 @@ lander:ecommerce,
 
 
 - [x] wiki section
-- [ ] table of contents
+- [x] table of contents
 
 
 - [ ] news directory (thematize cnn news? )
-- [ ] news story
-- [ ] news / blog article
+* first styles... static content
+* then, randomize content 
 
 ### day four (monday)
+- [ ] news story
+- [ ] news / blog article
 - [ ] file upload modal
 - [ ] three col cards ??
 

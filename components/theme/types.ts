@@ -253,6 +253,19 @@ export type ThemeConfig = {
     wikiCopy: CssProps
     tableOfContents: CssProps
     tableOfContentsLink: CssProps
+    newsPreviewH: CssProps
+    newsPreviewHImg: CssProps
+    newsPreviewHHeading: CssProps
+    newsPreviewLink: CssProps
+    newsPreview: CssProps
+    newsPreviewTopHeading: CssProps
+    newsPreviewImg: CssProps
+    newsPreviewHeading: CssProps
+    newsPreviewHeadingSm: CssProps
+    newsLink: CssProps
+    newsLinkList: CssProps
+    newsLinkContainer: CssProps
+    newsLinkDot: CssProps
   }
 }
 

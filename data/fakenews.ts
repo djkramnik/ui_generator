@@ -1,4 +1,4 @@
-import { randomItem, shuffle } from '../components/utils'
+import { randomItem, randomPick, shuffle } from '../components/utils'
 import { getRandomEmail, getRandomName } from './faker'
 
 const headlines = [
@@ -359,7 +359,8 @@ const defaultReplacements: Record<string, () => string> = {
   '{name}': getRandomName,
   '{org}': () => randomItem(fakeNewsOrgs),
   '{date}': () => new Date().toLocaleDateString(),
-  '{email}': () => getRandomEmail()
+  '{email}': () => getRandomEmail(),
+  '{integer}': () => String(randomPick(1, 10))
 }
 
 export const randomStrFormat

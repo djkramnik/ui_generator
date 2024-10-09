@@ -5,7 +5,7 @@ import { useThemeHelper } from "../../hooks"
 import { useEffect, useState } from "react"
 import { sizedArray } from "../../../util"
 import { randomPick } from "../../utils"
-import { fakeColumns, fakeHeadline, fakeLink, fakeNewsThumb } from "../../../data"
+import { fakeAvatarLineOne, fakeAvatarLineTwo, fakeColumns, fakeHeadline, fakeLink, fakeNewsThumb } from "../../../data"
 import { useTheme } from "styled-components"
 import { RandomAvatar, TrueRandomAvatar } from "./avatar"
 import { RandomSocialMediaButtonRow } from "./brand"
@@ -289,6 +289,26 @@ export const NewsStoryHeadline = ({
   withSocials?: boolean
 }) => {
   const { hookSc } = useThemeHelper()
+  const [avatarLineOne, setAvatarLineOne] = useState<string | null>(null)
+  const [avatarLineTwo, setAvatarLineTwo] = useState<string | null>(null)
+  
+  useEffect(() => {
+    if (avatarLineOne !== null) {
+      return
+    }
+    setAvatarLineOne(
+      fakeAvatarLineOne()
+    )
+    setAvatarLineTwo(
+      Math.random() > 0.5
+        ? fakeAvatarLineTwo()
+        : null
+    )
+  }, [avatarLineOne, setAvatarLineOne, setAvatarLineTwo])
+
+  if (!avatarLineOne) {
+    return null
+  }
   return (
     <Flex $sx={hookSc('newsStoryHeading')}>
       <Heading level={1} $sx={
@@ -297,6 +317,8 @@ export const NewsStoryHeadline = ({
         {headline}
       </Heading>
       <TrueRandomAvatar
+        name={avatarLineOne}
+        position={avatarLineTwo ?? undefined}
         avatarSx={hookSc('newsStoryHeadlineAvatar')}
         headingSx={hookSc('newsStoryHeadlineAvatarLine1')}
       />

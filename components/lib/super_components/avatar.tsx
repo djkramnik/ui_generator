@@ -84,18 +84,16 @@ export const MyAvatar = ({
               ...getSuperComponentStyles('avatarBig', theme),
               ...headingSx,
             }}
-          >
-            {name}
-          </Heading>
+            dangerouslySetInnerHTML={{ __html: name }}
+          />
           {position ? (
             <Copy
               $sx={{
                 ...getSuperComponentStyles('avatarLittle', theme),
                 ...copySx,
               }}
-            >
-              {position}
-            </Copy>
+              dangerouslySetInnerHTML={{ __html: position }}
+            />
           ) : null}
         </Flex>
       </Flex>

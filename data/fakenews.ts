@@ -338,6 +338,8 @@ export const fakeAvatarLineOne = (templates?: string[]) => {
   const availTemplates = templates ?? [
     'Analysis by <a>{name}</a>, {org}',
     '<a>{name}</a> · {org} · {date}',
+    'By {name}, {name} and {name}',
+    'By {name} and {name}'
   ]
   return randomStrFormat(
     (randomItem(availTemplates) as string)
@@ -348,7 +350,8 @@ export const fakeAvatarLineTwo = (templates?: string[]) => {
   const availTemplates = templates ?? [
     '{integer} minute read · Published {date}',
     'Edited by {name} with {name} reporting',
-    'We like to hear from you.  Get in touch: {email}'
+    'We like to hear from you.  Get in touch: {email}',
+    'Updated {date}'
   ]
   return randomStrFormat(
     (randomItem(availTemplates) as string)

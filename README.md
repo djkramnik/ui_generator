@@ -166,14 +166,12 @@ lander:ecommerce,
 
 ### day four (monday)
 - [x] randomize cnn thing
+
 - [ ] news story
 - [ ] news / blog article
 - [ ] file upload modal
-- [ ] three col cards ??
 
-(gandi.net, stripe)
-
-- [ ] dashboard section (heading, icons) 
+- [ ] dashboard section (heading, icons) (refer to gandi.net, stripe)
 - [ ] dashboard list with options
 - [ ] dashboard two col cards
 

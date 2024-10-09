@@ -1242,7 +1242,8 @@ export const getSuperComponents = ({
       fontWeight: 'normal'
     },
     newsLink: {
-      fontSize: '18px'
+      fontSize: '18px',
+      color: palette.copy
     },
     newsLinkContainer: {
       padding: '20px 0',

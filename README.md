@@ -162,11 +162,11 @@ lander:ecommerce,
 - [x] table of contents
 
 
-- [ ] news directory (thematize cnn news? )
-* first styles... static content
+- [x] news directory (thematize cnn news? )
 * then, randomize content 
 
 ### day four (monday)
+- [ ] randomize cnn thing
 - [ ] news story
 - [ ] news / blog article
 - [ ] file upload modal

@@ -1,17 +1,18 @@
-import { CSSProperties } from "react"
 import { Box, Flex, ThreeCol } from "../layout"
-import { CssProps, ResponsiveMixin } from "../../theme"
+import { CssProps } from "../../theme"
 import { Anchor, Heading, Image } from "../atomics"
 import { useThemeHelper } from "../../hooks"
+import { useEffect, useState } from "react"
+import { sizedArray } from "../../../util"
+import { randomPick } from "../../utils"
+import { fakeHeadline, fakeLink, fakeNewsThumb } from "../../../data"
 
 export const NewsPreviewH = ({
   asset,
   headline,
-  headlineSx,
 }: {
   asset: string
   headline: string
-  headlineSx?: CssProps
 })  => {
   const { hookSc } = useThemeHelper()
   return (
@@ -63,6 +64,40 @@ export const NewsPreview = ({
         </Heading>
       </Flex>
     </Anchor>
+  )
+}
+
+export const RandomNewsPreview = ({
+  sm,
+  withTop,
+}: {
+  sm?: boolean
+  withTop?: boolean
+}) => {
+  const [asset, setAsset] = useState<string | null>(null)
+  const [topHead, setTopHead] = useState<string | null>(null)
+  const [head, setHead] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (asset !== null || head !== null) {
+      return
+    }
+    setAsset(fakeNewsThumb())
+    setHead(fakeHeadline())
+    setTopHead(withTop ? fakeHeadline() : null)
+  }, [withTop, asset, head, setAsset, setHead, setTopHead])
+
+  if (!asset || !head) {
+    return null
+  }
+
+  return (
+    <NewsPreview
+      asset={asset}
+      sm={sm}
+      topHeadline={topHead ?? undefined}
+      headline={head}
+    />
   )
 }
 
@@ -133,7 +168,32 @@ export const NewsLinkList = ({
   )
 }
 
-
+export const RandomNewsLinks = ({
+  n,
+}: {
+  n?: number
+}) => {
+  const [links, setLinks] = useState<string[] | null>(null)
+  useEffect(() => {
+    if (links !== null) {
+      return
+    }
+    const numLinks = typeof n === 'number'
+      ? Math.max(1, n)
+      : randomPick(1, 6)
+    setLinks(
+      sizedArray(numLinks)
+        .map(() => fakeLink())
+    )
+  }, [links, setLinks, n])
+  
+  if (!links) {
+    return
+  }
+  return (
+    <NewsLinkList links={links} /> 
+  )
+}
 
 
 export const ThreeColNews = ({
@@ -144,17 +204,8 @@ export const ThreeColNews = ({
   return (
     <ThreeCol w={w}>
     <>
-      <NewsPreview
-        topHeadline="Read my lips says old man, whilst licking said lips disturbingly"
-        asset="yt_thumb1.jpg"
-        headline="Unearthed recording of Black Keys Lead Singer reveals confession of lonely young maleness"
-      />
-      <NewsLinkList 
-        links={[
-          'Trump threatens a crash course in foreign diplomacy for Buttigieg and Harris.',
-          'Tyreek Hill looked up at the roaring fans, blinking away the sweat trickling into his eyes.',
-        ]}
-      />
+      <RandomNewsPreview withTop />
+      <RandomNewsLinks />
       <NewsPreview asset="cnn12.jpg"
         headline="Fuck Santy Claus, say demoralized Ukrainian troops"
       />

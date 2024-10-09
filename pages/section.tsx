@@ -7,6 +7,7 @@ import {
   LanderCenter,
   LanderTestimonials,
   LanderTwoCol,
+  RandomNewsStory,
   SearchSection,
 } from '../components/lib/section'
 import {
@@ -77,6 +78,11 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <Fullscreen>
+        <Container>
+          <RandomNewsStory />
+        </Container>
+      </Fullscreen>
       <Container>
         <RandomThreeColNews />
       </Container>

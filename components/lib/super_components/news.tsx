@@ -1,11 +1,14 @@
 import { Box, Flex, ThreeCol } from "../layout"
 import { CssProps } from "../../theme"
-import { Anchor, Heading, Image } from "../atomics"
+import { Anchor, Heading, Image, Maybe } from "../atomics"
 import { useThemeHelper } from "../../hooks"
 import { useEffect, useState } from "react"
 import { sizedArray } from "../../../util"
 import { randomPick } from "../../utils"
 import { fakeColumns, fakeHeadline, fakeLink, fakeNewsThumb } from "../../../data"
+import { useTheme } from "styled-components"
+import { RandomAvatar, TrueRandomAvatar } from "./avatar"
+import { RandomSocialMediaButtonRow } from "./brand"
 
 export const NewsPreviewH = ({
   asset,
@@ -278,8 +281,30 @@ export const RandomThreeColNews = ({
 // avatar
 // socials 
 
-export const NewsStoryHeadline = () => {
-
+export const NewsStoryHeadline = ({
+  headline,
+  withSocials
+}: {
+  headline: string
+  withSocials?: boolean
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex $sx={hookSc('newsStoryHeading')}>
+      <Heading level={1} $sx={
+        hookSc('newsStoryHeadingTitle')
+      }>
+        {headline}
+      </Heading>
+      <TrueRandomAvatar
+        avatarSx={hookSc('newsStoryHeadlineAvatar')}
+        headingSx={hookSc('newsStoryHeadlineAvatarLine1')}
+      />
+      <Maybe condition={withSocials}>
+        <RandomSocialMediaButtonRow />
+      </Maybe>
+    </Flex>
+  )
 }
 
 // this is going to take a while :(

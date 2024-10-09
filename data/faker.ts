@@ -35,12 +35,10 @@ export const lastNames = [
   'Froggy'
 ]
 
-export const getRandomName= ({
-  firstNameOnly = false,
-}: {
+export const getRandomName= (options?: {
   firstNameOnly?: boolean
 }): string => {
-  return `${randomItem(firstNames)}${!firstNameOnly ? ` ${randomItem(lastNames)}`: ''}`
+  return `${randomItem(firstNames)}${!options?.firstNameOnly ? ` ${randomItem(lastNames)}`: ''}`
 }
 
 const searchResults = [
@@ -204,6 +202,10 @@ const topLevelDomains = [
   'video',
   'fun'
 ]
+
+export const getRandomEmail = () => {
+  return `${getRandomName({ firstNameOnly: true })}@gmail${randomItem(topLevelDomains)}`
+}
 
 export const getRandomWebsite = () => {
   return `https://${randomItem(websites)}.${randomItem(topLevelDomains)}`

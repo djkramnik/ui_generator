@@ -1,10 +1,11 @@
 import { useTheme } from "styled-components"
 import { useEffect, useState } from "react"
 import { CnnLogo, EnercareLogo, GsapLogo, ShopifyLogo, StripeLogo } from "../../svg"
-import { randomPick } from "../../utils"
+import { randomPick, shuffle } from "../../utils"
 import { Box, Flex } from "../layout"
 import { getSuperComponentStyles, sxToStyle } from "../../theme"
 import { BrandIcon, ChimericIcon, Icon } from "../atomics"
+import { sizedArray } from "../../../util"
 
 const randomLogos = [
   StripeLogo,
@@ -127,5 +128,44 @@ export const SocialMediaButtonRow = ({
         })
       }
     </Flex>
+  )
+}
+
+const socialMediaBrands: BrandIcon[] = [
+  'discord',
+  'docker',
+  'facebook',
+  'figma',
+  'google',
+  'instagram',
+  'stripe',
+  'tiktok',
+  'twitter'
+]
+
+export const RandomSocialMediaButtonRow = ({
+  n,
+  blackAndWhite
+}: {
+  n?: number
+  blackAndWhite?: boolean
+}) => {
+  const [socials, setSocials] = useState<BrandIcon[] | null>(null)
+
+  useEffect(() => {
+    const numItems = typeof n === 'number'
+      ? Math.max(n, 0)
+      : randomPick(3, 6)
+    const randomizedSocials = shuffle(socialMediaBrands)
+    setSocials(
+      randomizedSocials.slice(0, numItems)
+    )
+  }, [socials, setSocials])
+
+  if (!socials) {
+    return null
+  }
+  return (
+    <SocialMediaButtonRow blackAndWhite={blackAndWhite} icons={socials} />
   )
 }

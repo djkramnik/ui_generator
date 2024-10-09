@@ -617,9 +617,11 @@ export const getComponents = ({
 }
 
 export const getSuperComponents = ({
-  palette
+  palette,
+  typography,
 }: {
   palette: Theme['palette']
+  typography: Theme['typography']
 }): Theme['superComponents'] => {
   return {
     navbar: {
@@ -1259,6 +1261,24 @@ export const getSuperComponents = ({
     newsLinkDot: {
       display: 'list-item',
       marginLeft: '12px'
+    },
+    newsStoryHeading: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.bigGap
+    },
+    newsStoryHeadingTitle: {
+      fontSize: '54px',
+      lineHeight: '72px'
+    },
+    newsStoryHeadlineAvatar: {
+      width: '60px'
+    },
+    newsStoryHeadlineAvatarLine1: {
+      fontWeight: 'normal'
+    },
+    newsStoryContainer: {
+      
     }
   }
 }
@@ -1273,7 +1293,7 @@ export const generateTheme = (): Theme => {
     secondaryff,
   }
   return {
-    superComponents: getSuperComponents({ palette }),
+    superComponents: getSuperComponents({ palette, typography }),
     typography,
     palette,
     spacing,

@@ -1,4 +1,5 @@
 import { randomItem, shuffle } from '../components/utils'
+import { getRandomEmail, getRandomName } from './faker'
 
 const headlines = [
   'Dookie Demastered',
@@ -303,6 +304,23 @@ const newsAssets = [
   'yt_thumb9.jpg',
 ]
 
+const fakeNewsOrgs = [
+  'CNN',
+  'CBC',
+  'BBC',
+  'NBC',
+  'ABC',
+  'Al Jazeera',
+  'Democracy Now',
+  'Microsoft News',
+  'National Post',
+  'Globe and Mail',
+  'Star',
+  'The Times',
+  'The Globe',
+  'New York Times',
+]
+
 export const fakeColumns = (): [string, string, string] => {
   const validCombos = [
     ['45%', '30%', '25%'],
@@ -315,3 +333,39 @@ export const fakeColumns = (): [string, string, string] => {
 export const fakeLink = () => randomItem(links)
 export const fakeHeadline = () => randomItem(headlines)
 export const fakeNewsThumb = () => randomItem(newsAssets)
+
+export const fakeAvatarLineOne = (templates?: string[]) => {
+  const availTemplates = templates ?? [
+    'Analysis by <a>{name}</a>, {org}',
+    '<a>{name}</a> · {org} · {date}',
+  ]
+  return randomStrFormat(
+    (randomItem(availTemplates) as string)
+  )
+}
+
+export const fakeAvatarLineTwo = (templates?: string[]) => {
+  const availTemplates = templates ?? [
+    '{integer} minute read · Published {date}',
+    'Edited by {name} with {name} reporting',
+    'We like to hear from you.  Get in touch: {email}'
+  ]
+  return randomStrFormat(
+    (randomItem(availTemplates) as string)
+  )
+}
+
+const defaultReplacements: Record<string, () => string> = {
+  '{name}': getRandomName,
+  '{org}': () => randomItem(fakeNewsOrgs),
+  '{date}': () => new Date().toLocaleDateString(),
+  '{email}': () => getRandomEmail()
+}
+
+export const randomStrFormat
+  = (s: string, replacements?: Record<string, () => string>): string => {
+    return Object.entries(replacements ?? defaultReplacements)
+      .reduce((acc, [key, value]) => {
+        return acc.replaceAll(key, value())
+      }, s)
+  }

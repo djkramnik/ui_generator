@@ -4,6 +4,7 @@ import { Box, Flex } from '../layout'
 import { Copy, Heading, Image } from '../atomics'
 import { useEffect, useState } from 'react'
 import { randomItem } from '../../utils'
+import { getRandomName, getRandomSentence } from '../../../data'
 
 export type AvatarProps = {
   asset: string
@@ -118,3 +119,22 @@ export const RandomAvatar = (props: RandomAvatarProps) => {
   }
   return <MyAvatar asset={asset} {...props} />
 }
+
+export const TrueRandomAvatar = (props: Pick<RandomAvatarProps, 
+  'avatarSx' | 'avatarRightSx' | 'copySx' | 'headingSx'> & { name?: string; position?: string }) => {
+    const [name, setName] = useState<string | null>(props.name ?? null)
+    const [position, setPosition] = useState<string | null>(props.position ?? null)
+    useEffect(() => {
+      if (name !== null || position !== null) {
+        return
+      } // x minute read is salient info bro
+      setName(getRandomName({})) // name is a misnomer, so is position
+      setPosition(getRandomSentence()) // it should just be line1 and line2... also need something more complicated than strings here
+    }, [name, position, setName, setPosition])
+    if (!name || !position) {
+      return null
+    }
+    return (
+      <RandomAvatar name={name} position={position} {...props} />
+    )
+  }

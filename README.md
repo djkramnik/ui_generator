@@ -190,6 +190,7 @@ lander:ecommerce,
 - [ ] bottom up popover
 - [ ] squarespace type hero
 - [ ] comments
+- [ ] carousel o content
 
 ## Roadmap 
 - [x] create script to extract all custom styles from a given element on page... for the purpose of grabbing mock assets for use in the simulator.

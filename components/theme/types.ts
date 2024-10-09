@@ -266,6 +266,11 @@ export type ThemeConfig = {
     newsLinkList: CssProps
     newsLinkContainer: CssProps
     newsLinkDot: CssProps
+    newsStoryHeading: CssProps
+    newsStoryHeadingTitle: CssProps
+    newsStoryHeadlineAvatar: CssProps
+    newsStoryHeadlineAvatarLine1: CssProps,
+    newsStoryContainer: CssProps
   }
 }
 

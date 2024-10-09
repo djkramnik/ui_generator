@@ -57,7 +57,7 @@ import { useThemeHelper } from '../components/hooks'
 import { Container } from '../components/lib/layout/container'
 import { genGoogleSearchResults } from '../data'
 import { useEffect, useState } from 'react'
-import { ThreeColNews } from '../components/lib/super_components/news'
+import { RandomThreeColNews } from '../components/lib/super_components/news'
 
 const SectionsGallery = () => {
   const { theme, hookSc } = useThemeHelper()
@@ -78,7 +78,7 @@ const SectionsGallery = () => {
     <>
       <ThemeToggle />
       <Container>
-        <ThreeColNews w={['45%', '30%', '25%']} />
+        <RandomThreeColNews />
       </Container>
       <Spacer />
       <Box $sx={{}}>

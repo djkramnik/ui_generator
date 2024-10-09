@@ -5,7 +5,7 @@ import { useThemeHelper } from "../../hooks"
 import { useEffect, useState } from "react"
 import { sizedArray } from "../../../util"
 import { randomPick } from "../../utils"
-import { fakeHeadline, fakeLink, fakeNewsThumb } from "../../../data"
+import { fakeColumns, fakeHeadline, fakeLink, fakeNewsThumb } from "../../../data"
 
 export const NewsPreviewH = ({
   asset,
@@ -195,84 +195,81 @@ export const RandomNewsLinks = ({
   )
 }
 
+type ColFiller = {
+  type: 'links',
+} | {
+  type: 'preview',
+  withTop?: boolean
+}
 
-export const ThreeColNews = ({
-  w
+const RandomNewsCol = ({
+  n
 }: {
-  w: [string, string, string]
+  n?: number
 }) => {
+  const [items, setItems] = useState<ColFiller[] | null>(null)
+  useEffect(() => {
+    if (items !== null) {
+      return
+    }
+    const numItems = typeof n === 'number'
+      ? Math.max(n, 1)
+      : randomPick(1, 4)
+    setItems(
+      sizedArray(numItems)
+        .map((_, index) => {
+          return Math.random() > 0.6
+            ? {
+              type: 'links'
+            }
+            : {
+              type: 'preview',
+              withTop: index !== 0
+                ? false
+                : Math.random() > 0.3
+            }
+        })
+    )
+
+  }, [items, setItems])
+
+  if (items === null) {
+    return null
+  }
   return (
-    <ThreeCol w={w}>
     <>
-      <RandomNewsPreview withTop />
-      <RandomNewsLinks />
-      <NewsPreview asset="cnn12.jpg"
-        headline="Fuck Santy Claus, say demoralized Ukrainian troops"
-      />
-      <NewsLinkList
-        links={[
-          'How technology helped prevent further bloodshed at the mass gun attack in Georgia.',
-          'A painted world found in a Cupboard sold for $1.4M.  Could it be a long lost Rembrandt?',
-          'Kanye West has his greatest success when he participates in charitable sports events.'
-        ]}
-      />
+      {
+        items.map(item => {
+          if (item.type === 'links') {
+            return <RandomNewsLinks />
+          }
+          return <RandomNewsPreview withTop={item.withTop} />
+        })
+      }
+    </>
+  )
+}
 
-    </>
-    <>
-      <NewsPreview
-        headline="Old insecure man looks disapprovingly at some random object in the distance, trying to hide his hurt feelings"
-        asset="cnn3.jpg"
-      />
-      <NewsLinkList 
-        withDot
-        links={[
-          'If there is but one more infraction against our code... the whole thing was a disgusting charade.',
-          'It looks fleek.  In time, everything will be revealed to you, don\'t worry.',
-          'If that\'s the way it is, that\'s the way it is.  Sure I\'ll take care of you.',
-          'I will be by every Sunday, was the last recorded statement witnesses allege.',
-          'Can kids still do homework without smart phones experts ask.'
-
-        ]}
-      />
-      <NewsPreviewH asset="cnn14.jpg"
-        headline="Heyyy, the capital of Canada.  This kid smart or what."
-      />
-      <NewsPreviewH asset="cnn15.jpg"
-        headline="Shyness is a curse, says Bobby Baccala."
-      />
-    </>
-    <>
-      <NewsPreview
-        asset="cnn1.jpg"
-        headline="Body of British tech millionaire recovered from yacht, Italian official says, as divers search for his daughter"
-      />
-      <NewsLinkList 
-        links={[
-          'Put the pasta back in the pot with a little gravy, and a little butter.',
-          'Fourty five seconds, staring up really nice, is the period of time when the macaroni absorbs the gravy.',
-          'Canadian Prime Minster Justin Trudeau confides to Kamala Harris that Canada needs "a piece" in order to protect itself.',
-          'How .38 calibre firearms helped prevent a mass killing in Las Vegas.',
-          'The macaroni will be ready in thirty seconds is riling up some appetites.'
-        ]}
-      />
-      <ThreeCol>
-        <NewsPreview
-          sm
-          asset="cnn5.jpg"
-          headline="She was married to Tony Soprano for twenty fucking years.  This is all she has to show for it."
-        />
-        <NewsPreview
-          sm
-          asset="cnn6.jpg"
-          headline="Stop and smell the gorilla shit, it is good to get away, advised Trump's legal team."
-        />
-        <NewsPreview
-          sm
-          asset="cnn7.jpg"
-          headline="Flattery will get you nowhere, Mr. Bond."
-        />
-      </ThreeCol>
-    </>
-  </ThreeCol>
+export const RandomThreeColNews = ({
+  w,
+}: {
+  w?: [string, string, string]
+}) => {
+  const [widths, setWidths] = useState<[string, string, string] | null>(w ?? null)
+  useEffect(() => {
+    if (widths !== null) {
+      return
+    }
+    setWidths(fakeColumns())
+  }, [widths, setWidths])
+  if (!widths) {
+    return null
+  }
+  return (
+    <ThreeCol w={widths}>
+      <RandomNewsCol />
+      <RandomNewsCol />
+      <RandomNewsCol />
+    </ThreeCol>
   )
 }

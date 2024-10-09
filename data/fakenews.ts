@@ -304,7 +304,12 @@ const newsAssets = [
 ]
 
 export const fakeColumns = (): [string, string, string] => {
-  return shuffle(['45%', '30%', '25%']) as [string, string, string]
+  const validCombos = [
+    ['45%', '30%', '25%'],
+    ['33%', '33%', '33%'],
+  ]
+  const randomCombo = randomItem(validCombos)
+  return shuffle(randomCombo) as [string, string, string]
 }
 
 export const fakeLink = () => randomItem(links)

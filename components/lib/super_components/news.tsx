@@ -273,3 +273,26 @@ export const RandomThreeColNews = ({
     </ThreeCol>
   )
 }
+
+// heading
+// avatar
+// socials 
+
+export const NewsStoryHeadline = () => {
+
+}
+
+// this is going to take a while :(
+export const CarouselOContent = () => {
+
+}
+
+// similar to wiki? 
+export const NewsStoryParagraph = () => {
+
+}
+
+// for now just an image, but can also be a vid
+export const NewsStoryMedia = () => {
+
+}

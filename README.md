@@ -158,7 +158,7 @@ lander:ecommerce,
   - [x] vertical video results?  
 
 
-- [ ] wiki section
+- [x] wiki section
 - [ ] table of contents
 
 

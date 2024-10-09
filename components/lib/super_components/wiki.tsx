@@ -2,6 +2,7 @@ import React from "react"
 import { useThemeHelper } from "../../hooks"
 import { Anchor, Copy, Heading } from "../atomics"
 import { Box, Flex } from "../layout"
+import { TextAccordion } from "../atomics/accordion"
 
 type WikiHeadingProps = { 
   title: string
@@ -31,53 +32,57 @@ export const WikiHeading = ({
   )
 }
 
-const TextWithAnchors = ({
-  anchorIndexes,
+export const HtmlText = ({
   text,
 }: {
-  anchorIndexes: number[]
   text: string
 }) => {
   return (
-    <span>
-      {
-        text.split(' ')
-          .map((s, index) => {
-            return (
-              <React.Fragment key={index}>
-                {
-                  anchorIndexes.includes(index)
-                    ? <><Anchor>{s}</Anchor>{' '}</>
-                    : `${s} `
-                }
-              </React.Fragment>
-            )
-          })
-      }
-    </span>
+    <span dangerouslySetInnerHTML={{
+      __html: text
+    }}/>
   )
 }
 
 export const WikiSection = ({
   headingProps,
   paragraph,
-  anchorIndexes,
 }: {
   headingProps: WikiHeadingProps
   paragraph: string
-  anchorIndexes?: number[]
 }) => {
   const { hookSc } = useThemeHelper()
   return (
     <Flex $sx={hookSc('wikiSection')}>
       <WikiHeading {...headingProps} />
       <Copy $sx={hookSc('wikiCopy')}>
-        {
-          anchorIndexes
-            ? <TextWithAnchors anchorIndexes={anchorIndexes} text={paragraph} />
-            : paragraph
-        }
+        <HtmlText text={paragraph} />
       </Copy>
+    </Flex>
+  )
+}
+
+export const TableOfContents = ({
+  links
+}: {
+  links: Array<string | string[]>
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex col $sx={hookSc('tableOfContents')}>
+      {
+        links.map((link, index) => {
+          return (typeof link === 'string'
+            ? <Anchor $sx={hookSc('tableOfContentsLink')}
+              key={index}>{link}</Anchor>
+            : (
+              <TextAccordion label={link[0]} open>
+                <TableOfContents links={link.slice(1)} />
+              </TextAccordion>
+            )
+          )
+        })
+      }
     </Flex>
   )
 }

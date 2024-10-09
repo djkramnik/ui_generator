@@ -30,8 +30,10 @@ import {
   PersonDetails,
   PortraitVideoResult,
   RandomizedForm,
+  TableOfContents,
   VideoSearchResult,
   WikiHeading,
+  WikiSection,
 } from '../components/lib/super_components'
 import {
   Anchor,
@@ -83,9 +85,50 @@ const SectionsGallery = () => {
             </WikiHeading>
           </Box>
           <Spacer />
-          <Box $sx={{ width: '300px'}}>
-            <WikiHeading title="The phrase 'OMG'" />
-          </Box>
+          <Flex gap={theme.spacing.bigGap}>
+            <TableOfContents
+              links={[
+                [
+                  'Background',
+                  'Polygamy divides Smith\'s followers',
+                  'Destruction of the Naboo Expositor',
+                  'Arrest attempt and martial law',
+                  'Smith surrenders',
+                  'Incarceration at Carthage Jail'
+                ],
+                [
+                  'Attack', 
+                  'Injuries to mob members'
+                ],
+                'Interment',
+                'Responsibility and trial',
+                'Consequences for the Latter Day Saints movement',
+                'See also',
+                'Notes',
+                'References',
+                'Further Reading',
+                'External Links'
+              ]}
+            />
+            <Box $sx={{ width: '600px'}}>
+              <WikiSection 
+                headingProps={{
+                  title: 'Joseph Smith\'s last stand',
+                }}
+                paragraph={`In 1844, in the city of <a>Nauvoo, Illinois</a> where 
+                  Smith was mayor, several anti-polygamist Mormons,
+                  recently excommunicated from Smith's church,
+                  joined together to publish a newspaper called
+                  the <a>Nauvoo Expositor.</a> It put out its first and only issue on June 7, 1844.
+                  <a><sup>[12]:v6,p.430.</sup></a>
+                  Based on sworn statements, the Expositor revealed that
+                  Smith practiced polygamy, marrying at least eight other
+                  men’s wives, and he had tried to marry the wives of some
+                  of the Expositor's publishers.`}
+              />
+            </Box>
+          </Flex>
+
           
         </Container>
       </Box>

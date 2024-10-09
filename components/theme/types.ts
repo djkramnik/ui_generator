@@ -251,6 +251,8 @@ export type ThemeConfig = {
     wikiHeading: CssProps
     wikiSection: CssProps
     wikiCopy: CssProps
+    tableOfContents: CssProps
+    tableOfContentsLink: CssProps
   }
 }
 

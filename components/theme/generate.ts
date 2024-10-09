@@ -973,7 +973,7 @@ export const getSuperComponents = ({
     thumbnailImage: {
       width: '100%',
       borderRadius: '0.25em',
-      // border: `1px solid currentcolor`
+      aspectRatio: 'calc(160 / 89.94)'
     },
     thumbnailSm: {
       width: '160px'
@@ -1188,10 +1188,21 @@ export const getSuperComponents = ({
     },
     wikiSection: {
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      gap: spacing.gap
     },
     wikiCopy: {
-      
+
+    },
+    tableOfContents: {
+      width: '240px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.smallGap
+    },
+    tableOfContentsLink: {
+      paddingLeft: '22px',
+      fontWeight: 'normal'
     }
   }
 }

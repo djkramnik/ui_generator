@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, DefaultTheme, ExecutionProps } from 'styled-components'
 
 import {
   getSuperComponents,
@@ -48,22 +48,25 @@ export const themes: Record<string, Theme> = {
   },
 }
 
-export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
-  * {
+export const GlobalStyles = createGlobalStyle<{ theme: Theme }>(
+  (props: (ExecutionProps & { theme: DefaultTheme })) => {
+    const theme = props.theme
+    return `
+     * {
     box-sizing: border-box;
     margin: 0;
-    font-family: ${({ theme }) => theme.typography?.primaryff ?? 'fantasy'};
+    font-family: ${theme.typography?.primaryff ?? 'fantasy'};
     font-display: optional;
   }
 
   body {
     margin: 0;
     padding: 0;
-    background-color: ${({ theme }) => theme.palette?.background};
+    background-color: ${theme.palette?.background};
   }
 
   a {
-    color: inherit;
+    color: ${theme.components.link.color};
   }
 
   a:hover {
@@ -118,4 +121,5 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     width: fit-content;
     height: fit-content;
   }
-`
+    `
+  })

@@ -1265,20 +1265,21 @@ export const getSuperComponents = ({
     newsStoryHeading: {
       display: 'flex',
       flexDirection: 'column',
-      gap: spacing.bigGap
+      gap: spacing.gap
     },
     newsStoryHeadingTitle: {
-      fontSize: '54px',
-      lineHeight: '72px'
+      fontSize: '48px',
+      lineHeight: '54px'
     },
     newsStoryHeadlineAvatar: {
       width: '60px'
     },
     newsStoryHeadlineAvatarLine1: {
-      fontWeight: 'normal'
+      fontWeight: 'normal',
+      fontSize: '18px'
     },
     newsStoryContainer: {
-      
+
     }
   }
 }

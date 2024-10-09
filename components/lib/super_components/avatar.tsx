@@ -123,16 +123,16 @@ export const TrueRandomAvatar = (props: Pick<RandomAvatarProps,
     const [name, setName] = useState<string | null>(props.name ?? null)
     const [position, setPosition] = useState<string | null>(props.position ?? null)
     useEffect(() => {
-      if (name !== null || position !== null) {
+      if (name !== null) {
         return
       } // x minute read is salient info bro
       setName(getRandomName({})) // name is a misnomer, so is position
       setPosition(getRandomSentence()) // it should just be line1 and line2... also need something more complicated than strings here
     }, [name, position, setName, setPosition])
-    if (!name || !position) {
+    if (!name) {
       return null
     }
     return (
-      <RandomAvatar name={name} position={position} {...props} />
+      <RandomAvatar name={name} position={position ?? undefined} {...props} />
     )
   }

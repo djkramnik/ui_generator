@@ -80,7 +80,7 @@ const SectionsGallery = () => {
       <ThemeToggle />
       <Fullscreen>
         <Container>
-          <RandomNewsStory />
+          <RandomNewsStory withSocials={true} blackAndWhite={true} />
         </Container>
       </Fullscreen>
       <Container>

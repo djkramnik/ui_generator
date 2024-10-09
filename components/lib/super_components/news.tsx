@@ -283,10 +283,12 @@ export const RandomThreeColNews = ({
 
 export const NewsStoryHeadline = ({
   headline,
-  withSocials
+  withSocials,
+  blackAndWhite,
 }: {
   headline: string
   withSocials?: boolean
+  blackAndWhite?: boolean
 }) => {
   const { hookSc } = useThemeHelper()
   const [avatarLineOne, setAvatarLineOne] = useState<string | null>(null)
@@ -323,7 +325,7 @@ export const NewsStoryHeadline = ({
         headingSx={hookSc('newsStoryHeadlineAvatarLine1')}
       />
       <Maybe condition={withSocials}>
-        <RandomSocialMediaButtonRow />
+        <RandomSocialMediaButtonRow blackAndWhite={blackAndWhite} />
       </Maybe>
     </Flex>
   )

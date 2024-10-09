@@ -12,8 +12,10 @@ import { abort } from "process"
 // a random combination of various news story elements
 export const RandomNewsStory = ({
   withSocials,
+  blackAndWhite,
 }: {
   withSocials?: boolean
+  blackAndWhite?: boolean
 }) => {
   const { hookSc } = useThemeHelper()
   const [headline, setHeadline] = useState<string |  null>(null)
@@ -33,7 +35,7 @@ export const RandomNewsStory = ({
     <Flex col $sx={hookSc('newsStoryContainer')}>
       <Spacer />
       <NewsStoryHeadline headline={headline}
-        withSocials={withSocials} />
+        withSocials={withSocials} blackAndWhite={blackAndWhite} />
     </Flex>
     
   )

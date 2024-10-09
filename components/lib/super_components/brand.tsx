@@ -153,6 +153,7 @@ export const RandomSocialMediaButtonRow = ({
   const [socials, setSocials] = useState<BrandIcon[] | null>(null)
 
   useEffect(() => {
+    if (socials !== null) { return }
     const numItems = typeof n === 'number'
       ? Math.max(n, 0)
       : randomPick(3, 6)

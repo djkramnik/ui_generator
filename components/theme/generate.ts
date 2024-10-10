@@ -1276,9 +1276,13 @@ export const getSuperComponents = ({
     },
     newsStoryHeadlineAvatarLine1: {
       fontWeight: 'normal',
-      fontSize: '18px'
+      fontSize: '18px',
     },
     newsStoryContainer: {
+      gap: spacing.biggishGap,
+      maxWidth: '900px'
+    },
+    newsStoryParagraph: {
 
     }
   }

@@ -1,6 +1,6 @@
 import { Box, Flex, ThreeCol } from "../layout"
 import { CssProps } from "../../theme"
-import { Anchor, Heading, Image, Maybe } from "../atomics"
+import { Anchor, Copy, Heading, Image, Maybe } from "../atomics"
 import { useThemeHelper } from "../../hooks"
 import { useEffect, useState } from "react"
 import { sizedArray } from "../../../util"
@@ -337,8 +337,19 @@ export const CarouselOContent = () => {
 }
 
 // similar to wiki? 
-export const NewsStoryParagraph = () => {
-
+export const NewsStoryParagraph = ({
+  html,
+}: {
+  html: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Copy $sx={hookSc('newsStoryParagraph')}
+      dangerouslySetInnerHTML={{
+        __html: html
+      }}
+    />
+  )
 }
 
 // for now just an image, but can also be a vid

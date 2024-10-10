@@ -321,6 +321,27 @@ const fakeNewsOrgs = [
   'New York Times',
 ]
 
+const paragraphs = [
+  `<strong>New York AP</strong> — A Turkish Airlines jetliner headed from Seattle to Istanbul made an emergency landing in New York on Wednesday after the captain died on board, an airline official said.`,
+  `Pilot İlçehin Pehlivan, 59, lost consciousness at some point after flight 204 took off from Seattle on Tuesday night, Turkish Airlines spokesperson Yahya Üstün said in a statement.`,
+  `Medical intervention failed to revive the captain, and the co-pilot decided to make an emergency landing, but the captain died before the plane landed, Üstün said.`,
+  `Data from the tracking site FlightAware shows that the Airbus A350 landed at John F. Kennedy International Airport just before 6 a.m.`,
+  `Arrangements were being made for passengers to reach their destination from New York, the airline spokesperson said.`,
+  `Pehlivan had worked at Turkish Airlines since 2007, Üstün said. A routine health check in March showed no health problems that would have prevented him from working, he said.`,
+  `“As Turkish Airlines, we deeply feel the loss of our captain and extend our sincerest condolences to his bereaved family, colleagues, and all his loved ones,” Üstün said.`,
+  `<a>Long-haul flights</a> can feel neverending, particularly if you don’t get any sleep. If you’re like us, you wind up completely despondent at some point during your journey. Counting down the hours or minutes until you canfinally get some relief off the plane becomes an obsession. And, even if youdo manage to get some rest, sitting upright in close quarters can wreak havoc on your neck and back.`,
+  `When it comes to getting <a>better sleep</a> on a plane, it ultimately comes down to two factors: the mindset you’re in and the steps you take to prepare yourself for the long journey ahead combined with the travel products you have with you. We talked with experts to find out all of the best products and tips to help you sleep better on your next long-haul flight.`,
+  `It's that time of year again: NBA training camps are in full swing, the league is buzzing with two weeks before the 2024-25 season tips off, and the long-held task of predicting breakout players is upon us.`,
+  `While it's impossible to know how these things will play out, what we can do is assess the evidence: Every player on this list is walking into a friendly environment for their own development, and has the capacity to grow into a bigger role, expand their own ability, and most importantly, impact the present and future arc of their respective franchises.`,
+  `I broke this list out into tiers: players who are on the cusp of All-Star performance (such as the Cleveland Cavaliers' Evan Mobley), potential star breakouts who happen to share a first name (think the Oklahoma City Thunder's Jalen Williams), young players entering friendly situations (someone say Chicago Bulls' Josh Giddey?), and role players who will make greater impacts (such as the Phoenix Suns' Tyus Jones).`,
+  `It's not all-encompassing, but these are the 11 players who I'm most interested to watch over the next several months and could be breakouts in 2024-25.`
+]
+
+export const fakeParagraphs = (n: number) => {
+  const shuffledParagraphs = shuffle(paragraphs)
+  return shuffledParagraphs.slice(0, n)
+}
+
 export const fakeColumns = (): [string, string, string] => {
   const validCombos = [
     ['45%', '30%', '25%'],
@@ -370,6 +391,9 @@ export const randomStrFormat
   = (s: string, replacements?: Record<string, () => string>): string => {
     return Object.entries(replacements ?? defaultReplacements)
       .reduce((acc, [key, value]) => {
-        return acc.replaceAll(key, value())
+        return acc.replace(key, value())
+          .replace(key, value())
+          .replace(key, value())
+          .replaceAll(key, value()) // what is this weirdness? so that we get different random values for up to 4 instances of the same interpolation
       }, s)
   }

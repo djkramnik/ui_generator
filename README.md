@@ -167,7 +167,7 @@ lander:ecommerce,
 ### day four (monday)
 - [x] randomize cnn thing
 
-- [ ] news story
+- [x] news story
 - [ ] news / blog article
 - [ ] file upload modal
 

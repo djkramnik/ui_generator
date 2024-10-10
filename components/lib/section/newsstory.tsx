@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react'
 import { fakeHeadline, fakeParagraphs } from '../../../data'
-import { NewsStoryHeadline, NewsStoryParagraph } from '../super_components/news'
+import { NewsStoryHeadline, NewsStoryMedia, NewsStoryParagraph } from '../super_components/news'
 import { Spacer } from '../layout/spacer'
 import { Flex } from '../layout'
 import { useThemeHelper } from '../../hooks'
@@ -43,8 +43,17 @@ export const RandomNewsStory = ({
         withSocials={withSocials}
         blackAndWhite={blackAndWhite}
       />
+      <NewsStoryMedia withCaption />
       {paragraphs.map((p, index) => {
-        return <NewsStoryParagraph key={index} html={p} />
+        const imgIndex = Math.random() > 0.7
+          ? randomPick(0, p.length)
+          : undefined
+        return (
+          <NewsStoryParagraph
+            key={index}
+            html={p}
+          />
+        )
       })}
       <Spacer />
     </Flex>

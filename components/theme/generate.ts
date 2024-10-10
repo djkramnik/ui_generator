@@ -1280,10 +1280,24 @@ export const getSuperComponents = ({
     },
     newsStoryContainer: {
       gap: spacing.biggishGap,
-      maxWidth: '900px'
+      maxWidth: '900px',
     },
     newsStoryParagraph: {
-
+      padding: `0px 60px`
+    },
+    newsStoryMedia: {
+      height: 'auto',
+      width: '100%'
+    },
+    newsStoryMediaContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: spacing.gap
+    },
+    newsStoryMediaCaption: {
+      fontSize: '14px',
+      color: `rgba(0,0,0,0.5)`
     }
   }
 }

@@ -5,7 +5,7 @@ import { useThemeHelper } from "../../hooks"
 import { useEffect, useState } from "react"
 import { sizedArray } from "../../../util"
 import { randomPick } from "../../utils"
-import { fakeAvatarLineOne, fakeAvatarLineTwo, fakeColumns, fakeHeadline, fakeLink, fakeNewsThumb } from "../../../data"
+import { fakeAvatarLineOne, fakeAvatarLineTwo, fakeColumns, fakeHeadline, fakeLink, fakeNewsThumb, getRandomSentence } from "../../../data"
 import { useTheme } from "styled-components"
 import { RandomAvatar, TrueRandomAvatar } from "./avatar"
 import { RandomSocialMediaButtonRow } from "./brand"
@@ -341,8 +341,10 @@ export const NewsStoryParagraph = ({
   html,
 }: {
   html: string
+
 }) => {
   const { hookSc } = useThemeHelper()
+
   return (
     <Copy $sx={hookSc('newsStoryParagraph')}
       dangerouslySetInnerHTML={{
@@ -353,6 +355,42 @@ export const NewsStoryParagraph = ({
 }
 
 // for now just an image, but can also be a vid
-export const NewsStoryMedia = () => {
+export const NewsStoryMedia = ({
+  withCaption,
+}: {
+  withCaption?: boolean
+}) => {
+  const { hookSc } = useThemeHelper()
+  const [asset, setAsset] = useState<string | null>(null)
+  const [caption, setCaption] = useState<string | null>(null)
+  
+  useEffect(() => {
+    if (asset !== null) {
+      return
+    }
+    setAsset(
+      fakeNewsThumb()
+    )
+    setCaption(
+      withCaption
+        ? getRandomSentence()
+        : null
+    )
+  }, [asset, setAsset, setCaption])
 
+  if (!asset) {
+    return null
+  }
+
+  return (
+    <Flex $sx={hookSc('newsStoryMediaContainer')}>
+      <Image src={`/thumbs/${asset}`}
+        $sx={hookSc('newsStoryMedia')} />
+      <Maybe condition={caption}>
+        <Copy $sx={hookSc('newsStoryMediaCaption')}>
+          {caption}
+        </Copy>
+      </Maybe>
+    </Flex>
+  )
 }

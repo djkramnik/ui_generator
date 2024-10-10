@@ -272,6 +272,9 @@ export type ThemeConfig = {
     newsStoryHeadlineAvatarLine1: CssProps,
     newsStoryContainer: CssProps
     newsStoryParagraph: CssProps
+    newsStoryMedia: CssProps
+    newsStoryMediaContainer: CssProps
+    newsStoryMediaCaption: CssProps
   }
 }
 

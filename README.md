@@ -168,25 +168,25 @@ lander:ecommerce,
 - [x] randomize cnn thing
 
 - [x] news story
-- [ ] news / blog article
-- [ ] file upload modal
+- [x] news / blog article
 
+### day five (rsday)
 - [ ] dashboard section (heading, icons) (refer to gandi.net, stripe)
 - [ ] dashboard list with options
 - [ ] dashboard two col cards
-
-
 - [ ] secondary nav
-
-### day five (tuesday)
 - [ ] shopping cart summary
+
+### day six (sunday)
 - [ ] products card
 - [ ] product section
 - [ ] purchase confirmation section
 - [ ] side login (ie rbc)
 - [ ] email list (gmail)
 
-### day six (wednesdsay)
+
+### day seven (tueday)
+- [ ] file upload modal
 - [ ] bottom up popover
 - [ ] squarespace type hero
 - [ ] comments

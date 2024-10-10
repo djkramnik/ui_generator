@@ -1298,7 +1298,17 @@ export const getSuperComponents = ({
     newsStoryMediaCaption: {
       fontSize: '14px',
       color: `rgba(0,0,0,0.5)`
-    }
+    },
+    taggedText: {},
+    dashboardCardCol: {},
+    twoColList: {},
+    twoColListEntry: {},
+    twoColListLeft: {},
+    twoColListRight: {},
+    dashboardCard: {},
+    dashboardCardCopy: {},
+    dashboardCardHeading: {},
+    dashboardCardX: {}
   }
 }
 

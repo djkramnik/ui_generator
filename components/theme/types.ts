@@ -275,6 +275,16 @@ export type ThemeConfig = {
     newsStoryMedia: CssProps
     newsStoryMediaContainer: CssProps
     newsStoryMediaCaption: CssProps
+    taggedText: CssProps
+    dashboardCardCol: CssProps
+    twoColList: CssProps
+    twoColListEntry: CssProps
+    twoColListLeft: CssProps
+    twoColListRight: CssProps
+    dashboardCard: CssProps
+    dashboardCardX: CssProps
+    dashboardCardHeading: CssProps
+    dashboardCardCopy: CssProps
   }
 }
 

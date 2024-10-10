@@ -337,7 +337,7 @@ const paragraphs = [
   `It's not all-encompassing, but these are the 11 players who I'm most interested to watch over the next several months and could be breakouts in 2024-25.`
 ]
 
-export const fakeParagraphs = (n: number) => {
+export const fakeParagraphs = (n: number = 1) => {
   const shuffledParagraphs = shuffle(paragraphs)
   return shuffledParagraphs.slice(0, n)
 }

@@ -1374,6 +1374,29 @@ export const getSuperComponents = ({
     stripeTableBottomPaginationBtn: {
       padding: '6px 18px',
       borderRadius: '12px'
+    },
+    stripeTableTopFilters: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingBottom: spacing.gap,
+      borderBottom: `1px solid rgba(0,0,0,0.5)`
+    },
+    stripeTableTopFilterBtn: {
+      padding: '6px 12px',
+      fontSize: '12px',
+    },
+    stripeTableTopFilterToggleBtn: {
+      padding: '6px 18px',
+      borderRadius: '12px'
+    },
+    stripeTableTopToggleBtn: {
+      padding: '6px 12px',
+      fontSize: '12px',
+      border: `1px solid rgba(0,0,0,0.5)`
+    },
+    stripeTableTopRight: {
+      gap: spacing.gap
     }
   }
 }

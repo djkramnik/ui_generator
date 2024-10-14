@@ -11,7 +11,7 @@ import { sizedArray } from "../../../util"
 import { fakeParagraphs, getRandomSentence } from "../../../data"
 import { getGenericColumns } from "../atomics/table"
 import { ColumnData, genTableData } from "../../../data/table"
-import { Copy, Maybe, Toggle } from "../atomics"
+import { Button, Copy, Maybe, Toggle } from "../atomics"
 
 // NEED A RTL VERSION OF THIS PLZ
 export const DashboardSection = ({
@@ -138,6 +138,7 @@ export const RandomDashboardCards = ({
 export const StripeTable = ({
   btnLabel,
   bottomPagination,
+  topFilters,
   headers = [
     'checkbox',
     'Amount', 
@@ -168,6 +169,11 @@ export const StripeTable = ({
     prevLabel?: string
     nextLabel?: string
   }
+  topFilters?: {
+    options: string[]
+    rightButtonOne?: string
+    rightButtonTwo?: string
+  }
   btnLabel?: string
   headers?: string[],
   heading?: string
@@ -195,6 +201,30 @@ export const StripeTable = ({
 
   return (
     <Flex col $sx={hookSc('stripeTableContainer')}>
+      {
+        topFilters
+          ? (
+            <Flex $sx={hookSc('stripeTableTopFilters')}>
+              <Toggle
+                buttonSx={hookSc('stripeTableTopToggleBtn')}
+                options={topFilters!.options}
+              />
+              <Flex $sx={hookSc('stripeTableTopRight')}>
+                <Maybe condition={topFilters!.rightButtonOne}>
+                  <Button $sx={hookSc('stripeTableTopFilterBtn')}>
+                    {topFilters!.rightButtonOne!}
+                  </Button>
+                </Maybe>
+                <Maybe condition={topFilters!.rightButtonTwo}>
+                  <Button $sx={hookSc('stripeTableTopFilterBtn')}>
+                    {topFilters!.rightButtonTwo!}
+                  </Button>
+                </Maybe>
+              </Flex>
+            </Flex>
+          )
+          : null
+      }
       <DashboardTable<object>
         mui
         heading={heading}

@@ -84,6 +84,16 @@ const SectionsGallery = () => {
         sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}>
         <StripeTable
           btnLabel="Details"
+          topFilters={{
+            options: [
+              'Date and time',
+              'Amount',
+              'Status',
+              'Payment Method'
+            ],
+            rightButtonOne: 'Export',
+            rightButtonTwo: 'Edit Columns'
+          }}
           bottomPagination={{
             first: 1,
             last: 20,

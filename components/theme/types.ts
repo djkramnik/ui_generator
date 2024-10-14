@@ -310,6 +310,11 @@ export type ThemeConfig = {
     stripeTableContainer: CssProps
     stripeTableBottomPagination: CssProps
     stripeTableBottomPaginationBtn: CssProps
+    stripeTableTopFilters: CssProps
+    stripeTableTopFilterToggleBtn: CssProps
+    stripeTableTopFilterBtn: CssProps
+    stripeTableTopToggleBtn: CssProps
+    stripeTableTopRight: CssProps
   }
 }
 

@@ -292,6 +292,15 @@ export type ThemeConfig = {
     dashboardListAvatar: CssProps
     dashboardListAvatarHeading: CssProps
     dashboardListAvatarCopy: CssProps
+    dashboardListRight: CssProps
+    dashboardListRightIcon: CssProps
+    dashboardHeading: CssProps
+    dashboardSectionHeader: CssProps
+    dashboardSearchHeader: CssProps
+    dashboardSearch: CssProps
+    dashboardSearchFilter: CssProps
+    dashboardSearchFilterIcon: CssProps
+    dashboardSearchLeft: CssProps
   }
 }
 

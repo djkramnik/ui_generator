@@ -172,8 +172,10 @@ lander:ecommerce,
 
 ### day five (rsday)
 - [ ] dashboard section (heading, icons) (refer to gandi.net, stripe)
-- [ ] dashboard list with options
-- [ ] dashboard two col cards
+- [x] dashboard list with options
+- [x] dashboard two col cards
+- [ ] dashboard table
+- [ ] dashboard tabs
 - [ ] secondary nav
 - [ ] shopping cart summary
 

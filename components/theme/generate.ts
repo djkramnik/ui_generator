@@ -1318,7 +1318,20 @@ export const getSuperComponents = ({
     },
     dashboardListAvatar: {},
     dashboardListAvatarCopy: {},
-    dashboardListAvatarHeading: {}
+    dashboardListAvatarHeading: {},
+    dashboardListRight: {},
+    dashboardListRightIcon: {},
+    dashboardHeading: {
+
+    },
+    dashboardSectionHeader: {
+      display: 'flex',
+      justifyContent: 'space-between'
+    },
+    dashboardSearch: {},
+    dashboardSearchFilter: {},
+    dashboardSearchFilterIcon: {},
+    dashboardSearchLeft: {}
   }
 }
 

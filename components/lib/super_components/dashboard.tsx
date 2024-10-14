@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useThemeHelper } from '../../hooks'
 import { sxToStyle } from '../../theme'
-import { ChimericIcon, Copy, Heading, Icon, Maybe } from '../atomics'
+import { ButtonWithIcon, ChimericIcon, Copy, Heading, Icon, InputWithIcon, Maybe, Toggle } from '../atomics'
 import { Box, Flex } from '../layout'
 import { randomPick } from '../../utils'
 import { sizedArray } from '../../../util'
@@ -190,12 +190,116 @@ export const DashboardListWithOptions = ({
                 />
               }
               right={
-                null
+                <Flex $sx={hookSc('dashboardListRight')}>
+                  <TaggedText text={tag} />
+                  <ChimericIcon
+                    icon={rightIcon}
+                    iconStyle={{
+                      ...sxToStyle(hookSc('dashboardListRightIcon'))
+                    }}
+                  />
+                </Flex>
               }
             />
           )
         })
       }
+    </Flex>
+  )
+}
+
+export const DashboardSectionHeader = ({
+  heading,
+  toggleOptions,
+}: {
+  heading?: string
+  toggleOptions?: string[]
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex $sx={hookSc('dashboardSectionHeader')}>
+      <Maybe condition={heading}>
+        <Heading level={2} $sx={hookSc('dashboardHeading')}>
+          {heading}
+        </Heading>
+      </Maybe>
+      <Maybe condition={toggleOptions}>
+        {
+          <Toggle options={toggleOptions!} />
+        }
+      </Maybe>
+    </Flex>
+  )
+}
+
+export const DashboardSearch = ({
+  icon,
+  placeholder,
+}: {
+  icon: Icon
+  placeholder: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <InputWithIcon
+      rev
+      icon={icon}
+      inputProps={{
+        placeholder,
+        $variant: ['fullwidth', 'pill', 'border'],
+        $sx: hookSc('dashboardSearch')
+      }}
+    />
+  )
+}
+
+export const DashboardSearchHeader = ({
+  placeholder = 'Search',
+  searchIcon = Icon.search,
+  filterLabel = 'Filter',
+  filterIcon = Icon.filter,
+  toggleOptions,
+}: {
+  placeholder?: string
+  searchIcon?: Icon
+  filterLabel?: string
+  filterIcon?: Icon
+  toggleOptions?: string[]
+}) => {
+  const { hookSc } = useThemeHelper()
+  const [iconPos, setIconPos] = useState<'start' | 'end' | null>(null)
+  useEffect(() => {
+    if (iconPos !== null) {
+      return
+    }
+    setIconPos(
+      Math.random() > 0.5
+        ? 'end'
+        : 'start'
+    )
+  }, [iconPos, setIconPos])
+  if (!iconPos) {
+    return null
+  }
+  return (
+    <Flex $sx={hookSc('dashboardSearchHeader')}>
+      <Flex aic $sx={hookSc('dashboardSearchLeft')}>
+        <DashboardSearch placeholder={placeholder} icon={searchIcon} />
+        <ButtonWithIcon
+          text={filterLabel}
+          icon={filterIcon}
+          $sx={hookSc('dashboardSearchFilter')}
+          iconPos={iconPos}
+          iconStyle={{
+            ...sxToStyle(hookSc('dashboardSearchFilterIcon'))
+          }}
+        />
+      </Flex>
+      <Maybe condition={toggleOptions}>
+        {
+          <Toggle options={toggleOptions!} />
+        }
+      </Maybe>
     </Flex>
   )
 }

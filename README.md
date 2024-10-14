@@ -174,7 +174,10 @@ lander:ecommerce,
 - [ ] dashboard section (heading, icons) (refer to gandi.net, stripe)
 - [x] dashboard list with options
 - [x] dashboard two col cards
-- [ ] dashboard table
+- [x] stripe table
+- [ ] table with checkbox
+- [ ] table with buttons
+- [ ] table with toggle filters
 - [ ] dashboard tabs
 - [ ] secondary nav
 - [ ] shopping cart summary

@@ -9,6 +9,7 @@ import {
   LanderTwoCol,
   RandomNewsStory,
   SearchSection,
+  StripeTable,
 } from '../components/lib/section'
 import {
   RandomBrandLogo,
@@ -78,6 +79,11 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <DashboardSection
+        withNav={false}
+        sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}>
+        <StripeTable />
+      </DashboardSection>
       <Fullscreen>
         <Container>
           <RandomNewsStory withSocials={true} blackAndWhite={true} />

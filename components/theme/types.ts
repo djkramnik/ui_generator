@@ -301,6 +301,11 @@ export type ThemeConfig = {
     dashboardSearchFilter: CssProps
     dashboardSearchFilterIcon: CssProps
     dashboardSearchLeft: CssProps
+    stripeTable: CssProps
+    stripeTableCell: CssProps
+    stripeTableHeader: CssProps
+    stripeTableCellInner: CssProps
+    stripeTableHeaderInner: CssProps
   }
 }
 

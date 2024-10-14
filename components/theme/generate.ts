@@ -1329,9 +1329,30 @@ export const getSuperComponents = ({
       justifyContent: 'space-between'
     },
     dashboardSearch: {},
+    dashboardSearchHeader: {},
     dashboardSearchFilter: {},
     dashboardSearchFilterIcon: {},
-    dashboardSearchLeft: {}
+    dashboardSearchLeft: {},
+    stripeTable: {
+      border: 'none'
+    },
+    stripeTableCell: {
+      padding: '6px 24px',
+      fontSize: '14px',
+      borderBottom: `1px solid ${palette.grey}`
+    },
+    stripeTableHeader: {
+      padding: '6px 24px',
+      fontSize: '14px',
+      textAlign: 'initial',
+      borderBottom: `1px solid ${palette.grey}`
+    },
+    stripeTableCellInner: {
+      textAlign: 'initial',
+    },
+    stripeTableHeaderInner: {
+      display: 'block'
+    }
   }
 }
 

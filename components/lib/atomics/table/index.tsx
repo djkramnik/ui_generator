@@ -26,6 +26,7 @@ import {
   mergeStyles,
   sxToStyle,
 } from '../../../theme/variants'
+import { Maybe } from '../passthrough'
 
 // styled component shit
 
@@ -94,7 +95,9 @@ type Columns<T extends RowType> = {
   }
 }
 
-export const getGenericColumns = <T extends RowType>(keys: Array<keyof T>) => {
+export const getGenericColumns = <T extends RowType>(keys: Array<keyof T>,
+  cellSx?: CssProps
+) => {
   return keys.reduce((acc, k, i) => {
     return {
       ...acc,
@@ -106,6 +109,7 @@ export const getGenericColumns = <T extends RowType>(keys: Array<keyof T>) => {
               $sx={{
                 padding: '4px',
                 textAlign: 'center',
+                ...cellSx
               }}
             >
               {String(item)}
@@ -261,7 +265,11 @@ export type BasicTableProps<T extends RowType = object> = {
     header: string
     direction: 'asc' | 'desc'
   }
+  noSort?: boolean
   noColumnBorder?: boolean
+  headerSx?: CssProps
+  cellSx?: CssProps
+  headerInnerSx?: CssProps
 }
 
 export const BasicTable = <T extends RowType = object>({
@@ -271,7 +279,11 @@ export const BasicTable = <T extends RowType = object>({
   tableProps,
   alternateColor,
   sort,
-  noColumnBorder
+  noSort,
+  noColumnBorder,
+  headerSx,
+  cellSx,
+  headerInnerSx,
 }: BasicTableProps<T>) => {
   const theme = useTheme()
   const sortedColumns = Object.entries(columns)
@@ -299,44 +311,48 @@ export const BasicTable = <T extends RowType = object>({
                     !noColumnBorder && i !== sortedColumns.length - 1
                       ? `1px solid ${theme.palette.copy}`
                       : 'none',
+                  ...headerSx,
                 }}
               >
                 <Box
                   $sx={{
                     ...getComponentStyles('thInner', theme),
+                    ...headerInnerSx,
                   }}
                 >
                   {header ?? null}
-                  <Box
-                    $sx={{
-                      ...getComponentStyles('thSort', theme),
-                    }}
-                  >
-                    <i
-                      className="fa-solid fa-caret-up"
-                      style={{
-                        ...sxToStyle({
-                          ...getComponentStyles('thSortAsc', theme),
-                          color:
-                            (sort?.header === header && sort?.direction === 'asc')
-                              ? theme.palette.copy
-                              : theme.palette.inactive
-                        })
+                  <Maybe condition={noSort !== true}>
+                    <Box
+                      $sx={{
+                        ...getComponentStyles('thSort', theme),
                       }}
-                    />
-                    <i
-                      className="fa-solid fa-caret-down"
-                      style={{
-                        ...sxToStyle({
-                          ...getComponentStyles('thSortDesc', theme),
-                          color:
-                            (sort?.header === header && sort?.direction === 'desc')
-                              ? theme.palette.copy
-                              : theme.palette.inactive
-                        })
-                      }}
-                    />
-                  </Box>
+                    >
+                      <i
+                        className="fa-solid fa-caret-up"
+                        style={{
+                          ...sxToStyle({
+                            ...getComponentStyles('thSortAsc', theme),
+                            color:
+                              (sort?.header === header && sort?.direction === 'asc')
+                                ? theme.palette.copy
+                                : theme.palette.inactive
+                          })
+                        }}
+                      />
+                      <i
+                        className="fa-solid fa-caret-down"
+                        style={{
+                          ...sxToStyle({
+                            ...getComponentStyles('thSortDesc', theme),
+                            color:
+                              (sort?.header === header && sort?.direction === 'desc')
+                                ? theme.palette.copy
+                                : theme.palette.inactive
+                          })
+                        }}
+                      />
+                    </Box>
+                  </Maybe>
                 </Box>
               </TableHeader>
             )
@@ -357,6 +373,7 @@ export const BasicTable = <T extends RowType = object>({
                           : 'none',
                       backgroundColor:
                         alternateColor && !(i % 2) ? alternateColor : 'initial',
+                      ...cellSx,
                     }}
                     key={`${i}_${j}`}
                   >

@@ -204,7 +204,7 @@ const topLevelDomains = [
 ]
 
 export const getRandomEmail = () => {
-  return `${getRandomName({ firstNameOnly: true })}@gmail${randomItem(topLevelDomains)}`
+  return `${getRandomName({ firstNameOnly: true })}@gmail.${randomItem(topLevelDomains)}`
 }
 
 export const getRandomWebsite = () => {

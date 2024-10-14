@@ -2,13 +2,15 @@
 import { useTheme } from "styled-components"
 import { getSuperComponentStyles } from "../../theme"
 import { Box, Flex, TwoCol } from "../layout"
-import { NavbarShortcut, NavbarShortcutProps } from "../super_components"
+import { DashboardTable, NavbarShortcut, NavbarShortcutProps } from "../super_components"
 import { RandomBrandLogo } from "../super_components/brand"
 import { useThemeHelper } from "../../hooks"
 import { useEffect, useState } from "react"
 import { randomPick } from "../../utils"
 import { sizedArray } from "../../../util"
 import { fakeParagraphs, getRandomSentence } from "../../../data"
+import { getGenericColumns } from "../atomics/table"
+import { ColumnData, genTableData } from "../../../data/table"
 
 // NEED A RTL VERSION OF THIS PLZ
 export const DashboardSection = ({
@@ -129,5 +131,79 @@ export const RandomDashboardCards = ({
         }
       </Box>
     </TwoCol>
+  )
+}
+
+export const StripeTable = ({
+  headers = [
+    'Amount', 
+    'Payment method',
+    'Description',
+    'Customer',
+  ],
+  heading = 'Transactions',
+  dataConfig = [{
+    key: 'amount',
+    type: 'price'
+  }, {
+    key: 'paymentMethod',
+    type: 'cc'
+  }, {
+    key: 'description',
+    type: 'invoice'
+  }, {
+    key: 'customer',
+    type: 'email'
+  }],
+  n = 20,
+}:{
+  headers?: string[],
+  heading?: string
+  dataConfig?: ColumnData[]
+  n?: number
+}) => {
+  const { theme, hookSc } = useThemeHelper()
+  const [data, setData]
+    = useState<Array<Record<string, string>> | null>(null)
+  useEffect(() => {
+    if (data !== null) {
+      return
+    }
+    setData(
+      genTableData({
+        config: dataConfig,
+        n,
+      })
+    )
+  }, [data, setData])
+
+  if (!data) {
+    return null
+  }
+
+  return (
+    <DashboardTable<object>
+      mui
+      heading={heading}
+      tableProps={{
+        alternateColor: theme.palette.grey,
+        cellSx: hookSc('stripeTableCell'),
+        headerSx: hookSc('stripeTableHeader'),
+        headerInnerSx: hookSc('stripeTableHeaderInner'),
+        tableProps: {
+          $sx: hookSc('stripeTable')
+        },
+        noColumnBorder: true,
+        noSort: true,
+        headers,
+        data,
+        columns: getGenericColumns([
+          'amount',
+          'paymentMethod',
+          'description',
+          'customer',
+        ], hookSc('stripeTableCellInner')),
+      }}
+    />
   )
 }

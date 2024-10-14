@@ -160,8 +160,8 @@ export enum Icon {
   heart = 'heart',
 
   discord = 'discord',
-  circleXMark = 'circle-x-mark',
-  xMark = 'x-mark',
+  circleXMark = 'circle-xmark',
+  xMark = 'xmark',
   youtube = 'youtube',
   cloud = 'cloud',
   comment = 'comment',

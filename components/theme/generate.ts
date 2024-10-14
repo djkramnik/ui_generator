@@ -1299,16 +1299,42 @@ export const getSuperComponents = ({
       fontSize: '14px',
       color: `rgba(0,0,0,0.5)`
     },
-    taggedText: {},
-    dashboardCardCol: {},
-    twoColList: {},
-    twoColListEntry: {},
+    taggedText: {
+      color: palette.button,
+      backgroundColor: palette.success,
+      padding: '6px 12px'
+    },
+    dashboardCardCol: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.gap,
+    },
+    twoColList: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.gap,
+    },
+    twoColListEntry: {
+      alignItems: 'center',
+      justifyContent: 'space-between'
+    },
     twoColListLeft: {},
     twoColListRight: {},
-    dashboardCard: {},
-    dashboardCardCopy: {},
-    dashboardCardHeading: {},
-    dashboardCardX: {},
+    dashboardCard: {
+      position: 'relative'
+    },
+    dashboardCardCopy: {
+      maxWidth: '80%'
+    },
+    dashboardCardHeading: {
+      marginBottom: spacing.gap,
+      fontSize: '18px'
+    },
+    dashboardCardX: {
+      position: 'absolute',
+      right: '4px',
+      top: '4px'
+    },
     dashboardListRow: {},
     dashboardListRowLeft: {},
     dashboardListRowRight: {},

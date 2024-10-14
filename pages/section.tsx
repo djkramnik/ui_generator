@@ -7,6 +7,7 @@ import {
   LanderCenter,
   LanderTestimonials,
   LanderTwoCol,
+  RandomDashboardCards,
   RandomNewsStory,
   SearchSection,
   StripeTable,
@@ -79,9 +80,13 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      
       <DashboardSection
         withNav={false}
         sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}>
+        
+        <RandomDashboardCards />
+        <Spacer />
         <StripeTable
           btnLabel="Details"
           topFilters={{

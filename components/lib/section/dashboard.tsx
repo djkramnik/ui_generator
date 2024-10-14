@@ -2,7 +2,7 @@
 import { useTheme } from "styled-components"
 import { getSuperComponentStyles } from "../../theme"
 import { Box, Flex, TwoCol } from "../layout"
-import { DashboardTable, NavbarShortcut, NavbarShortcutProps } from "../super_components"
+import { DashboardCard, DashboardTable, NavbarShortcut, NavbarShortcutProps } from "../super_components"
 import { RandomBrandLogo } from "../super_components/brand"
 import { useThemeHelper } from "../../hooks"
 import { useEffect, useState } from "react"
@@ -86,7 +86,7 @@ export const RandomDashboardCards = ({
   randomCopyGen?: () => string
   randomN?: number
 }) => {
-  const { hookSc } = useThemeHelper()
+  const { theme, hookSc } = useThemeHelper()
   const [dashboardCards, setDashboardCards] = useState<Record<string, string> | null>(null)
   
   useEffect(() => {
@@ -118,17 +118,32 @@ export const RandomDashboardCards = ({
   const cards = Object.entries(dashboardCards)
 
   return (
-    <TwoCol halvsies>
+    <TwoCol halvsies hGap={theme.spacing.biggishGap}>
       <Box $sx={hookSc('dashboardCardCol')}>
         {
           cards.filter((_, index) => index % 2)
-            .map(() => null)
+            .map((card) => {
+              return (
+                <DashboardCard
+                  heading={card[0]}
+                  copy={card[1]}
+                  withList={true}
+                />
+              )
+            })
         }
       </Box>
       <Box $sx={hookSc('dashboardCardCol')}>
         {
           cards.filter((_, index) => !(index % 2))
-            .map(() => null)
+            .map((card) => {
+              return (
+                <DashboardCard
+                  heading={card[0]}
+                  copy={card[1]}
+                />
+              )
+            })
         }
       </Box>
     </TwoCol>

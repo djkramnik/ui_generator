@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useThemeHelper } from '../../hooks'
 import { sxToStyle } from '../../theme'
 import { ButtonWithIcon, ChimericIcon, Copy, Heading, Icon, InputWithIcon, Maybe, Toggle } from '../atomics'
-import { Box, Flex } from '../layout'
+import { Box, Card, Flex } from '../layout'
 import { randomPick } from '../../utils'
 import { sizedArray } from '../../../util'
 import {
@@ -11,6 +11,7 @@ import {
   getRandomWebsite,
 } from '../../../data'
 import { MyAvatar } from './avatar'
+import { Spacer } from '../layout/spacer'
 
 export const TaggedText = ({ text }: { text: string }) => {
   const { hookSc } = useThemeHelper()
@@ -25,6 +26,7 @@ export const TwoColList = ({
   children?: React.ReactNode[]
 }) => {
   const { hookSc } = useThemeHelper()
+  console.log('nameos', names)
   return (
     <Flex col $sx={hookSc('twoColList')}>
       {names.map((name, index) => {
@@ -75,9 +77,10 @@ export const DashboardCard = ({
       }, {})
     )
   }, [withList, listItems, setListItems, listItemN])
-
+  console.log('list???', withList, listItems)
   return (
-    <Box $sx={hookSc('dashboardCard')}>
+    <Card>
+       <Box $sx={hookSc('dashboardCard')}>
       <Maybe condition={withCloseIcon}>
         {closeIcon ?? (
           <ChimericIcon
@@ -95,15 +98,25 @@ export const DashboardCard = ({
         $sx={hookSc('dashboardCardCopy')}
         dangerouslySetInnerHTML={{ __html: copy }}
       />
-      <Maybe condition={withList && listItems !== null}>
-        <TwoColList names={Object.keys(listItems!)}>
-          {Object.values(listItems!).map((item, index) => (
-            <TaggedText key={index} text={item} />
-          ))}
-        </TwoColList>
-      </Maybe>
+      {
+        withList && listItems !== null
+          ? (
+            <>
+              <Spacer />
+              <TwoColList names={Object.keys(listItems!)}>
+                {Object.values(listItems!).map((item, index) => (
+                  <TaggedText key={index} text={item} />
+                ))}
+              </TwoColList>
+            </>
+          )
+          : null
+      }
     </Box>
+
+    </Card>
   )
+   
 }
 
 const DashboardListRow = ({

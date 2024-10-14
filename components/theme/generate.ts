@@ -1308,7 +1308,17 @@ export const getSuperComponents = ({
     dashboardCard: {},
     dashboardCardCopy: {},
     dashboardCardHeading: {},
-    dashboardCardX: {}
+    dashboardCardX: {},
+    dashboardListRow: {},
+    dashboardListRowLeft: {},
+    dashboardListRowRight: {},
+    dashboardList: {
+      flexDirection: 'column',
+      gap: spacing.gap
+    },
+    dashboardListAvatar: {},
+    dashboardListAvatarCopy: {},
+    dashboardListAvatarHeading: {}
   }
 }
 

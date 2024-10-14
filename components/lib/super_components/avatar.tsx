@@ -1,13 +1,14 @@
 import { useTheme } from 'styled-components'
-import { CssProps, getSuperComponentStyles } from '../../theme'
+import { CssProps, getSuperComponentStyles, sxToStyle } from '../../theme'
 import { Box, Flex } from '../layout'
-import { Copy, Heading, Image } from '../atomics'
+import { ChimericIcon, Copy, Heading, Icon, Image } from '../atomics'
 import { useEffect, useState } from 'react'
 import { randomItem } from '../../utils'
 import { getRandomName, getRandomSentence } from '../../../data'
 
 export type AvatarProps = {
-  asset: string
+  asset?: string
+  icon?: Icon
   name: string
   position?: string
   avatarSx?: CssProps
@@ -38,7 +39,8 @@ const avatars = [
   'superman.jpg',
 ]
 
-export const MyAvatar = ({ 
+export const MyAvatar = ({
+  icon,
   asset,
   name,
   position,
@@ -65,12 +67,23 @@ export const MyAvatar = ({
             ...avatarSx,
           }}
         >
-          <Image
-            src={`/avatars/${asset}`}
-            $sx={{
-              ...getSuperComponentStyles('avatarImg', theme),
-            }}
-          />
+          {
+            icon && (
+              <ChimericIcon icon={icon} iconStyle={{
+                ...sxToStyle(getSuperComponentStyles('avatarImg', theme))
+              }}/>
+            )
+          }
+          {
+            asset && (
+              <Image
+                src={`/avatars/${asset}`}
+                $sx={{
+                  ...getSuperComponentStyles('avatarImg', theme),
+                }}
+              />
+            )
+          }
         </Box>
         <Flex
           $sx={{

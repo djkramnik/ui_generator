@@ -285,6 +285,13 @@ export type ThemeConfig = {
     dashboardCardX: CssProps
     dashboardCardHeading: CssProps
     dashboardCardCopy: CssProps
+    dashboardListRow: CssProps
+    dashboardListRowLeft: CssProps
+    dashboardListRowRight: CssProps
+    dashboardList: CssProps
+    dashboardListAvatar: CssProps
+    dashboardListAvatarHeading: CssProps
+    dashboardListAvatarCopy: CssProps
   }
 }
 

@@ -2,15 +2,18 @@ import { useTheme } from "styled-components"
 import { Flex } from "../../layout"
 import { Button } from "../button"
 import { getComponentStyles, mergeStyles } from "../../../theme/variants"
+import { CssProps } from "../../../theme"
 
 export const Toggle = ({
   selectedIndex,
   options,
   buttonVariant = ['pill', 'border'],
+  buttonSx,
 }: {
   selectedIndex?: number,
   options: string[]
   buttonVariant?: string | string[]
+  buttonSx?: CssProps
 }) => {
   const theme = useTheme()
   const buttonDiff = mergeStyles({
@@ -34,6 +37,7 @@ export const Toggle = ({
                     ? getComponentStyles('toggleButtonSelected', theme)
                     : {}
                 ),
+                ...buttonSx,
               }}
             >
               {optionText}

@@ -7,12 +7,27 @@ import MuiRadio from '@mui/material/Radio'
 import { useTheme } from "styled-components"
 import { Input } from "./input"
 import { getComponentStyles, sxToStyle } from "../../../theme/variants"
+import { useThemeHelper } from "../../../hooks"
 
 type CheckboxProps = {
   checked?: boolean
   label: string
   radio?: boolean
   labelSx?: CssProps
+}
+
+export const NakedCheckbox = ({
+  checked,
+  radio,
+}: Pick<CheckboxProps, 'checked' | 'radio'>) => {
+  const { hookC } = useThemeHelper()
+  return (
+    <Input
+      $sx={hookC('checkboxInput')}
+      type={radio ? 'radio' : 'checkbox'}
+      checked={checked === true}
+    />
+  )
 }
 
 export const Checkbox = ({
@@ -27,13 +42,7 @@ export const Checkbox = ({
       ...getComponentStyles('checkboxContainer', theme),
     }} 
       row gap={theme.spacing.gap}>
-      <Input
-        $sx={{
-          ...getComponentStyles('checkboxLabel', theme),
-        }}
-        type={radio ? 'radio' : 'checkbox'}
-        checked={checked === true}
-      />
+      <NakedCheckbox radio={radio} checked={checked} />
       <Copy $sx={{ 
         ...getComponentStyles('checkboxLabel', theme),
         ...labelSx

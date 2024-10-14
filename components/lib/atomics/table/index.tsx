@@ -27,6 +27,8 @@ import {
   sxToStyle,
 } from '../../../theme/variants'
 import { Maybe } from '../passthrough'
+import { Checkbox, NakedCheckbox } from '../form'
+import { Button } from '../button'
 
 // styled component shit
 
@@ -95,8 +97,17 @@ type Columns<T extends RowType> = {
   }
 }
 
-export const getGenericColumns = <T extends RowType>(keys: Array<keyof T>,
-  cellSx?: CssProps
+export const getGenericColumns = <T extends RowType>(
+  keys: Array<keyof T>,
+  {
+    cellSx,
+    btnLabel,
+    btnSx,
+  }: {
+    cellSx?: CssProps,
+    btnLabel?: string,
+    btnSx?: CssProps
+  } = {}
 ) => {
   return keys.reduce((acc, k, i) => {
     return {
@@ -104,17 +115,49 @@ export const getGenericColumns = <T extends RowType>(keys: Array<keyof T>,
       [k]: {
         order: i,
         config: {
-          render: (item: any) => (
-            <Box
-              $sx={{
-                padding: '4px',
-                textAlign: 'center',
-                ...cellSx
-              }}
-            >
-              {String(item)}
-            </Box>
-          ),
+          render: (item: any) => {
+            if (k === 'checkbox') {
+              return (
+                <Box
+                  $sx={{
+                    padding: '4px',
+                    textAlign: 'center',
+                    ...cellSx,
+                  }}
+                >
+                  <NakedCheckbox />
+                </Box>
+              )
+            }
+            if (k === 'button') {
+              return (
+                <Box
+                  $sx={{
+                    padding: '4px',
+                    textAlign: 'center',
+                    ...cellSx,
+                  }}
+                >
+                  <Button $sx={btnSx}>
+                    {
+                      btnLabel ?? 'Save'
+                    }
+                  </Button>
+                </Box>
+              )
+            }
+            return (
+              <Box
+                $sx={{
+                  padding: '4px',
+                  textAlign: 'center',
+                  ...cellSx,
+                }}
+              >
+                {String(item)}
+              </Box>
+            )
+          },
         },
       },
     }
@@ -312,6 +355,7 @@ export const BasicTable = <T extends RowType = object>({
                       ? `1px solid ${theme.palette.copy}`
                       : 'none',
                   ...headerSx,
+                  ...(header === 'checkbox' ? { minWidth: 'auto ' } : {}),
                 }}
               >
                 <Box
@@ -320,7 +364,14 @@ export const BasicTable = <T extends RowType = object>({
                     ...headerInnerSx,
                   }}
                 >
-                  {header ?? null}
+                  {/** evil */}
+                  {header === 'checkbox' ? (
+                    <Box $sx={{ padding: '4px' }}>
+                      <NakedCheckbox />
+                    </Box>
+                  ) : (
+                    (header ?? null)
+                  )}
                   <Maybe condition={noSort !== true}>
                     <Box
                       $sx={{
@@ -333,10 +384,11 @@ export const BasicTable = <T extends RowType = object>({
                           ...sxToStyle({
                             ...getComponentStyles('thSortAsc', theme),
                             color:
-                              (sort?.header === header && sort?.direction === 'asc')
+                              sort?.header === header &&
+                              sort?.direction === 'asc'
                                 ? theme.palette.copy
-                                : theme.palette.inactive
-                          })
+                                : theme.palette.inactive,
+                          }),
                         }}
                       />
                       <i
@@ -345,10 +397,11 @@ export const BasicTable = <T extends RowType = object>({
                           ...sxToStyle({
                             ...getComponentStyles('thSortDesc', theme),
                             color:
-                              (sort?.header === header && sort?.direction === 'desc')
+                              sort?.header === header &&
+                              sort?.direction === 'desc'
                                 ? theme.palette.copy
-                                : theme.palette.inactive
-                          })
+                                : theme.palette.inactive,
+                          }),
                         }}
                       />
                     </Box>
@@ -414,7 +467,7 @@ export const ChimericTable = <T extends RowType = object>(
           style={{
             ...sxToStyle({
               ...getComponentStyles('table', theme),
-              ...props.tableProps?.$sx ?? {}
+              ...(props.tableProps?.$sx ?? {}),
             }),
             ...props.tableProps?.style,
           }}
@@ -428,7 +481,7 @@ export const ChimericTable = <T extends RowType = object>(
                     style={{
                       ...sxToStyle({
                         ...getComponentStyles('th', theme),
-                      })
+                      }),
                     }}
                   >
                     {header ?? null}
@@ -449,7 +502,8 @@ export const ChimericTable = <T extends RowType = object>(
                             ...getComponentStyles('td', theme),
                           }),
                           borderRight:
-                            !props.noColumnBorder && j !== sortedColumns.length - 1
+                            !props.noColumnBorder &&
+                            j !== sortedColumns.length - 1
                               ? `1px solid ${theme.palette.copy}`
                               : 'none',
                           backgroundColor:

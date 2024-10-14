@@ -306,6 +306,10 @@ export type ThemeConfig = {
     stripeTableHeader: CssProps
     stripeTableCellInner: CssProps
     stripeTableHeaderInner: CssProps
+    stripeTableBtn: CssProps
+    stripeTableContainer: CssProps
+    stripeTableBottomPagination: CssProps
+    stripeTableBottomPaginationBtn: CssProps
   }
 }
 

@@ -11,6 +11,7 @@ import { sizedArray } from "../../../util"
 import { fakeParagraphs, getRandomSentence } from "../../../data"
 import { getGenericColumns } from "../atomics/table"
 import { ColumnData, genTableData } from "../../../data/table"
+import { Copy, Maybe, Toggle } from "../atomics"
 
 // NEED A RTL VERSION OF THIS PLZ
 export const DashboardSection = ({
@@ -135,7 +136,10 @@ export const RandomDashboardCards = ({
 }
 
 export const StripeTable = ({
+  btnLabel,
+  bottomPagination,
   headers = [
+    'checkbox',
     'Amount', 
     'Payment method',
     'Description',
@@ -157,6 +161,14 @@ export const StripeTable = ({
   }],
   n = 20,
 }:{
+  bottomPagination?: {
+    total: number
+    first: number
+    last: number
+    prevLabel?: string
+    nextLabel?: string
+  }
+  btnLabel?: string
   headers?: string[],
   heading?: string
   dataConfig?: ColumnData[]
@@ -182,28 +194,57 @@ export const StripeTable = ({
   }
 
   return (
-    <DashboardTable<object>
-      mui
-      heading={heading}
-      tableProps={{
-        alternateColor: theme.palette.grey,
-        cellSx: hookSc('stripeTableCell'),
-        headerSx: hookSc('stripeTableHeader'),
-        headerInnerSx: hookSc('stripeTableHeaderInner'),
-        tableProps: {
-          $sx: hookSc('stripeTable')
-        },
-        noColumnBorder: true,
-        noSort: true,
-        headers,
-        data,
-        columns: getGenericColumns([
-          'amount',
-          'paymentMethod',
-          'description',
-          'customer',
-        ], hookSc('stripeTableCellInner')),
-      }}
-    />
+    <Flex col $sx={hookSc('stripeTableContainer')}>
+      <DashboardTable<object>
+        mui
+        heading={heading}
+        tableProps={{
+          alternateColor: theme.palette.grey,
+          cellSx: hookSc('stripeTableCell'),
+          headerSx: hookSc('stripeTableHeader'),
+          headerInnerSx: hookSc('stripeTableHeaderInner'),
+          tableProps: {
+            $sx: hookSc('stripeTable')
+          },
+          noColumnBorder: true,
+          noSort: true,
+          headers,
+          data,
+          columns: getGenericColumns([
+            'checkbox',
+            'amount',
+            'paymentMethod',
+            'description',
+            'customer',
+            'button',
+          ], { 
+            cellSx: hookSc('stripeTableCellInner'),
+            btnSx: hookSc('stripeTableBtn'),
+            btnLabel,
+          }),
+        }}
+      />
+      <Maybe condition={bottomPagination}>
+        {
+          <Flex $sx={hookSc('stripeTableBottomPagination')}>
+            <Copy $sx={{
+              fontSize: 'inherit',
+              color: 'inherit',
+              lineHeight: 'inherit',
+              fontWeight: 'inherit'
+            }}>
+              {`Viewing ${bottomPagination?.first}-${bottomPagination?.last} of ${bottomPagination?.total}`}
+            </Copy>
+            <Toggle 
+              buttonSx={hookSc('stripeTableBottomPaginationBtn')}
+              options={[
+                bottomPagination?.prevLabel ?? 'Prev',
+                bottomPagination?.nextLabel ??  'Next',
+              ]} />
+          </Flex>
+        }
+      </Maybe>
+    </Flex>
+
   )
 }

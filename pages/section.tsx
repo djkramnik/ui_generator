@@ -82,7 +82,14 @@ const SectionsGallery = () => {
       <DashboardSection
         withNav={false}
         sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}>
-        <StripeTable />
+        <StripeTable
+          btnLabel="Details"
+          bottomPagination={{
+            first: 1,
+            last: 20,
+            total: 10000
+          }}
+        />
       </DashboardSection>
       <Fullscreen>
         <Container>

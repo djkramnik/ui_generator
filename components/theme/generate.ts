@@ -1333,6 +1333,10 @@ export const getSuperComponents = ({
     dashboardSearchFilter: {},
     dashboardSearchFilterIcon: {},
     dashboardSearchLeft: {},
+    stripeTableContainer: {
+      flexDirection: 'column',
+      gap: spacing.gap,
+    },
     stripeTable: {
       border: 'none'
     },
@@ -1352,6 +1356,24 @@ export const getSuperComponents = ({
     },
     stripeTableHeaderInner: {
       display: 'block'
+    },
+    stripeTableBtn: {
+      padding: '6px 18px',
+      borderRadius: '24px',
+      backgroundColor: 'transparent',
+      color: palette.primary,
+      border: `1px solid ${palette.primary}`,
+      fontSize: '14px',
+      fontWeight: 'bold'
+    },
+    stripeTableBottomPagination: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    },
+    stripeTableBottomPaginationBtn: {
+      padding: '6px 18px',
+      borderRadius: '12px'
     }
   }
 }

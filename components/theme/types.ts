@@ -320,6 +320,12 @@ export type ThemeConfig = {
     stripeTableTopFilterBtn: CssProps
     stripeTableTopToggleBtn: CssProps
     stripeTableTopRight: CssProps
+    amazonTopNav: CssProps
+    amazonTopNavInner: CssProps
+    amazonMidNav: CssProps
+    amazonMidNavInner: CssProps
+    amazonBottomNav: CssProps
+    amazonBottomNavInner: CssProps
   }
 }
 

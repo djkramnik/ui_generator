@@ -5,12 +5,13 @@ import {
   ResponsiveComponent,
   WithTheme,
 } from '../../../theme'
-import { Box } from '../../layout'
+import { Box, Flex, Span } from '../../layout'
 import React from 'react'
 import MuiSelect from '@mui/material/Select'
 import { MenuItem } from '@mui/material'
 import { getComponentStyles, mergeStyles, sxToStyle } from '../../../theme/variants'
 import { ChimericIcon, Icon } from '../icon'
+import { useThemeHelper } from '../../../hooks'
 
 export type SelectProps = WithTheme<ResponsiveComponent<'select'>>
 
@@ -241,5 +242,40 @@ export const DropdownBubble = ({
         </Box>
       </Box>
     </Box>
+  )
+}
+
+// le sigh
+export const MiniDropdown = ({
+  text,
+  containerSx,
+  copySx,
+  iconSx,
+  icon,
+}: {
+  text: string
+  containerSx?: CssProps
+  copySx?: CssProps
+  iconSx?: CssProps
+  icon?: Icon
+}) => {
+  const { hookC } = useThemeHelper()
+  return (
+    <Flex aic gap="4px" $sx={{
+      position: 'relative',
+      ...containerSx
+    }}>
+      <Span $sx={{
+        ...hookC('link'),
+        ...copySx
+      }}>{text}</Span>
+      <ChimericIcon
+        icon={icon ?? Icon.caretDown}
+        iconStyle={{
+          ...(iconSx ? sxToStyle(iconSx) : {}),
+          fontSize: '12px'
+        }}
+      />
+    </Flex>
   )
 }

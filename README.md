@@ -181,7 +181,7 @@ lander:ecommerce,
 - [x] dashboard tabs
 
 ### day six (sunday)
-- [ ] secondary nav
+- [x] secondary nav
 - [ ] shopping cart summary
 - [ ] products card
 - [ ] product section

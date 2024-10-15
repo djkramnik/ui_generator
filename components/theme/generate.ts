@@ -1,6 +1,6 @@
 import { randomPick, shuffle } from "../utils";
 import { CssProps, ResponsiveMixin, Theme } from "./types";
-import { shadows } from "./variants";
+import { colors, shadows } from "./variants";
 
 // NOTE: THE DEFAULT TEMPLATE SHOULD LIVE HERE.  STYLES/INDEX CAN IMPORT FROM HERE
 const fsBundles: Partial<Record<keyof Theme['components'], CssProps>>[] = [{
@@ -1468,6 +1468,37 @@ export const getSuperComponents = ({
     },
     dashboardTabInner: {
       gap: spacing.biggishGap
+    },
+    amazonTopNav: {
+      backgroundColor: colors.amazonDark
+    },
+    amazonTopNavInner: {
+      alignItems: 'center'
+    },
+    amazonMidNav: {
+      backgroundColor: 'rgb(35, 47, 62)',
+      height: '40px'
+    },
+    amazonMidNavInner: {
+      height: '40px',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      gap: spacing.gap,
+      color: '#eee'
+    },
+    amazonBottomNav: {
+      backgroundColor: palette.white,
+      color: 'rgba(0, 0, 0, 0.5)',
+      height: '35px',
+      borderBottom: '1px solid rgba(0, 0, 0, 0.2)'
+    },
+    amazonBottomNavInner: {
+      height: '35px',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      gap: spacing.gap,
+      color: 'rgba(0,0,0,0.8)',
+      fontSize: '12px',
     }
   }
 }

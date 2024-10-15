@@ -16,6 +16,7 @@ export type AvatarProps = {
   copySx?: CssProps
   avatarRightSx?: CssProps
   avatarInnerSx?: CssProps
+  avatarIconSx?: CssProps
 }
 
 const avatars = [
@@ -50,6 +51,7 @@ export const MyAvatar = ({
   headingSx,
   copySx,
   avatarInnerSx,
+  avatarIconSx,
 }: AvatarProps) => {
   const theme = useTheme()
   return (
@@ -73,7 +75,14 @@ export const MyAvatar = ({
           {
             icon && (
               <ChimericIcon icon={icon} iconStyle={{
-                ...sxToStyle(getSuperComponentStyles('avatarImg', theme))
+                ...sxToStyle(getSuperComponentStyles('avatarImg', theme)),
+                ...(
+                  avatarIconSx
+                    ? (
+                      sxToStyle(avatarIconSx)
+                    )
+                    : {}
+                )
               }}/>
             )
           }

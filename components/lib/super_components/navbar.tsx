@@ -1,23 +1,30 @@
 
 import { useTheme } from "styled-components"
 import { Box, Flex } from "../layout"
-import { getComponentStyles, getSuperComponentStyles } from "../../theme"
+import { CssProps, getComponentStyles, getSuperComponentStyles } from "../../theme"
 import { Anchor, Dropdown, Icon } from "../atomics"
 import React from "react"
 import { ContentFitter } from "../exotic/content-fitter"
+import { useThemeHelper } from "../../hooks"
 
 export const Navbar = ({
   children,
+  navbarSx,
+  navbarInnerSx,
 }: {
   children?: React.ReactNode
+  navbarInnerSx?: CssProps
+  navbarSx?: CssProps
 }) => {
-  const theme = useTheme()
+  const { theme, hookSc } = useThemeHelper()
   return (
     <Box $sx={{
-      ...getSuperComponentStyles('navbar', theme)
+      ...hookSc('navbar'),
+      ...navbarSx,
     }}>
       <Flex $sx={{
-        ...getSuperComponentStyles('navbarInner', theme)
+        ...hookSc('navbarInner'),
+        ...navbarInnerSx
       }}>
         {children}
       </Flex>

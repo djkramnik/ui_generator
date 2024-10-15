@@ -10,6 +10,7 @@ export const colors: Record<string, string> = {
   amazonDark: '#131921',
   amazonGrey: '#F8F8F8',
   amazonBlue: '#007185',
+  amazonYellow: 'rgb(254, 189, 105)',
   antBlueLight: '#e6f4ff'
 }
 

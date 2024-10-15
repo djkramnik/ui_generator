@@ -65,6 +65,7 @@ import { Container } from '../components/lib/layout/container'
 import { genGoogleSearchResults } from '../data'
 import { useEffect, useState } from 'react'
 import { RandomThreeColNews } from '../components/lib/super_components/news'
+import { TopNav } from '../components/lib/section/topnav'
 
 const SectionsGallery = () => {
   const { theme, hookSc } = useThemeHelper()
@@ -84,11 +85,10 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
-      
+      <TopNav withTop withMid withBottom />
       <DashboardSection
         withNav={false}
         sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}>
-        
         <Tabs
           containerSx={hookSc('dashboardTabs')}
           tabSx={hookSc('dashboardTab')}

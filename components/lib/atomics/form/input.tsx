@@ -104,6 +104,7 @@ export const InputWithIcon = ({
   iconStyles,
   mui,
   rev,
+  containerSx,
 }: {
   placeholder?: string
   inputProps?: Omit<InputProps, 'theme'>
@@ -111,6 +112,7 @@ export const InputWithIcon = ({
   iconStyles?: CSSProperties
   mui?: boolean
   rev?: boolean
+  containerSx?: CssProps
 }) => {
   const theme = useTheme()
   if (mui) {
@@ -133,6 +135,7 @@ export const InputWithIcon = ({
   return (
     <Box $sx={{
       ...getComponentStyles('inputWithIconContainer', theme),
+      ...containerSx,
     }}>
       <ChimericIcon icon={icon} iconStyle={{
         ...sxToStyle({

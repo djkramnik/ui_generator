@@ -22,6 +22,9 @@ import {
   AmazonSearchResult,
   CollapsibleMenuItem,
   CreditCardDetails,
+  DashboardListWithOptions,
+  DashboardSearchHeader,
+  DashboardSectionHeader,
   GoogleSearchResult,
   GoogleSearchResultProps,
   Headings,
@@ -47,6 +50,7 @@ import {
   Heading,
   Icon,
   Input,
+  Tabs,
 } from '../components/lib/atomics'
 import { Box, Flex, ThreeCol, TwoCol } from '../components/lib'
 import { sxToStyle } from '../components/theme'
@@ -85,7 +89,41 @@ const SectionsGallery = () => {
         withNav={false}
         sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}>
         
+        <Tabs
+          containerSx={hookSc('dashboardTabs')}
+          tabSx={hookSc('dashboardTab')}
+          tabInnerSx={hookSc('dashboardTabInner')}
+          selectedIndex={0}
+          tabs={[
+            'Active',
+            'Pending',
+            'Restorable',
+            'Tools',
+          ]}
+        />
+        <Spacer />
+        <DashboardSectionHeader
+          heading='Welcome, djkramnik!'
+          toggleOptions={[
+            'Transfer',
+            'Register'
+          ]}
+        />
+        <Spacer />
+        <DashboardSearchHeader
+          toggleOptions={[
+            'Black',
+            'White'
+          ]}
+        />
+        <Spacer />
         <RandomDashboardCards />
+        <Spacer />
+        <DashboardListWithOptions
+          icon={Icon.gamepad}
+          rightIcon={Icon.sliders}
+
+        />
         <Spacer />
         <StripeTable
           btnLabel="Details"

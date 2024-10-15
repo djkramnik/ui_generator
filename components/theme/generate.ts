@@ -530,6 +530,7 @@ export const getComponents = ({
     },
     toggleButtonContainer: {
       gap: spacing.gap,
+      alignItems: 'center'
     },
     toggleButtonButton: {
       border: '2px solid black',
@@ -1335,30 +1336,65 @@ export const getSuperComponents = ({
       right: '4px',
       top: '4px'
     },
-    dashboardListRow: {},
+    dashboardListRow: {
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      boxShadow: shadows.lichessCard,
+      padding: `6px ${spacing.biggishGap}`,
+      backgroundColor: palette.secondary,
+      gap: spacing.gap
+    },
     dashboardListRowLeft: {},
     dashboardListRowRight: {},
     dashboardList: {
       flexDirection: 'column',
       gap: spacing.gap
     },
-    dashboardListAvatar: {},
+    dashboardListAvatar: {
+      width: 'auto'
+    },
     dashboardListAvatarCopy: {},
-    dashboardListAvatarHeading: {},
-    dashboardListRight: {},
+    dashboardListAvatarHeading: {
+      fontSize: '18px'
+    },
+    dashboardListAvatarInner: {
+      gap: spacing.biggishGap
+    },
+    dashboardListRight: {
+      gap: spacing.gap,
+      alignItems: 'center'
+    },
     dashboardListRightIcon: {},
     dashboardHeading: {
-
+      fontSize: '24px'
     },
     dashboardSectionHeader: {
       display: 'flex',
       justifyContent: 'space-between'
     },
-    dashboardSearch: {},
-    dashboardSearchHeader: {},
+    dashboardSearch: {
+      flexGrow: '1',
+      gap: spacing.gap,
+      maxWidth: '600px'
+    },
+    dashboardSearchHeader: {
+      gap: spacing.gap
+    },
     dashboardSearchFilter: {},
-    dashboardSearchFilterIcon: {},
-    dashboardSearchLeft: {},
+    dashboardSearchFilterIcon: {
+      color: palette.button
+    },
+    dashboardSearchToggle: {
+      padding: '6px 12px',
+      borderRadius: '30px',
+      fontSize: '12px',
+      border: `1px solid rgba(0, 0, 0, 0.5)`,
+      height: 'auto'
+    },
+    dashboardSearchLeft: {
+      flexGrow: '1',
+      gap: spacing.gap
+    },
     stripeTableContainer: {
       flexDirection: 'column',
       gap: spacing.gap,
@@ -1423,6 +1459,15 @@ export const getSuperComponents = ({
     },
     stripeTableTopRight: {
       gap: spacing.gap
+    },
+    dashboardTabs: {
+      backgroundColor: palette.background
+    },
+    dashboardTab: {
+      boxShadow: 'initial'
+    },
+    dashboardTabInner: {
+      gap: spacing.biggishGap
     }
   }
 }

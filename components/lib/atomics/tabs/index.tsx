@@ -2,6 +2,7 @@ import React from "react"
 import { colors, CssProps, shadows } from "../../../theme"
 import { Box, Flex } from "../../layout"
 import {Tabs as MuiTabs, Tab as MuiTab} from '@mui/material'
+import { useThemeHelper } from "../../../hooks"
 
 const DefaultTab = ({
   containerSx,
@@ -41,21 +42,31 @@ type TabsProps = {
   selectedSx?: CssProps
   containerSx?: CssProps
   children?: React.ReactNode
+  tabContainerSx?: CssProps
+  tabInnerSx?: CssProps
 }
 
 export const Tabs = ({
   tabs,
   tabSx,
+  tabContainerSx,
+  tabInnerSx,
   selectedSx = { backgroundColor: '#fff' },
   containerSx = { backgroundColor: '#fff' },
   tab,
   selectedIndex,
   children,
 }: TabsProps) => {
+  const { hookSc } = useThemeHelper()
   const Tab = tab ?? DefaultTab
   return (
-    <Flex col $sx={{ backgroundColor: colors.amazonGrey }}>
-      <Flex row>
+    <Flex col $sx={{
+      ...hookSc('dashboardTabs'),
+      ...tabContainerSx
+    }}>
+      <Flex row $sx={{
+        ...tabInnerSx
+      }}> 
         {
           tabs.map((t, index) => {
             return (

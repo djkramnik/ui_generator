@@ -175,14 +175,14 @@ lander:ecommerce,
 - [x] dashboard list with options
 - [x] dashboard two col cards
 - [x] stripe table
-- [ ] table with checkbox
-- [ ] table with buttons
-- [ ] table with toggle filters
-- [ ] dashboard tabs
-- [ ] secondary nav
-- [ ] shopping cart summary
+- [x] table with checkbox
+- [x] table with buttons
+- [x] table with toggle filters
+- [x] dashboard tabs
 
 ### day six (sunday)
+- [ ] secondary nav
+- [ ] shopping cart summary
 - [ ] products card
 - [ ] product section
 - [ ] purchase confirmation section

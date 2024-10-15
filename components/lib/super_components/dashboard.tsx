@@ -13,9 +13,23 @@ import {
 import { MyAvatar } from './avatar'
 import { Spacer } from '../layout/spacer'
 
-export const TaggedText = ({ text }: { text: string }) => {
+export const TaggedText = ({ 
+  text,
+  bgc
+}: { 
+  text: string
+  bgc?: string
+}) => {
   const { hookSc } = useThemeHelper()
-  return <Box $sx={hookSc('taggedText')}>{text}</Box>
+  console.log('bgc??', bgc)
+  return <Box $sx={{
+    ...hookSc('taggedText'),
+    ...(
+      bgc ? { backgroundColor: bgc } : {}
+    )
+  }}>
+    {text}
+  </Box>
 }
 
 export const TwoColList = ({
@@ -26,7 +40,7 @@ export const TwoColList = ({
   children?: React.ReactNode[]
 }) => {
   const { hookSc } = useThemeHelper()
-  console.log('nameos', names)
+
   return (
     <Flex col $sx={hookSc('twoColList')}>
       {names.map((name, index) => {
@@ -58,7 +72,7 @@ export const DashboardCard = ({
   withCloseIcon?: boolean
   listItemN?: number
 }) => {
-  const { hookSc } = useThemeHelper()
+  const { theme, hookSc } = useThemeHelper()
   const [listItems, setListItems] = useState<Record<string, string> | null>(
     null
   )
@@ -77,7 +91,7 @@ export const DashboardCard = ({
       }, {})
     )
   }, [withList, listItems, setListItems, listItemN])
-  console.log('list???', withList, listItems)
+
   return (
     <Card>
        <Box $sx={hookSc('dashboardCard')}>
@@ -105,7 +119,11 @@ export const DashboardCard = ({
               <Spacer />
               <TwoColList names={Object.keys(listItems!)}>
                 {Object.values(listItems!).map((item, index) => (
-                  <TaggedText key={index} text={item} />
+                  <TaggedText key={index} text={item} bgc={
+                    item === 'No'
+                      ? String(theme.palette.error)
+                      : undefined
+                  } />
                 ))}
               </TwoColList>
             </>
@@ -151,7 +169,7 @@ export const DashboardListWithOptions = ({
   genRandomTag?: () => string
   randomN?: number
 }) => {
-  const { hookSc } = useThemeHelper()
+  const { theme, hookSc } = useThemeHelper()
   const [avatars, setAvatars] = useState<Array<
     [string, string, string]
   > | null>(null)
@@ -191,6 +209,7 @@ export const DashboardListWithOptions = ({
           lineTwo,
           tag
         ]) => {
+
           return (
             <DashboardListRow
               left={
@@ -200,11 +219,17 @@ export const DashboardListWithOptions = ({
                   avatarSx={hookSc('dashboardListAvatar')}
                   headingSx={hookSc('dashboardListAvatarHeading')}
                   copySx={hookSc('dashboardListAvatarCopy')}
+                  avatarInnerSx={hookSc('dashboardListAvatarInner')}
                 />
               }
               right={
                 <Flex $sx={hookSc('dashboardListRight')}>
-                  <TaggedText text={tag} />
+                  <TaggedText bgc={
+                    tag === 'No'
+                      ? String(theme.palette.error)
+                      : undefined
+                  }
+                  text={tag} />
                   <ChimericIcon
                     icon={rightIcon}
                     iconStyle={{
@@ -238,7 +263,8 @@ export const DashboardSectionHeader = ({
       </Maybe>
       <Maybe condition={toggleOptions}>
         {
-          <Toggle options={toggleOptions!} />
+          <Toggle buttonSx={hookSc('dashboardSearchToggle')}
+            options={toggleOptions!} />
         }
       </Maybe>
     </Flex>
@@ -257,10 +283,11 @@ export const DashboardSearch = ({
     <InputWithIcon
       rev
       icon={icon}
+      containerSx={hookSc('dashboardSearch')}
       inputProps={{
         placeholder,
         $variant: ['fullwidth', 'pill', 'border'],
-        $sx: hookSc('dashboardSearch')
+
       }}
     />
   )
@@ -280,7 +307,8 @@ export const DashboardSearchHeader = ({
   toggleOptions?: string[]
 }) => {
   const { hookSc } = useThemeHelper()
-  const [iconPos, setIconPos] = useState<'start' | 'end' | null>(null)
+  const [iconPos, setIconPos]
+    = useState<'start' | 'end' | null>(null)
   useEffect(() => {
     if (iconPos !== null) {
       return
@@ -310,7 +338,10 @@ export const DashboardSearchHeader = ({
       </Flex>
       <Maybe condition={toggleOptions}>
         {
-          <Toggle options={toggleOptions!} />
+          <Toggle
+            options={toggleOptions!}
+            buttonSx={hookSc('dashboardSearchToggle')}
+          />
         }
       </Maybe>
     </Flex>

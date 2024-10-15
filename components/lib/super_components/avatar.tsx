@@ -15,6 +15,7 @@ export type AvatarProps = {
   headingSx?: CssProps
   copySx?: CssProps
   avatarRightSx?: CssProps
+  avatarInnerSx?: CssProps
 }
 
 const avatars = [
@@ -48,6 +49,7 @@ export const MyAvatar = ({
   avatarRightSx,
   headingSx,
   copySx,
+  avatarInnerSx,
 }: AvatarProps) => {
   const theme = useTheme()
   return (
@@ -59,6 +61,7 @@ export const MyAvatar = ({
       <Flex
         $sx={{
           ...getSuperComponentStyles('avatarInner', theme),
+          ...avatarInnerSx,
         }}
       >
         <Box

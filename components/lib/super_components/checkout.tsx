@@ -1,7 +1,9 @@
 import { useThemeHelper } from "../../hooks"
 import { CssProps } from "../../theme"
-import { Button, Checkbox } from "../atomics"
-import { Box, Flex } from "../layout"
+import { Button, Checkbox, Heading, Maybe, NakedCheckbox } from "../atomics"
+import { Box, Card, Flex } from "../layout"
+import { Price, ProductInfo, ProductInfoProps } from "./product"
+import { ThumbnailImage } from "./thumbnail"
 
 // amazon? walmart? sephora? drugs?  
 export const ShoppingCartSummary = () => {
@@ -96,13 +98,84 @@ export const ProceedCard = ({
   )
 }
 
+const CartRow = ({
+  info,
+  checked,
+}: {
+  info: ProductInfoProps & { asset: string }
+  checked?: boolean
+}) => {
+  const { hookSc } = useThemeHelper()
+  const { asset, ...rest } = info
+  return (
+    <Flex aic $sx={hookSc('cartRow')}>
+      <NakedCheckbox checked={checked} />
+      <Flex $sx={hookSc('cartProduct')}>
+        <ThumbnailImage asset={asset} />
+        <ProductInfo {...rest} />
+      </Flex>
+      <Box $sx={hookSc('cartRowPrice')}>
+        <Price dollars={Math.floor(info.price)}
+          cents={info.price - Math.floor(info.price)}
+        />
+      </Box>
+    </Flex>
+  )
+}
+
 // header 
 // bullshit link "Deselect all items"
 // table header.  price at the end 
 // checkbox image, product info price. qty dropdown
 // table footer.  lineitem at the end 
-export const ShoppingCart = () => {
-
+export const ShoppingCart = ({
+  heading,
+  link,
+  products,
+  price,
+  checkedIndexes,
+}: {
+  heading: string
+  link?: string
+  products: (ProductInfoProps & { asset: string })[]
+  price: number
+  checkedIndexes?: number[]
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Box $sx={hookSc('cartSummary')}>
+      <Flex col>
+        <Heading level={3}>
+          {heading}
+        </Heading>
+        <Maybe condition={link !== undefined}>
+          {link}
+        </Maybe>
+        <Flex jcfe $sx={hookSc('cartHeader')}>
+          Price
+        </Flex>
+        <Flex col>
+          {
+            products.map((p, index) => {
+              return (
+                <CartRow
+                  checked={(checkedIndexes ?? []).includes(index)}
+                  info={p}
+                  key={index}
+                />
+              )
+            })
+          }
+        </Flex>
+        <Flex jcfe $sx={hookSc('cartFooter')}>
+          <LineItem
+            left={`Subtotal (${products.length}):`}
+            right={`$${price.toFixed(2)}`}
+          />
+        </Flex>
+      </Flex>
+    </Box>
+  )
 }
 
 // one big flex card, image, insidious promotion, button or link at the edn

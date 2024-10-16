@@ -333,6 +333,12 @@ export type ThemeConfig = {
     proceedCard: CssProps
     proceedCardCheckboxLabel: CssProps
     proceedCardButton: CssProps
+    cartHeader: CssProps
+    cartFooter: CssProps
+    cartSummary: CssProps
+    cartRow: CssProps
+    cartProduct: CssProps
+    cartRowPrice: CssProps
   }
 }
 

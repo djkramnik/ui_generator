@@ -1505,7 +1505,16 @@ export const getSuperComponents = ({
     },
     lineItemLeft: {},
     lineItemRight: {},
-    lineItems: {}
+    lineItems: {},
+    proceedCard: {},
+    proceedCardButton: {},
+    proceedCardCheckboxLabel: {},
+    cartHeader: {},
+    cartFooter: {},
+    cartSummary: {},
+    cartRow: {},
+    cartProduct: {},
+    cartRowPrice: {}
   }
 }
 

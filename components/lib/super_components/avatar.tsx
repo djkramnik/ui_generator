@@ -5,6 +5,7 @@ import { ChimericIcon, Copy, Heading, Icon, Image } from '../atomics'
 import { useEffect, useState } from 'react'
 import { randomItem } from '../../utils'
 import { getRandomName, getRandomSentence } from '../../../data'
+import { useThemeHelper } from '../../hooks'
 
 export type AvatarProps = {
   asset?: string
@@ -40,6 +41,27 @@ const avatars = [
   'shruti.jpg',
   'superman.jpg',
 ]
+
+export const AvatarImg = ({
+  asset,
+  fullAsset,
+  imgSx,
+}: {
+  asset?: string
+  fullAsset?: string
+  imgSx?: CssProps
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Image
+      src={fullAsset ?? `/avatars/${asset ?? ''}`}
+      $sx={{
+        ...hookSc('avatarImg'),
+        ...imgSx,
+      }}
+    />
+  )
+}
 
 export const MyAvatar = ({
   icon,
@@ -88,12 +110,7 @@ export const MyAvatar = ({
           }
           {
             asset && (
-              <Image
-                src={`/avatars/${asset}`}
-                $sx={{
-                  ...getSuperComponentStyles('avatarImg', theme),
-                }}
-              />
+              <AvatarImg asset={asset} />
             )
           }
         </Box>

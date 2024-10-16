@@ -185,8 +185,8 @@ lander:ecommerce,
 - [x] products card variants
   
 ### day seven (wed)
-- [ ] shopping cart summary
 - [ ] purchase confirmation section
+  - [x] shopping cart summary
 - [ ] side login (ie rbc)
 - [ ] email list (gmail)
 - [ ] file upload modal

@@ -1,9 +1,8 @@
 import { useThemeHelper } from "../../hooks"
 import { CssProps } from "../../theme"
-import { Button, Checkbox, Heading, Maybe, NakedCheckbox } from "../atomics"
-import { Box, Card, Flex } from "../layout"
+import { Button, Checkbox, Heading, Maybe, NakedCheckbox, Image, Copy, Anchor } from "../atomics"
+import { Box, Flex } from "../layout"
 import { Price, ProductInfo, ProductInfoProps } from "./product"
-import { ThumbnailImage } from "./thumbnail"
 
 // amazon? walmart? sephora? drugs?  
 export const ShoppingCartSummary = () => {
@@ -111,7 +110,7 @@ const CartRow = ({
     <Flex aic $sx={hookSc('cartRow')}>
       <NakedCheckbox checked={checked} />
       <Flex $sx={hookSc('cartProduct')}>
-        <ThumbnailImage asset={asset} />
+        <Image src={asset} />
         <ProductInfo {...rest} />
       </Flex>
       <Box $sx={hookSc('cartRowPrice')}>
@@ -179,13 +178,83 @@ export const ShoppingCart = ({
 }
 
 // one big flex card, image, insidious promotion, button or link at the edn
-export const StupidPromotion = () => {
-
+export const StupidPromotion = ({
+  asset,
+  html,
+  buttonLabel,
+  link,
+}: {
+  asset: string
+  html: string
+  buttonLabel?: string
+  link?: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex $sx={hookSc('stupidPromotion')}>
+      <Box $sx={hookSc('stupidPromotionImage')}>
+        <Image $sx={{
+          width: '100%'
+        }} src={asset} />
+      </Box>
+      <Copy
+        $sx={hookSc('stupidPromotionCopy')}
+        dangerouslySetInnerHTML={{
+          __html: html
+        }}
+      />
+      <Box $sx={hookSc('stupidPromotionRight')}>
+        <Maybe condition={buttonLabel !== undefined}>
+          <Button $sx={hookSc('stupidPromotionButton')}>
+            {buttonLabel}
+          </Button>
+        </Maybe>
+        <Maybe condition={link !== undefined}>
+          <Anchor $sx={hookSc('stupidPromotionLink')}>
+            {link}
+          </Anchor>
+        </Maybe>
+      </Box>
+    </Flex>
+  )
 }
 
 // productInfo? (a two col product info + delivery options)
-export const PurchaseProductInfo = () => {
-
+export const PurchaseProductInfo = ({
+  info,
+  deliveryOptions,
+}: {
+  info: ProductInfoProps & { asset: string }
+  deliveryOptions: {
+    label: string
+    checked?: boolean
+    children?: React.ReactNode
+  }[]
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex $sx={hookSc('purchaseProductInfo')}>
+      <Flex $sx={hookSc('purchaseProduct')}>
+        <Image src={info.asset} />
+        <ProductInfo {...info} />
+      </Flex>
+      <Flex col $sx={hookSc('purchaseDeliveryOptions')}>
+        {
+          deliveryOptions.map((d, index) => {
+            return (
+              <Box key={index} $sx={hookSc('purchaseDelivery')}>
+                <Checkbox checked={d.checked}
+                  radio={true} label={d.label} />
+                <Box $sx={hookSc('purchaseDeliveryExtras')}>
+                  {d.children ?? null}
+                </Box>
+              </Box>
+            )
+          })
+        }
+      </Flex>
+    </Flex>
+  )
 }
 
 // card, 

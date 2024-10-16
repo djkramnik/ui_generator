@@ -339,6 +339,17 @@ export type ThemeConfig = {
     cartRow: CssProps
     cartProduct: CssProps
     cartRowPrice: CssProps
+    stupidPromotion: CssProps
+    stupidPromotionImage: CssProps
+    stupidPromotionCopy: CssProps
+    stupidPromotionRight: CssProps
+    stupidPromotionButton: CssProps
+    stupidPromotionLink: CssProps
+    purchaseProduct: CssProps
+    purchaseProductInfo: CssProps
+    purchaseDeliveryOptions: CssProps
+    purchaseDelivery: CssProps
+    purchaseDeliveryExtras: CssProps
   }
 }
 

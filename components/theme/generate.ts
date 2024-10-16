@@ -1514,7 +1514,18 @@ export const getSuperComponents = ({
     cartSummary: {},
     cartRow: {},
     cartProduct: {},
-    cartRowPrice: {}
+    cartRowPrice: {},
+    stupidPromotion: {},
+    stupidPromotionButton: {},
+    stupidPromotionCopy: {},
+    stupidPromotionImage: {},
+    stupidPromotionLink: {},
+    stupidPromotionRight: {},
+    purchaseDelivery: {},
+    purchaseDeliveryExtras: {},
+    purchaseDeliveryOptions: {},
+    purchaseProduct: {},
+    purchaseProductInfo: {}
   }
 }
 

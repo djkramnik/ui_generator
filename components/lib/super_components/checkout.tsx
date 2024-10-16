@@ -263,8 +263,51 @@ export const PurchaseProductInfo = ({
 // link
 // textAccordion? 
 // productInfo? (a two col product info + delivery options)
-export const PurchaseInfoCard = () => {
-
+export const PurchaseInfoCard = ({
+  heading,
+  link,
+  copy,
+  noChange,
+  changeLink,
+  children,
+  containerSx,
+}: {
+  heading: string
+  link: string
+  copy?: string
+  noChange?: boolean
+  changeLink?: string
+  children?: React.ReactNode
+  containerSx?: CssProps
+}) => {
+  const { hookSc } = useThemeHelper()
+  {/* Change thing up here */}
+  return (
+    <Box $sx={hookSc('purchaseInfoCard')}>
+      <Maybe condition={noChange !== true}>
+        <Anchor $sx={hookSc('purchaseInfoEdit')}>
+          {changeLink || 'Change'}
+        </Anchor>
+      </Maybe>
+      <Heading level={4} $sx={hookSc('purchaseInfoHeading')}>
+        {heading}
+      </Heading>
+      <Maybe condition={copy !== undefined}>
+        <Copy $sx={hookSc('purchaseInfoCopy')}>
+          {copy}
+        </Copy>
+      </Maybe>
+      <Anchor $sx={hookSc('purchaseInfoLink')}>
+        {link}
+      </Anchor>
+      <Box $sx={{
+        ...hookSc('purchaseInfoContainer'),
+        ...containerSx,
+        }}>
+        {children}
+      </Box>
+    </Box>
+  )
 }
 
 export const FingeronTheButtonHorizontal = () => {

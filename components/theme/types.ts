@@ -350,6 +350,12 @@ export type ThemeConfig = {
     purchaseDeliveryOptions: CssProps
     purchaseDelivery: CssProps
     purchaseDeliveryExtras: CssProps
+    purchaseInfoCard: CssProps
+    purchaseInfoHeading: CssProps
+    purchaseInfoCopy: CssProps
+    purchaseInfoEdit: CssProps
+    purchaseInfoLink: CssProps
+    purchaseInfoContainer: CssProps
   }
 }
 

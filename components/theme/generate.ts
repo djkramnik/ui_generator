@@ -1525,7 +1525,13 @@ export const getSuperComponents = ({
     purchaseDeliveryExtras: {},
     purchaseDeliveryOptions: {},
     purchaseProduct: {},
-    purchaseProductInfo: {}
+    purchaseProductInfo: {},
+    purchaseInfoCard: {},
+    purchaseInfoContainer: {},
+    purchaseInfoCopy: {},
+    purchaseInfoEdit: {},
+    purchaseInfoHeading: {},
+    purchaseInfoLink: {}
   }
 }
 

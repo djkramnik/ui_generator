@@ -330,6 +330,9 @@ export type ThemeConfig = {
     lineItemLeft: CssProps
     lineItemRight: CssProps
     lineItems: CssProps
+    proceedCard: CssProps
+    proceedCardCheckboxLabel: CssProps
+    proceedCardButton: CssProps
   }
 }
 

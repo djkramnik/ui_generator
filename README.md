@@ -187,12 +187,15 @@ lander:ecommerce,
 ### day seven (wed)
 - [ ] purchase confirmation section
   - [x] shopping cart summary
-- [ ] side login (ie rbc)
-- [ ] email list (gmail)
-- [ ] file upload modal
-- [ ] bottom up popover
 
 ### day eight (rsday)
+- [ ] side login (ie rbc)
+- [ ] email list (gmail)
+
+### next week I presume 
+
+- [ ] file upload modal
+- [ ] bottom up popover
 - [ ] squarespace type hero
 - [ ] comments
 - [ ] carousel o content

@@ -1541,6 +1541,22 @@ export const getSuperComponents = ({
     orderConfirmVLegalese: {},
     orderConfirmVTop: {},
     legaleseCard: {},
+    checkoutNav: {},
+    checkoutNavHeading: {},
+    checkoutNavHeadingIcon: {},
+    checkoutNavHeadingLink: {},
+    checkoutNavInner: {},
+    checkoutPage: {},
+    checkoutPageContainer: {},
+    checkoutPageLeft: {},
+    checkoutPageRight: {},
+    backToTop: {},
+    backToTopLabel: {},
+    confirmationPage: {},
+    outlinedLangDropdown: {},
+    confirmationPageContainer: {},
+    confirmationPageLeft: {},
+    confirmationPageRight: {},
   }
 }
 

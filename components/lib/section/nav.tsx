@@ -284,3 +284,17 @@ export const TopNav = ({
   )
 }
 
+export const BackToTop = ({
+  label = 'Back to Top',
+}: {
+  label?: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Box $sx={hookSc('backToTop')}>
+      <Copy $sx={hookSc('backToTopLabel')}>
+        {label}
+      </Copy>
+    </Box>
+  )
+}

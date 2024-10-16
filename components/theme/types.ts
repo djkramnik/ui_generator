@@ -365,6 +365,22 @@ export type ThemeConfig = {
     orderConfirmVButton: CssProps
     orderConfirmVLegalese: CssProps
     legaleseCard: CssProps
+    checkoutPage: CssProps
+    checkoutNav: CssProps
+    checkoutNavInner: CssProps
+    checkoutNavHeading: CssProps
+    checkoutNavHeadingIcon: CssProps
+    checkoutNavHeadingLink: CssProps
+    checkoutPageContainer: CssProps
+    checkoutPageLeft: CssProps
+    checkoutPageRight: CssProps
+    backToTop: CssProps
+    backToTopLabel: CssProps
+    confirmationPage: CssProps
+    outlinedLangDropdown: CssProps
+    confirmationPageContainer: CssProps
+    confirmationPageLeft: CssProps
+    confirmationPageRight: CssProps
   }
 }
 

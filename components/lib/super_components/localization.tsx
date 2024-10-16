@@ -1,5 +1,6 @@
+import { useThemeHelper } from "../../hooks"
 import { ChimericIcon, Icon } from "../atomics"
-import { Flex, Span } from "../layout"
+import { Box, Flex, Span } from "../layout"
 
 export const CanadaFlag = () => {
   return (
@@ -37,5 +38,23 @@ export const LangDropdown = ({
         }}
       />
     </Flex>
+  )
+}
+
+// globe icon, language, double caret within a button shaped outline
+// flag, country within a button shaped outline 
+export const OutlinedLangDropdown = ({
+  icon,
+  label = 'Canada',
+}: {
+  icon: string
+  label?: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Box $sx={hookSc('outlinedLangDropdown')}>
+      {icon}
+      {label}
+    </Box>
   )
 }

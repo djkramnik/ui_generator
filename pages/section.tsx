@@ -65,7 +65,7 @@ import { Container } from '../components/lib/layout/container'
 import { genGoogleSearchResults } from '../data'
 import { useEffect, useState } from 'react'
 import { RandomThreeColNews } from '../components/lib/super_components/news'
-import { TopNav } from '../components/lib/section/topnav'
+import { TopNav } from '../components/lib/section/nav'
 
 const SectionsGallery = () => {
   const { theme, hookSc } = useThemeHelper()

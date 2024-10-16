@@ -5,7 +5,7 @@ import { Box, Flex } from "../../layout"
 import { Copy } from "../copy"
 import { ChimericIcon, Icon } from "../icon"
 
-type TextAccordionProps = {
+export type TextAccordionProps = {
   label: string
   children: React.ReactNode
   open?: boolean

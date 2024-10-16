@@ -4,11 +4,6 @@ import { Button, Checkbox, Heading, Maybe, NakedCheckbox, Image, Copy, Anchor } 
 import { Box, Flex } from "../layout"
 import { Price, ProductInfo, ProductInfoProps } from "./product"
 
-// amazon? walmart? sephora? drugs?  
-export const ShoppingCartSummary = () => {
-
-}
-
 export const LineItem = ({
   left,
   right,
@@ -39,13 +34,15 @@ export const LineItem = ({
   )
 }
 
+type LineItemsProps = {
+  lineItems: Array<[string, string]>
+  finalItem: [string, string]
+}
+
 export const LineItems = ({
   lineItems,
   finalItem,
-}: {
-  lineItems: Array<[string, string]>
-  finalItem: [string, string]
-}) => {
+}: LineItemsProps) => {
   const { hookSc } = useThemeHelper()
   return (
     <Flex col $sx={hookSc('lineItems')}>
@@ -310,12 +307,60 @@ export const PurchaseInfoCard = ({
   )
 }
 
-export const FingeronTheButtonHorizontal = () => {
-
+export const FingeronTheButtonHorizontal = ({
+  redButtonLabel = 'Place order',
+  heading,
+  legalese,
+}: {
+  redButtonLabel?: string
+  heading: string
+  legalese?: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex $sx={hookSc('orderConfirmH')}>
+      <Button $sx={hookSc('orderConfirmHButton')}>
+        {redButtonLabel}
+      </Button>
+      <Heading level={4} $sx={hookSc('orderConfirmHHeading')}>
+        {heading}
+      </Heading>
+      <Maybe condition={!!legalese}>
+        <Copy 
+          $sx={hookSc('orderConfirmHLegalese')}
+        dangerouslySetInnerHTML={{
+          __html: legalese || ''
+        }} />
+      </Maybe>
+    </Flex>
+  )
 }
 
-export const FingerOnTheButtonVertical = () => {
-
+export const FingerOnTheButtonVertical = ({
+  redButtonLabel = 'Place order',
+  legalese,
+  lineItemProps
+}: {
+  redButtonLabel?: string
+  legalese?: string
+  lineItemProps: LineItemsProps
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Flex col $sx={hookSc('orderConfirmV')}>
+      <Flex col $sx={hookSc('orderConfirmVTop')}>
+        <Button $sx={hookSc('orderConfirmVButton')}>
+          {redButtonLabel}
+        </Button>
+        <Maybe condition={!!legalese}>
+          <Copy $sx={hookSc('orderConfirmVLegalese')} dangerouslySetInnerHTML={{
+            __html: legalese || ''
+          }} />
+        </Maybe>
+      </Flex>
+      <LineItems {...lineItemProps} />
+    </Flex>
+  )
 }
 
 export const IgnoreThisCard = ({
@@ -323,6 +368,15 @@ export const IgnoreThisCard = ({
 }: {
   html: string
 }) => {
-
+  const { hookSc } = useThemeHelper()
+  return (
+    <Box $sx={hookSc('legaleseCard')}>
+      <Copy $sx={hookSc('legalese')}
+        dangerouslySetInnerHTML={{
+          __html: html
+        }}
+      />
+    </Box>
+  )
 }
 

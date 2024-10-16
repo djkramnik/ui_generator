@@ -356,6 +356,15 @@ export type ThemeConfig = {
     purchaseInfoEdit: CssProps
     purchaseInfoLink: CssProps
     purchaseInfoContainer: CssProps
+    orderConfirmH: CssProps
+    orderConfirmHButton: CssProps
+    orderConfirmHHeading: CssProps
+    orderConfirmHLegalese: CssProps
+    orderConfirmV: CssProps
+    orderConfirmVTop: CssProps
+    orderConfirmVButton: CssProps
+    orderConfirmVLegalese: CssProps
+    legaleseCard: CssProps
   }
 }
 

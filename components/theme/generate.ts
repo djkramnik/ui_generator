@@ -1531,7 +1531,16 @@ export const getSuperComponents = ({
     purchaseInfoCopy: {},
     purchaseInfoEdit: {},
     purchaseInfoHeading: {},
-    purchaseInfoLink: {}
+    purchaseInfoLink: {},
+    orderConfirmH: {},
+    orderConfirmHButton: {},
+    orderConfirmHHeading: {},
+    orderConfirmHLegalese: {},
+    orderConfirmV: {},
+    orderConfirmVButton: {},
+    orderConfirmVLegalese: {},
+    orderConfirmVTop: {},
+    legaleseCard: {},
   }
 }
 

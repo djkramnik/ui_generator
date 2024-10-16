@@ -50,7 +50,7 @@ import { Headings } from '../components/lib/super_components/headings'
 import { MyAvatar } from '../components/lib/super_components'
 import { Testimonial } from '../components/lib/super_components/testimonial'
 import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
-import { Price, ProductInfo, Starz } from '../components/lib/super_components/product'
+import { Price, ProductCard, ProductInfo, Starz } from '../components/lib/super_components/product'
 import { useThemeHelper } from '../components/hooks'
 
 const Cell = ({
@@ -113,6 +113,16 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row>
+          <ProductCard
+            heading="Do you like that?"
+            link="See more"
+          />
+          <ProductCard
+            heading="I recommend it"
+            link="See more"
+          />
+        </Row>
         <Row>
           <Box $sx={{ width: '606px', border: '1px solid black'}}>
             <ProductInfo

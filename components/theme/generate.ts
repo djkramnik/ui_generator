@@ -1499,7 +1499,13 @@ export const getSuperComponents = ({
       gap: spacing.gap,
       color: 'rgba(0,0,0,0.8)',
       fontSize: '12px',
-    }
+    },
+    lineItem: {
+
+    },
+    lineItemLeft: {},
+    lineItemRight: {},
+    lineItems: {}
   }
 }
 

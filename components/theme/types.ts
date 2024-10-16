@@ -326,6 +326,10 @@ export type ThemeConfig = {
     amazonMidNavInner: CssProps
     amazonBottomNav: CssProps
     amazonBottomNavInner: CssProps
+    lineItem: CssProps
+    lineItemLeft: CssProps
+    lineItemRight: CssProps
+    lineItems: CssProps
   }
 }
 

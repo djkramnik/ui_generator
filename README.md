@@ -180,19 +180,19 @@ lander:ecommerce,
 - [x] table with toggle filters
 - [x] dashboard tabs
 
-### day six (sunday)
+### day six
 - [x] secondary nav
+- [x] products card variants
+  
+### day seven (wed)
 - [ ] shopping cart summary
-- [ ] products card
-- [ ] product section
 - [ ] purchase confirmation section
 - [ ] side login (ie rbc)
 - [ ] email list (gmail)
-
-
-### day seven (tueday)
 - [ ] file upload modal
 - [ ] bottom up popover
+
+### day eight (rsday)
 - [ ] squarespace type hero
 - [ ] comments
 - [ ] carousel o content

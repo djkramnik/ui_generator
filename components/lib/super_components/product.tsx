@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react"
 import { sizedArray } from "../../../util"
 import { useThemeHelper } from "../../hooks"
 import { CssProps, sxToStyle } from "../../theme"
-import { ChimericIcon, Copy, Heading, Icon, Maybe } from "../atomics"
-import { Box, Flex, Span } from "../layout"
+import { ChimericIcon, Copy, Heading, Icon, Maybe, Image, Anchor } from "../atomics"
+import { Box, Flex, Span, TwoCol } from "../layout"
+import { shuffle } from "../../utils"
 
 const padCents = (n: number): string => {
   if (n < 10) {
@@ -195,3 +197,75 @@ export const ProductInfo = ({
     </Flex>
   )
 }
+
+export const ProductCard = ({
+  heading,
+  link,
+}: {
+  heading: string
+  link?: string
+}) => {
+  const { theme, hookSc } = useThemeHelper()
+  const [randomProducts, setRandomProducts]
+    = useState<string[] | null>(null)
+
+  const allProducts: string[] = sizedArray(31)
+    .map((_, index) => {
+      return `product${index + 1}.jpg`
+    })
+  useEffect(() => {
+    if (randomProducts !== null) {
+      return
+    }
+
+    setRandomProducts(
+      shuffle(allProducts).slice(0, 4)
+    )
+  }, [randomProducts, setRandomProducts])
+
+  if (randomProducts === null) {
+    return null
+  }
+
+  return (
+    <Flex col $sx={{
+      padding: '20px',
+      gap: theme.spacing.gap,
+      backgroundColor: theme.palette.white,
+      width: '320px'
+    }}>
+      <Heading level={4} $sx={{
+        fontWeight: 'bold'
+      }}>
+        {heading}
+      </Heading>
+      <Flex $sx={{
+        flexWrap: 'wrap',
+      }}>
+        {
+          randomProducts.map((product, index) => {
+            return (
+              <Box $sx={{ width: '50%', padding: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden'
+              }}>
+                <Image
+                  $sx={{ height: '160px' }}
+                  src={`/products/${product}`}
+                  key={index}
+                />
+              </Box>
+            )
+          })
+        }
+      </Flex>
+      <Maybe condition={link !== undefined}>
+        <Anchor>
+          {link}
+        </Anchor>
+      </Maybe>
+    </Flex>
+  )
+} 

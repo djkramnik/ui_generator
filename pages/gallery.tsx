@@ -52,7 +52,7 @@ import { Testimonial } from '../components/lib/super_components/testimonial'
 import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
 import { Price, ProductCard, ProductInfo, Starz } from '../components/lib/super_components/product'
 import { useThemeHelper } from '../components/hooks'
-import { CartRow, LineItem, LineItems, ProceedCard, ShoppingCart } from '../components/lib/super_components/checkout'
+import { CartRow, LineItem, LineItems, ProceedCard, PurchaseInfoCard, PurchaseProductInfo, ShoppingCart } from '../components/lib/super_components/checkout'
 import { Legalese } from '../components/lib/super_components/legalese'
 
 const Cell = ({
@@ -115,6 +115,35 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row bgc="#eee" withGrow>
+          <Box $sx={{ flexGrow: '1'}}>
+            <PurchaseInfoCard
+              heading="Arriving Oct 18, 2024"
+              copy="If you order within the next 10 minutes"
+              link="Add delivery instructions">
+              <PurchaseProductInfo
+                deliveryOptions={[{
+                  label: 'Friday, Oct 18',
+                  children: (
+                    <span style={{ fontWeight: 'bold'}}>
+                      FREE Delivery
+                    </span>
+                  )
+                }]}
+                info={{
+                  price: 38.94,
+                  title: 'Chess: 5334 Problems, Combinations and Games',
+                  asset: '/products/product3.jpg',
+                  description: 'Fie I was an immigrant from Ireland',
+                  children: [
+                    null,
+                    <Copy>Ship and sold by <Anchor>amazon.ca</Anchor></Copy>,
+                  ]
+                }}
+              />
+            </PurchaseInfoCard>
+          </Box>
+        </Row>
         <Row bgc="#eee">
           <ShoppingCart
             heading="Shopping Cart"
@@ -134,7 +163,7 @@ const Gallery = () => {
               {
                 price: 38.94,
                 title: 'Chess: 5334 Problems, Combinations and Games',
-                asset: '/products/product1.jpg',
+                asset: '/products/product2.jpg',
                 description: 'Fie I was an immigrant from Ireland',
                 children: [
                   null,

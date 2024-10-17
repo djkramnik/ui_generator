@@ -337,6 +337,8 @@ export type ThemeConfig = {
     proceedCardPrice: CssProps
     cartHeader: CssProps
     cartFooter: CssProps
+    cartFooterCopy: CssProps
+    cartFooterLineItem: CssProps
     cartSummary: CssProps
     cartRow: CssProps
     cartRowCheckbox: CssProps
@@ -352,6 +354,7 @@ export type ThemeConfig = {
     stupidPromotionLink: CssProps
     purchaseProduct: CssProps
     purchaseProductInfo: CssProps
+    purchaseProductImg: CssProps
     purchaseDeliveryOptions: CssProps
     purchaseDelivery: CssProps
     purchaseDeliveryExtras: CssProps

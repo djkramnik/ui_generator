@@ -178,7 +178,9 @@ export const ShoppingCart = ({
                   {
                     index !== products.length - 1
                       ? (
-                        <hr />
+                        <hr 
+                          style={{ color: 'inherit' }}
+                        />
                       )
                       : null
                   }
@@ -188,10 +190,14 @@ export const ShoppingCart = ({
           }
         </Flex>
         <Flex jcfe $sx={hookSc('cartFooter')}>
-          <LineItem
-            left={`Subtotal (${products.length}):`}
-            right={`$${price.toFixed(2)}`}
-          />
+          <Box $sx={hookSc('cartFooterLineItem')}>
+            <LineItem
+              leftSx={hookSc('cartFooterCopy')}
+              rightSx={hookSc('cartFooterCopy')}
+              left={`Subtotal (${products.length}):`}
+              right={`$${price.toFixed(2)}`}
+            />
+          </Box>
         </Flex>
       </Flex>
     </Box>
@@ -256,8 +262,9 @@ export const PurchaseProductInfo = ({
   return (
     <Flex $sx={hookSc('purchaseProductInfo')}>
       <Flex $sx={hookSc('purchaseProduct')}>
-        <Image src={info.asset} />
-        <ProductInfo {...info} />
+        <Image $sx={hookSc('purchaseProductImg')}
+        src={info.asset} />
+        <ProductInfo {...info} sm />
       </Flex>
       <Flex col $sx={hookSc('purchaseDeliveryOptions')}>
         {

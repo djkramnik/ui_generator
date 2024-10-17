@@ -1535,7 +1535,18 @@ export const getSuperComponents = ({
       padding: `${spacing.smallGap} 0`,
       borderBottom: `1px solid rgba(0,0,0,0.5)`
     },
-    cartFooter: {},
+    cartFooter: {
+      paddingTop: spacing.smallGap,
+      borderTop: `1px solid rgba(0,0,0,0.5)`,
+
+    },
+    cartFooterCopy: {
+      fontWeight: 'bold',
+      fontSize: '18px'
+    },
+    cartFooterLineItem: {
+      width: '20%'
+    },
     cartSummary: {
       background: palette.white,
       color: colors.amazonDark,
@@ -1572,15 +1583,44 @@ export const getSuperComponents = ({
     stupidPromotionLink: {},
     stupidPromotionRight: {},
     purchaseDelivery: {},
-    purchaseDeliveryExtras: {},
+    purchaseDeliveryExtras: {
+      paddingLeft: '25px'
+    },
     purchaseDeliveryOptions: {},
-    purchaseProduct: {},
-    purchaseProductInfo: {},
-    purchaseInfoCard: {},
+    purchaseProduct: {
+      gap: spacing.gap,
+      padding: spacing.biggishGap,
+      background: '#eee',
+      borderRadius: '12px'
+    },
+    purchaseProductInfo: {
+      padding: '12px 0',
+      gap: spacing.gap,
+      width: '100%'
+    },
+    purchaseProductImg: {
+      width: '120px'
+    },
+    purchaseInfoCard: {
+      background: palette.white,
+      color: colors.amazonDark,
+      padding: spacing.gap,
+      position: 'relative',
+      borderRadius: '8px'
+    },
     purchaseInfoContainer: {},
-    purchaseInfoCopy: {},
-    purchaseInfoEdit: {},
-    purchaseInfoHeading: {},
+    purchaseInfoCopy: {
+      fontSize: '14px',
+    },
+    purchaseInfoEdit: {
+      position: 'absolute',
+      top: spacing.gap,
+      right: spacing.gap
+    },
+    purchaseInfoHeading: {
+      fontSize: '20px',
+      fontWeight: 'bold'
+    },
     purchaseInfoLink: {},
     orderConfirmH: {},
     orderConfirmHButton: {},

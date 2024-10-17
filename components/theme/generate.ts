@@ -1604,7 +1604,7 @@ export const getSuperComponents = ({
     purchaseInfoCard: {
       background: palette.white,
       color: colors.amazonDark,
-      padding: spacing.gap,
+      padding: spacing.biggishGap,
       position: 'relative',
       borderRadius: '8px'
     },
@@ -1622,15 +1622,56 @@ export const getSuperComponents = ({
       fontWeight: 'bold'
     },
     purchaseInfoLink: {},
-    orderConfirmH: {},
-    orderConfirmHButton: {},
-    orderConfirmHHeading: {},
-    orderConfirmHLegalese: {},
-    orderConfirmV: {},
-    orderConfirmVButton: {},
+    orderConfirmH: {
+      width: '100%',
+      background: palette.white,
+      color: colors.amazonDark,
+      padding: spacing.biggishGap,
+      gap: spacing.biggishGap,
+      borderRadius: '8px'
+    },
+    orderConfirmHButton: {
+      borderRadius: '30px',
+
+    },
+    orderConfirmHHeading: {
+      fontSize: '20px',
+      fontWeight: 'bold'
+    },
+    orderConfirmHLegalese: {
+      fontSize: '12px'
+    },
+    orderConfirmV: {
+      flexDirection: 'column',
+      width: '100%',
+      background: palette.white,
+      color: colors.amazonDark,
+      padding: spacing.biggishGap,
+      gap: spacing.biggishGap,
+      borderRadius: '8px',
+      alignItems: 'center'
+    },
+    orderConfirmVButton: {
+      borderRadius: '80px'
+    },
     orderConfirmVLegalese: {},
-    orderConfirmVTop: {},
-    legaleseCard: {},
+    orderConfirmVTop: {
+      borderBottom: `1px solid rgba(0,0,0,0.5)`,
+      paddingBottom: spacing.biggishGap,
+      width: '94%'
+    },
+    orderConfirmVBottom: {
+      width: '94%'
+    },
+    legaleseCard: {
+      width: '100%',
+      background: palette.white,
+      color: colors.amazonDark,
+      padding: spacing.biggishGap,
+      gap: spacing.biggishGap,
+      borderRadius: '8px',
+      alignItems: 'center'
+    },
     checkoutNav: {},
     checkoutNavHeading: {},
     checkoutNavHeadingIcon: {},

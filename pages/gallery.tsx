@@ -52,8 +52,7 @@ import { Testimonial } from '../components/lib/super_components/testimonial'
 import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
 import { Price, ProductCard, ProductInfo, Starz } from '../components/lib/super_components/product'
 import { useThemeHelper } from '../components/hooks'
-import { CartRow, LineItem, LineItems, ProceedCard, PurchaseInfoCard, PurchaseProductInfo, ShoppingCart } from '../components/lib/super_components/checkout'
-import { Legalese } from '../components/lib/super_components/legalese'
+import { CartRow, FingeronTheButtonHorizontal, FingerOnTheButtonVertical, IgnoreThisCard, LineItem, LineItems, ProceedCard, PurchaseInfoCard, PurchaseProductInfo, ShoppingCart } from '../components/lib/super_components/checkout'
 
 const Cell = ({
   children,
@@ -115,6 +114,42 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row bgc="#eee">
+          <Box $sx={{ width: '600px'}}>
+            <IgnoreThisCard
+              html={`
+                Do you need help? Explore our <a>Help pages</a> or <a>contact us</a><br/>
+                For an item ordered from Amazon.ca: When you click the 'Place your order' button,
+                we will send you an e-mail acknowledging receipt of your order.
+                Your contract to purchase an item will not be complete until we send
+                you an e-mail notifying you that the item has been shipped to you.<br />
+                Within 30 days of delivery, you may return new,
+                unopened merchandise in its original condition.
+                Exceptions and restrictions apply. See Amazon.ca's <a>Returns Policy</a>.
+                <br/>
+                <a>Back to cart</a>
+                `}
+            />
+          </Box>
+        </Row>
+        <Row bgc="#eee" withGrow>
+          <FingeronTheButtonHorizontal
+            heading="Order Total: $58.96"
+            legalese='My patience ends, I want <a>revenge</a>, I need those hits'
+          />
+
+          <FingerOnTheButtonVertical
+            lineItemProps={{
+              lineItems: [
+                ['Items (2)', '$57.01',],
+                ['Shipping & Handling', '$0.00'],
+                ['Estimated GST/HST:', '$0.00'],
+                ['Estimated PST/RST/QST:', '$0.00']
+              ],
+              finalItem: ['Order Total:', '$58.96']
+            }}
+          />
+        </Row>
         <Row bgc="#eee" withGrow>
           <Box $sx={{ flexGrow: '1'}}>
             <PurchaseInfoCard

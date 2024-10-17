@@ -370,6 +370,7 @@ export type ThemeConfig = {
     orderConfirmHLegalese: CssProps
     orderConfirmV: CssProps
     orderConfirmVTop: CssProps
+    orderConfirmVBottom: CssProps
     orderConfirmVButton: CssProps
     orderConfirmVLegalese: CssProps
     legaleseCard: CssProps

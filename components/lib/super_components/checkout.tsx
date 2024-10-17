@@ -353,16 +353,18 @@ export const FingeronTheButtonHorizontal = ({
       <Button $sx={hookSc('orderConfirmHButton')}>
         {redButtonLabel}
       </Button>
-      <Heading level={4} $sx={hookSc('orderConfirmHHeading')}>
-        {heading}
-      </Heading>
-      <Maybe condition={!!legalese}>
-        <Copy 
-          $sx={hookSc('orderConfirmHLegalese')}
-        dangerouslySetInnerHTML={{
-          __html: legalese || ''
-        }} />
-      </Maybe>
+      <Flex col>
+        <Heading level={4} $sx={hookSc('orderConfirmHHeading')}>
+          {heading}
+        </Heading>
+        <Maybe condition={!!legalese}>
+          <Copy 
+            $sx={hookSc('orderConfirmHLegalese')}
+          dangerouslySetInnerHTML={{
+            __html: legalese || ''
+          }} />
+        </Maybe>
+      </Flex>
     </Flex>
   )
 }
@@ -389,7 +391,9 @@ export const FingerOnTheButtonVertical = ({
           }} />
         </Maybe>
       </Flex>
-      <LineItems {...lineItemProps} />
+      <Box $sx={hookSc('orderConfirmVBottom')}>
+        <LineItems {...lineItemProps} />
+      </Box>
     </Flex>
   )
 }

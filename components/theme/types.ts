@@ -333,11 +333,16 @@ export type ThemeConfig = {
     proceedCard: CssProps
     proceedCardCheckboxLabel: CssProps
     proceedCardButton: CssProps
+    proceedCardLineItem: CssProps
+    proceedCardPrice: CssProps
     cartHeader: CssProps
     cartFooter: CssProps
     cartSummary: CssProps
     cartRow: CssProps
+    cartRowCheckbox: CssProps
     cartProduct: CssProps
+    cartProductImg: CssProps
+    cartProducts: CssProps
     cartRowPrice: CssProps
     stupidPromotion: CssProps
     stupidPromotionImage: CssProps
@@ -381,6 +386,8 @@ export type ThemeConfig = {
     confirmationPageContainer: CssProps
     confirmationPageLeft: CssProps
     confirmationPageRight: CssProps
+    finalItemLeft: CssProps
+    finalItemRight: CssProps
   }
 }
 

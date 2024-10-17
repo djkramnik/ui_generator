@@ -1,4 +1,4 @@
-import { Flex, Box, Card } from '../components/lib'
+import { Flex, Box, Card, Span } from '../components/lib'
 import {
   Anchor,
   Autocomplete,
@@ -52,6 +52,8 @@ import { Testimonial } from '../components/lib/super_components/testimonial'
 import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
 import { Price, ProductCard, ProductInfo, Starz } from '../components/lib/super_components/product'
 import { useThemeHelper } from '../components/hooks'
+import { CartRow, LineItem, LineItems, ProceedCard, ShoppingCart } from '../components/lib/super_components/checkout'
+import { Legalese } from '../components/lib/super_components/legalese'
 
 const Cell = ({
   children,
@@ -113,6 +115,67 @@ const Gallery = () => {
       <ThemeToggle />
       <Spacer />
       <Container>
+        <Row bgc="#eee">
+          <ShoppingCart
+            heading="Shopping Cart"
+            link="Deselect all items"
+            price={38.94}
+            products={[
+              {
+                price: 38.94,
+                title: 'Chess: 5334 Problems, Combinations and Games',
+                asset: '/products/product1.jpg',
+                description: 'Fie I was an immigrant from Ireland',
+                children: [
+                  null,
+                  <Copy>Ship and sold by <Anchor>amazon.ca</Anchor></Copy>,
+                ]
+              },
+              {
+                price: 38.94,
+                title: 'Chess: 5334 Problems, Combinations and Games',
+                asset: '/products/product1.jpg',
+                description: 'Fie I was an immigrant from Ireland',
+                children: [
+                  null,
+                  <Copy>Ship and sold by <Anchor>amazon.ca</Anchor></Copy>,
+                ]
+              }
+            ]}
+          />
+        </Row>
+        <Row bgc='#fff'>
+          <Box $sx={{ width: '250px' }}>
+            <LineItem left="Items (2):" right="$57.01" />
+            <LineItems
+              lineItems={[
+                ['Items (2)', '$57.01'],
+                ['Shipping & Handling', '$0.00'],
+                ['Estimated GST/HST:', '$1.95'],
+                ['Estimated PST/RST/QST:', '$0.00']
+              ]}
+              finalItem={[
+                'Order Total:',
+                '$58.96'
+              ]}
+            />
+          </Box>
+          <ProceedCard totalItems={2} price={58.96} />
+          <Box $sx={{ width: '800px' }}>
+            <CartRow checked info={{
+              price: 38.94,
+              title: 'Chess: 5334 Problems, Combinations and Games',
+              asset: '/products/product1.jpg',
+              description: 'Fie I was an immigrant from Ireland',
+              children: [
+                <Anchor>In Stock</Anchor>,
+                <Copy>Ship and sold by <Anchor>amazon.ca</Anchor></Copy>,
+                <Checkbox label="This will be a gift" />
+              ]
+            }}>
+            </CartRow>
+          </Box>
+        </Row>
         <Row>
           <ProductCard
             heading="Do you like that?"

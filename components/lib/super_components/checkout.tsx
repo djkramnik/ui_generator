@@ -1,6 +1,6 @@
 import { useThemeHelper } from "../../hooks"
 import { CssProps } from "../../theme"
-import { Button, Checkbox, Heading, Maybe, NakedCheckbox, Image, Copy, Anchor } from "../atomics"
+import { Button, Checkbox, Heading, Maybe, NakedCheckbox, Image, Copy, Anchor, CustomCheckbox } from "../atomics"
 import { Box, Flex } from "../layout"
 import { Price, ProductInfo, ProductInfoProps } from "./product"
 
@@ -57,8 +57,8 @@ export const LineItems = ({
         })
       }
       <LineItem
-        leftSx={hookSc('lineItemLeft')}
-        rightSx={hookSc('lineItemRight')}
+        leftSx={hookSc('finalItemLeft')}
+        rightSx={hookSc('finalItemRight')}
         left={finalItem[0]}
         right={finalItem[1]}
       />
@@ -79,6 +79,8 @@ export const ProceedCard = ({
   return (
     <Flex col $sx={hookSc('proceedCard')}>
       <LineItem
+        leftSx={hookSc('proceedCardLineItem')}
+        rightSx={hookSc('proceedCardPrice')}
         left={`Subtotal (${totalItems}):`}
         right={`$${price.toFixed(2)}`}
       />
@@ -94,27 +96,40 @@ export const ProceedCard = ({
   )
 }
 
-const CartRow = ({
+export const CartRow = ({
   info,
   checked,
+  noPrice,
 }: {
   info: ProductInfoProps & { asset: string }
   checked?: boolean
+  noPrice?: boolean
 }) => {
   const { hookSc } = useThemeHelper()
   const { asset, ...rest } = info
   return (
-    <Flex aic $sx={hookSc('cartRow')}>
-      <NakedCheckbox checked={checked} />
+    <Flex $sx={hookSc('cartRow')}>
+      <Box $sx={hookSc('cartRowCheckbox')}>
+        <CustomCheckbox checked={checked} label="" />
+      </Box>
       <Flex $sx={hookSc('cartProduct')}>
-        <Image src={asset} />
+        <Image src={asset} $sx={hookSc('cartProductImg')}/>
         <ProductInfo {...rest} />
       </Flex>
-      <Box $sx={hookSc('cartRowPrice')}>
-        <Price dollars={Math.floor(info.price)}
-          cents={info.price - Math.floor(info.price)}
-        />
-      </Box>
+      <Maybe condition={noPrice !== true}>
+        <Box $sx={hookSc('cartRowPrice')}>
+          <Price dollars={Math.floor(info.price)}
+            priceSx={{
+              fontSize: 'inherit',
+              color: 'inherit',
+              fontWeight: 'inherit'
+            }}
+            cents={
+              Math.round((info.price - Math.floor(info.price)) * 100)
+            }
+          />
+        </Box>
+      </Maybe>
     </Flex>
   )
 }
@@ -145,20 +160,29 @@ export const ShoppingCart = ({
           {heading}
         </Heading>
         <Maybe condition={link !== undefined}>
-          {link}
+          <Anchor>{link}</Anchor>
         </Maybe>
-        <Flex jcfe $sx={hookSc('cartHeader')}>
+        <Flex jcfe $sx={{...hookSc('cartHeader')}}>
           Price
         </Flex>
-        <Flex col>
+        <Flex col $sx={hookSc('cartProducts')}>
           {
             products.map((p, index) => {
               return (
-                <CartRow
-                  checked={(checkedIndexes ?? []).includes(index)}
-                  info={p}
-                  key={index}
-                />
+                <Box>
+                  <CartRow
+                    checked={(checkedIndexes ?? []).includes(index)}
+                    info={p}
+                    key={index}
+                  />
+                  {
+                    index !== products.length - 1
+                      ? (
+                        <hr />
+                      )
+                      : null
+                  }
+                </Box>
               )
             })
           }

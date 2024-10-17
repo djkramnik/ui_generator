@@ -1501,20 +1501,70 @@ export const getSuperComponents = ({
       fontSize: '12px',
     },
     lineItem: {
-
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      fontSize: '14px'
     },
     lineItemLeft: {},
     lineItemRight: {},
     lineItems: {},
-    proceedCard: {},
-    proceedCardButton: {},
+    proceedCard: {
+      width: '100%',
+      background: palette.white,
+      color: colors.amazonDark,
+      boxShadow: shadows.lichessCard,
+      padding: '20px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.gap
+    },
+    proceedCardLineItem: {
+      fontSize: '18px'
+    },
+    proceedCardPrice: {
+      fontSize: '20px',
+      fontWeight: 'bold'
+    },
+    proceedCardButton: {
+      borderRadius: '30px',
+      padding: '8px 18px'
+    },
     proceedCardCheckboxLabel: {},
-    cartHeader: {},
+    cartHeader: {
+      padding: `${spacing.smallGap} 0`,
+      borderBottom: `1px solid rgba(0,0,0,0.5)`
+    },
     cartFooter: {},
-    cartSummary: {},
-    cartRow: {},
-    cartProduct: {},
-    cartRowPrice: {},
+    cartSummary: {
+      background: palette.white,
+      color: colors.amazonDark,
+      padding: '20px'
+    },
+    cartRow: {
+      gap: spacing.gap
+    },
+    cartRowCheckbox: {
+      alignSelf: 'center',
+      paddingRight: spacing.bigGap
+    },
+    cartProduct: {
+      gap: spacing.bigGap,
+      flexGrow: '1',
+      padding: `${spacing.gap} 0`
+    },
+    cartProductImg: {
+
+    },
+    cartProducts: {
+      paddingTop: spacing.gap,
+      gap: spacing.gap
+    },
+    cartRowPrice: {
+      minWidth: '20%',
+      fontSize: '24px',
+      textAlign: 'right'
+    },
     stupidPromotion: {},
     stupidPromotionButton: {},
     stupidPromotionCopy: {},
@@ -1557,6 +1607,14 @@ export const getSuperComponents = ({
     confirmationPageContainer: {},
     confirmationPageLeft: {},
     confirmationPageRight: {},
+    finalItemLeft: {
+      fontSize: '18px',
+      fontWeight: 'bold'
+    },
+    finalItemRight: {
+      fontSize: '18px',
+      fontWeight: 'bold'
+    }
   }
 }
 

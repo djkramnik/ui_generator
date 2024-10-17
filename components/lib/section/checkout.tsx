@@ -1,6 +1,6 @@
 import { useThemeHelper } from "../../hooks"
 import { sxToStyle } from "../../theme"
-import { ChimericIcon, Heading, Icon, MiniDropdown } from "../atomics"
+import { ChimericIcon, Heading, Icon, Maybe, MiniDropdown } from "../atomics"
 import { Box, Flex } from "../layout"
 import { Container } from "../layout/container"
 import { Navbar, RandomBrandLogo } from "../super_components"
@@ -26,7 +26,9 @@ export const CheckoutPage = ({
         navbarSx={hookSc('checkoutNav')}
         navbarInnerSx={hookSc('checkoutNavInner')}
       >
-        <RandomBrandLogo />
+        <Box $sx={{ position: 'absolute', left: '0'}}>
+          <RandomBrandLogo />
+        </Box>
         {
           navHeadingDropdown
             ? (
@@ -43,13 +45,15 @@ export const CheckoutPage = ({
               </Heading>
             )
         }
-        <ChimericIcon icon={Icon.shoppingCart}
-          iconStyle={sxToStyle(hookSc('checkoutNavIcon'))}
-        />
+        <Box $sx={{ position: 'absolute', right: '0'}}>
+          <ChimericIcon icon={Icon.shoppingCart}
+            iconStyle={sxToStyle(hookSc('checkoutNavIcon'))}
+          />
+        </Box>
       </Navbar>
       <Flex $sx={hookSc('checkoutPageContainer')}>
         <Container>
-          <Box $sx={{}}>
+          <Box $sx={hookSc('checkoutPageInner')}>
             <Box $sx={hookSc('checkoutPageLeft')}>
               {childrenLeft}
             </Box>
@@ -66,20 +70,31 @@ export const CheckoutPage = ({
 export const ConfirmationPage = ({
   childrenLeft,
   childrenRight,
+  childrenTop,
 }: {
   childrenLeft?: React.ReactNode
   childrenRight?: React.ReactNode
+  childrenTop?: React.ReactNode
 }) => {
   const { hookSc } = useThemeHelper()
   return (
     <Box $sx={hookSc('confirmationPage')}>
       <Flex $sx={hookSc('confirmationPageContainer')}>
-        <Box $sx={hookSc('confirmationPageLeft')}>
-          {childrenLeft}
-        </Box>
-        <Box $sx={hookSc('confirmationPageRight')}>
-          {childrenRight}
-        </Box>
+        <Container>
+          <Maybe condition={childrenTop !== undefined}>
+            <Flex $sx={hookSc('confirmationPageTop')}>
+              {childrenTop}
+            </Flex>
+          </Maybe>
+          <Flex $sx={hookSc('confirmationPageInner')}>
+            <Box $sx={hookSc('confirmationPageLeft')}>
+              {childrenLeft}
+            </Box>
+            <Box $sx={hookSc('confirmationPageRight')}>
+              {childrenRight}
+            </Box>
+          </Flex>
+        </Container>
       </Flex>
     </Box>
   )

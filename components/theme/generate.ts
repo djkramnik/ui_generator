@@ -1682,7 +1682,9 @@ export const getSuperComponents = ({
     checkoutNavHeadingIcon: {},
     checkoutNavHeadingLink: {},
     checkoutNavInner: {
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'relative'
     },
     checkoutNavIcon: {
       color: palette.button
@@ -1691,20 +1693,48 @@ export const getSuperComponents = ({
       minHeight: '100vh',
       backgroundColor: '#eee'
     },
+    checkoutPageInner: {
+      display: 'flex',
+      gap: spacing.biggishGap
+    },
     checkoutPageContainer: {
       padding: `${spacing.bigGap} 0`
     },
     checkoutPageLeft: {
-
+      flexGrow: '1',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.biggishGap
     },
-    checkoutPageRight: {},
+    checkoutPageRight: {
+      minWidth: '300px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: spacing.biggishGap
+    },
     backToTop: {},
     backToTopLabel: {},
-    confirmationPage: {},
+    confirmationPage: {
+      backgroundColor: '#eee'
+    },
     outlinedLangDropdown: {},
-    confirmationPageContainer: {},
-    confirmationPageLeft: {},
-    confirmationPageRight: {},
+    confirmationPageContainer: {
+      padding: `${spacing.bigGap} 0`
+    },
+    confirmationPageInner: {
+      display: 'flex',
+      gap: spacing.biggishGap
+    },
+    confirmationPageLeft: {
+      flexGrow: '1'
+    },
+    confirmationPageRight: {
+      minWidth: '300px'
+    },
+    confirmationPageTop: {
+      justifyContent: 'center',
+      padding: `${spacing.biggishGap} 0`
+    },
     finalItemLeft: {
       fontSize: '18px',
       fontWeight: 'bold'

@@ -185,7 +185,7 @@ lander:ecommerce,
 - [x] products card variants
   
 ### day seven (wed)
-- [ ] purchase confirmation section
+- [x] purchase confirmation section
   - [x] shopping cart summary
 
 ### day eight (rsday)

@@ -384,13 +384,16 @@ export type ThemeConfig = {
     checkoutPageContainer: CssProps
     checkoutPageLeft: CssProps
     checkoutPageRight: CssProps
+    checkoutPageInner: CssProps
     backToTop: CssProps
     backToTopLabel: CssProps
     confirmationPage: CssProps
     outlinedLangDropdown: CssProps
     confirmationPageContainer: CssProps
+    confirmationPageInner: CssProps
     confirmationPageLeft: CssProps
     confirmationPageRight: CssProps
+    confirmationPageTop: CssProps
     finalItemLeft: CssProps
     finalItemRight: CssProps
   }

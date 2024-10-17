@@ -66,11 +66,17 @@ import { genGoogleSearchResults } from '../data'
 import { useEffect, useState } from 'react'
 import { RandomThreeColNews } from '../components/lib/super_components/news'
 import { TopNav } from '../components/lib/section/nav'
-import { CheckoutPage } from '../components/lib/section/checkout'
 import {
+  CheckoutPage,
+  ConfirmationPage,
+} from '../components/lib/section/checkout'
+import {
+  FingerOnTheButtonVertical,
   PurchaseInfoCard,
   PurchaseProductInfo,
+  ShoppingCart,
 } from '../components/lib/super_components/checkout'
+import { TextAccordion } from '../components/lib/atomics/accordion'
 
 const SectionsGallery = () => {
   const { theme, hookSc } = useThemeHelper()
@@ -92,37 +98,107 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <Fullscreen>
+        <TopNav withTop withMid withBottom />
+        <ConfirmationPage
+          childrenLeft={
+            <ShoppingCart
+              heading="Shopping Cart"
+              link="Deselect all items"
+              price={38.94}
+              products={[
+                {
+                  price: 38.94,
+                  title: 'Chess: 5334 Problems, Combinations and Games',
+                  asset: '/products/product1.jpg',
+                  description: 'Fie I was an immigrant from Ireland',
+                  children: [
+                    null,
+                    <Copy>
+                      Ship and sold by <Anchor>amazon.ca</Anchor>
+                    </Copy>,
+                  ],
+                },
+                {
+                  price: 38.94,
+                  title: 'Chess: 5334 Problems, Combinations and Games',
+                  asset: '/products/product2.jpg',
+                  description: 'Fie I was an immigrant from Ireland',
+                  children: [
+                    null,
+                    <Copy>
+                      Ship and sold by <Anchor>amazon.ca</Anchor>
+                    </Copy>,
+                  ],
+                },
+              ]}
+            />
+          }
+          childrenRight={null}
+        />
+      </Fullscreen>
       <CheckoutPage
         navHeading="Secure Checkout"
         childrenLeft={
-          <PurchaseInfoCard
-            heading="Arriving Oct 18, 2024"
-            copy="If you order within the next 10 minutes"
-            link="Add delivery instructions"
-          >
-            <PurchaseProductInfo
-              deliveryOptions={[
-                {
-                  label: 'Friday, Oct 18',
-                  children: (
-                    <span style={{ fontWeight: 'bold' }}>FREE Delivery</span>
-                  ),
-                },
-              ]}
-              info={{
-                price: 38.94,
-                title: 'Chess: 5334 Problems, Combinations and Games',
-                asset: '/products/product3.jpg',
-                description: 'Fie I was an immigrant from Ireland',
-                children: [
-                  null,
-                  <Copy>
-                    Ship and sold by <Anchor>amazon.ca</Anchor>
-                  </Copy>,
-                ],
-              }}
+          <>
+            <PurchaseInfoCard
+              heading="Delivering to Mexican Mario"
+              copy="100 Princess Peach Lane"
+              link="Add Delivery Instructions"
+            >
+              <>
+                <Spacer />
+                <TextAccordion label="Pickup available nearby">
+                  {null}
+                </TextAccordion>
+              </>
+            </PurchaseInfoCard>
+            <PurchaseInfoCard
+              heading="Pay with Visa 4242"
+              link="Use a gift card, voucher, or promo code"
             />
-          </PurchaseInfoCard>
+            <PurchaseInfoCard
+              heading="Arriving Oct 18, 2024"
+              copy="If you order within the next 10 minutes"
+              link="Add delivery instructions"
+            >
+              <PurchaseProductInfo
+                deliveryOptions={[
+                  {
+                    label: 'Friday, Oct 18',
+                    children: (
+                      <span style={{ fontWeight: 'bold' }}>FREE Delivery</span>
+                    ),
+                  },
+                ]}
+                info={{
+                  price: 38.94,
+                  title: 'Chess: 5334 Problems, Combinations and Games',
+                  asset: '/products/product3.jpg',
+                  description: 'Fie I was an immigrant from Ireland',
+                  children: [
+                    null,
+                    <Copy>
+                      Ship and sold by <Anchor>amazon.ca</Anchor>
+                    </Copy>,
+                  ],
+                }}
+              />
+            </PurchaseInfoCard>
+          </>
+        }
+        childrenRight={
+          <FingerOnTheButtonVertical
+            lineItemProps={{
+              lineItems: [
+                ['Items (2)', '$57.01'],
+                ['Shipping & Handling', '$0.00'],
+                ['Estimated GST/HST:', '$0.00'],
+                ['Estimated PST/RST/QST:', '$0.00'],
+              ],
+              finalItem: ['Order Total:', '$58.96'],
+            }}
+          />
         }
       />
       <TopNav withTop withMid withBottom />

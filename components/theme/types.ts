@@ -380,6 +380,7 @@ export type ThemeConfig = {
     checkoutNavHeading: CssProps
     checkoutNavHeadingIcon: CssProps
     checkoutNavHeadingLink: CssProps
+    checkoutNavIcon: CssProps
     checkoutPageContainer: CssProps
     checkoutPageLeft: CssProps
     checkoutPageRight: CssProps

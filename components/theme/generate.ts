@@ -1672,14 +1672,31 @@ export const getSuperComponents = ({
       borderRadius: '8px',
       alignItems: 'center'
     },
-    checkoutNav: {},
-    checkoutNavHeading: {},
+    checkoutNav: {
+      color: palette.button
+    },
+    checkoutNavHeading: {
+      color: palette.button,
+      fontSize: '24px'
+    },
     checkoutNavHeadingIcon: {},
     checkoutNavHeadingLink: {},
-    checkoutNavInner: {},
-    checkoutPage: {},
-    checkoutPageContainer: {},
-    checkoutPageLeft: {},
+    checkoutNavInner: {
+      alignItems: 'center'
+    },
+    checkoutNavIcon: {
+      color: palette.button
+    },
+    checkoutPage: {
+      minHeight: '100vh',
+      backgroundColor: '#eee'
+    },
+    checkoutPageContainer: {
+      padding: `${spacing.bigGap} 0`
+    },
+    checkoutPageLeft: {
+
+    },
     checkoutPageRight: {},
     backToTop: {},
     backToTopLabel: {},

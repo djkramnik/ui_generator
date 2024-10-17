@@ -49,10 +49,29 @@ import { ContentFitter } from '../components/lib/exotic/content-fitter'
 import { Headings } from '../components/lib/super_components/headings'
 import { MyAvatar } from '../components/lib/super_components'
 import { Testimonial } from '../components/lib/super_components/testimonial'
-import { RandomThumbnail, RandomThumbnailImage } from '../components/lib/super_components/thumbnail'
-import { Price, ProductCard, ProductInfo, Starz } from '../components/lib/super_components/product'
+import {
+  RandomThumbnail,
+  RandomThumbnailImage,
+} from '../components/lib/super_components/thumbnail'
+import {
+  Price,
+  ProductCard,
+  ProductInfo,
+  Starz,
+} from '../components/lib/super_components/product'
 import { useThemeHelper } from '../components/hooks'
-import { CartRow, FingeronTheButtonHorizontal, FingerOnTheButtonVertical, IgnoreThisCard, LineItem, LineItems, ProceedCard, PurchaseInfoCard, PurchaseProductInfo, ShoppingCart } from '../components/lib/super_components/checkout'
+import {
+  CartRow,
+  FingeronTheButtonHorizontal,
+  FingerOnTheButtonVertical,
+  IgnoreThisCard,
+  LineItem,
+  LineItems,
+  ProceedCard,
+  PurchaseInfoCard,
+  PurchaseProductInfo,
+  ShoppingCart,
+} from '../components/lib/super_components/checkout'
 
 const Cell = ({
   children,
@@ -115,7 +134,7 @@ const Gallery = () => {
       <Spacer />
       <Container>
         <Row bgc="#eee">
-          <Box $sx={{ width: '600px'}}>
+          <Box $sx={{ width: '600px' }}>
             <IgnoreThisCard
               html={`
                 Do you need help? Explore our <a>Help pages</a> or <a>contact us</a><br/>
@@ -135,36 +154,37 @@ const Gallery = () => {
         <Row bgc="#eee" withGrow>
           <FingeronTheButtonHorizontal
             heading="Order Total: $58.96"
-            legalese='My patience ends, I want <a>revenge</a>, I need those hits'
+            legalese="My patience ends, I want <a>revenge</a>, I need those hits"
           />
 
           <FingerOnTheButtonVertical
             lineItemProps={{
               lineItems: [
-                ['Items (2)', '$57.01',],
+                ['Items (2)', '$57.01'],
                 ['Shipping & Handling', '$0.00'],
                 ['Estimated GST/HST:', '$0.00'],
-                ['Estimated PST/RST/QST:', '$0.00']
+                ['Estimated PST/RST/QST:', '$0.00'],
               ],
-              finalItem: ['Order Total:', '$58.96']
+              finalItem: ['Order Total:', '$58.96'],
             }}
           />
         </Row>
         <Row bgc="#eee" withGrow>
-          <Box $sx={{ flexGrow: '1'}}>
+          <Box $sx={{ flexGrow: '1' }}>
             <PurchaseInfoCard
               heading="Arriving Oct 18, 2024"
               copy="If you order within the next 10 minutes"
-              link="Add delivery instructions">
+              link="Add delivery instructions"
+            >
               <PurchaseProductInfo
-                deliveryOptions={[{
-                  label: 'Friday, Oct 18',
-                  children: (
-                    <span style={{ fontWeight: 'bold'}}>
-                      FREE Delivery
-                    </span>
-                  )
-                }]}
+                deliveryOptions={[
+                  {
+                    label: 'Friday, Oct 18',
+                    children: (
+                      <span style={{ fontWeight: 'bold' }}>FREE Delivery</span>
+                    ),
+                  },
+                ]}
                 info={{
                   price: 38.94,
                   title: 'Chess: 5334 Problems, Combinations and Games',
@@ -172,8 +192,10 @@ const Gallery = () => {
                   description: 'Fie I was an immigrant from Ireland',
                   children: [
                     null,
-                    <Copy>Ship and sold by <Anchor>amazon.ca</Anchor></Copy>,
-                  ]
+                    <Copy>
+                      Ship and sold by <Anchor>amazon.ca</Anchor>
+                    </Copy>,
+                  ],
                 }}
               />
             </PurchaseInfoCard>
@@ -192,8 +214,10 @@ const Gallery = () => {
                 description: 'Fie I was an immigrant from Ireland',
                 children: [
                   null,
-                  <Copy>Ship and sold by <Anchor>amazon.ca</Anchor></Copy>,
-                ]
+                  <Copy>
+                    Ship and sold by <Anchor>amazon.ca</Anchor>
+                  </Copy>,
+                ],
               },
               {
                 price: 38.94,
@@ -202,13 +226,15 @@ const Gallery = () => {
                 description: 'Fie I was an immigrant from Ireland',
                 children: [
                   null,
-                  <Copy>Ship and sold by <Anchor>amazon.ca</Anchor></Copy>,
-                ]
-              }
+                  <Copy>
+                    Ship and sold by <Anchor>amazon.ca</Anchor>
+                  </Copy>,
+                ],
+              },
             ]}
           />
         </Row>
-        <Row bgc='#fff'>
+        <Row bgc="#fff">
           <Box $sx={{ width: '250px' }}>
             <LineItem left="Items (2):" right="$57.01" />
             <LineItems
@@ -216,85 +242,86 @@ const Gallery = () => {
                 ['Items (2)', '$57.01'],
                 ['Shipping & Handling', '$0.00'],
                 ['Estimated GST/HST:', '$1.95'],
-                ['Estimated PST/RST/QST:', '$0.00']
+                ['Estimated PST/RST/QST:', '$0.00'],
               ]}
-              finalItem={[
-                'Order Total:',
-                '$58.96'
-              ]}
+              finalItem={['Order Total:', '$58.96']}
             />
           </Box>
           <ProceedCard totalItems={2} price={58.96} />
           <Box $sx={{ width: '800px' }}>
-            <CartRow checked info={{
-              price: 38.94,
-              title: 'Chess: 5334 Problems, Combinations and Games',
-              asset: '/products/product1.jpg',
-              description: 'Fie I was an immigrant from Ireland',
-              children: [
-                <Anchor>In Stock</Anchor>,
-                <Copy>Ship and sold by <Anchor>amazon.ca</Anchor></Copy>,
-                <Checkbox label="This will be a gift" />
-              ]
-            }}>
-            </CartRow>
+            <CartRow
+              checked
+              info={{
+                price: 38.94,
+                title: 'Chess: 5334 Problems, Combinations and Games',
+                asset: '/products/product1.jpg',
+                description: 'Fie I was an immigrant from Ireland',
+                children: [
+                  <Anchor>In Stock</Anchor>,
+                  <Copy>
+                    Ship and sold by <Anchor>amazon.ca</Anchor>
+                  </Copy>,
+                  <Checkbox label="This will be a gift" />,
+                ],
+              }}
+            ></CartRow>
           </Box>
         </Row>
         <Row>
-          <ProductCard
-            heading="Do you like that?"
-            link="See more"
-          />
-          <ProductCard
-            heading="I recommend it"
-            link="See more"
-          />
+          <ProductCard heading="Do you like that?" link="See more" />
+          <ProductCard heading="I recommend it" link="See more" />
         </Row>
         <Row>
-          <Box $sx={{ width: '606px', border: '1px solid black'}}>
+          <Box $sx={{ width: '606px', border: '1px solid black' }}>
             <ProductInfo
               title={`Waters of Babylon,
                 that we `}
               tags={['Medicinal', 'Voodoo', 'Fear']}
               star={{
                 rating: 4,
-                reviews: 88
+                reviews: 88,
               }}
               price={23.96}
-              description={
-                `Options: 3 Sizes`
-              }
+              description={`Options: 3 Sizes`}
             >
-              {
-                [
-                  <Copy $sx={{
+              {[
+                <Copy
+                  $sx={{
                     ...hookSc('productMeta'),
-                    fontWeight: 'bold'
-                  }}>ASHUR SPECIAL</Copy>,
-                  <Copy $sx={{
-                    ...hookSc('productMeta')
+                    fontWeight: 'bold',
                   }}
-                  >Yaaa we wept</Copy>,
-                  <Copy>All I know is that I will never dish
-                    another raw deal, playing making believe,
-                    tellin I'll be true, holdin in my laugh as I say
-                    that I love you
-                  </Copy>
-                ]
-              }
-              
+                >
+                  ASHUR SPECIAL
+                </Copy>,
+                <Copy
+                  $sx={{
+                    ...hookSc('productMeta'),
+                  }}
+                >
+                  Yaaa we wept
+                </Copy>,
+                <Copy>
+                  All I know is that I will never dish another raw deal, playing
+                  making believe, tellin I'll be true, holdin in my laugh as I
+                  say that I love you
+                </Copy>,
+              ]}
             </ProductInfo>
           </Box>
-          <Box $sx={{ width: '225px', display: 'flex',
-            justifyContent: 'center',
-            border: '1px solid black'
-          }}>
+          <Box
+            $sx={{
+              width: '225px',
+              display: 'flex',
+              justifyContent: 'center',
+              border: '1px solid black',
+            }}
+          >
             <ProductInfo
               title="Host Defense Stamets Mushroom Power Roar Capsules"
               tags={['Medicinal', 'Voodoo', 'Fear']}
               star={{
                 rating: 4,
-                reviews: 88
+                reviews: 88,
               }}
               price={23.96}
               sm={true}
@@ -302,26 +329,16 @@ const Gallery = () => {
           </Box>
         </Row>
         <Row>
-          <Price
-            dollars={199}
-          />
-          <Price
-            dollars={199}
-            cents={1}
-          />
-          <Price
-            dollars={199}
-            cents={15}
-            symbol={'€'}
-            currency={'EUR'}
-          />
+          <Price dollars={199} />
+          <Price dollars={199} cents={1} />
+          <Price dollars={199} cents={15} symbol={'€'} currency={'EUR'} />
           <Starz rating={4} />
           <Starz mui rating={5} />
           <Starz mui rating={3} />
         </Row>
         <Row>
           <Noop label="haha">
-            <Input placeholder="Pina Colada mix" /> 
+            <Input placeholder="Pina Colada mix" />
           </Noop>
           <Box $sx={{ width: '160px' }}>
             <RandomThumbnailImage />
@@ -331,7 +348,8 @@ const Gallery = () => {
           <RandomThumbnail size="lg" />
         </Row>
         <Row>
-          <MyAvatar asset="superman.jpg"
+          <MyAvatar
+            asset="superman.jpg"
             name="Clark Kent"
             position="Important vital Dave Grrr guy"
           />
@@ -339,16 +357,12 @@ const Gallery = () => {
             asset="superman.jpg"
             name="Clark Kent"
             position="Important vital Dave Grrr guy"
-            testimonial={
-              `I feel safe and smug, I mean snug, in my new atomic bunker.  Now who is laughing!`
-            }
+            testimonial={`I feel safe and smug, I mean snug, in my new atomic bunker.  Now who is laughing!`}
           />
           <Card>
             <Spacer />
             <Spacer />
-            <Heading level={3}>
-              Sick to my stomach
-            </Heading>
+            <Heading level={3}>Sick to my stomach</Heading>
             <Spacer />
             <Spacer />
           </Card>
@@ -367,7 +381,7 @@ const Gallery = () => {
               'color:copy',
               'background:grey',
               'borderless',
-              'padding:small'
+              'padding:small',
             ]}
             selectedIndex={0}
             options={['Monday', 'Toosday', 'Whensday', 'Hersday']}
@@ -378,7 +392,7 @@ const Gallery = () => {
             <Dropdown
               selectSx={{
                 border: 'none',
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
               }}
               icon={Icon.caretDown}
               value={'v.5.0.0'}
@@ -391,7 +405,7 @@ const Gallery = () => {
               open
               selectSx={{
                 border: 'none',
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
               }}
               icon={Icon.caretDown}
               value={'v.5.0.0'}
@@ -404,73 +418,67 @@ const Gallery = () => {
           <Dropdown
             selectSx={{
               paddingLeft: '12px',
-              width: '100%'
+              width: '100%',
             }}
-            options={[
-              'Sorry to interrupt',
-              'Leave it alone'
-            ]}
+            options={['Sorry to interrupt', 'Leave it alone']}
           />
           <ChimericDropdown
             mui
             value="Sorry to interrupt"
             selectSx={{
               paddingLeft: '12px',
-              width: '100%'
+              width: '100%',
             }}
-            options={[
-              'Sorry to interrupt',
-              'Leave it alone'
-            ]}
+            options={['Sorry to interrupt', 'Leave it alone']}
           />
         </Row>
         <Row>
           <Autocomplete
             inputProps={{
-              placeholder: 'Enter sport'
+              placeholder: 'Enter sport',
             }}
             open
-            options={[
-              'NBA',
-              'MLB',
-            ]}
+            options={['NBA', 'MLB']}
           />
           <ChimericAutocomplete
             mui
             label="Favorite sport"
             inputProps={{
-              placeholder: 'Enter sport', 
+              placeholder: 'Enter sport',
             }}
             open
-            options={[
-              'NBA',
-              'MLB',
-            ]}
+            options={['NBA', 'MLB']}
           />
         </Row>
-        <Spacer h="120px"/>
+        <Spacer h="120px" />
         <Row>
           <CustomCheckbox label="Swelled to include" />
-          <CustomCheckbox label="To quote"
-          iconSx={{ color: 'white' }}
-          checked inputSx={{ 
-            backgroundColor: 'green',
-            border: 'none',
-            boxShadow: shadows.lichessCard
-          }} />
-          <CustomCheckbox radio label="Preaching to myself" />
-          <CustomCheckbox radio label="A variation"
-          icon={
-            <Box
-            $sx={{
-              backgroundColor: 'blue',
-              borderRadius: '50%',
-              width: '90%',
-              aspectRatio: '1',
+          <CustomCheckbox
+            label="To quote"
+            iconSx={{ color: 'white' }}
+            checked
+            inputSx={{
+              backgroundColor: 'green',
+              border: 'none',
+              boxShadow: shadows.lichessCard,
             }}
           />
-          }
-          checked  />
+          <CustomCheckbox radio label="Preaching to myself" />
+          <CustomCheckbox
+            radio
+            label="A variation"
+            icon={
+              <Box
+                $sx={{
+                  backgroundColor: 'blue',
+                  borderRadius: '50%',
+                  width: '90%',
+                  aspectRatio: '1',
+                }}
+              />
+            }
+            checked
+          />
         </Row>
         <Row>
           <ChimericCheckbox label="Synchronicity" radio checked />
@@ -493,8 +501,8 @@ const Gallery = () => {
                 placeholder: 'Search Biblical Passages',
                 $variant: ['fullwidth', 'pill', 'border'],
                 $sx: {
-                  borderColor: theme.palette.secondary
-                }
+                  borderColor: theme.palette.secondary,
+                },
               }}
             />
           </Box>
@@ -507,18 +515,22 @@ const Gallery = () => {
                 placeholder: 'Search Biblical Passages',
                 $variant: ['fullwidth', 'pill', 'border'],
                 $sx: {
-                  borderColor: theme.palette.secondary
-                }
+                  borderColor: theme.palette.secondary,
+                },
               }}
             />
           </Box>
         </Row>
         <Row bgc="#eee">
           <Box>
-            <Heading level={3} $variant={['fullwidth', 'center']} $sx={{
-              width: '100%',
-              color: '#333'
-            }}>
+            <Heading
+              level={3}
+              $variant={['fullwidth', 'center']}
+              $sx={{
+                width: '100%',
+                color: '#333',
+              }}
+            >
               Sign up to Ancient Folklore
             </Heading>
             <Spacer h="12px" />
@@ -526,22 +538,30 @@ const Gallery = () => {
               <LabelizeIt label="Name" secondaryLabel="required">
                 <ChimericInput mui placeholder="Sinking back" />
               </LabelizeIt>
-              <WithErrata errorMessage="Error: Required" errorIcon={(
-                <ChimericIcon icon={Icon.circleExclamation} iconStyle={{
-                  ...sxToStyle({
-                    color: theme.palette.error
-                  })
-                }} />
-              )}>
-                <LabelizeIt label="Town" secondaryLabel='*required'
-                secondaryLabelSx={{ color: theme.palette.error }}
+              <WithErrata
+                errorMessage="Error: Required"
+                errorIcon={
+                  <ChimericIcon
+                    icon={Icon.circleExclamation}
+                    iconStyle={{
+                      ...sxToStyle({
+                        color: theme.palette.error,
+                      }),
+                    }}
+                  />
+                }
+              >
+                <LabelizeIt
+                  label="Town"
+                  secondaryLabel="*required"
+                  secondaryLabelSx={{ color: theme.palette.error }}
                 >
                   <InputWithIcon
                     mui
                     placeholder="Mystikal"
                     icon={Icon.house}
                     iconStyles={{
-                      ...sxToStyle({ 
+                      ...sxToStyle({
                         color: theme.palette.error,
                         borderColor: theme.palette.error,
                       }),
@@ -550,8 +570,7 @@ const Gallery = () => {
                       $variant: 'fullwidth',
                       $sx: {
                         color: theme.palette.error,
-                      }
-
+                      },
                     }}
                   />
                 </LabelizeIt>
@@ -563,7 +582,7 @@ const Gallery = () => {
                   inputProps={{
                     placeholder: 'Vain and Unadjusted',
                     type: 'email',
-                    $variant: 'fullwidth'
+                    $variant: 'fullwidth',
                   }}
                 />
               </LabelizeIt>
@@ -574,26 +593,28 @@ const Gallery = () => {
                   inputProps={{
                     placeholder: 'Active Imagination Password',
                     type: 'password',
-                    $variant: 'fullwidth'
+                    $variant: 'fullwidth',
                   }}
                 />
               </LabelizeIt>
             </Flex>
-            <Spacer h="12px"/>
+            <Spacer h="12px" />
             <Flex row gap="12px">
-              <Button $variant="bold" $sx={{ flexGrow: '1'}}>
+              <Button $variant="bold" $sx={{ flexGrow: '1' }}>
                 Depths of the Mind
               </Button>
-              <Button $variant={["bgc:secondary", "bold"]}>
-                Cancel
-              </Button>
+              <Button $variant={['bgc:secondary', 'bold']}>Cancel</Button>
             </Flex>
           </Box>
           <Box>
-          <Heading level={3} $variant={['fullwidth', 'center']} $sx={{
-              width: '100%',
-              color: '#333'
-            }}>
+            <Heading
+              level={3}
+              $variant={['fullwidth', 'center']}
+              $sx={{
+                width: '100%',
+                color: '#333',
+              }}
+            >
               Needing to change everything as I go
             </Heading>
             <Spacer h="12px" />
@@ -606,7 +627,7 @@ const Gallery = () => {
                   placeholder="Anima image"
                   icon={Icon.house}
                   inputProps={{
-                    $variant: 'fullwidth'
+                    $variant: 'fullwidth',
                   }}
                 />
               </LabelizeIt>
@@ -617,7 +638,7 @@ const Gallery = () => {
                   inputProps={{
                     placeholder: 'Vain and Unadjusted',
                     type: 'email',
-                    $variant: 'fullwidth'
+                    $variant: 'fullwidth',
                   }}
                 />
               </LabelizeIt>
@@ -628,19 +649,17 @@ const Gallery = () => {
                   inputProps={{
                     placeholder: 'PHAntasies',
                     type: 'email',
-                    $variant: 'fullwidth'
+                    $variant: 'fullwidth',
                   }}
                 />
               </LabelizeIt>
             </Flex>
-            <Spacer h="12px"/>
+            <Spacer h="12px" />
             <Flex row gap="12px">
-              <Button $variant="bold" $sx={{ flexGrow: '1'}}>
+              <Button $variant="bold" $sx={{ flexGrow: '1' }}>
                 Depths of the Mind
               </Button>
-              <Button $variant={["bgc:secondary", "bold"]}>
-                Cancel
-              </Button>
+              <Button $variant={['bgc:secondary', 'bold']}>Cancel</Button>
             </Flex>
           </Box>
         </Row>
@@ -665,11 +684,11 @@ const Gallery = () => {
               rootVariant={['borderless:l', 'borderless:r']}
             >
               <Copy>
-                I saw two toddlers interacting with one another
-                near a Starbucks. They were both around one, and
-                they took turns staring curiously or joyously at one another,
-                and a small bird pecking at crumbs nearby. One was a Chinese boy,
-                the one closer to the bird, and the other was an Iranian girl.
+                I saw two toddlers interacting with one another near a
+                Starbucks. They were both around one, and they took turns
+                staring curiously or joyously at one another, and a small bird
+                pecking at crumbs nearby. One was a Chinese boy, the one closer
+                to the bird, and the other was an Iranian girl.
               </Copy>
             </ChimericAccordion>
           </Flex>

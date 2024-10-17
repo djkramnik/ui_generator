@@ -1,6 +1,8 @@
 import { useThemeHelper } from "../../hooks"
-import { Heading, MiniDropdown } from "../atomics"
+import { sxToStyle } from "../../theme"
+import { ChimericIcon, Heading, Icon, MiniDropdown } from "../atomics"
 import { Box, Flex } from "../layout"
+import { Container } from "../layout/container"
 import { Navbar, RandomBrandLogo } from "../super_components"
 
 // amazon? walmart? sephora? mom and pop drug shop
@@ -41,14 +43,21 @@ export const CheckoutPage = ({
               </Heading>
             )
         }
+        <ChimericIcon icon={Icon.shoppingCart}
+          iconStyle={sxToStyle(hookSc('checkoutNavIcon'))}
+        />
       </Navbar>
       <Flex $sx={hookSc('checkoutPageContainer')}>
-        <Box $sx={hookSc('checkoutPageLeft')}>
-          {childrenLeft}
-        </Box>
-        <Box $sx={hookSc('checkoutPageRight')}>
-          {childrenRight}
-        </Box>
+        <Container>
+          <Box $sx={{}}>
+            <Box $sx={hookSc('checkoutPageLeft')}>
+              {childrenLeft}
+            </Box>
+            <Box $sx={hookSc('checkoutPageRight')}>
+              {childrenRight}
+            </Box>
+          </Box>
+        </Container>
       </Flex>
     </Box>
   )

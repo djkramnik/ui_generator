@@ -1,6 +1,6 @@
 import { useThemeHelper } from "../../hooks"
 import { CssProps } from "../../theme"
-import { Button, Checkbox, Heading, Maybe, NakedCheckbox, Image, Copy, Anchor, CustomCheckbox } from "../atomics"
+import { Button, Checkbox, Heading, Maybe, Image, Copy, Anchor, CustomCheckbox } from "../atomics"
 import { Box, Flex } from "../layout"
 import { Price, ProductInfo, ProductInfoProps } from "./product"
 

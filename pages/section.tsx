@@ -66,11 +66,18 @@ import { genGoogleSearchResults } from '../data'
 import { useEffect, useState } from 'react'
 import { RandomThreeColNews } from '../components/lib/super_components/news'
 import { TopNav } from '../components/lib/section/nav'
+import { CheckoutPage } from '../components/lib/section/checkout'
+import {
+  PurchaseInfoCard,
+  PurchaseProductInfo,
+} from '../components/lib/super_components/checkout'
 
 const SectionsGallery = () => {
   const { theme, hookSc } = useThemeHelper()
-  const [ cookieOpen, setCookieOpen ] = useState<boolean>(true)
-  const [googleSearchResults, setGoogleSearchResults] = useState<GoogleSearchResultProps[] | null>(null)
+  const [cookieOpen, setCookieOpen] = useState<boolean>(true)
+  const [googleSearchResults, setGoogleSearchResults] = useState<
+    GoogleSearchResultProps[] | null
+  >(null)
   useEffect(() => {
     if (googleSearchResults !== null) {
       return
@@ -85,62 +92,77 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <CheckoutPage
+        navHeading="Secure Checkout"
+        childrenLeft={
+          <PurchaseInfoCard
+            heading="Arriving Oct 18, 2024"
+            copy="If you order within the next 10 minutes"
+            link="Add delivery instructions"
+          >
+            <PurchaseProductInfo
+              deliveryOptions={[
+                {
+                  label: 'Friday, Oct 18',
+                  children: (
+                    <span style={{ fontWeight: 'bold' }}>FREE Delivery</span>
+                  ),
+                },
+              ]}
+              info={{
+                price: 38.94,
+                title: 'Chess: 5334 Problems, Combinations and Games',
+                asset: '/products/product3.jpg',
+                description: 'Fie I was an immigrant from Ireland',
+                children: [
+                  null,
+                  <Copy>
+                    Ship and sold by <Anchor>amazon.ca</Anchor>
+                  </Copy>,
+                ],
+              }}
+            />
+          </PurchaseInfoCard>
+        }
+      />
       <TopNav withTop withMid withBottom />
       <DashboardSection
         withNav={false}
-        sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}>
+        sidebarChildren={<Box $sx={{ width: '150px', height: '100vh' }} />}
+      >
         <Tabs
           containerSx={hookSc('dashboardTabs')}
           tabSx={hookSc('dashboardTab')}
           tabInnerSx={hookSc('dashboardTabInner')}
           selectedIndex={0}
-          tabs={[
-            'Active',
-            'Pending',
-            'Restorable',
-            'Tools',
-          ]}
+          tabs={['Active', 'Pending', 'Restorable', 'Tools']}
         />
         <Spacer />
         <DashboardSectionHeader
-          heading='Welcome, djkramnik!'
-          toggleOptions={[
-            'Transfer',
-            'Register'
-          ]}
+          heading="Welcome, djkramnik!"
+          toggleOptions={['Transfer', 'Register']}
         />
         <Spacer />
-        <DashboardSearchHeader
-          toggleOptions={[
-            'Black',
-            'White'
-          ]}
-        />
+        <DashboardSearchHeader toggleOptions={['Black', 'White']} />
         <Spacer />
         <RandomDashboardCards />
         <Spacer />
         <DashboardListWithOptions
           icon={Icon.gamepad}
           rightIcon={Icon.sliders}
-
         />
         <Spacer />
         <StripeTable
           btnLabel="Details"
           topFilters={{
-            options: [
-              'Date and time',
-              'Amount',
-              'Status',
-              'Payment Method'
-            ],
+            options: ['Date and time', 'Amount', 'Status', 'Payment Method'],
             rightButtonOne: 'Export',
-            rightButtonTwo: 'Edit Columns'
+            rightButtonTwo: 'Edit Columns',
           }}
           bottomPagination={{
             first: 1,
             last: 20,
-            total: 10000
+            total: 10000,
           }}
         />
       </DashboardSection>
@@ -155,7 +177,7 @@ const SectionsGallery = () => {
       <Spacer />
       <Box $sx={{}}>
         <Container>
-          <Box $sx={{ width: '800px'}}>
+          <Box $sx={{ width: '800px' }}>
             <WikiHeading title="2024 Pont-Sondé Attack" lg>
               <Anchor>[ Edit ]</Anchor>
             </WikiHeading>
@@ -166,16 +188,13 @@ const SectionsGallery = () => {
               links={[
                 [
                   'Background',
-                  'Polygamy divides Smith\'s followers',
+                  "Polygamy divides Smith's followers",
                   'Destruction of the Naboo Expositor',
                   'Arrest attempt and martial law',
                   'Smith surrenders',
-                  'Incarceration at Carthage Jail'
+                  'Incarceration at Carthage Jail',
                 ],
-                [
-                  'Attack', 
-                  'Injuries to mob members'
-                ],
+                ['Attack', 'Injuries to mob members'],
                 'Interment',
                 'Responsibility and trial',
                 'Consequences for the Latter Day Saints movement',
@@ -183,13 +202,13 @@ const SectionsGallery = () => {
                 'Notes',
                 'References',
                 'Further Reading',
-                'External Links'
+                'External Links',
               ]}
             />
-            <Box $sx={{ width: '600px'}}>
-              <WikiSection 
+            <Box $sx={{ width: '600px' }}>
+              <WikiSection
                 headingProps={{
-                  title: 'Joseph Smith\'s last stand',
+                  title: "Joseph Smith's last stand",
                 }}
                 paragraph={`In 1844, in the city of <a>Nauvoo, Illinois</a> where 
                   Smith was mayor, several anti-polygamist Mormons,
@@ -204,8 +223,6 @@ const SectionsGallery = () => {
               />
             </Box>
           </Flex>
-
-          
         </Container>
       </Box>
       <Spacer />
@@ -255,7 +272,6 @@ const SectionsGallery = () => {
               description={''}
             />
           </Flex>
-
         </Container>
       </Box>
       <Box $sx={{}}>
@@ -295,7 +311,6 @@ const SectionsGallery = () => {
               noDescription
             />
           </Flex>
-
         </Container>
       </Box>
       <Box>
@@ -309,38 +324,39 @@ const SectionsGallery = () => {
         />
         <DashboardSection
           withNav={false}
-          sidebarChildren={<Box $sx={{ width: '150px', height: '100vh'}} />}
+          sidebarChildren={<Box $sx={{ width: '150px', height: '100vh' }} />}
         >
-            <SearchSection
-              interludes={[
-                (
-                  <Flex col gap={theme.spacing.gap}>
-                    <Heading level={4}>
-                      People also ask
-                    </Heading>
-                    <AccordionSection
-                      openText={`It hydrates, refreshes and cleanses
+          <SearchSection
+            interludes={[
+              <Flex col gap={theme.spacing.gap}>
+                <Heading level={4}>People also ask</Heading>
+                <AccordionSection
+                  openText={`It hydrates, refreshes and cleanses
                         your pores, using Nissan's triple safety protocol`}
-                      openIndex={0}
-                      accordions={[{
-                        heading: 'What does Tongkat Ali do for a man?'
-                      }, {
-                        heading: 'Will I become superman taking this?'
-                      }, {
-                        heading: 'Is this the silver bullet to give me unlimited satisfaction?'
-                      }, {
-                        heading: 'Can I do it if I put my back into it?'
-                      }]}
-                    />
-                  </Flex>
-                )
-              ]}>
-              {
-                (googleSearchResults ?? []).map((props, index) => {
-                  return <GoogleSearchResult {...props} key={index} />
-                })
-              }
-            </SearchSection>
+                  openIndex={0}
+                  accordions={[
+                    {
+                      heading: 'What does Tongkat Ali do for a man?',
+                    },
+                    {
+                      heading: 'Will I become superman taking this?',
+                    },
+                    {
+                      heading:
+                        'Is this the silver bullet to give me unlimited satisfaction?',
+                    },
+                    {
+                      heading: 'Can I do it if I put my back into it?',
+                    },
+                  ]}
+                />
+              </Flex>,
+            ]}
+          >
+            {(googleSearchResults ?? []).map((props, index) => {
+              return <GoogleSearchResult {...props} key={index} />
+            })}
+          </SearchSection>
         </DashboardSection>
       </Box>
       <Box>
@@ -348,7 +364,7 @@ const SectionsGallery = () => {
           <GoogleSearchResult
             avatar={{
               name: 'Merriam-Webster',
-              position: 'https://www.merriam-webster.com > dictionary > test'
+              position: 'https://www.merriam-webster.com > dictionary > test',
             }}
             heading="Test Definition & Meaning"
             description={`Sep 23, 2024 — Kids Definition · 
@@ -357,7 +373,7 @@ const SectionsGallery = () => {
               'Synonyms of test',
               'Litmus test',
               'Bechdel test',
-              'Acid test'
+              'Acid test',
             ]}
           />
         </Container>
@@ -365,15 +381,18 @@ const SectionsGallery = () => {
       <Box>
         <Container>
           <Spacer />
-          <Flex gap="8px" $sx={{ alignItems: 'stretch', justifyContent: 'center' }}>
+          <Flex
+            gap="8px"
+            $sx={{ alignItems: 'stretch', justifyContent: 'center' }}
+          >
             <AmazonSearchResult
               sm={true}
               productInfo={{
-                title: "Host Defense Stamets Mushroom Power Roar Capsules",
+                title: 'Host Defense Stamets Mushroom Power Roar Capsules',
                 tags: ['Medicinal', 'Voodoo', 'Fear'],
                 star: {
                   rating: 4,
-                  reviews: 88
+                  reviews: 88,
                 },
                 price: 23.96,
               }}
@@ -381,11 +400,11 @@ const SectionsGallery = () => {
             <AmazonSearchResult
               sm={true}
               productInfo={{
-                title: "Host Defense Stamets Mushroom Power Roar Capsules",
+                title: 'Host Defense Stamets Mushroom Power Roar Capsules',
                 tags: ['Medicinal', 'Voodoo', 'Fear'],
                 star: {
                   rating: 4,
-                  reviews: 88
+                  reviews: 88,
                 },
                 price: 23.96,
               }}
@@ -393,11 +412,11 @@ const SectionsGallery = () => {
             <AmazonSearchResult
               sm={true}
               productInfo={{
-                title: "Host Defense Stamets Mushroom Power Roar Capsules",
+                title: 'Host Defense Stamets Mushroom Power Roar Capsules',
                 tags: ['Medicinal', 'Voodoo', 'Fear'],
                 star: {
                   rating: 4,
-                  reviews: 88
+                  reviews: 88,
                 },
                 price: 23.96,
               }}
@@ -410,7 +429,7 @@ const SectionsGallery = () => {
       <Box $sx={{}}>
         <AmazonSearchResult
           productInfo={{
-            title:`Waters of Babylon, that we `,
+            title: `Waters of Babylon, that we `,
             tags: ['Medicinal', 'Voodoo', 'Fear'],
             star: {
               rating: 4,
@@ -431,8 +450,8 @@ const SectionsGallery = () => {
               null,
               <Copy>
                 All I know is that I will never dish another raw deal
-              </Copy>
-            ]
+              </Copy>,
+            ],
           }}
         />
       </Box>

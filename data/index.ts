@@ -1,3 +1,5 @@
 export * from './search-results'
 export * from './faker'
 export * from './fakenews'
+export * from './table'
+export * from './promotional'

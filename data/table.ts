@@ -30,6 +30,17 @@ export const genFakePrice = (
   return `$${dollars}.${cents}`
 }
 
+export const genFakePriceNumeric = (
+  digits: number,
+  withCents = true
+): number => {
+  return Number((
+    Math.floor(Math.random() * (10**digits)) + (
+      withCents ? Math.random() : 0
+    )
+  ).toFixed(2))
+}
+
 const creditCards = [
   'Visa',
   'Mastercard',

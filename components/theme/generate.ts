@@ -1576,8 +1576,22 @@ export const getSuperComponents = ({
       fontSize: '24px',
       textAlign: 'right'
     },
-    stupidPromotion: {},
-    stupidPromotionButton: {},
+    stupidPromotion: {
+      width: '80%',
+      background: palette.white,
+      color: colors.amazonDark,
+      padding: `${spacing.biggishGap} ${spacing.bigGap}`,
+      gap: spacing.biggishGap,
+      borderRadius: '8px',
+    },
+    stupidPromotionButton: {
+      fontSize: '12px',
+      backgroundColor: 'transparent',
+      borderRadius: '30px',
+      border: `1px solid rgba(0,0,0,0.5)`,
+      color: 'rgba(0,0,0,0.5)',
+      minWidth: '200px'
+    },
     stupidPromotionCopy: {},
     stupidPromotionImage: {},
     stupidPromotionLink: {},
@@ -1719,7 +1733,7 @@ export const getSuperComponents = ({
     },
     outlinedLangDropdown: {},
     confirmationPageContainer: {
-      padding: `${spacing.bigGap} 0`
+      padding: `${spacing.biggishGap} 0`
     },
     confirmationPageInner: {
       display: 'flex',

@@ -72,9 +72,11 @@ import {
 } from '../components/lib/section/checkout'
 import {
   FingerOnTheButtonVertical,
+  ProceedCard,
   PurchaseInfoCard,
   PurchaseProductInfo,
   ShoppingCart,
+  StupidPromotion,
 } from '../components/lib/super_components/checkout'
 import { TextAccordion } from '../components/lib/atomics/accordion'
 
@@ -101,10 +103,16 @@ const SectionsGallery = () => {
       <Fullscreen>
         <TopNav withTop withMid withBottom />
         <ConfirmationPage
+          childrenTop={
+            <StupidPromotion asset="/avatars/rp.jpg"
+              buttonLabel="Just dew it"
+              html="Pay me <a>$10.00</a> a month for absolute piece of mind.  You will be safe from the psychic attacks of your foes"
+            />
+          }
           childrenLeft={
             <ShoppingCart
               heading="Shopping Cart"
-              link="Deselect all items"
+              link="Select all items"
               price={38.94}
               products={[
                 {
@@ -134,7 +142,7 @@ const SectionsGallery = () => {
               ]}
             />
           }
-          childrenRight={null}
+          childrenRight={<ProceedCard totalItems={2} price={300.10}/>}
         />
       </Fullscreen>
       <CheckoutPage

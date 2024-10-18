@@ -5,11 +5,12 @@ import { ChimericIcon, Heading, Icon, Maybe, MiniDropdown } from "../atomics"
 import { Box, Flex } from "../layout"
 import { Container } from "../layout/container"
 import { Navbar, RandomBrandLogo } from "../super_components"
-import { ProceedCard, ShoppingCart, StupidPromotion } from "../super_components/checkout"
+import { FingeronTheButtonHorizontal, ProceedCard, ShoppingCart, StupidPromotion } from "../super_components/checkout"
 import { genFakePriceNumeric, genShoppingCart, genStupidPromotion } from "../../../data"
 import { ProductInfoProps } from "../super_components/product"
 import { randomPick } from "../../utils"
 import { sizedArray } from "../../../util"
+import { Spacer } from "../layout/spacer"
 
 // amazon? walmart? sephora? mom and pop drug shop
 // this includes the heading but it still needs to share
@@ -159,7 +160,14 @@ export const RandomConfirmationPage = () => {
         <StupidPromotion {...stupidPromotion} />
       }
       childrenLeft={
-        <ShoppingCart {...shoppingCart} />
+        <>
+          <ShoppingCart {...shoppingCart} />
+          <Spacer />
+          <FingeronTheButtonHorizontal
+            heading="Proceed to Checkout"
+            legalese="You sure about this bro? Ok bro, lets go bro"
+          />
+        </>
       }
       childrenRight={
         <ProceedCard {...proceedProps} />

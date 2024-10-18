@@ -1756,6 +1756,36 @@ export const getSuperComponents = ({
     finalItemRight: {
       fontSize: '18px',
       fontWeight: 'bold'
+    },
+    sideLogin: {
+      display: 'flex',
+      width: '100vw',
+      height: '100vh'
+    },
+    sideLoginBg: {
+      width: '50%',
+      backgroundSize: '200%', // very sensitive to the image used... might have to map these
+      backgroundPositionX: '-300px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    sideLoginBgInner: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
+    sideLoginBgHeading: {
+      color: palette.white,
+      fontSize: '14px',
+      fontWeight: 'normal'
+
+    },
+    sideLoginPanel: {
+      width: '50%',
+      backgroundColor: palette.white,
+      boxShadow: shadows.card,
+      zIndex: '1'
     }
   }
 }

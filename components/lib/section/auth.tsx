@@ -1,8 +1,11 @@
 
 import { useTheme } from "styled-components"
 import { getSuperComponentStyles } from "../../theme"
-import { Box } from "../layout"
-import { Card } from "../super_components"
+import { Box, Flex } from "../layout"
+import { Card, RandomBrandLogo } from "../super_components"
+import { Fullscreen } from "./fullscreen"
+import { useThemeHelper } from "../../hooks"
+import { Heading } from "../atomics"
 
 export const AuthSection = ({
   children,
@@ -36,5 +39,37 @@ export const AuthSection = ({
         {children}
       </Card>
     </Box>
+  )
+}
+
+export const SideLogin = ({
+  bg = 'rbc.jpg',
+  heading,
+}: {
+  bg?: string
+  heading: string
+}) => {
+  const { hookSc } = useThemeHelper()
+  return (
+    <Fullscreen>
+      <Flex $sx={{
+        ...hookSc('sideLogin')
+      }}>
+        <Flex $sx={{
+          backgroundImage: `url(/backgrounds/${bg})`,
+          ...hookSc('sideLoginBg')
+        }}>
+          <Flex $sx={hookSc('sideLoginBgInner')}>
+            <RandomBrandLogo />
+            <Heading level={3} $sx={hookSc('sideLoginBgHeading')}>
+              {heading}
+            </Heading>
+          </Flex>
+        </Flex>
+        <Flex $sx={hookSc('sideLoginPanel')}>
+
+        </Flex>
+      </Flex>
+    </Fullscreen>
   )
 }

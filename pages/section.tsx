@@ -10,6 +10,7 @@ import {
   RandomDashboardCards,
   RandomNewsStory,
   SearchSection,
+  SideLogin,
   StripeTable,
 } from '../components/lib/section'
 import {
@@ -101,6 +102,8 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <SideLogin heading="Your bank, for real this time" />
+
       <Fullscreen>
         <TopNav withTop withMid withBottom />
         <RandomConfirmationPage />

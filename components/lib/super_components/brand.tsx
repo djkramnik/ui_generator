@@ -6,6 +6,7 @@ import { Box, Flex } from "../layout"
 import { getSuperComponentStyles, sxToStyle } from "../../theme"
 import { BrandIcon, ChimericIcon, Icon } from "../atomics"
 import { sizedArray } from "../../../util"
+import { RbcLogo } from "../../svg/logos/rbc"
 
 const randomLogos = [
   StripeLogo,
@@ -13,6 +14,7 @@ const randomLogos = [
   EnercareLogo,
   GsapLogo,
   ShopifyLogo, 
+  RbcLogo
 ]
 
 export const RandomBrandLogo = ({

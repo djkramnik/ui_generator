@@ -396,6 +396,11 @@ export type ThemeConfig = {
     confirmationPageTop: CssProps
     finalItemLeft: CssProps
     finalItemRight: CssProps
+    sideLogin: CssProps
+    sideLoginPanel: CssProps
+    sideLoginBg: CssProps
+    sideLoginBgInner: CssProps
+    sideLoginBgHeading: CssProps
   }
 }
 

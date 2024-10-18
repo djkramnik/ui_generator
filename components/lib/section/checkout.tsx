@@ -1,9 +1,15 @@
+import { useEffect, useState } from "react"
 import { useThemeHelper } from "../../hooks"
 import { sxToStyle } from "../../theme"
 import { ChimericIcon, Heading, Icon, Maybe, MiniDropdown } from "../atomics"
 import { Box, Flex } from "../layout"
 import { Container } from "../layout/container"
 import { Navbar, RandomBrandLogo } from "../super_components"
+import { ProceedCard, ShoppingCart, StupidPromotion } from "../super_components/checkout"
+import { genFakePriceNumeric, genShoppingCart, genStupidPromotion } from "../../../data"
+import { ProductInfoProps } from "../super_components/product"
+import { randomPick } from "../../utils"
+import { sizedArray } from "../../../util"
 
 // amazon? walmart? sephora? mom and pop drug shop
 // this includes the heading but it still needs to share
@@ -97,5 +103,67 @@ export const ConfirmationPage = ({
         </Container>
       </Flex>
     </Box>
+  )
+}
+
+export const RandomConfirmationPage = () => {
+  const [stupidPromotion, setPromotion] = useState<{
+    asset: string
+    buttonLabel: string
+    html: string
+  } | null>(null)
+  const [shoppingCart, setShoppingCart] = useState<{
+    heading: string;
+    link?: string;
+    products: (ProductInfoProps & {
+        asset: string;
+    })[];
+    price: number;
+    checkedIndexes?: number[];
+  } | null>(null)
+  const [proceedProps, setProceedProps] = useState<{
+    totalItems: number
+    price: number
+  } | null>(null)
+  
+  useEffect(() => {
+    if (stupidPromotion !== null ||
+        shoppingCart !== null ||
+      proceedProps !== null) {
+      return
+    }
+    setPromotion(genStupidPromotion())
+    setShoppingCart(genShoppingCart())
+    setProceedProps({
+      totalItems: randomPick(1, 5),
+      price: genFakePriceNumeric(randomPick(2,3))
+    })
+    
+  }, [
+    stupidPromotion,
+    setPromotion,
+    shoppingCart,
+    setShoppingCart,
+    setProceedProps,
+  ])
+
+  if (stupidPromotion === null ||
+      shoppingCart === null ||
+    proceedProps === null) {
+    return null
+  }
+
+  return (
+    <ConfirmationPage
+      childrenTop={
+        <StupidPromotion {...stupidPromotion} />
+      }
+      childrenLeft={
+        <ShoppingCart {...shoppingCart} />
+      }
+      childrenRight={
+        <ProceedCard {...proceedProps} />
+      }
+    />
   )
 }

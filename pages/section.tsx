@@ -69,6 +69,7 @@ import { TopNav } from '../components/lib/section/nav'
 import {
   CheckoutPage,
   ConfirmationPage,
+  RandomConfirmationPage,
 } from '../components/lib/section/checkout'
 import {
   FingerOnTheButtonVertical,
@@ -100,6 +101,11 @@ const SectionsGallery = () => {
   return (
     <>
       <ThemeToggle />
+      <Fullscreen>
+        <TopNav withTop withMid withBottom />
+        <RandomConfirmationPage />
+      </Fullscreen>
+
       <Fullscreen>
         <TopNav withTop withMid withBottom />
         <ConfirmationPage

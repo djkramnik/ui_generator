@@ -200,7 +200,7 @@ export const genProductInfo = ({
   const [title, description] = randomItem(products)
   return {
     tags: tagN
-      ? shuffle(tags).slice(tagN)
+      ? shuffle(tags).slice(0, tagN)
       : undefined,
     star: withStars
       ? {
@@ -245,6 +245,10 @@ export const genShoppingCart = (): {
   checkedIndexes?: number[];
 } => {
   const nProducts = randomPick(1, 4)
+  const allProducts: string[] = sizedArray(31)
+  .map((_, index) => {
+    return `product${index + 1}.jpg`
+  })
   return {
     heading: randomItem(shoppingCartSynonyms),
     price: genFakePriceNumeric(randomPick(2,3)),
@@ -262,7 +266,7 @@ export const genShoppingCart = (): {
             withTag: true,
             withDescription: true
           }),
-          asset: `/avatars/${randomItem(avatars)}`
+          asset: `/products/${randomItem(allProducts)}`
         }
       }),
   }

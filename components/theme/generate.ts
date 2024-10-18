@@ -1565,7 +1565,7 @@ export const getSuperComponents = ({
       padding: `${spacing.gap} 0`
     },
     cartProductImg: {
-
+      height: '180px'
     },
     cartProducts: {
       paddingTop: spacing.gap,
